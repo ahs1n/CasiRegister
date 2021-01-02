@@ -18,4 +18,5 @@
     <color name="gray">#7f7f7f</color>
     <color name="grayDark">#5e5e5e</color>
     <color name="grayLight">#efefef</color>
+    <color name="greenOverlay">#d600ef00</color>
 </resources>

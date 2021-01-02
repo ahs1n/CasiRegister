@@ -38,7 +38,7 @@
                 android:id="@+id/status_color"
                 android:layout_width="20dp"
                 android:layout_height="match_parent"
-                android:background="@color/red_overlay"
+                android:background="@color/redOverlay"
                 android:elevation="5.20dp" />
 
             <LinearLayout
