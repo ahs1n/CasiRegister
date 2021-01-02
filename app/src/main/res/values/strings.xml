@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Naunehal</string>
+    <string name="action_settings">Settings</string>
+    <string name="wfa101">یہ ایک سوال ہے ؟</string>
+    <string name="Q_wfa101">Q. WFA101</string>
+    <string name="hh05">Name of District</string>
+    <string name="Q_hh05">Q. HH05</string>
+    <string name="hh06">Union Council</string>
+    <string name="Q_hh06">Q. HH06</string>
+    <string name="hh08">Cluster Number</string>
+    <string name="Q_hh08">Q. HH08</string>
+    <string name="hh09">Household number</string>
+    <string name="Q_hh09">Q. HH09</string>
+    <string name="action_data_sync">Sync Data</string>
+    <string name="btnDownload">Download Data</string>
+    <string name="btnUpload">Upload Data</string>
+</resources>
