@@ -64,7 +64,7 @@ public class Form extends BaseObservable {
     public String hh24;
     public String hh25;
     public String hh26;
-    public String cb01;
+  /*  public String cb01;
     public String cb02;
     public String cb03;
     public String cb04dd;
@@ -424,8 +424,7 @@ public class Form extends BaseObservable {
     public String se3796x;
     public String se38;
     public String se39;
-    public String se40;
-
+    public String se40;*/
 
 
     public Form() {
@@ -649,6 +648,56 @@ public class Form extends BaseObservable {
 
 
     @Bindable
+    public String getHh01() {
+        return hh01;
+    }
+
+    public void setHh01(String hh01) {
+        this.hh01 = hh01;
+        notifyPropertyChanged(BR.hh01);
+    }
+
+    @Bindable
+    public String getHh0201() {
+        return hh0201;
+    }
+
+    public void setHh0201(String hh0201) {
+        this.hh0201 = hh0201;
+        notifyPropertyChanged(BR.hh0201);
+    }
+
+    @Bindable
+    public String getHh0202() {
+        return hh0202;
+    }
+
+    public void setHh0202(String hh0202) {
+        this.hh0202 = hh0202;
+        notifyPropertyChanged(BR.hh0202);
+    }
+
+    @Bindable
+    public String getHh03() {
+        return hh03;
+    }
+
+    public void setHh03(String hh03) {
+        this.hh03 = hh03;
+        notifyPropertyChanged(BR.hh03);
+    }
+
+    @Bindable
+    public String getHh04() {
+        return hh04;
+    }
+
+    public void setHh04(String hh04) {
+        this.hh04 = hh04;
+        notifyPropertyChanged(BR.hh04);
+    }
+
+    @Bindable
     public String getHh05() {
         return hh05;
     }
@@ -669,6 +718,16 @@ public class Form extends BaseObservable {
     }
 
     @Bindable
+    public String getHh07() {
+        return hh07;
+    }
+
+    public void setHh07(String hh07) {
+        this.hh07 = hh07;
+        notifyPropertyChanged(BR.hh07);
+    }
+
+    @Bindable
     public String getHh08() {
         return hh08;
     }
@@ -686,5 +745,195 @@ public class Form extends BaseObservable {
     public void setHh09(String hh09) {
         this.hh09 = hh09;
         notifyPropertyChanged(BR.hh09);
+    }
+
+    @Bindable
+    public String getHh10() {
+        return hh10;
+    }
+
+    public void setHh10(String hh10) {
+        this.hh10 = hh10;
+        notifyPropertyChanged(BR.hh10);
+    }
+
+    @Bindable
+    public String getHh11() {
+        return hh11;
+    }
+
+    public void setHh11(String hh11) {
+        this.hh11 = hh11;
+        notifyPropertyChanged(BR.hh11);
+    }
+
+    @Bindable
+    public String getHh12() {
+        return hh12;
+    }
+
+    public void setHh12(String hh12) {
+        this.hh12 = hh12;
+        notifyPropertyChanged(BR.hh12);
+    }
+
+    @Bindable
+    public String getHh13() {
+        return hh13;
+    }
+
+    public void setHh13(String hh13) {
+        this.hh13 = hh13;
+        notifyPropertyChanged(BR.hh13);
+    }
+
+    @Bindable
+    public String getHh14() {
+        return hh14;
+    }
+
+    public void setHh14(String hh14) {
+        this.hh14 = hh14;
+        notifyPropertyChanged(BR.hh14);
+    }
+
+    @Bindable
+    public String getHh15() {
+        return hh15;
+    }
+
+    public void setHh15(String hh15) {
+        this.hh15 = hh15;
+        notifyPropertyChanged(BR.hh15);
+    }
+
+    @Bindable
+    public String getHh16() {
+        return hh16;
+    }
+
+    public void setHh16(String hh16) {
+        this.hh16 = hh16;
+        notifyPropertyChanged(BR.hh16);
+    }
+
+    @Bindable
+    public String getHh17() {
+        return hh17;
+    }
+
+    public void setHh17(String hh17) {
+        this.hh17 = hh17;
+        notifyPropertyChanged(BR.hh17);
+    }
+
+    @Bindable
+    public String getHh1796x() {
+        return hh1796x;
+    }
+
+    public void setHh1796x(String hh1796x) {
+        this.hh1796x = hh1796x;
+        notifyPropertyChanged(BR.hh1796x);
+    }
+
+    @Bindable
+    public String getHh18() {
+        return hh18;
+    }
+
+    public void setHh18(String hh18) {
+        this.hh18 = hh18;
+        notifyPropertyChanged(BR.hh18);
+    }
+
+    @Bindable
+    public String getHh19() {
+        return hh19;
+    }
+
+    public void setHh19(String hh19) {
+        this.hh19 = hh19;
+        notifyPropertyChanged(BR.hh19);
+    }
+
+    @Bindable
+    public String getHh20() {
+        return hh20;
+    }
+
+    public void setHh20(String hh20) {
+        this.hh20 = hh20;
+        notifyPropertyChanged(BR.hh20);
+    }
+
+    @Bindable
+    public String getHh2096x() {
+        return hh2096x;
+    }
+
+    public void setHh2096x(String hh2096x) {
+        this.hh2096x = hh2096x;
+        notifyPropertyChanged(BR.hh2096x);
+    }
+
+    @Bindable
+    public String getHh21() {
+        return hh21;
+    }
+
+    public void setHh21(String hh21) {
+        this.hh21 = hh21;
+        notifyPropertyChanged(BR.hh21);
+    }
+
+    @Bindable
+    public String getHh22() {
+        return hh22;
+    }
+
+    public void setHh22(String hh22) {
+        this.hh22 = hh22;
+        notifyPropertyChanged(BR.hh22);
+    }
+
+    @Bindable
+    public String getHh23() {
+        return hh23;
+    }
+
+    public void setHh23(String hh23) {
+        this.hh23 = hh23;
+        notifyPropertyChanged(BR.hh23);
+    }
+
+    @Bindable
+    public String getHh24() {
+        return hh24;
+    }
+
+    public void setHh24(String hh24) {
+        this.hh24 = hh24;
+        notifyPropertyChanged(BR.hh24);
+    }
+
+    @Bindable
+    public String getHh25() {
+        return hh25;
+    }
+
+    public void setHh25(String hh25) {
+        this.hh25 = hh25;
+        notifyPropertyChanged(BR.hh25);
+    }
+
+    @Bindable
+    public String getHh26() {
+        return hh26;
+    }
+
+    public void setHh26(String hh26) {
+        this.hh26 = hh26;
+        notifyPropertyChanged(BR.hh26);
     }
 }
