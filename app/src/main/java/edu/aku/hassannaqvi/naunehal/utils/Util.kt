@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.smk_pwd.utils
+package edu.aku.hassannaqvi.naunehal.utils
 
 import android.Manifest
 import android.app.Activity
@@ -14,7 +14,6 @@ import edu.aku.hassannaqvi.naunehal.CONSTANTS
 import edu.aku.hassannaqvi.naunehal.R
 import edu.aku.hassannaqvi.naunehal.core.MainApp
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity
-
 import java.util.*
 
 private fun checkPermission(context: Context): IntArray {
@@ -56,7 +55,7 @@ fun openEndActivity(activity: Activity, childEndingActivity: Boolean = false) {
     dialog.window!!.attributes = params
     dialog.findViewById<View>(R.id.btnOk).setOnClickListener { view: View? ->
         activity.finish()
-        val intent = Intent(activity, EndingActivity::class.java).putExtra("complete", false)
+        val intent = Intent(activity, EndSectionActivity::class.java).putExtra("complete", false)
                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         if (childEndingActivity) intent.putExtra(CONSTANTS.SECTION_MAIN_CHECK_FOR_END, true)
         activity.startActivity(intent)
