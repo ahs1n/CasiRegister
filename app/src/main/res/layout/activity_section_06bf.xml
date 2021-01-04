@@ -272,6 +272,8 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
+
             <!-- bf05  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVbf05"
@@ -789,6 +791,7 @@
                     </RadioGroup>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
 
             <!-- bf11  Radio   -->
             <androidx.cardview.widget.CardView
