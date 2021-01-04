@@ -55,6 +55,7 @@ public class Section01HHActivity extends AppCompatActivity {
 
     private void setupSkips() {
         rgListener(bi.hh11, bi.hh1102, bi.llhh11);
+        rgListener(bi.hh18, bi.hh1801, bi.llhh18);
     }
 
 
