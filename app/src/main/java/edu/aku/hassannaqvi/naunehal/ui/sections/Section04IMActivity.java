@@ -38,10 +38,10 @@ public class Section04IMActivity extends AppCompatActivity {
             Clear.clearAllFields(bi.fldGrpCVim03);
             bi.fldGrpCVim01.setVisibility(View.GONE);
             bi.fldGrpCVim03.setVisibility(View.GONE);
-            if (i == bi.im021.getId()) {
+            if (i == bi.im0201.getId()) {
                 bi.fldGrpCVim01.setVisibility(View.VISIBLE);
             }
-            if (i == bi.im022.getId()) {
+            if (i == bi.im0202.getId()) {
                 bi.fldGrpCVim03.setVisibility(View.VISIBLE);
             }
         });
@@ -51,7 +51,7 @@ public class Section04IMActivity extends AppCompatActivity {
             Clear.clearAllFields(bi.fldGrpCVim07);
             bi.llim01.setVisibility(View.GONE);
             bi.fldGrpCVim07.setVisibility(View.GONE);
-            if (i == bi.im011.getId()) {
+            if (i == bi.im0101.getId()) {
                 bi.llim01.setVisibility(View.VISIBLE);
                 bi.fldGrpCVim07.setVisibility(View.VISIBLE);
             }

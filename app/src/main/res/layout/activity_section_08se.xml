@@ -22,7 +22,6 @@
 
             <!-- se_title1  Title   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse_title1"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -39,7 +38,6 @@
 
             <!-- se01  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse01"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -153,7 +151,6 @@
 
             <!-- se02  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse02"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -317,7 +314,6 @@
 
             <!-- se03  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse03"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -529,7 +525,6 @@
 
             <!-- se04  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse04"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -725,7 +720,6 @@
 
             <!-- se05  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse05"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -807,7 +801,6 @@
 
             <!-- se06  Title   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse06"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -841,7 +834,6 @@
 
             <!-- se07  Title   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse07"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -875,7 +867,6 @@
 
             <!-- se08  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse08"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1063,7 +1054,6 @@
 
             <!-- se09  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse09"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1127,7 +1117,6 @@
 
             <!-- se10  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse10"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1241,7 +1230,6 @@
 
             <!-- se11  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse11"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1407,7 +1395,6 @@
 
             <!-- se12  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse12"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1489,7 +1476,6 @@
 
             <!-- se13  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse13"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1575,7 +1561,6 @@
 
             <!-- se14  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse14"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1631,7 +1616,6 @@
 
             <!-- se15  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse15"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1695,7 +1679,6 @@
 
             <!-- se16  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse16"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1751,7 +1734,6 @@
 
             <!-- se17  CheckBox   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse17"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1833,7 +1815,6 @@
 
             <!-- se18  Title   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse18"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1850,7 +1831,6 @@
 
             <!-- se1801  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse1801"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1906,7 +1886,6 @@
 
             <!-- se1802  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse1802"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1962,7 +1941,6 @@
 
             <!-- se1803  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse1803"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2018,7 +1996,6 @@
 
             <!-- se1804  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse1804"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2074,7 +2051,6 @@
 
             <!-- se1805  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse1805"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2130,7 +2106,6 @@
 
             <!-- se1896  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse1896"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2196,7 +2171,6 @@
 
             <!-- se19  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse19"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2350,7 +2324,6 @@
 
             <!-- se20  CheckBox   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse20"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2450,7 +2423,6 @@
 
             <!-- se21  CheckBox   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse21"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2550,7 +2522,6 @@
 
             <!-- se22  Title   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse22"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2567,7 +2538,6 @@
 
             <!-- se2201  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse2201"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2623,7 +2593,6 @@
 
             <!-- se2202  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse2202"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2679,7 +2648,6 @@
 
             <!-- se2203  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse2203"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2735,7 +2703,6 @@
 
             <!-- se2204  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse2204"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2791,7 +2758,6 @@
 
             <!-- se2205  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse2205"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2847,7 +2813,6 @@
 
             <!-- se2206  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse2206"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2903,7 +2868,6 @@
 
             <!-- se2207  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse2207"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2959,7 +2923,6 @@
 
             <!-- se2208  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse2208"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -3015,7 +2978,6 @@
 
             <!-- se2209  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse2209"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -3071,7 +3033,6 @@
 
             <!-- se2210  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse2210"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -3127,7 +3088,6 @@
 
             <!-- se2211  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse2211"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -3183,7 +3143,6 @@
 
             <!-- se2212  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse2212"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -3239,7 +3198,6 @@
 
             <!-- se2213  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse2213"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -3295,7 +3253,6 @@
 
             <!-- se2214  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse2214"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -3351,7 +3308,6 @@
 
             <!-- se2215  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse2215"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -3407,7 +3363,6 @@
 
             <!-- se2216  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse2216"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -3463,7 +3418,6 @@
 
             <!-- se2217  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse2217"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -3519,7 +3473,6 @@
 
             <!-- se2218  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse2218"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -3575,7 +3528,6 @@
 
             <!-- se23  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse23"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -3631,7 +3583,6 @@
 
             <!-- se24  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse24"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -3676,7 +3627,6 @@
 
             <!-- se25  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse25"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -3721,7 +3671,6 @@
 
             <!-- se26  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse26"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -3766,7 +3715,6 @@
 
             <!-- se27  CheckBox   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse27"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -3840,7 +3788,6 @@
 
             <!-- se28  CheckBox   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse28"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -3906,7 +3853,6 @@
 
             <!-- se29  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse29"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -3962,7 +3908,6 @@
 
             <!-- se30  CheckBox   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse30"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -4046,7 +3991,6 @@
 
             <!-- se31  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse31"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -4120,7 +4064,6 @@
 
             <!-- se32  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse32"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -4244,7 +4187,6 @@
 
             <!-- se33  Title   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse33"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -4294,7 +4236,6 @@
 
             <!-- se34  Title   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse34"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -4344,7 +4285,6 @@
 
             <!-- se35  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse35"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -4408,7 +4348,6 @@
 
             <!-- se36  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse36"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -4472,7 +4411,6 @@
 
             <!-- se37  CheckBox   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse37"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -4604,7 +4542,6 @@
 
             <!-- se38  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse38"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -4692,7 +4629,6 @@
 
             <!-- se39  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse39"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -4748,7 +4684,6 @@
 
             <!-- se40  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVse40"
                 style="@style/cardView">
 
                 <LinearLayout

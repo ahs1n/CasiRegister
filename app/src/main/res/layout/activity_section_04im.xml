@@ -96,6 +96,7 @@
 
             <!-- im01  Radio   -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVim01"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -151,6 +152,7 @@
 
             <!-- im03  Radio   -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVim03"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -582,7 +584,6 @@
                             android:layout_weight="1"
                             android:hint="@string/im0503mm"
                             android:text="@={form.im0503mm}" />
-
 
                         <EditText
                             android:id="@+id/im0503yy"
@@ -1612,6 +1613,7 @@
 
             <!-- im07  Radio   -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVim07"
                 style="@style/cardView">
 
                 <LinearLayout
