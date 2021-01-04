@@ -15,9 +15,6 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Date;
-import java.util.Locale;
-
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
@@ -59,7 +56,7 @@ public class Section01HHActivity extends AppCompatActivity {
     }
 
 
-    public void rgListener(@NotNull RadioGroup rg, RadioButton rb, ViewGroup vg) {
+    private void rgListener(@NotNull RadioGroup rg, RadioButton rb, ViewGroup vg) {
         rg.setOnCheckedChangeListener((radioGroup, i) -> {
             Clear.clearAllFields(vg);
             vg.setVisibility(View.VISIBLE);
@@ -68,7 +65,7 @@ public class Section01HHActivity extends AppCompatActivity {
     }
 
 
-    public void BtnContinue() {
+    public void BtnContinue(View view) {
         if (!formValidation()) return;
 
         // SaveDraft(); //<== This function is no longer needed after DataBinding
@@ -95,4 +92,5 @@ public class Section01HHActivity extends AppCompatActivity {
         // TODO: From now on we will save GPS as JSON
         // MainApp.setGPS({"gpsLng":"12444",...});
     }
+
 }
