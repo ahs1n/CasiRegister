@@ -46,6 +46,17 @@ public class Section04IMActivity extends AppCompatActivity {
             }
         });
 
+        bi.im01.setOnCheckedChangeListener((radioGroup, i) -> {
+            Clear.clearAllFields(bi.llim01);
+            Clear.clearAllFields(bi.fldGrpCVim07);
+            bi.llim01.setVisibility(View.GONE);
+            bi.fldGrpCVim07.setVisibility(View.GONE);
+            if (i == bi.im011.getId()) {
+                bi.llim01.setVisibility(View.VISIBLE);
+                bi.fldGrpCVim07.setVisibility(View.VISIBLE);
+            }
+        });
+
     }
 
 

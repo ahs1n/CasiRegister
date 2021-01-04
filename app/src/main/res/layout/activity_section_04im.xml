@@ -245,985 +245,996 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- im04  Title   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVim04"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im04" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im04_dd" />
-
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/im04_dd"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im04_dd"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:text="@={form.im04_dd}"
-                        app:maxValue="30"
-                        app:minValue="1"
-                        app:type="range" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im04_mm" />
-
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/im04_mm"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im04_mm"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:text="@={form.im04_mm}"
-                        app:maxValue="12"
-                        app:minValue="1"
-                        app:type="range" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im04_yy" />
-
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/im04_yy"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im04_yy"
-                        android:inputType="number"
-
-
-                        android:text="@={form.im04_yy}"
-                        app:type="range" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im05_title1  Title   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVim05_title1"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im05_title1" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im05_01  Title   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVim05_01"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im05_01" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_01_dd" />
-
-                    <EditText
-                        android:id="@+id/im05_01_dd"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_01_dd"
-                        android:text="@={form.im05_01_dd}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_01_mm" />
-
-                    <EditText
-                        android:id="@+id/im05_01_mm"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_01_mm"
-                        android:text="@={form.im05_01_mm}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_01_yy" />
-
-                    <EditText
-                        android:id="@+id/im05_01_yy"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_01_yy"
-                        android:text="@={form.im05_01_yy}" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im05_02  Title   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVim05_02"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im05_02" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_02_dd" />
-
-                    <EditText
-                        android:id="@+id/im05_02_dd"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_02_dd"
-                        android:text="@={form.im05_02_dd}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_02_mm" />
-
-                    <EditText
-                        android:id="@+id/im05_02_mm"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_02_mm"
-                        android:text="@={form.im05_02_mm}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_02_yy" />
-
-                    <EditText
-                        android:id="@+id/im05_02_yy"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_02_yy"
-                        android:text="@={form.im05_02_yy}" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im05_03  Title   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVim05_03"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im05_03" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_03_dd" />
-
-                    <EditText
-                        android:id="@+id/im05_03_dd"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_03_dd"
-                        android:text="@={form.im05_03_dd}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_03_mm" />
-
-                    <EditText
-                        android:id="@+id/im05_03_mm"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_03_mm"
-                        android:text="@={form.im05_03_mm}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_03_yy" />
-
-                    <EditText
-                        android:id="@+id/im05_03_yy"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_03_yy"
-                        android:text="@={form.im05_03_yy}" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im05_04  Title   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVim05_04"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im05_04" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_04_dd" />
-
-                    <EditText
-                        android:id="@+id/im05_04_dd"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_04_dd"
-                        android:text="@={form.im05_04_dd}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_04_mm" />
-
-                    <EditText
-                        android:id="@+id/im05_04_mm"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_04_mm"
-                        android:text="@={form.im05_04_mm}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_04_yy" />
-
-                    <EditText
-                        android:id="@+id/im05_04_yy"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_04_yy"
-                        android:text="@={form.im05_04_yy}" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im05_05  Title   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVim05_05"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im05_05" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_05_dd" />
-
-                    <EditText
-                        android:id="@+id/im05_05_dd"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_05_dd"
-                        android:text="@={form.im05_05_dd}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_05_mm" />
-
-                    <EditText
-                        android:id="@+id/im05_05_mm"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_05_mm"
-                        android:text="@={form.im05_05_mm}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_05_yy" />
-
-                    <EditText
-                        android:id="@+id/im05_05_yy"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_05_yy"
-                        android:text="@={form.im05_05_yy}" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im05_06  Title   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVim05_06"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im05_06" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_06_dd" />
-
-                    <EditText
-                        android:id="@+id/im05_06_dd"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_06_dd"
-                        android:text="@={form.im05_06_dd}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_06_mm" />
-
-                    <EditText
-                        android:id="@+id/im05_06_mm"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_06_mm"
-                        android:text="@={form.im05_06_mm}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_06_yy" />
-
-                    <EditText
-                        android:id="@+id/im05_06_yy"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_06_yy"
-                        android:text="@={form.im05_06_yy}" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im05_07  Title   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVim05_07"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im05_07" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_07_dd" />
-
-                    <EditText
-                        android:id="@+id/im05_07_dd"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_07_dd"
-                        android:text="@={form.im05_07_dd}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_07_mm" />
-
-                    <EditText
-                        android:id="@+id/im05_07_mm"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_07_mm"
-                        android:text="@={form.im05_07_mm}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_07_yy" />
-
-                    <EditText
-                        android:id="@+id/im05_07_yy"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_07_yy"
-                        android:text="@={form.im05_07_yy}" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im05_08  Title   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVim05_08"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im05_08" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_08_dd" />
-
-                    <EditText
-                        android:id="@+id/im05_08_dd"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_08_dd"
-                        android:text="@={form.im05_08_dd}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_08_mm" />
-
-                    <EditText
-                        android:id="@+id/im05_08_mm"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_08_mm"
-                        android:text="@={form.im05_08_mm}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_08_yy" />
-
-                    <EditText
-                        android:id="@+id/im05_08_yy"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_08_yy"
-                        android:text="@={form.im05_08_yy}" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im05_09  Title   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVim05_09"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im05_09" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_09_dd" />
-
-                    <EditText
-                        android:id="@+id/im05_09_dd"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_09_dd"
-                        android:text="@={form.im05_09_dd}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_09_mm" />
-
-                    <EditText
-                        android:id="@+id/im05_09_mm"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_09_mm"
-                        android:text="@={form.im05_09_mm}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_09_yy" />
-
-                    <EditText
-                        android:id="@+id/im05_09_yy"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_09_yy"
-                        android:text="@={form.im05_09_yy}" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im05_10  Title   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVim05_10"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im05_10" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_10_dd" />
-
-                    <EditText
-                        android:id="@+id/im05_10_dd"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_10_dd"
-                        android:text="@={form.im05_10_dd}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_10_mm" />
-
-                    <EditText
-                        android:id="@+id/im05_10_mm"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_10_mm"
-                        android:text="@={form.im05_10_mm}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_10_yy" />
-
-                    <EditText
-                        android:id="@+id/im05_10_yy"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_10_yy"
-                        android:text="@={form.im05_10_yy}" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im05_11  Title   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVim05_11"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im05_11" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_11_dd" />
-
-                    <EditText
-                        android:id="@+id/im05_11_dd"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_11_dd"
-                        android:text="@={form.im05_11_dd}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_11_mm" />
-
-                    <EditText
-                        android:id="@+id/im05_11_mm"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_11_mm"
-                        android:text="@={form.im05_11_mm}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_11_yy" />
-
-                    <EditText
-                        android:id="@+id/im05_11_yy"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_11_yy"
-                        android:text="@={form.im05_11_yy}" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im05_12  Title   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVim05_12"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im05_12" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_12_dd" />
-
-                    <EditText
-                        android:id="@+id/im05_12_dd"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_12_dd"
-                        android:text="@={form.im05_12_dd}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_12_mm" />
-
-                    <EditText
-                        android:id="@+id/im05_12_mm"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_12_mm"
-                        android:text="@={form.im05_12_mm}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_12_yy" />
-
-                    <EditText
-                        android:id="@+id/im05_12_yy"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_12_yy"
-                        android:text="@={form.im05_12_yy}" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im05_13  Title   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVim05_13"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im05_13" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_13_dd" />
-
-                    <EditText
-                        android:id="@+id/im05_13_dd"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_13_dd"
-                        android:text="@={form.im05_13_dd}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_13_mm" />
-
-                    <EditText
-                        android:id="@+id/im05_13_mm"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_13_mm"
-                        android:text="@={form.im05_13_mm}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_13_yy" />
-
-                    <EditText
-                        android:id="@+id/im05_13_yy"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_13_yy"
-                        android:text="@={form.im05_13_yy}" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im05_14  Title   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVim05_14"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im05_14" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_14_dd" />
-
-                    <EditText
-                        android:id="@+id/im05_14_dd"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_14_dd"
-                        android:text="@={form.im05_14_dd}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_14_mm" />
-
-                    <EditText
-                        android:id="@+id/im05_14_mm"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_14_mm"
-                        android:text="@={form.im05_14_mm}" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_14_yy" />
-
-                    <EditText
-                        android:id="@+id/im05_14_yy"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_14_yy"
-                        android:text="@={form.im05_14_yy}" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im05_15  Title   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVim05_15"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im05_15" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_15_dd" />
-
-                    <EditText
-                        android:id="@+id/im05_15_dd"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_15_dd"
-                        android:text="@={form.im05_15_dd}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_15_mm" />
-
-                    <EditText
-                        android:id="@+id/im05_15_mm"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_15_mm"
-                        android:text="@={form.im05_15_mm}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_15_yy" />
-
-                    <EditText
-                        android:id="@+id/im05_15_yy"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_15_yy"
-                        android:text="@={form.im05_15_yy}" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im05_16  Title   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVim05_16"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im05_16" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_16_dd" />
-
-                    <EditText
-                        android:id="@+id/im05_16_dd"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_16_dd"
-                        android:text="@={form.im05_16_dd}" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_16_mm" />
-
-                    <EditText
-                        android:id="@+id/im05_16_mm"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_16_mm"
-                        android:text="@={form.im05_16_mm}" />
+            <LinearLayout
+                android:id="@+id/llim01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <!-- im04  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVim04"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im04" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im04_dd" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/im04_dd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im04_dd"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:text="@={form.im04_dd}"
+                            app:maxValue="30"
+                            app:minValue="1"
+                            app:type="range" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im04_mm" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/im04_mm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im04_mm"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:text="@={form.im04_mm}"
+                            app:maxValue="12"
+                            app:minValue="1"
+                            app:type="range" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im04_yy" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/im04_yy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im04_yy"
+                            android:inputType="number"
+
+
+                            android:text="@={form.im04_yy}"
+                            app:type="range" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im05_title1  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVim05_title1"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im05_title1" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im05_01  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVim05_01"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im05_01" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_01_dd" />
+
+                        <EditText
+                            android:id="@+id/im05_01_dd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_01_dd"
+                            android:text="@={form.im05_01_dd}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_01_mm" />
+
+                        <EditText
+                            android:id="@+id/im05_01_mm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_01_mm"
+                            android:text="@={form.im05_01_mm}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_01_yy" />
+
+                        <EditText
+                            android:id="@+id/im05_01_yy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_01_yy"
+                            android:text="@={form.im05_01_yy}" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im05_02  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVim05_02"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im05_02" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_02_dd" />
+
+                        <EditText
+                            android:id="@+id/im05_02_dd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_02_dd"
+                            android:text="@={form.im05_02_dd}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_02_mm" />
+
+                        <EditText
+                            android:id="@+id/im05_02_mm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_02_mm"
+                            android:text="@={form.im05_02_mm}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_02_yy" />
+
+                        <EditText
+                            android:id="@+id/im05_02_yy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_02_yy"
+                            android:text="@={form.im05_02_yy}" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im05_03  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVim05_03"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im05_03" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_03_dd" />
+
+                        <EditText
+                            android:id="@+id/im05_03_dd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_03_dd"
+                            android:text="@={form.im05_03_dd}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_03_mm" />
+
+                        <EditText
+                            android:id="@+id/im05_03_mm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_03_mm"
+                            android:text="@={form.im05_03_mm}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_03_yy" />
+
+                        <EditText
+                            android:id="@+id/im05_03_yy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_03_yy"
+                            android:text="@={form.im05_03_yy}" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im05_04  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVim05_04"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im05_04" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_04_dd" />
+
+                        <EditText
+                            android:id="@+id/im05_04_dd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_04_dd"
+                            android:text="@={form.im05_04_dd}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_04_mm" />
+
+                        <EditText
+                            android:id="@+id/im05_04_mm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_04_mm"
+                            android:text="@={form.im05_04_mm}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_04_yy" />
+
+                        <EditText
+                            android:id="@+id/im05_04_yy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_04_yy"
+                            android:text="@={form.im05_04_yy}" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im05_05  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVim05_05"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im05_05" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_05_dd" />
+
+                        <EditText
+                            android:id="@+id/im05_05_dd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_05_dd"
+                            android:text="@={form.im05_05_dd}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_05_mm" />
+
+                        <EditText
+                            android:id="@+id/im05_05_mm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_05_mm"
+                            android:text="@={form.im05_05_mm}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_05_yy" />
+
+                        <EditText
+                            android:id="@+id/im05_05_yy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_05_yy"
+                            android:text="@={form.im05_05_yy}" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im05_06  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVim05_06"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im05_06" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_06_dd" />
+
+                        <EditText
+                            android:id="@+id/im05_06_dd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_06_dd"
+                            android:text="@={form.im05_06_dd}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_06_mm" />
+
+                        <EditText
+                            android:id="@+id/im05_06_mm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_06_mm"
+                            android:text="@={form.im05_06_mm}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_06_yy" />
+
+                        <EditText
+                            android:id="@+id/im05_06_yy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_06_yy"
+                            android:text="@={form.im05_06_yy}" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im05_07  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVim05_07"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im05_07" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_07_dd" />
+
+                        <EditText
+                            android:id="@+id/im05_07_dd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_07_dd"
+                            android:text="@={form.im05_07_dd}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_07_mm" />
+
+                        <EditText
+                            android:id="@+id/im05_07_mm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_07_mm"
+                            android:text="@={form.im05_07_mm}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_07_yy" />
+
+                        <EditText
+                            android:id="@+id/im05_07_yy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_07_yy"
+                            android:text="@={form.im05_07_yy}" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im05_08  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVim05_08"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im05_08" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_08_dd" />
+
+                        <EditText
+                            android:id="@+id/im05_08_dd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_08_dd"
+                            android:text="@={form.im05_08_dd}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_08_mm" />
+
+                        <EditText
+                            android:id="@+id/im05_08_mm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_08_mm"
+                            android:text="@={form.im05_08_mm}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_08_yy" />
+
+                        <EditText
+                            android:id="@+id/im05_08_yy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_08_yy"
+                            android:text="@={form.im05_08_yy}" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im05_09  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVim05_09"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im05_09" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_09_dd" />
+
+                        <EditText
+                            android:id="@+id/im05_09_dd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_09_dd"
+                            android:text="@={form.im05_09_dd}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_09_mm" />
+
+                        <EditText
+                            android:id="@+id/im05_09_mm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_09_mm"
+                            android:text="@={form.im05_09_mm}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_09_yy" />
+
+                        <EditText
+                            android:id="@+id/im05_09_yy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_09_yy"
+                            android:text="@={form.im05_09_yy}" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im05_10  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVim05_10"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im05_10" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_10_dd" />
+
+                        <EditText
+                            android:id="@+id/im05_10_dd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_10_dd"
+                            android:text="@={form.im05_10_dd}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_10_mm" />
+
+                        <EditText
+                            android:id="@+id/im05_10_mm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_10_mm"
+                            android:text="@={form.im05_10_mm}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_10_yy" />
+
+                        <EditText
+                            android:id="@+id/im05_10_yy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_10_yy"
+                            android:text="@={form.im05_10_yy}" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im05_11  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVim05_11"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im05_11" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_11_dd" />
+
+                        <EditText
+                            android:id="@+id/im05_11_dd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_11_dd"
+                            android:text="@={form.im05_11_dd}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_11_mm" />
+
+                        <EditText
+                            android:id="@+id/im05_11_mm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_11_mm"
+                            android:text="@={form.im05_11_mm}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_11_yy" />
+
+                        <EditText
+                            android:id="@+id/im05_11_yy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_11_yy"
+                            android:text="@={form.im05_11_yy}" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im05_12  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVim05_12"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im05_12" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_12_dd" />
+
+                        <EditText
+                            android:id="@+id/im05_12_dd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_12_dd"
+                            android:text="@={form.im05_12_dd}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_12_mm" />
+
+                        <EditText
+                            android:id="@+id/im05_12_mm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_12_mm"
+                            android:text="@={form.im05_12_mm}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_12_yy" />
+
+                        <EditText
+                            android:id="@+id/im05_12_yy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_12_yy"
+                            android:text="@={form.im05_12_yy}" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im05_13  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVim05_13"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im05_13" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_13_dd" />
+
+                        <EditText
+                            android:id="@+id/im05_13_dd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_13_dd"
+                            android:text="@={form.im05_13_dd}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_13_mm" />
+
+                        <EditText
+                            android:id="@+id/im05_13_mm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_13_mm"
+                            android:text="@={form.im05_13_mm}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_13_yy" />
+
+                        <EditText
+                            android:id="@+id/im05_13_yy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_13_yy"
+                            android:text="@={form.im05_13_yy}" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im05_14  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVim05_14"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im05_14" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_14_dd" />
+
+                        <EditText
+                            android:id="@+id/im05_14_dd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_14_dd"
+                            android:text="@={form.im05_14_dd}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_14_mm" />
+
+                        <EditText
+                            android:id="@+id/im05_14_mm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_14_mm"
+                            android:text="@={form.im05_14_mm}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_14_yy" />
+
+                        <EditText
+                            android:id="@+id/im05_14_yy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_14_yy"
+                            android:text="@={form.im05_14_yy}" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im05_15  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVim05_15"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im05_15" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_15_dd" />
+
+                        <EditText
+                            android:id="@+id/im05_15_dd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_15_dd"
+                            android:text="@={form.im05_15_dd}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_15_mm" />
+
+                        <EditText
+                            android:id="@+id/im05_15_mm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_15_mm"
+                            android:text="@={form.im05_15_mm}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_15_yy" />
+
+                        <EditText
+                            android:id="@+id/im05_15_yy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_15_yy"
+                            android:text="@={form.im05_15_yy}" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im05_16  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVim05_16"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im05_16" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_16_dd" />
+
+                        <EditText
+                            android:id="@+id/im05_16_dd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_16_dd"
+                            android:text="@={form.im05_16_dd}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_16_mm" />
+
+                        <EditText
+                            android:id="@+id/im05_16_mm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_16_mm"
+                            android:text="@={form.im05_16_mm}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/im05_16_yy" />
+
+                        <EditText
+                            android:id="@+id/im05_16_yy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/im05_16_yy"
+                            android:text="@={form.im05_16_yy}" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im05_16_yy" />
-
-                    <EditText
-                        android:id="@+id/im05_16_yy"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im05_16_yy"
-                        android:text="@={form.im05_16_yy}" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
             <!-- im07  Radio   -->
             <androidx.cardview.widget.CardView
