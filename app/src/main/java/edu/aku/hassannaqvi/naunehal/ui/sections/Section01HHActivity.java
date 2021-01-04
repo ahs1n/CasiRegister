@@ -68,7 +68,7 @@ public class Section01HHActivity extends AppCompatActivity {
     }
 
 
-    public void BtnContinue() {
+    public void BtnContinue(View view) {
         if (!formValidation()) return;
 
         // SaveDraft(); //<== This function is no longer needed after DataBinding
