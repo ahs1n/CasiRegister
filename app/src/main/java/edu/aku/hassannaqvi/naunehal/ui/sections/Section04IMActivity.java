@@ -60,7 +60,7 @@ public class Section04IMActivity extends AppCompatActivity {
     }
 
 
-    public void BtnContinue() {
+    public void BtnContinue(View view) {
         if (!formValidation()) return;
 
         // SaveDraft(); //<== This function is no longer needed after DataBinding
@@ -76,7 +76,7 @@ public class Section04IMActivity extends AppCompatActivity {
     }
 
 
-    public void BtnEnd() {
+    public void BtnEnd(View view) {
         finish();
         startActivity(new Intent(this, MainActivity.class));
     }

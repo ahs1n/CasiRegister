@@ -1710,7 +1710,7 @@
                             android:hint="@string/im12_1"
                             android:tag="im12_1"
                             android:text="@={form.im12_1x}"
-                            android:visibility='@{im12_1.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{im121.checked? View.VISIBLE : View.GONE}' />
 
                         <RadioButton
                             android:id="@+id/im12_98"
@@ -2208,7 +2208,7 @@
                             android:hint="@string/im19_1"
                             android:tag="im19_1"
                             android:text="@={form.im19_1x}"
-                            android:visibility='@{im19_1.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{im191.checked? View.VISIBLE : View.GONE}' />
 
                         <RadioButton
                             android:id="@+id/im19_98"
@@ -2481,7 +2481,7 @@
                             android:hint="@string/im23_6"
                             android:tag="im23_6"
                             android:text="@={form.im23_6x}"
-                            android:visibility='@{im23_6.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{im236.checked? View.VISIBLE : View.GONE}' />
                     </RadioGroup>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -2806,7 +2806,7 @@
                             android:hint="@string/im24_96"
                             android:tag="im24_96"
                             android:text="@={form.im24_96x}"
-                            android:visibility='@{im24_96.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{im2496.checked? View.VISIBLE : View.GONE}' />
                     </RadioGroup>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -2895,7 +2895,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:background="@color/redOverlay"
-                    android:onClick="@{() -> callback.BtnEnd()}"
+                    android:onClick="BtnEnd"
                     android:text="Cancel"
                     android:textColor="@color/white" />
 
@@ -2905,7 +2905,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:background="@color/greenOverlay"
-                    android:onClick="@{() -> callback.BtnContinue()}"
+                    android:onClick="BtnContinue"
                     android:text="Save"
                     android:textColor="@color/white" />
             </LinearLayout>
