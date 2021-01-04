@@ -63,6 +63,22 @@ public class Section06BFActivity extends AppCompatActivity {
             }
         });
 
+        bi.bf08.setOnCheckedChangeListener((radioGroup, i) -> {
+            Clear.clearAllFields(bi.fldGrpCVbf09);
+            bi.fldGrpCVbf09.setVisibility(View.GONE);
+            if (i == bi.bf0801.getId()) {
+                bi.fldGrpCVbf09.setVisibility(View.VISIBLE);
+            }
+        });
+
+        bi.bf10.setOnCheckedChangeListener((radioGroup, i) -> {
+            Clear.clearAllFields(bi.fldGrpCVbf11);
+            bi.fldGrpCVbf07.setVisibility(View.VISIBLE);
+            if (i == bi.bf1001.getId()) {
+                bi.fldGrpCVbf09.setVisibility(View.GONE);
+            }
+        });
+
     }
 
 
