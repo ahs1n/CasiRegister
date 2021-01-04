@@ -5,8 +5,14 @@ import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection06bfBinding;
+import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+
+import com.validatorcrawler.aliazaz.Clear;
+import com.validatorcrawler.aliazaz.Validator;
 
 public class Section06BFActivity extends AppCompatActivity {
 
@@ -20,6 +26,65 @@ public class Section06BFActivity extends AppCompatActivity {
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_06bf);
         bi.setForm(MainApp.form);
-//        setupSkips();
+        setupSkips();
     }
+
+
+    private void setupSkips() {
+
+        bi.bf04.setOnCheckedChangeListener((radioGroup, i) -> {
+            Clear.clearAllFields(bi.fldGrpCVbf05);
+            Clear.clearAllFields(bi.fldGrpCVbf06);
+            Clear.clearAllFields(bi.fldGrpCVbf07);
+            Clear.clearAllFields(bi.fldGrpCVbf08);
+            Clear.clearAllFields(bi.fldGrpCVbf09);
+            Clear.clearAllFields(bi.fldGrpCVbf10);
+            bi.fldGrpCVbf05.setVisibility(View.GONE);
+            bi.fldGrpCVbf06.setVisibility(View.GONE);
+            bi.fldGrpCVbf07.setVisibility(View.GONE);
+            bi.fldGrpCVbf08.setVisibility(View.GONE);
+            bi.fldGrpCVbf09.setVisibility(View.GONE);
+            bi.fldGrpCVbf10.setVisibility(View.GONE);
+            if (i == bi.bf0401.getId()) {
+                bi.fldGrpCVbf05.setVisibility(View.VISIBLE);
+                bi.fldGrpCVbf06.setVisibility(View.VISIBLE);
+                bi.fldGrpCVbf07.setVisibility(View.VISIBLE);
+                bi.fldGrpCVbf08.setVisibility(View.VISIBLE);
+                bi.fldGrpCVbf09.setVisibility(View.VISIBLE);
+                bi.fldGrpCVbf10.setVisibility(View.VISIBLE);
+            }
+        });
+
+        bi.bf06.setOnCheckedChangeListener((radioGroup, i) -> {
+            Clear.clearAllFields(bi.fldGrpCVbf07);
+            bi.fldGrpCVbf07.setVisibility(View.VISIBLE);
+            if (i == bi.bf0601.getId()) {
+                bi.fldGrpCVbf07.setVisibility(View.GONE);
+            }
+        });
+
+    }
+
+
+    public void BtnContinue() {
+        if (!formValidation()) return;
+
+        // SaveDraft(); //<== This function is no longer needed after DataBinding
+        if (/*UpdateDB()*/ true) {
+            finish();
+            startActivity(new Intent(this, Section07CVActivity.class));
+        }
+    }
+
+    private boolean formValidation() {
+        return Validator.emptyCheckingContainer(this, bi.GrpName);
+
+    }
+
+
+    public void BtnEnd() {
+        finish();
+        startActivity(new Intent(this, MainActivity.class));
+    }
+
 }
