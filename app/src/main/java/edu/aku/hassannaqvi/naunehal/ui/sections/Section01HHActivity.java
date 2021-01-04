@@ -2,11 +2,18 @@ package edu.aku.hassannaqvi.naunehal.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Date;
 import java.util.Locale;
@@ -47,7 +54,16 @@ public class Section01HHActivity extends AppCompatActivity {
     }
 
     private void setupSkips() {
+        rgListener(bi.hh11, bi.hh1102, bi.llhh11);
+    }
 
+
+    public void rgListener(@NotNull RadioGroup rg, RadioButton rb, ViewGroup vg) {
+        rg.setOnCheckedChangeListener((radioGroup, i) -> {
+            Clear.clearAllFields(vg);
+            vg.setVisibility(View.VISIBLE);
+            if (i == rb.getId()) vg.setVisibility(View.GONE);
+        });
     }
 
 
@@ -68,12 +84,13 @@ public class Section01HHActivity extends AppCompatActivity {
 
     // Only in First Section of every Table.
     public void initializeForm() {
-        MainApp.form.setSysDate(new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault()).format(new Date().getTime()));
-        MainApp.form.setUserName(MainApp.userName);
-        MainApp.form.setDeviceId(MainApp.appInfo.getDeviceID());
-        MainApp.form.setDeviceTag(MainApp.appInfo.getTagName());
-        MainApp.form.setAppver(MainApp.appInfo.getAppVersion());
-        MainApp.setGPS(this);
+        // TODO: need work on appinfo
+        //ainApp.form.setSysDate(new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault()).format(new Date().getTime()));
+        //ainApp.form.setUserName(MainApp.userName);
+        //ainApp.form.setDeviceId(MainApp.appInfo.getDeviceID());
+        //ainApp.form.setDeviceTag(MainApp.appInfo.getTagName());
+        //ainApp.form.setAppver(MainApp.appInfo.getAppVersion());
+        //ainApp.setGPS(this);
         // TODO: From now on we will save GPS as JSON
         // MainApp.setGPS({"gpsLng":"12444",...});
     }

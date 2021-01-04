@@ -43,10 +43,18 @@ public class EndingActivity extends AppCompatActivity {
         if (check) {
             bi.istatusa.setEnabled(true);
             bi.istatusb.setEnabled(false);
+            bi.istatusc.setEnabled(false);
+            bi.istatusd.setEnabled(false);
+            bi.istatuse.setEnabled(false);
+            bi.istatusf.setEnabled(false);
             bi.istatus96.setEnabled(false);
         } else {
             bi.istatusa.setEnabled(false);
             bi.istatusb.setEnabled(true);
+            bi.istatusc.setEnabled(true);
+            bi.istatusd.setEnabled(true);
+            bi.istatuse.setEnabled(true);
+            bi.istatusf.setEnabled(true);
             bi.istatus96.setEnabled(true);
         }
 
@@ -56,10 +64,12 @@ public class EndingActivity extends AppCompatActivity {
 
     public void BtnEnd() {
         if (!formValidation()) return;
-        SaveDraft();
-        if (UpdateDB()) {
+        //SaveDraft();
+
+        //TODO: needs to work on updateDB
+        if (/*UpdateDB()*/ true) {
             finish();
-            startActivity(new Intent(this, sectionMainCheck ? routingSelectionForChildEnding() : MainActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
         } else {
             Toast.makeText(this, "Error in updating db!!", Toast.LENGTH_SHORT).show();
         }
@@ -93,7 +103,8 @@ public class EndingActivity extends AppCompatActivity {
     }
 
 
-    public boolean UpdateDB() {
+
+    /*public boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
         int updcount;
         if (sectionMainCheck) {
@@ -110,7 +121,7 @@ public class EndingActivity extends AppCompatActivity {
             return false;
         }
 
-    }
+    }*/
 
 
     private boolean formValidation() {

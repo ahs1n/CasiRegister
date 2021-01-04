@@ -40,7 +40,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_status"
-                            android:text="Complete" />
+                            android:text="@string/hh26" />
 
                         <TextView
                             android:id="@+id/q_status"
@@ -49,7 +49,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignTop="@id/qtxt_status"
                             android:layout_alignBottom="@id/qtxt_status"
-                            android:text="Q. Status" />
+                            android:text="@string/Q_hh26" />
 
                     </RelativeLayout>
 
@@ -62,29 +62,67 @@
                             android:id="@+id/istatusa"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Complete" />
+                            android:checked="@{form.hh26.equals(`1`)}"
+                            android:onClick="@{()->form.setHh26(`1`)}"
+                            android:text="@string/hh2601" />
 
                         <RadioButton
                             android:id="@+id/istatusb"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Incomplete" />
+                            android:checked="@{form.hh26.equals(`2`)}"
+                            android:onClick="@{()->form.setHh26(`2`)}"
+                            android:text="@string/hh2602" />
+
+                        <RadioButton
+                            android:id="@+id/istatusc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{form.hh26.equals(`3`)}"
+                            android:onClick="@{()->form.setHh26(`3`)}"
+                            android:text="@string/hh2603" />
+
+                        <RadioButton
+                            android:id="@+id/istatusd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{form.hh26.equals(`4`)}"
+                            android:onClick="@{()->form.setHh26(`4`)}"
+                            android:text="@string/hh2604" />
+
+                        <RadioButton
+                            android:id="@+id/istatuse"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{form.hh26.equals(`5`)}"
+                            android:onClick="@{()->form.setHh26(`5`)}"
+                            android:text="@string/hh2605" />
+
+                        <RadioButton
+                            android:id="@+id/istatusf"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{form.hh26.equals(`6`)}"
+                            android:onClick="@{()->form.setHh26(`6`)}"
+                            android:text="@string/hh2606" />
 
                         <RadioButton
                             android:id="@+id/istatus96"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:text="@string/other" />
+                            android:checked="@{form.hh26.equals(`96`)}"
+                            android:onClick="@{()->form.setHh26(`96`)}"
+                            android:text="@string/hh2696" />
 
-                        <EditText
+                        <!--<EditText
                             android:id="@+id/istatus96x"
                             style="@style/EditTextAlpha"
                             android:hint="@string/specify"
                             android:maxLength="40"
                             android:tag="istatus96"
-                            android:text='@{istatus96.checked? istatus96x.getText().toString(): ""}'
-                            android:visibility='@{istatus96.checked? View.VISIBLE : View.GONE}' />
+                            android:text="@={form.i}"
+                            android:text='@={istatus96.checked ? istatus96x.getText().toString(): ""}'
+                            android:visibility='@{istatus96.checked ? View.VISIBLE : View.GONE}' />-->
 
                     </RadioGroup>
 
@@ -102,7 +140,7 @@
                 <Button
                     android:id="@+id/btn_End"
                     style="@style/btnNext"
-                    android:onClick="@{() -> callback.BtnEnd()}"
+                    android:onClick="BtnEnd"
                     android:text="Save" />
 
             </LinearLayout>
