@@ -272,11 +272,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-        <LinearLayout
-            android:id="@+id/llbf04"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+
 
             <!-- bf05  Radio   -->
             <androidx.cardview.widget.CardView
@@ -795,7 +791,7 @@
                     </RadioGroup>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-           </LinearLayout>
+
 
             <!-- bf11  Radio   -->
             <androidx.cardview.widget.CardView
