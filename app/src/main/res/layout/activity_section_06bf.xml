@@ -272,6 +272,8 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
+
             <!-- bf05  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVbf05"
@@ -790,6 +792,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- bf11  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVbf11"
@@ -994,7 +997,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:background="@color/redOverlay"
-                    android:onClick="@{() -> callback.BtnEnd()}"
+                    android:onClick="BtnEnd"
                     android:text="Cancel"
                     android:textColor="@color/white" />
 
@@ -1004,7 +1007,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:background="@color/greenOverlay"
-                    android:onClick="@{() -> callback.BtnContinue()}"
+                    android:onClick="BtnContinue"
                     android:text="Save"
                     android:textColor="@color/white" />
             </LinearLayout>

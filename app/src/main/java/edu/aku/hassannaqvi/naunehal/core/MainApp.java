@@ -20,6 +20,7 @@ public class MainApp extends Application {
     public static final String _UPDATE_URL = MainApp._IP + "/nns/app/";
     public static Form form;
     public static String DeviceURL = "devices.php";
+    public static AppInfo appInfo;
 
     public static void hideSystemUI(View decorView) {
         // Enables regular immersive mode.
@@ -41,6 +42,6 @@ public class MainApp extends Application {
     public void onCreate() {
         super.onCreate();
 
-
+        appInfo = new AppInfo(this);
     }
 }

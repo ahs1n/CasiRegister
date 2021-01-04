@@ -154,7 +154,6 @@
                     android:orientation="vertical">
 
 
-
                     <RadioGroup
                         android:id="@+id/pd03"
                         android:layout_width="match_parent"
@@ -1937,7 +1936,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:background="@color/redOverlay"
-                    android:onClick="@{() -> callback.BtnEnd()}"
+                    android:onClick="BtnEnd"
                     android:text="Cancel"
                     android:textColor="@color/white" />
 
@@ -1947,7 +1946,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:background="@color/greenOverlay"
-                    android:onClick="@{() -> callback.BtnContinue()}"
+                    android:onClick="BtnContinue"
                     android:text="Save"
                     android:textColor="@color/white" />
             </LinearLayout>
