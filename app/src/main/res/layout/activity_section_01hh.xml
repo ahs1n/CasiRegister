@@ -528,6 +528,7 @@
                             android:layout_alignTop="@id/qtxt_hh11"
                             android:layout_alignBottom="@id/qtxt_hh11"
                             android:text="@string/Q_hh11" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -550,8 +551,11 @@
                             android:checked="@{form.hh11.equals(`2`)}"
                             android:onClick="@{()->form.setHh11(`2`)}"
                             android:text="@string/hh1102" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 
@@ -1032,6 +1036,7 @@
                                 android:layout_alignTop="@id/qtxt_hh18"
                                 android:layout_alignBottom="@id/qtxt_hh18"
                                 android:text="@string/Q_hh18" />
+
                         </RelativeLayout>
 
                         <RadioGroup
@@ -1054,8 +1059,11 @@
                                 android:checked="@{form.hh18.equals(`2`)}"
                                 android:onClick="@{()->form.setHh18(`2`)}"
                                 android:text="@string/hh1802" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -1629,7 +1637,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:background="@color/redOverlay"
-                    android:onClick="@{() -> callback.BtnEnd()}"
+                    android:onClick="BtnEnd"
                     android:text="Cancel"
                     android:textColor="@color/white" />
 
@@ -1639,7 +1647,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:background="@color/greenOverlay"
-                    android:onClick="@{() -> callback.BtnContinue()}"
+                    android:onClick="BtnContinue"
                     android:text="Save"
                     android:textColor="@color/white" />
 
