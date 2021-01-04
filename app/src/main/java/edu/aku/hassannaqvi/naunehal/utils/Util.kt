@@ -12,7 +12,6 @@ import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import edu.aku.hassannaqvi.naunehal.CONSTANTS
 import edu.aku.hassannaqvi.naunehal.R
-import edu.aku.hassannaqvi.naunehal.core.MainApp
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity
 import java.util.*
 
@@ -77,14 +76,15 @@ fun openSectionMainActivity(activity: Activity, item: String) {
     dialog.findViewById<View>(R.id.btnOk).setOnClickListener { view: View? ->
 
         when (item) {
-            "B" -> MainApp.form.sBtoString()
+            // TODO: if needed.
+/*            "B" -> MainApp.form.sBtoString()
             "C" -> MainApp.form.setsC(null)
             "D" -> MainApp.form.setsD(null)
             "E" -> MainApp.form.setsE(null)
             "F" -> MainApp.form.setsF(null)
             "G" -> MainApp.psc.setsG(null)
             "H" -> MainApp.form.setsH(null)
-            "I" -> MainApp.form.setsI(null)
+            "I" -> MainApp.form.setsI(null)*/
         }
 
         activity.finish()
@@ -108,7 +108,8 @@ fun openSectionMainActivityI(activity: Activity) {
     dialog.window!!.attributes = params
     dialog.findViewById<View>(R.id.btnOk).setOnClickListener { view: View? ->
 
-        if (MainApp.psc.getsG() != null) MainApp.psc.setsG(null)
+        //TODO: modify if requied
+        // if (MainApp.psc.getsG() != null) MainApp.psc.setsG(null)
 
         activity.finish()
         val intent = Intent(activity, MainActivity::class.java)
