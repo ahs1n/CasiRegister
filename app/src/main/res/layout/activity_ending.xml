@@ -133,14 +133,17 @@
 
             <!--EndButton LinearLayout-->
             <LinearLayout
-                style="@style/hlinearlayout"
                 android:layout_gravity="end"
-                android:layout_marginTop="18dp">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/btn_End"
-                    style="@style/btnNext"
                     android:onClick="BtnEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Save" />
 
             </LinearLayout>

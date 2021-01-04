@@ -16,7 +16,7 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-
+        <item name="fontFamily">@font/roboto</item>
         <item name="android:textSize">18sp</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -41,6 +41,7 @@
 
     <style name="AppThemeUrdu" parent="Theme.AppCompat.Light.NoActionBar">
 
+        <item name="android:fontFamily">@font/jameel</item>
         <item name="android:textSize">18sp</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -90,6 +91,8 @@
         <item name="android:minHeight">52dp</item>
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:background">@color/grayLight</item>
+
 
         <!--
                         <item name="android:background">@color/colorPrimary_overlay</item>
