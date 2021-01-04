@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/greenInfo"
+        android:background="@color/greenOverlay"
         android:gravity="center"
         android:minHeight="160dp"
         android:orientation="vertical"
@@ -18,7 +18,7 @@
             android:id="@+id/icon"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:tint="@android:color/white"
+            app:tint="@android:color/holo_red_light"
             app:srcCompat="@drawable/ic_info" />
 
         <TextView
@@ -28,7 +28,7 @@
             android:layout_marginTop="10dp"
             android:text="Warning!"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@android:color/white"
+            android:textColor="@color/grayDark"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -48,7 +48,7 @@
             android:text="@string/dialog_text"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-            android:textColor="@color/dullBlack" />
+            android:textColor="@color/grayDark" />
     </LinearLayout>
 
     <LinearLayout
@@ -64,11 +64,11 @@
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/outline_btn"
+            android:background="@drawable/action_button"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="Yes, Exit"
-            android:textColor="@color/greenInfo" />
+            android:textColor="@color/greenOverlay" />
 
         <View
             android:layout_width="0dp"
@@ -80,11 +80,11 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/outline_btn"
+            android:background="@drawable/secondary_button"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="No"
-            android:textColor="@color/greenInfo" />
+            android:textColor="@color/redOverlay" />
 
     </LinearLayout>
 

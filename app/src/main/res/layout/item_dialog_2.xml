@@ -19,7 +19,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
-            android:tint="@android:color/white"
+            app:tint="@color/white"
             app:srcCompat="@drawable/ic_stop" />
 
     </LinearLayout>
@@ -39,7 +39,7 @@
             android:text="Surely! You Want To Exit?"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-            android:textColor="@color/dullBlack"
+            android:textColor="@color/grayDark"
             android:textSize="20sp" />
 
     </LinearLayout>
@@ -57,11 +57,11 @@
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/outline_btn"
+            android:background="@drawable/action_button"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="Yes, Exit"
-            android:textColor="@color/greenInfo" />
+            android:textColor="@color/greenOverlay" />
 
         <View
             android:layout_width="0dp"
@@ -73,11 +73,11 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/outline_btn"
+            android:background="@drawable/secondary_button"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="No"
-            android:textColor="@color/greenInfo" />
+            android:textColor="@color/redOverlay" />
 
     </LinearLayout>
 

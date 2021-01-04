@@ -171,14 +171,14 @@
     <string name="cs0403">About The Same</string>
     <string name="cs0404">More</string>
     <string name="cs0405">Nothing To Drink</string>
-    <string name="cs0498">Don't Know</string>
+    <string name="cs0498">Don\'t Know</string>
     <string name="cs05">How much was given to eat to the child during the diarrhoea episode? </string>
     <string name="cs0501">Much Less</string>
     <string name="cs0502">Somewhat Less</string>
     <string name="cs0503">About The Same </string>
     <string name="cs0504">More</string>
     <string name="cs0505">Never Gave Food </string>
-    <string name="cs0598">Don't Know</string>
+    <string name="cs0598">Don\'t Know</string>
     <string name="cs06">Did you seek advice or treatment for the diarrhoea from any source?</string>
     <string name="cs0601">Yes</string>
     <string name="cs0602">No</string>
@@ -387,8 +387,8 @@
     <string name="im12_1">Number of times</string>
     <string name="im12a">How many times was Polio vaccine received during a large campaign? </string>
     <string name="im12a1">Number of times</string>
-    <string name="im12_98">Don’t know</string>
-    <string name="im1298">Don't Know</string>
+    <string name="im12_98">Don\'t know</string>
+    <string name="im1298">Don\'t Know</string>
     <string name="im13">The last time (name) received the polio drops, did (he/she) also get an injection to protect against polio?   Probe to ensure that both were given, drops and injection</string>
     <string name="im13_1">Yes </string>
     <string name="im13_2">No  </string>
@@ -399,21 +399,21 @@
     <string name="im14_3">Dont know</string>
     <string name="im15">How many times was the Pentavalent vaccine received? Number of times</string>
     <string name="im15_1">Number of times</string>
-    <string name="im15_98">Don't know</string>
+    <string name="im15_98">Don\'t know</string>
     <string name="im16">Has (name) ever received a Pneumococcal Conjugate vaccination – that is, an injection to prevent (him/her) from getting pneumococcal disease, including ear infections and meningitis caused by pneumococcus? Probe by indicating that Pneumococcal Conjugate vaccination is sometimes given at the same time as the Pentavalent vaccination.</string>
     <string name="im16_1">Yes </string>
     <string name="im16_2">No  </string>
     <string name="im16_3">Dont know</string>
     <string name="im17">How many times was the pneumococcal vaccine received? Number of times</string>
     <string name="im17_1">Number of times</string>
-    <string name="im17_98">Don't know</string>
+    <string name="im17_98">Don\'t know</string>
     <string name="im18">Has (name) ever received drops for Rotavirus vaccine (RV) vaccination- A vaccine given orally soon after 6 weeks birth to protect against rotavirus infections, which are the leading cause of severe diarrhea among young children.</string>
     <string name="im18_1">Yes </string>
     <string name="im18_2">No  </string>
     <string name="im18_3">Dont know</string>
     <string name="im19">How many times were the drops received? Number of times</string>
     <string name="im19_1">Number of times</string>
-    <string name="im19_98">Don't know</string>
+    <string name="im19_98">Don\'t know</string>
     <string name="im20">Has (name) ever received an inactivated polio vaccine (IPV) – that is, a shot in the thigh at the age of 14 weeks or older - to prevent (him/her) from getting polio?</string>
     <string name="im20_1">Yes </string>
     <string name="im20_2">No  </string>
@@ -424,7 +424,7 @@
     <string name="im21_3">Dont know</string>
     <string name="im22">How many times was a Measles Injection vaccine received? Number of times</string>
     <string name="im22_1">Number of times</string>
-    <string name="im22_98">Don't know</string>
+    <string name="im22_98">Don\'t know</string>
     <string name="im23">Where from (name) is usually vaccinated?   If the child is vaccinated from multiple sources, mention the usual source with higher frequency of vaccine doses.</string>
     <string name="im23a">Can you please specify where is this facility located? </string>
     <string name="im23a_1">Within Catchment area 10km</string>
@@ -876,7 +876,7 @@
     <string name="se1004">Use Water Filter (Ceramic/ Sand/Composite/Etc)</string>
     <string name="se1005">Solar Disinfection</string>
     <string name="se1006">Let It Stand And Settle</string>
-    <string name="se1098">Don't Know</string>
+    <string name="se1098">Don\'t Know</string>
     <string name="se1099">Other Pleas Specify</string>
     <string name="se11">What kind of toilet facility do members of your HH usually use?</string>
     <string name="se11title1">FLUSH OR POUR FLUSH TOILET</string>
@@ -884,7 +884,7 @@
     <string name="se1102">Flush To Septic Tank</string>
     <string name="se1103">Flush To Pit Latrine</string>
     <string name="se1104">Flush To Somewhere Else</string>
-    <string name="se1105">Flush, Don't Know Where</string>
+    <string name="se1105">Flush, Don\'t Know Where</string>
     <string name="se11title2">PIT LATRINE</string>
     <string name="se1106">Ventilated Improved Pit Latrine</string>
     <string name="se1107">Pit Latrine With Slab</string>
@@ -1333,6 +1333,8 @@
     <string name='Q_se38'>se38</string>
     <string name='Q_se39'>se39</string>
     <string name='Q_se40'>se40</string>
+    <string name="dialog_text">"    Please add Info for second child."</string>
+    <string name="Q_cs16">CS16</string>
 
 
 </resources>
