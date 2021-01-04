@@ -1,16 +1,20 @@
 package edu.aku.hassannaqvi.naunehal.ui.sections;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+
+import com.validatorcrawler.aliazaz.Clear;
+import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection08seBinding;
-
-import android.os.Bundle;
-import android.view.View;
-
-import com.validatorcrawler.aliazaz.Clear;
+import edu.aku.hassannaqvi.naunehal.ui.EndingActivity;
+import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
 
 public class Section08SEActivity extends AppCompatActivity {
 
@@ -59,5 +63,27 @@ public class Section08SEActivity extends AppCompatActivity {
                 bi.fldGrpCVse17.setVisibility(View.VISIBLE);
             }
         });
+    }
+
+
+    public void BtnContinue() {
+        if (!formValidation()) return;
+
+        // SaveDraft(); //<== This function is no longer needed after DataBinding
+        if (/*UpdateDB()*/ true) {
+            finish();
+            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+        }
+    }
+
+    private boolean formValidation() {
+        return Validator.emptyCheckingContainer(this, bi.GrpName);
+
+    }
+
+
+    public void BtnEnd() {
+        finish();
+        startActivity(new Intent(this, MainActivity.class));
     }
 }
