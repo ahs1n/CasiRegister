@@ -47,7 +47,9 @@ import edu.aku.hassannaqvi.naunehal.models.SyncModel;
 import edu.aku.hassannaqvi.naunehal.workers.DataDownWorkerALL;
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.PROJECT_NAME;
-import static edu.aku.hassannaqvi.naunehal.database.DatabaseHelper.DATABASE_NAME;
+import static edu.aku.hassannaqvi.naunehal.utils.CreateTable.DATABASE_COPY;
+import static edu.aku.hassannaqvi.naunehal.utils.CreateTable.DATABASE_NAME;
+
 
 public class SyncActivity extends AppCompatActivity {
     private static final String TAG = "SyncActivity";
@@ -74,9 +76,9 @@ public class SyncActivity extends AppCompatActivity {
 
        /* TODO: ADD DOWNLOAD TABLES HERE * * * * *
        downloadTables.add(new SyncModel(TableDistricts.TABLE_NAME));
-        downloadTables.add(new SyncModel(UCsContract.TableUCs.TABLE_NAME));
+        downloadTables.add(new SyncModel(UCs.TableUCs.TABLE_NAME));
         downloadTables.add(new SyncModel(ClustersContract.TableClusters.TABLE_NAME));*/
-        downloadTables.add(new SyncModel(UsersContract.TableUsers.TABLE_NAME));
+        downloadTables.add(new SyncModel(UsersContract.UsersTable.TABLE_NAME));
 
         // Set tables to UPLOAD
         uploadTables.add(new SyncModel("Forms"));
@@ -141,7 +143,7 @@ public class SyncActivity extends AppCompatActivity {
                         File dbFile = new File(this.getDatabasePath(DATABASE_NAME).getPath());
                         FileInputStream fis = new FileInputStream(dbFile);
 
-                        String outFileName = DirectoryName + File.separator + DatabaseHelper.DB_NAME;
+                        String outFileName = DirectoryName + File.separator + DATABASE_COPY;
 
                         // Open the empty db as the output stream
                         OutputStream output = new FileOutputStream(outFileName);
@@ -204,7 +206,7 @@ public class SyncActivity extends AppCompatActivity {
 
         for (int i = 0; i < downloadTables.size(); i++) {
             Data data = new Data.Builder()
-                    .putString("table", downloadTables.get(i).gettableName())
+                    .putString("VillageTable", downloadTables.get(i).gettableName())
                     .putInt("position", i)
                     //.putString("columns", "_id, sysdate")
                     // .putString("where", where)
@@ -342,7 +344,7 @@ public class SyncActivity extends AppCompatActivity {
 
         for (int i = 0; i < downloadTables.size(); i++) {
             Data data = new Data.Builder()
-                    .putString("table", downloadTables.get(i).gettableName())
+                    .putString("VillageTable", downloadTables.get(i).gettableName())
                     .putInt("position", i)
                     //.putString("columns", "_id, sysdate")
                     // .putString("where", where)

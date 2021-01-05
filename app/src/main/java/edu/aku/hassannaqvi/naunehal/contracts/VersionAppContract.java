@@ -1,68 +1,34 @@
 package edu.aku.hassannaqvi.naunehal.contracts;
 
-import android.database.Cursor;
+import android.content.ContentResolver;
+import android.content.ContentUris;
+import android.net.Uri;
 import android.provider.BaseColumns;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 public class VersionAppContract {
+    public static String CONTENT_AUTHORITY = "edu.aku.hassannaqvi.spsa_afg";
 
-    private static final String TAG = VersionAppContract.class.getName();
-    String versioncode;
-    String versionname;
-    String pathname;
-
-    public VersionAppContract() {
-        // Default Constructor
-    }
-
-    public VersionAppContract Sync(JSONObject jsonObject) throws JSONException {
-        this.versioncode = jsonObject.getString(TableVersionApp.COLUMN_VERSION_CODE);
-        this.pathname = jsonObject.getString(TableVersionApp.COLUMN_PATH_NAME);
-        this.versionname = jsonObject.getString(TableVersionApp.COLUMN_VERSION_NAME);
-        return this;
-    }
-
-    public VersionAppContract hydrate(Cursor cursor) {
-        this.versioncode = cursor.getString(cursor.getColumnIndex(TableVersionApp.COLUMN_VERSION_CODE));
-        this.pathname = cursor.getString(cursor.getColumnIndex(TableVersionApp.COLUMN_PATH_NAME));
-        this.versionname = cursor.getString(cursor.getColumnIndex(TableVersionApp.COLUMN_VERSION_NAME));
-        return this;
-    }
-
-    public String getVersioncode() {
-        return versioncode;
-    }
-
-    public void setVersioncode(String versioncode) {
-        this.versioncode = versioncode;
-    }
-
-    public String getPathname() {
-        return pathname;
-    }
-
-    public void setPathname(String pathname) {
-        this.pathname = pathname;
-    }
-
-    public String getVersionname() {
-        return versionname;
-    }
-
-    public void setVersionname(String versionname) {
-        this.versionname = versionname;
-    }
-
-    public static abstract class TableVersionApp implements BaseColumns {
-
+    public static abstract class VersionAppTable implements BaseColumns {
         public static final String TABLE_NAME = "versionApp";
         public static final String COLUMN_VERSION_PATH = "elements";
         public static final String COLUMN_VERSION_CODE = "versionCode";
         public static final String COLUMN_VERSION_NAME = "versionName";
         public static final String COLUMN_PATH_NAME = "outputFile";
+        public static final String SERVER_URI = "output.json";
+        public static String PATH = "versionapp";
+        public static final String CONTENT_TYPE =
+                ContentResolver.CURSOR_DIR_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH;
+        public static final String CONTENT_ITEM_TYPE =
+                ContentResolver.CURSOR_ITEM_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH;
+        public static Uri CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY)
+                .buildUpon().appendPath(PATH).build();
 
-        public static final String _URI = "output.json";
+        public static String getMovieKeyFromUri(Uri uri) {
+            return uri.getPathSegments().get(1);
+        }
+
+        public static Uri buildUriWithId(long id) {
+            return ContentUris.withAppendedId(CONTENT_URI, id);
+        }
     }
 }

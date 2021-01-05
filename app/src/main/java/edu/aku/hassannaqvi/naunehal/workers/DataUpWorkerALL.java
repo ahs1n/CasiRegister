@@ -50,7 +50,7 @@ public class DataUpWorkerALL extends Worker {
     public DataUpWorkerALL(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
         mContext = context;
-        uploadTable = workerParams.getInputData().getString("table");
+        uploadTable = workerParams.getInputData().getString("VillageTable");
         try {
             uploadData = new JSONObject(workerParams.getInputData().getString("data"));
         } catch (JSONException e) {
@@ -106,7 +106,7 @@ public class DataUpWorkerALL extends Worker {
             JSONObject jsonTable = new JSONObject();
             JSONArray jsonParam = new JSONArray();
 
-            jsonTable.put("table", uploadTable);
+            jsonTable.put("VillageTable", uploadTable);
             jsonSync.put(uploadData);
             jsonParam
                     .put(jsonTable)

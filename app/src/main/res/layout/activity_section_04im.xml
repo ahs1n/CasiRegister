@@ -19,12 +19,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:visibility="gone">
-    <!-- im1_title1  Title   -->
+
+
+            <!-- im1_title1  Title   -->
     <androidx.cardview.widget.CardView style="@style/cardView">
 
         <LinearLayout
@@ -150,1466 +147,1459 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- im03  Radio   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVim03"
-                style="@style/cardView">
+            <LinearLayout
+                android:id="@+id/llim01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
-                        <TextView
-                            android:id="@+id/qtxt_im03"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im03"
-                            android:text="@string/im03" />
-
-                        <TextView
-                            android:id="@+id/q_im03"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im03"
-                            android:layout_alignBottom="@id/qtxt_im03"
-                            android:text="@string/Q_im03" />
-                    </RelativeLayout>
-
-                    <RadioGroup
-                        android:id="@+id/im03"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <RadioButton
-                            android:id="@+id/im0301"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.im03.equals(`1`)}"
-                            android:onClick="@{()->form.setIm03(`1`)}"
-                            android:text="@string/im0301" />
-
-                        <RadioButton
-                            android:id="@+id/im0302"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.im03.equals(`2`)}"
-                            android:onClick="@{()->form.setIm03(`2`)}"
-                            android:text="@string/im0302" />
-
-                        <RadioButton
-                            android:id="@+id/im0303"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.im03.equals(`3`)}"
-                            android:onClick="@{()->form.setIm03(`3`)}"
-                            android:text="@string/im0303" />
-
-                        <RadioButton
-                            android:id="@+id/im0304"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.im03.equals(`4`)}"
-                            android:onClick="@{()->form.setIm03(`4`)}"
-                            android:text="@string/im0304" />
-
-                        <RadioButton
-                            android:id="@+id/im0305"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.im03.equals(`5`)}"
-                            android:onClick="@{()->form.setIm03(`5`)}"
-                            android:text="@string/im0305" />
-
-                        <RadioButton
-                            android:id="@+id/im0306"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.im03.equals(`6`)}"
-                            android:onClick="@{()->form.setIm03(`6`)}"
-                            android:text="@string/im0306" />
-
-                        <RadioButton
-                            android:id="@+id/im0396"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.im03.equals(`96`)}"
-                            android:onClick="@{()->form.setIm03(`96`)}"
-                            android:text="@string/im0396" />
-                    </RadioGroup>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im04  Title   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
-                        <TextView
-                            android:id="@+id/qtxt_im04"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im04"
-                            android:text="@string/im04" />
-
-                        <TextView
-                            android:id="@+id/q_im04"
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im04"
-                            android:layout_alignBottom="@id/qtxt_im04"
-                            android:text="@string/Q_im04" />
-                    </RelativeLayout>
+                <!-- im03  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVim03"
+                    style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom">
+
+                            <TextView
+                                android:id="@+id/qtxt_im03"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@id/q_im03"
+                                android:text="@string/im03" />
+
+                            <TextView
+                                android:id="@+id/q_im03"
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_im03"
+                                android:layout_alignBottom="@id/qtxt_im03"
+                                android:text="@string/Q_im03" />
+                        </RelativeLayout>
+
+                        <RadioGroup
+                            android:id="@+id/im03"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RadioButton
+                                android:id="@+id/im0301"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.im03.equals(`1`)}"
+                                android:onClick="@{()->form.setIm03(`1`)}"
+                                android:text="@string/im0301" />
+
+                            <RadioButton
+                                android:id="@+id/im0302"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.im03.equals(`2`)}"
+                                android:onClick="@{()->form.setIm03(`2`)}"
+                                android:text="@string/im0302" />
+
+                            <RadioButton
+                                android:id="@+id/im0303"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.im03.equals(`3`)}"
+                                android:onClick="@{()->form.setIm03(`3`)}"
+                                android:text="@string/im0303" />
+
+                            <RadioButton
+                                android:id="@+id/im0304"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.im03.equals(`4`)}"
+                                android:onClick="@{()->form.setIm03(`4`)}"
+                                android:text="@string/im0304" />
+
+                            <RadioButton
+                                android:id="@+id/im0305"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.im03.equals(`5`)}"
+                                android:onClick="@{()->form.setIm03(`5`)}"
+                                android:text="@string/im0305" />
+
+                            <RadioButton
+                                android:id="@+id/im0306"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.im03.equals(`6`)}"
+                                android:onClick="@{()->form.setIm03(`6`)}"
+                                android:text="@string/im0306" />
+
+                            <RadioButton
+                                android:id="@+id/im0396"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.im03.equals(`96`)}"
+                                android:onClick="@{()->form.setIm03(`96`)}"
+                                android:text="@string/im0396" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im04  Title   -->
+                <androidx.cardview.widget.CardView style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom">
+
+                            <TextView
+                                android:id="@+id/qtxt_im04"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@id/q_im04"
+                                android:text="@string/im04" />
+
+                            <TextView
+                                android:id="@+id/q_im04"
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_im04"
+                                android:layout_alignBottom="@id/qtxt_im04"
+                                android:text="@string/Q_im04" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/im04dd" />
+
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/im04mm" />
+
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/im04yy" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/im04dd"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im04dd"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.im04dd}"
+                                app:maxValue="30"
+                                app:minValue="1"
+                                app:type="range" />
+
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/im04mm"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im04mm"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.im04mm}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
+
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/im04yy"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im04yy"
+                                android:inputType="number"
+
+
+                                android:text="@={form.im04yy}"
+                                app:type="range" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im05title1  Title   -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/im05_title1" />
+
+
+                <!-- im0501  Title   -->
+                <androidx.cardview.widget.CardView style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
                         <TextView
                             style="@style/sub_labels"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/im04dd" />
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im0501" />
 
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginTop="12dp"
+                                android:text="@string/im0501dd" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginTop="12dp"
+                                android:text="@string/im0501mm" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginTop="12dp"
+                                android:text="@string/im0501yy" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <EditText
+                                android:id="@+id/im0501dd"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0501dd"
+                                android:text="@={form.im0501dd}" />
+
+
+                            <EditText
+                                android:id="@+id/im0501mm"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0501mm"
+                                android:text="@={form.im0501mm}" />
+
+
+                            <EditText
+                                android:id="@+id/im0501yy"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0501yy"
+                                android:text="@={form.im0501yy}" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im0502  Title   -->
+                <androidx.cardview.widget.CardView style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
                         <TextView
                             style="@style/sub_labels"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/im04mm" />
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im0502" />
 
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginTop="12dp"
+                                android:text="@string/im0502dd" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginTop="12dp"
+                                android:text="@string/im0502mm" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0502yy" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <EditText
+                                android:id="@+id/im0502dd"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0502dd"
+                                android:text="@={form.im0502dd}" />
+
+
+                            <EditText
+                                android:id="@+id/im0502mm"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0502mm"
+                                android:text="@={form.im0502mm}" />
+
+
+                            <EditText
+                                android:id="@+id/im0502yy"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0502yy"
+                                android:text="@={form.im0502yy}" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im0503  Title   -->
+                <androidx.cardview.widget.CardView style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
                         <TextView
                             style="@style/sub_labels"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/im04yy" />
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im0503" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0503dd" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0503mm" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0503yy" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
 
+                            <EditText
+                                android:id="@+id/im0503dd"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0503dd"
+                                android:text="@={form.im0503dd}" />
+
+
+                            <EditText
+                                android:id="@+id/im0503mm"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0503mm"
+                                android:text="@={form.im0503mm}" />
+
+                            <EditText
+                                android:id="@+id/im0503yy"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0503yy"
+                                android:text="@={form.im0503yy}" />
+                        </LinearLayout>
                     </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im0504  Title   -->
+                <androidx.cardview.widget.CardView style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/im04dd"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im04dd"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:text="@={form.im04dd}"
-                            app:maxValue="30"
-                            app:minValue="1"
-                            app:type="range" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/sub_labels"
+                            android:text="@string/im0504" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0504dd" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0504mm" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0504yy" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/im04mm"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im04mm"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:text="@={form.im04mm}"
-                            app:maxValue="12"
-                            app:minValue="1"
-                            app:type="range" />
+                            <EditText
+                                android:id="@+id/im0504dd"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0504dd"
+                                android:text="@={form.im0504dd}" />
 
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/im04yy"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im04yy"
-                            android:inputType="number"
+                            <EditText
+                                android:id="@+id/im0504mm"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0504mm"
+                                android:text="@={form.im0504mm}" />
 
 
-                            android:text="@={form.im04yy}"
-                            app:type="range" />
+                            <EditText
+                                android:id="@+id/im0504yy"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0504yy"
+                                android:text="@={form.im0504yy}" />
+                        </LinearLayout>
                     </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-    <!-- im05title1  Title   -->
-    <TextView
-        style="@style/info"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/im05_title1" />
-
-</LinearLayout>
-            <!-- im0501  Title   -->
-            <androidx.cardview.widget.CardView style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/sub_labels"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im0501" />
+                <!-- im0505  Title   -->
+                <androidx.cardview.widget.CardView style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginTop="12dp"
-                            android:text="@string/im0501dd" />
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/sub_labels"
+                            android:text="@string/im0505" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginTop="12dp"
-                            android:text="@string/im0501mm" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginTop="12dp"
-                            android:text="@string/im0501yy" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0505dd" />
 
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0505mm" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0505yy" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <EditText
+                                android:id="@+id/im0505dd"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0505dd"
+                                android:text="@={form.im0505dd}" />
+
+
+                            <EditText
+                                android:id="@+id/im0505mm"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0505mm"
+                                android:text="@={form.im0505mm}" />
+
+
+                            <EditText
+                                android:id="@+id/im0505yy"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0505yy"
+                                android:text="@={form.im0505yy}" />
+                        </LinearLayout>
                     </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im0506  Title   -->
+                <androidx.cardview.widget.CardView style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/sub_labels"
+                            android:text="@string/im0506" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0506dd" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0506mm" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0506yy" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
 
-                        <EditText
-                            android:id="@+id/im0501dd"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0501dd"
-                            android:text="@={form.im0501dd}" />
+                            <EditText
+                                android:id="@+id/im0506dd"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0506dd"
+                                android:text="@={form.im0506dd}" />
 
 
-                        <EditText
-                            android:id="@+id/im0501mm"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0501mm"
-                            android:text="@={form.im0501mm}" />
+                            <EditText
+                                android:id="@+id/im0506mm"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0506mm"
+                                android:text="@={form.im0506mm}" />
 
 
-                        <EditText
-                            android:id="@+id/im0501yy"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0501yy"
-                            android:text="@={form.im0501yy}" />
+                            <EditText
+                                android:id="@+id/im0506yy"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0506yy"
+                                android:text="@={form.im0506yy}" />
+                        </LinearLayout>
                     </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-            <!-- im0502  Title   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/sub_labels"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im0502" />
+                <!-- im0507  Title   -->
+                <androidx.cardview.widget.CardView style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginTop="12dp"
-                            android:text="@string/im0502dd" />
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/sub_labels"
+                            android:text="@string/im0507" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginTop="12dp"
-                            android:text="@string/im0502mm" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0502yy" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0507dd" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0507mm" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0507yy" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <EditText
+                                android:id="@+id/im0507dd"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0507dd"
+                                android:text="@={form.im0507dd}" />
+
+
+                            <EditText
+                                android:id="@+id/im0507mm"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0507mm"
+                                android:text="@={form.im0507mm}" />
+
+
+                            <EditText
+                                android:id="@+id/im0507yy"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0507yy"
+                                android:text="@={form.im0507yy}" />
+                        </LinearLayout>
                     </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im0508  Title   -->
+                <androidx.cardview.widget.CardView style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/sub_labels"
+                            android:text="@string/im0508" />
 
 
-                        <EditText
-                            android:id="@+id/im0502dd"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0502dd"
-                            android:text="@={form.im0502dd}" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0508dd" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0508mm" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0508yy" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
 
-                        <EditText
-                            android:id="@+id/im0502mm"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0502mm"
-                            android:text="@={form.im0502mm}" />
+                            <EditText
+                                android:id="@+id/im0508dd"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0508dd"
+                                android:text="@={form.im0508dd}" />
 
 
-                        <EditText
-                            android:id="@+id/im0502yy"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0502yy"
-                            android:text="@={form.im0502yy}" />
+                            <EditText
+                                android:id="@+id/im0508mm"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0508mm"
+                                android:text="@={form.im0508mm}" />
+
+
+                            <EditText
+                                android:id="@+id/im0508yy"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0508yy"
+                                android:text="@={form.im0508yy}" />
+                        </LinearLayout>
                     </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-            <!-- im0503  Title   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/sub_labels"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im0503" />
+                <!-- im0509  Title   -->
+                <androidx.cardview.widget.CardView style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0503dd" />
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/sub_labels"
+                            android:text="@string/im0509" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0503mm" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0503yy" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0509dd" />
 
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0509mm" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0509yy" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <EditText
+                                android:id="@+id/im0509dd"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0509dd"
+                                android:text="@={form.im0509dd}" />
+
+
+                            <EditText
+                                android:id="@+id/im0509mm"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0509mm"
+                                android:text="@={form.im0509mm}" />
+
+
+                            <EditText
+                                android:id="@+id/im0509yy"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0509yy"
+                                android:text="@={form.im0509yy}" />
+                        </LinearLayout>
                     </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im0510  Title   -->
+                <androidx.cardview.widget.CardView style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/sub_labels"
+                            android:text="@string/im0510" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0510dd" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0510mm" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0510yy" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
 
-                        <EditText
-                            android:id="@+id/im0503dd"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0503dd"
-                            android:text="@={form.im0503dd}" />
+                            <EditText
+                                android:id="@+id/im0510dd"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0510dd"
+                                android:text="@={form.im0510dd}" />
 
 
-                        <EditText
-                            android:id="@+id/im0503mm"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0503mm"
-                            android:text="@={form.im0503mm}" />
+                            <EditText
+                                android:id="@+id/im0510mm"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0510mm"
+                                android:text="@={form.im0510mm}" />
 
-                        <EditText
-                            android:id="@+id/im0503yy"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0503yy"
-                            android:text="@={form.im0503yy}" />
+
+                            <EditText
+                                android:id="@+id/im0510yy"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0510yy"
+                                android:text="@={form.im0510yy}" />
+                        </LinearLayout>
                     </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-            <!-- im0504  Title   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/sub_labels"
-                        android:text="@string/im0504" />
+                <!-- im0511  Title   -->
+                <androidx.cardview.widget.CardView style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+
+                        android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0504dd" />
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/sub_labels"
+                            android:text="@string/im0511" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0504mm" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0504yy" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0511dd" />
 
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0511mm" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0511yy" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <EditText
+                                android:id="@+id/im0511dd"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0511dd"
+                                android:text="@={form.im0511dd}" />
+
+
+                            <EditText
+                                android:id="@+id/im0511mm"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0511mm"
+                                android:text="@={form.im0511mm}" />
+
+
+                            <EditText
+                                android:id="@+id/im0511yy"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0511yy"
+                                android:text="@={form.im0511yy}" />
+                        </LinearLayout>
                     </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im0512  Title   -->
+                <androidx.cardview.widget.CardView style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im0512" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0512dd" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0512mm" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0512yy" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
 
-                        <EditText
-                            android:id="@+id/im0504dd"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0504dd"
-                            android:text="@={form.im0504dd}" />
+                            <EditText
+                                android:id="@+id/im0512dd"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0512dd"
+                                android:text="@={form.im0512dd}" />
 
 
-                        <EditText
-                            android:id="@+id/im0504mm"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0504mm"
-                            android:text="@={form.im0504mm}" />
+                            <EditText
+                                android:id="@+id/im0512mm"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0512mm"
+                                android:text="@={form.im0512mm}" />
 
 
-                        <EditText
-                            android:id="@+id/im0504yy"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0504yy"
-                            android:text="@={form.im0504yy}" />
+                            <EditText
+                                android:id="@+id/im0512yy"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0512yy"
+                                android:text="@={form.im0512yy}" />
+                        </LinearLayout>
                     </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-            <!-- im0505  Title   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/sub_labels"
-                        android:text="@string/im0505" />
+                <!-- im0513  Title   -->
+                <androidx.cardview.widget.CardView style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0505dd" />
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/sub_labels"
+                            android:text="@string/im0513" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0505mm" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0505yy" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0513dd" />
 
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0513mm" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0513yy" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <EditText
+                                android:id="@+id/im0513dd"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0513dd"
+                                android:text="@={form.im0513dd}" />
+
+
+                            <EditText
+                                android:id="@+id/im0513mm"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0513mm"
+                                android:text="@={form.im0513mm}" />
+
+
+                            <EditText
+                                android:id="@+id/im0513yy"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0513yy"
+                                android:text="@={form.im0513yy}" />
+                        </LinearLayout>
                     </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im0514  Title   -->
+                <androidx.cardview.widget.CardView style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im0514" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0514dd" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0514mm" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0514yy" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
 
-                        <EditText
-                            android:id="@+id/im0505dd"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0505dd"
-                            android:text="@={form.im0505dd}" />
+                            <EditText
+                                android:id="@+id/im0514dd"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0514dd"
+                                android:text="@={form.im0514dd}" />
 
 
-                        <EditText
-                            android:id="@+id/im0505mm"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0505mm"
-                            android:text="@={form.im0505mm}" />
+                            <EditText
+                                android:id="@+id/im0514mm"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0514mm"
+                                android:text="@={form.im0514mm}" />
 
 
-                        <EditText
-                            android:id="@+id/im0505yy"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0505yy"
-                            android:text="@={form.im0505yy}" />
+                            <EditText
+                                android:id="@+id/im0514yy"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0514yy"
+                                android:text="@={form.im0514yy}" />
+                        </LinearLayout>
                     </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-            <!-- im0506  Title   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/sub_labels"
-                        android:text="@string/im0506" />
+                <!-- im0515  Title   -->
+                <androidx.cardview.widget.CardView style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0506dd" />
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/sub_labels"
+                            android:text="@string/im0515" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0506mm" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0506yy" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0515dd" />
 
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0515mm" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0515yy" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <EditText
+                                android:id="@+id/im0515dd"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0515dd"
+                                android:text="@={form.im0515dd}" />
+
+
+                            <EditText
+                                android:id="@+id/im0515mm"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0515mm"
+                                android:text="@={form.im0515mm}" />
+
+
+                            <EditText
+                                android:id="@+id/im0515yy"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0515yy"
+                                android:text="@={form.im0515yy}" />
+                        </LinearLayout>
                     </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- im0516  Title   -->
+                <androidx.cardview.widget.CardView style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/sub_labels"
+                            android:text="@string/im0516" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0516dd" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0516mm" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:text="@string/im0516yy" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
 
-                        <EditText
-                            android:id="@+id/im0506dd"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0506dd"
-                            android:text="@={form.im0506dd}" />
+                            <EditText
+                                android:id="@+id/im0516dd"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0516dd"
+                                android:text="@={form.im0516dd}" />
 
 
-                        <EditText
-                            android:id="@+id/im0506mm"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0506mm"
-                            android:text="@={form.im0506mm}" />
+                            <EditText
+                                android:id="@+id/im0516mm"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0516mm"
+                                android:text="@={form.im0516mm}" />
 
 
-                        <EditText
-                            android:id="@+id/im0506yy"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0506yy"
-                            android:text="@={form.im0506yy}" />
+                            <EditText
+                                android:id="@+id/im0516yy"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/im0516yy"
+                                android:text="@={form.im0516yy}" />
+                        </LinearLayout>
                     </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-            <!-- im0507  Title   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/sub_labels"
-                        android:text="@string/im0507" />
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0507dd" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0507mm" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0507yy" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-
-                        <EditText
-                            android:id="@+id/im0507dd"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0507dd"
-                            android:text="@={form.im0507dd}" />
-
-
-                        <EditText
-                            android:id="@+id/im0507mm"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0507mm"
-                            android:text="@={form.im0507mm}" />
-
-
-                        <EditText
-                            android:id="@+id/im0507yy"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0507yy"
-                            android:text="@={form.im0507yy}" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im0508  Title   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/sub_labels"
-                        android:text="@string/im0508" />
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0508dd" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0508mm" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0508yy" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-
-                        <EditText
-                            android:id="@+id/im0508dd"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0508dd"
-                            android:text="@={form.im0508dd}" />
-
-
-                        <EditText
-                            android:id="@+id/im0508mm"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0508mm"
-                            android:text="@={form.im0508mm}" />
-
-
-                        <EditText
-                            android:id="@+id/im0508yy"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0508yy"
-                            android:text="@={form.im0508yy}" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im0509  Title   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/sub_labels"
-                        android:text="@string/im0509" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0509dd" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0509mm" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0509yy" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-
-                        <EditText
-                            android:id="@+id/im0509dd"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0509dd"
-                            android:text="@={form.im0509dd}" />
-
-
-                        <EditText
-                            android:id="@+id/im0509mm"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0509mm"
-                            android:text="@={form.im0509mm}" />
-
-
-                        <EditText
-                            android:id="@+id/im0509yy"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0509yy"
-                            android:text="@={form.im0509yy}" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im0510  Title   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/sub_labels"
-                        android:text="@string/im0510" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0510dd" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0510mm" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0510yy" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-
-                        <EditText
-                            android:id="@+id/im0510dd"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0510dd"
-                            android:text="@={form.im0510dd}" />
-
-
-                        <EditText
-                            android:id="@+id/im0510mm"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0510mm"
-                            android:text="@={form.im0510mm}" />
-
-
-                        <EditText
-                            android:id="@+id/im0510yy"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0510yy"
-                            android:text="@={form.im0510yy}" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im0511  Title   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/sub_labels"
-                        android:text="@string/im0511" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0511dd" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0511mm" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0511yy" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-
-                        <EditText
-                            android:id="@+id/im0511dd"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0511dd"
-                            android:text="@={form.im0511dd}" />
-
-
-                        <EditText
-                            android:id="@+id/im0511mm"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0511mm"
-                            android:text="@={form.im0511mm}" />
-
-
-                        <EditText
-                            android:id="@+id/im0511yy"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0511yy"
-                            android:text="@={form.im0511yy}" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im0512  Title   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im0512" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0512dd" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0512mm" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0512yy" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-
-                        <EditText
-                            android:id="@+id/im0512dd"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0512dd"
-                            android:text="@={form.im0512dd}" />
-
-
-                        <EditText
-                            android:id="@+id/im0512mm"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0512mm"
-                            android:text="@={form.im0512mm}" />
-
-
-                        <EditText
-                            android:id="@+id/im0512yy"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0512yy"
-                            android:text="@={form.im0512yy}" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im0513  Title   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/sub_labels"
-                        android:text="@string/im0513" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0513dd" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0513mm" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0513yy" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-
-                        <EditText
-                            android:id="@+id/im0513dd"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0513dd"
-                            android:text="@={form.im0513dd}" />
-
-
-                        <EditText
-                            android:id="@+id/im0513mm"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0513mm"
-                            android:text="@={form.im0513mm}" />
-
-
-                        <EditText
-                            android:id="@+id/im0513yy"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0513yy"
-                            android:text="@={form.im0513yy}" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im0514  Title   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im0514" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0514dd" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0514mm" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0514yy" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-
-                        <EditText
-                            android:id="@+id/im0514dd"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0514dd"
-                            android:text="@={form.im0514dd}" />
-
-
-                        <EditText
-                            android:id="@+id/im0514mm"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0514mm"
-                            android:text="@={form.im0514mm}" />
-
-
-                        <EditText
-                            android:id="@+id/im0514yy"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0514yy"
-                            android:text="@={form.im0514yy}" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im0515  Title   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/sub_labels"
-                        android:text="@string/im0515" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0515dd" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0515mm" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0515yy" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-
-                        <EditText
-                            android:id="@+id/im0515dd"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0515dd"
-                            android:text="@={form.im0515dd}" />
-
-
-                        <EditText
-                            android:id="@+id/im0515mm"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0515mm"
-                            android:text="@={form.im0515mm}" />
-
-
-                        <EditText
-                            android:id="@+id/im0515yy"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0515yy"
-                            android:text="@={form.im0515yy}" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im0516  Title   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/sub_labels"
-                        android:text="@string/im0516" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0516dd" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0516mm" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:text="@string/im0516yy" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-
-                        <EditText
-                            android:id="@+id/im0516dd"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0516dd"
-                            android:text="@={form.im0516dd}" />
-
-
-                        <EditText
-                            android:id="@+id/im0516mm"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0516mm"
-                            android:text="@={form.im0516mm}" />
-
-
-                        <EditText
-                            android:id="@+id/im0516yy"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/im0516yy"
-                            android:text="@={form.im0516yy}" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </LinearLayout>
 
             <!-- im07  Radio   -->
             <androidx.cardview.widget.CardView

@@ -51,7 +51,7 @@ public class DataDownWorkerALL extends Worker {
     public DataDownWorkerALL(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
         mContext = context;
-        uploadTable = workerParams.getInputData().getString("table");
+        uploadTable = workerParams.getInputData().getString("VillageTable");
         //uploadColumns = workerParams.getInputData().getString("columns");
         uploadWhere = workerParams.getInputData().getString("where");
 
@@ -104,7 +104,7 @@ public class DataDownWorkerALL extends Worker {
             JSONObject jsonTable = new JSONObject();
             JSONArray jsonParam = new JSONArray();
 
-            jsonTable.put("table", uploadTable);
+            jsonTable.put("VillageTable", uploadTable);
             //jsonTable.put("select", uploadColumns);
             jsonTable.put("filter", uploadWhere);
             jsonTable.put("limit", "3");

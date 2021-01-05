@@ -801,6 +801,7 @@
 
             <!-- se06  Title   -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVse06"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1117,6 +1118,7 @@
 
             <!-- se10  Radio   -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVse10"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1734,6 +1736,7 @@
 
             <!-- se17  CheckBox   -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVse17"
                 style="@style/cardView">
 
                 <LinearLayout

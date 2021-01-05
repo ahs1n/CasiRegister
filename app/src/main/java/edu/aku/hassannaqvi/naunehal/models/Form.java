@@ -25,14 +25,14 @@ public class Form extends BaseObservable {
     private String syncDate;
 
     // SECTION VARIABLES
-    private String sHH;
-    private String sCB;
-    private String sCS;
-    private String sIM;
-    private String sDD;
-    private String sBF;
-    private String sCV;
-    private String sSE;
+    private String s01HH;
+    private String s02CB;
+    private String s03CS;
+    private String s04IM;
+    private String s05PD;
+    private String s06BF;
+    private String s07CV;
+    private String s08SE;
 
     // FIELD VARIABLES
     public String hh01;
@@ -534,25 +534,6 @@ public class Form extends BaseObservable {
         return this;
     }
 
-    @Bindable
-    public String getiStatus() {
-        return iStatus;
-    }
-
-    public Form setiStatus(String iStatus) {
-        this.iStatus = iStatus;
-        return this;
-    }
-
-    @Bindable
-    public String getiStatus96x() {
-        return iStatus96x;
-    }
-
-    public Form setiStatus96x(String iStatus96x) {
-        this.iStatus96x = iStatus96x;
-        return this;
-    }
 
     @Bindable
     public String getSynced() {
@@ -574,75 +555,76 @@ public class Form extends BaseObservable {
         return this;
     }
 
-    public String getsHH() {
-        return sHH;
+
+    public String getS01HH() {
+        return s01HH;
     }
 
-    public Form setsHH(String sHH) {
-        this.sHH = sHH;
+    public Form setS01HH(String s01HH) {
+        this.s01HH = s01HH;
         return this;
     }
 
-    public String getsCB() {
-        return sCB;
+    public String getS02CB() {
+        return s02CB;
     }
 
-    public Form setsCB(String sCB) {
-        this.sCB = sCB;
+    public Form setS02CB(String s02CB) {
+        this.s02CB = s02CB;
         return this;
     }
 
-    public String getsCS() {
-        return sCS;
+    public String getS03CS() {
+        return s03CS;
     }
 
-    public Form setsCS(String sCS) {
-        this.sCS = sCS;
+    public Form setS03CS(String s03CS) {
+        this.s03CS = s03CS;
         return this;
     }
 
-    public String getsIM() {
-        return sIM;
+    public String getS04IM() {
+        return s04IM;
     }
 
-    public Form setsIM(String sIM) {
-        this.sIM = sIM;
+    public Form setS04IM(String s04IM) {
+        this.s04IM = s04IM;
         return this;
     }
 
-    public String getsDD() {
-        return sDD;
+    public String getS05PD() {
+        return s05PD;
     }
 
-    public Form setsDD(String sDD) {
-        this.sDD = sDD;
+    public Form setS05PD(String s05PD) {
+        this.s05PD = s05PD;
         return this;
     }
 
-    public String getsBF() {
-        return sBF;
+    public String getS06BF() {
+        return s06BF;
     }
 
-    public Form setsBF(String sBF) {
-        this.sBF = sBF;
+    public Form setS06BF(String s06BF) {
+        this.s06BF = s06BF;
         return this;
     }
 
-    public String getsCV() {
-        return sCV;
+    public String getS07CV() {
+        return s07CV;
     }
 
-    public Form setsCV(String sCV) {
-        this.sCV = sCV;
+    public Form setS07CV(String s07CV) {
+        this.s07CV = s07CV;
         return this;
     }
 
-    public String getsSE() {
-        return sSE;
+    public String getS08SE() {
+        return s08SE;
     }
 
-    public Form setsSE(String sSE) {
-        this.sSE = sSE;
+    public Form setS08SE(String s08SE) {
+        this.s08SE = s08SE;
         return this;
     }
 
@@ -2290,15 +2272,6 @@ public class Form extends BaseObservable {
         notifyPropertyChanged(BR.im22);
     }
 
-    @Bindable
-    public String getIm221() {
-        return im2201;
-    }
-
-    public void setIm221(String im2201) {
-        this.im2201 = im2201;
-        notifyPropertyChanged(BR.im221);
-    }
 
     @Bindable
     public String getIm23() {
@@ -4551,5 +4524,35 @@ public class Form extends BaseObservable {
     public void setSe40(String se40) {
         this.se40 = se40;
         notifyPropertyChanged(BR.se40);
+    }
+
+    @Bindable
+    public String getIm2201() {
+        return im2201;
+    }
+
+    public void setIm2201(String im2201) {
+        this.im2201 = im2201;
+        notifyPropertyChanged(BR.im2201);
+    }
+
+    @Bindable
+    public String getIStatus() {
+        return iStatus;
+    }
+
+    public void setIStatus(String iStatus) {
+        this.iStatus = iStatus;
+        notifyPropertyChanged(BR.iStatus);
+    }
+
+    @Bindable
+    public String getIStatus96x() {
+        return iStatus96x;
+    }
+
+    public void setIStatus96x(String iStatus96x) {
+        this.iStatus96x = iStatus96x;
+        notifyPropertyChanged(BR.iStatus96x);
     }
 }
