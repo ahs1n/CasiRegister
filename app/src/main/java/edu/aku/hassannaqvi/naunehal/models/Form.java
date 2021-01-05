@@ -2,7 +2,6 @@ package edu.aku.hassannaqvi.naunehal.models;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
-
 import edu.aku.hassannaqvi.naunehal.BR;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 
@@ -425,7 +424,30 @@ public class Form extends BaseObservable {
     public String se38;
     public String se39;
     public String se40;
-
+    // APP VARIABLES
+    private String projectName = MainApp.PROJECT_NAME;
+    private String id;
+    private String uid;
+    private String userName;
+    private String deviceId;
+    private String deviceTag;
+    private String appver;
+    private String sysDate;
+    private String gps;
+    private String endTime;
+    private String iStatus;
+    private String iStatus96x;
+    private String synced;
+    private String syncDate;
+    // SECTION VARIABLES
+    private String sHH;
+    private String sCB;
+    private String sCS;
+    private String sIM;
+    private String sDD;
+    private String sBF;
+    private String sCV;
+    private String sSE;
 
     public Form() {
 
