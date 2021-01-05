@@ -8,17 +8,21 @@
         <variable
             name="form"
             type="edu.aku.hassannaqvi.naunehal.models.Form" />
+
     </data>
+
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
 
         <LinearLayout
             android:id="@+id/GrpName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
 
             <!-- se_title1  Title   -->
             <androidx.cardview.widget.CardView
@@ -33,8 +37,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/se_title1" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- se01  Radio   -->
             <androidx.cardview.widget.CardView
@@ -51,7 +58,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se01"
@@ -62,9 +68,8 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se01"
-                            android:layout_alignBottom="@id/qtxt_se01"
                             android:text="@string/Q_se01" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -149,6 +154,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se02  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -164,7 +170,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se02"
@@ -175,9 +180,8 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se02"
-                            android:layout_alignBottom="@id/qtxt_se02"
                             android:text="@string/Q_se02" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -312,6 +316,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se03  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -327,7 +332,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se03"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se03"
@@ -338,9 +342,8 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se03"
-                            android:layout_alignBottom="@id/qtxt_se03"
                             android:text="@string/Q_se03" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -523,6 +526,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se04  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -538,7 +542,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se04"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se04"
@@ -549,9 +552,8 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se04"
-                            android:layout_alignBottom="@id/qtxt_se04"
                             android:text="@string/Q_se04" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -718,6 +720,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se05  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -733,7 +736,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se05"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se05"
@@ -744,9 +746,8 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se05"
-                            android:layout_alignBottom="@id/qtxt_se05"
                             android:text="@string/Q_se05" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -799,6 +800,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se06  Title   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVse06"
@@ -830,8 +832,11 @@
                         app:maxValue="100000"
                         app:minValue="1000"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- se07  Title   -->
             <androidx.cardview.widget.CardView
@@ -863,8 +868,11 @@
                         app:maxValue="5"
                         app:minValue="1"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- se08  Radio   -->
             <androidx.cardview.widget.CardView
@@ -881,7 +889,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se08"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se08"
@@ -892,9 +899,8 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se08"
-                            android:layout_alignBottom="@id/qtxt_se08"
                             android:text="@string/Q_se08" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -1050,8 +1056,11 @@
                             android:text="@={form.se0896x}"
                             android:visibility='@{se0896.checked? View.VISIBLE : View.GONE}' />
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- se09  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1068,7 +1077,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se09"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se09"
@@ -1079,9 +1087,8 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se09"
-                            android:layout_alignBottom="@id/qtxt_se09"
                             android:text="@string/Q_se09" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -1112,9 +1119,13 @@
                             android:checked="@{form.se09.equals(`98`)}"
                             android:onClick="@{()->form.setSe09(`98`)}"
                             android:text="@string/se0998" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- se10  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1132,7 +1143,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se10"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se10"
@@ -1143,9 +1153,8 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se10"
-                            android:layout_alignBottom="@id/qtxt_se10"
                             android:text="@string/Q_se10" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -1227,8 +1236,11 @@
                             android:text="@={form.se1099x}"
                             android:visibility='@{se1099.checked? View.VISIBLE : View.GONE}' />
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- se11  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1245,7 +1257,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se11"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se11"
@@ -1256,9 +1267,8 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se11"
-                            android:layout_alignBottom="@id/qtxt_se11"
                             android:text="@string/Q_se11" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -1392,8 +1402,11 @@
                             android:text="@={form.se1196x}"
                             android:visibility='@{se1196.checked? View.VISIBLE : View.GONE}' />
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- se12  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1410,7 +1423,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se12"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se12"
@@ -1421,9 +1433,8 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se12"
-                            android:layout_alignBottom="@id/qtxt_se12"
                             android:text="@string/Q_se12" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -1473,8 +1484,11 @@
                             android:text="@={form.se1296x}"
                             android:visibility='@{se1296.checked? View.VISIBLE : View.GONE}' />
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- se13  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1491,7 +1505,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se13"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se13"
@@ -1502,9 +1515,8 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se13"
-                            android:layout_alignBottom="@id/qtxt_se13"
                             android:text="@string/Q_se13" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -1558,8 +1570,11 @@
                             android:onClick="@{()->form.setSe13(`5`)}"
                             android:text="@string/se1305" />
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- se14  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1576,7 +1591,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se14"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se14"
@@ -1587,9 +1601,8 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se14"
-                            android:layout_alignBottom="@id/qtxt_se14"
                             android:text="@string/Q_se14" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -1613,8 +1626,11 @@
                             android:onClick="@{()->form.setSe14(`2`)}"
                             android:text="@string/se1402" />
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- se15  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1631,7 +1647,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se15"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se15"
@@ -1642,9 +1657,8 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se15"
-                            android:layout_alignBottom="@id/qtxt_se15"
                             android:text="@string/Q_se15" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -1676,8 +1690,11 @@
                             android:onClick="@{()->form.setSe15(`3`)}"
                             android:text="@string/se1503" />
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- se16  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1694,7 +1711,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se16"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se16"
@@ -1705,9 +1721,8 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se16"
-                            android:layout_alignBottom="@id/qtxt_se16"
                             android:text="@string/Q_se16" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -1731,8 +1746,11 @@
                             android:onClick="@{()->form.setSe16(`2`)}"
                             android:text="@string/se1602" />
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- se17  CheckBox   -->
             <androidx.cardview.widget.CardView
@@ -1750,7 +1768,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se17"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se17"
@@ -1761,9 +1778,8 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se17"
-                            android:layout_alignBottom="@id/qtxt_se17"
                             android:text="@string/Q_se17" />
+
                     </RelativeLayout>
 
                     <LinearLayout
@@ -1813,8 +1829,11 @@
                             android:onClick="@{()->form.setSe1705(form.se1705.equals(`5`)?``:`5`)}"
                             android:text="@string/se1705" />
                     </LinearLayout>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- se18  Title   -->
             <androidx.cardview.widget.CardView
@@ -1829,8 +1848,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/se18" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- se1801  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1847,7 +1869,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se1801"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se1801"
@@ -1858,12 +1879,11 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se1801"
-                            android:layout_alignBottom="@id/qtxt_se1801"
                             android:text="@string/Q_se1801" />
                     </RelativeLayout>
 
                     <RadioGroup
+
                         android:id="@+id/se1801"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -1885,7 +1905,9 @@
                             android:text="@string/se180102" />
                     </RadioGroup>
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- se1802  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1902,7 +1924,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se1802"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se1802"
@@ -1913,8 +1934,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se1802"
-                            android:layout_alignBottom="@id/qtxt_se1802"
                             android:text="@string/Q_se1802" />
                     </RelativeLayout>
 
@@ -1942,6 +1961,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se1803  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -1957,7 +1977,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se1803"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se1803"
@@ -1968,8 +1987,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se1803"
-                            android:layout_alignBottom="@id/qtxt_se1803"
                             android:text="@string/Q_se1803" />
                     </RelativeLayout>
 
@@ -1997,6 +2014,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se1804  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -2012,7 +2030,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se1804"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se1804"
@@ -2023,8 +2040,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se1804"
-                            android:layout_alignBottom="@id/qtxt_se1804"
                             android:text="@string/Q_se1804" />
                     </RelativeLayout>
 
@@ -2052,6 +2067,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se1805  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -2067,7 +2083,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se1805"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se1805"
@@ -2078,8 +2093,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se1805"
-                            android:layout_alignBottom="@id/qtxt_se1805"
                             android:text="@string/Q_se1805" />
                     </RelativeLayout>
 
@@ -2107,6 +2120,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se1896  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -2122,7 +2136,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se1896"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se1896"
@@ -2133,8 +2146,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se1896"
-                            android:layout_alignBottom="@id/qtxt_se1896"
                             android:text="@string/Q_se1896" />
                     </RelativeLayout>
 
@@ -2172,6 +2183,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se19  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -2187,7 +2199,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se19"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se19"
@@ -2198,8 +2209,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se19"
-                            android:layout_alignBottom="@id/qtxt_se19"
                             android:text="@string/Q_se19" />
                     </RelativeLayout>
 
@@ -2325,6 +2334,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se20  CheckBox   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -2340,7 +2350,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se20"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se20"
@@ -2351,8 +2360,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se20"
-                            android:layout_alignBottom="@id/qtxt_se20"
                             android:text="@string/Q_se20" />
                     </RelativeLayout>
 
@@ -2424,6 +2431,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se21  CheckBox   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -2439,7 +2447,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se21"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se21"
@@ -2450,8 +2457,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se21"
-                            android:layout_alignBottom="@id/qtxt_se21"
                             android:text="@string/Q_se21" />
                     </RelativeLayout>
 
@@ -2523,6 +2528,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se22  Title   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -2539,6 +2545,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se2201  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -2554,7 +2561,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se2201"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se2201"
@@ -2565,8 +2571,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se2201"
-                            android:layout_alignBottom="@id/qtxt_se2201"
                             android:text="@string/Q_se2201" />
                     </RelativeLayout>
 
@@ -2594,6 +2598,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se2202  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -2609,7 +2614,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se2202"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se2202"
@@ -2620,8 +2624,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se2202"
-                            android:layout_alignBottom="@id/qtxt_se2202"
                             android:text="@string/Q_se2202" />
                     </RelativeLayout>
 
@@ -2649,6 +2651,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se2203  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -2664,7 +2667,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se2203"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se2203"
@@ -2675,8 +2677,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se2203"
-                            android:layout_alignBottom="@id/qtxt_se2203"
                             android:text="@string/Q_se2203" />
                     </RelativeLayout>
 
@@ -2704,6 +2704,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se2204  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -2719,7 +2720,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se2204"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se2204"
@@ -2730,8 +2730,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se2204"
-                            android:layout_alignBottom="@id/qtxt_se2204"
                             android:text="@string/Q_se2204" />
                     </RelativeLayout>
 
@@ -2759,6 +2757,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se2205  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -2774,7 +2773,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se2205"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se2205"
@@ -2785,8 +2783,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se2205"
-                            android:layout_alignBottom="@id/qtxt_se2205"
                             android:text="@string/Q_se2205" />
                     </RelativeLayout>
 
@@ -2814,6 +2810,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se2206  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -2829,7 +2826,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se2206"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se2206"
@@ -2840,8 +2836,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se2206"
-                            android:layout_alignBottom="@id/qtxt_se2206"
                             android:text="@string/Q_se2206" />
                     </RelativeLayout>
 
@@ -2869,6 +2863,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se2207  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -2884,7 +2879,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se2207"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se2207"
@@ -2895,8 +2889,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se2207"
-                            android:layout_alignBottom="@id/qtxt_se2207"
                             android:text="@string/Q_se2207" />
                     </RelativeLayout>
 
@@ -2924,6 +2916,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se2208  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -2939,7 +2932,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se2208"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se2208"
@@ -2950,8 +2942,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se2208"
-                            android:layout_alignBottom="@id/qtxt_se2208"
                             android:text="@string/Q_se2208" />
                     </RelativeLayout>
 
@@ -2979,6 +2969,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se2209  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -2994,7 +2985,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se2209"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se2209"
@@ -3005,8 +2995,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se2209"
-                            android:layout_alignBottom="@id/qtxt_se2209"
                             android:text="@string/Q_se2209" />
                     </RelativeLayout>
 
@@ -3034,6 +3022,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se2210  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -3049,7 +3038,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se2210"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se2210"
@@ -3060,8 +3048,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se2210"
-                            android:layout_alignBottom="@id/qtxt_se2210"
                             android:text="@string/Q_se2210" />
                     </RelativeLayout>
 
@@ -3089,6 +3075,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se2211  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -3104,7 +3091,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se2211"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se2211"
@@ -3115,8 +3101,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se2211"
-                            android:layout_alignBottom="@id/qtxt_se2211"
                             android:text="@string/Q_se2211" />
                     </RelativeLayout>
 
@@ -3144,6 +3128,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se2212  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -3159,7 +3144,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se2212"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se2212"
@@ -3170,8 +3154,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se2212"
-                            android:layout_alignBottom="@id/qtxt_se2212"
                             android:text="@string/Q_se2212" />
                     </RelativeLayout>
 
@@ -3199,6 +3181,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se2213  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -3214,7 +3197,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se2213"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se2213"
@@ -3225,8 +3207,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se2213"
-                            android:layout_alignBottom="@id/qtxt_se2213"
                             android:text="@string/Q_se2213" />
                     </RelativeLayout>
 
@@ -3254,6 +3234,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se2214  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -3269,7 +3250,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se2214"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se2214"
@@ -3280,8 +3260,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se2214"
-                            android:layout_alignBottom="@id/qtxt_se2214"
                             android:text="@string/Q_se2214" />
                     </RelativeLayout>
 
@@ -3309,6 +3287,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se2215  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -3324,7 +3303,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se2215"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se2215"
@@ -3335,8 +3313,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se2215"
-                            android:layout_alignBottom="@id/qtxt_se2215"
                             android:text="@string/Q_se2215" />
                     </RelativeLayout>
 
@@ -3364,6 +3340,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se2216  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -3379,7 +3356,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se2216"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se2216"
@@ -3390,8 +3366,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se2216"
-                            android:layout_alignBottom="@id/qtxt_se2216"
                             android:text="@string/Q_se2216" />
                     </RelativeLayout>
 
@@ -3419,6 +3393,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se2217  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -3434,7 +3409,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se2217"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se2217"
@@ -3445,8 +3419,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se2217"
-                            android:layout_alignBottom="@id/qtxt_se2217"
                             android:text="@string/Q_se2217" />
                     </RelativeLayout>
 
@@ -3474,6 +3446,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se2218  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -3489,7 +3462,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se2218"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se2218"
@@ -3500,8 +3472,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se2218"
-                            android:layout_alignBottom="@id/qtxt_se2218"
                             android:text="@string/Q_se2218" />
                     </RelativeLayout>
 
@@ -3529,6 +3499,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se23  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -3544,7 +3515,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se23"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se23"
@@ -3555,8 +3525,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se23"
-                            android:layout_alignBottom="@id/qtxt_se23"
                             android:text="@string/Q_se23" />
                     </RelativeLayout>
 
@@ -3584,6 +3552,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se24  Input-Numeric   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -3599,7 +3568,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se24"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se24"
@@ -3610,9 +3578,8 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se24"
-                            android:layout_alignBottom="@id/qtxt_se24"
                             android:text="@string/Q_se24" />
+
                     </RelativeLayout>
 
                     <com.edittextpicker.aliazaz.EditTextPicker
@@ -3627,6 +3594,7 @@
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
 
             <!-- se25  Input-Numeric   -->
             <androidx.cardview.widget.CardView
@@ -3643,7 +3611,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se25"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se25"
@@ -3654,8 +3621,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se25"
-                            android:layout_alignBottom="@id/qtxt_se25"
                             android:text="@string/Q_se25" />
                     </RelativeLayout>
 
@@ -3672,6 +3637,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se26  Input-Numeric   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -3687,7 +3653,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se26"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se26"
@@ -3698,8 +3663,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se26"
-                            android:layout_alignBottom="@id/qtxt_se26"
                             android:text="@string/Q_se26" />
                     </RelativeLayout>
 
@@ -3716,6 +3679,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se27  CheckBox   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -3731,7 +3695,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se27"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se27"
@@ -3742,8 +3705,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se27"
-                            android:layout_alignBottom="@id/qtxt_se27"
                             android:text="@string/Q_se27" />
                     </RelativeLayout>
 
@@ -3789,6 +3750,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se28  CheckBox   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -3804,7 +3766,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se28"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se28"
@@ -3815,8 +3776,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se28"
-                            android:layout_alignBottom="@id/qtxt_se28"
                             android:text="@string/Q_se28" />
                     </RelativeLayout>
 
@@ -3854,6 +3813,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se29  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -3869,7 +3829,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se29"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se29"
@@ -3880,8 +3839,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se29"
-                            android:layout_alignBottom="@id/qtxt_se29"
                             android:text="@string/Q_se29" />
                     </RelativeLayout>
 
@@ -3909,6 +3866,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se30  CheckBox   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -3924,7 +3882,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se30"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se30"
@@ -3935,9 +3892,8 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se30"
-                            android:layout_alignBottom="@id/qtxt_se30"
                             android:text="@string/Q_se30" />
+
                     </RelativeLayout>
 
                     <LinearLayout
@@ -3988,9 +3944,13 @@
                             android:tag="se3096"
                             android:text="@={form.se3096x}"
                             android:visibility='@{se3096.checked? View.VISIBLE : View.GONE}' />
+
                     </LinearLayout>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- se31  Radio   -->
             <androidx.cardview.widget.CardView
@@ -4007,7 +3967,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se31"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se31"
@@ -4018,9 +3977,8 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se31"
-                            android:layout_alignBottom="@id/qtxt_se31"
                             android:text="@string/Q_se31" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -4061,9 +4019,13 @@
                             android:tag="se3196"
                             android:text="@={form.se3196x}"
                             android:visibility='@{se3196.checked? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- se32  Radio   -->
             <androidx.cardview.widget.CardView
@@ -4080,7 +4042,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se32"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se32"
@@ -4091,8 +4052,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se32"
-                            android:layout_alignBottom="@id/qtxt_se32"
                             android:text="@string/Q_se32" />
                     </RelativeLayout>
 
@@ -4188,6 +4147,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se33  Title   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -4236,6 +4196,7 @@
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
 
             <!-- se34  Title   -->
             <androidx.cardview.widget.CardView
@@ -4286,6 +4247,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se35  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -4301,7 +4263,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se35"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se35"
@@ -4312,9 +4273,8 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se35"
-                            android:layout_alignBottom="@id/qtxt_se35"
                             android:text="@string/Q_se35" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -4349,6 +4309,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se36  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -4364,7 +4325,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se36"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se36"
@@ -4375,8 +4335,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se36"
-                            android:layout_alignBottom="@id/qtxt_se36"
                             android:text="@string/Q_se36" />
                     </RelativeLayout>
 
@@ -4412,6 +4370,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se37  CheckBox   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -4427,7 +4386,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se37"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se37"
@@ -4438,8 +4396,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se37"
-                            android:layout_alignBottom="@id/qtxt_se37"
                             android:text="@string/Q_se37" />
                     </RelativeLayout>
 
@@ -4543,6 +4499,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se38  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -4558,7 +4515,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se38"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se38"
@@ -4569,8 +4525,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se38"
-                            android:layout_alignBottom="@id/qtxt_se38"
                             android:text="@string/Q_se38" />
                     </RelativeLayout>
 
@@ -4630,6 +4584,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se39  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -4645,7 +4600,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se39"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se39"
@@ -4656,8 +4610,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se39"
-                            android:layout_alignBottom="@id/qtxt_se39"
                             android:text="@string/Q_se39" />
                     </RelativeLayout>
 
@@ -4685,6 +4637,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se40  Radio   -->
             <androidx.cardview.widget.CardView
                 style="@style/cardView">
@@ -4700,7 +4653,6 @@
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_se40"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/q_se40"
@@ -4711,8 +4663,6 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_se40"
-                            android:layout_alignBottom="@id/qtxt_se40"
                             android:text="@string/Q_se40" />
                     </RelativeLayout>
 
@@ -4748,6 +4698,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!--EndButton LinearLayout-->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -4777,6 +4728,13 @@
                     android:textColor="@color/white" />
 
             </LinearLayout>
+            <!--EndButton LinearLayout-->
+
+
         </LinearLayout>
+
+
     </ScrollView>
+
+
 </layout>
