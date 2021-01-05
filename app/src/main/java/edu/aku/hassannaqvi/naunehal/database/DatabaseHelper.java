@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
@@ -14,7 +13,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
@@ -24,7 +22,6 @@ import edu.aku.hassannaqvi.naunehal.models.Users;
 import edu.aku.hassannaqvi.naunehal.models.Users.UsersTable;
 import edu.aku.hassannaqvi.naunehal.models.VersionApp;
 import edu.aku.hassannaqvi.naunehal.models.VersionApp.VersionAppTable;
-;
 import edu.aku.hassannaqvi.naunehal.utils.CreateTable;
 
 
@@ -81,6 +78,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return (int) count;
     }
 
+
     public int syncUser(JSONArray userList) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(UsersTable.TABLE_NAME, null, null);
@@ -110,6 +108,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return insertCount;
     }
 
+
     public boolean Login(String username, String password) throws SQLException {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -125,6 +124,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return false;
     }
+
 
     public Long addForm(Form form) {
 
