@@ -13,6 +13,10 @@ public class Form extends BaseObservable {
     private String id;
     private String uid;
     private String userName;
+    private String dcode;
+    private String ucode;
+    private String cluster;
+    private String hhno;
     private String deviceId;
     private String deviceTag;
     private String appver;
@@ -473,6 +477,51 @@ public class Form extends BaseObservable {
         this.userName = userName;
         return this;
     }
+
+
+    @Bindable
+    public String getDcode() {
+        return dcode;
+    }
+
+    public Form setDcode(String dcode) {
+        this.dcode = dcode;
+        return this;
+    }
+
+
+    @Bindable
+    public String getUcode() {
+        return ucode;
+    }
+
+    public Form setUcode(String ucode) {
+        this.ucode = ucode;
+        return this;
+    }
+
+
+    @Bindable
+    public String getCluster() {
+        return cluster;
+    }
+
+    public Form setCluster(String cluster) {
+        this.cluster = cluster;
+        return this;
+    }
+
+
+    @Bindable
+    public String getHhno() {
+        return hhno;
+    }
+
+    public Form setHhno(String hhno) {
+        this.hhno = hhno;
+        return this;
+    }
+
 
     @Bindable
     public String getDeviceId() {
