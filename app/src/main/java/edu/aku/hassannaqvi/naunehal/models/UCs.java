@@ -23,14 +23,14 @@ public class UCs {
     public UCs Sync(JSONObject jsonObject) throws JSONException {
         this.ucCode = jsonObject.getString(TableUCs.COLUMN_UC_CODE);
         this.ucName = jsonObject.getString(TableUCs.COLUMN_UC_NAME);
-        this.districtCode = jsonObject.getString(TableUCs.COLUMN_TEHSIL_CODE);
+        this.districtCode = jsonObject.getString(TableUCs.COLUMN_DISTRICT_CODE);
         return this;
     }
 
     public UCs HydrateUCs(Cursor cursor) {
         this.ucCode = cursor.getString(cursor.getColumnIndex(TableUCs.COLUMN_UC_CODE));
         this.ucName = cursor.getString(cursor.getColumnIndex(TableUCs.COLUMN_UC_NAME));
-        this.districtCode = cursor.getString(cursor.getColumnIndex(TableUCs.COLUMN_TEHSIL_CODE));
+        this.districtCode = cursor.getString(cursor.getColumnIndex(TableUCs.COLUMN_DISTRICT_CODE));
         return this;
     }
 
@@ -66,7 +66,7 @@ public class UCs {
         JSONObject json = new JSONObject();
         json.put(UCsContract.TableUCs.COLUMN_UC_CODE, this.ucCode == null ? JSONObject.NULL : this.ucCode);
         json.put(TableUCs.COLUMN_UC_NAME, this.ucName == null ? JSONObject.NULL : this.ucName);
-        json.put(TableUCs.COLUMN_TEHSIL_CODE, this.districtCode == null ? JSONObject.NULL : this.districtCode);
+        json.put(TableUCs.COLUMN_DISTRICT_CODE, this.districtCode == null ? JSONObject.NULL : this.districtCode);
         return json;
     }
 

@@ -24,10 +24,12 @@ import edu.aku.hassannaqvi.naunehal.contracts.UsersContract;
 import edu.aku.hassannaqvi.naunehal.contracts.VersionAppContract;
 import edu.aku.hassannaqvi.naunehal.contracts.VillageContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
+import edu.aku.hassannaqvi.naunehal.models.Districts;
 import edu.aku.hassannaqvi.naunehal.models.Form;
 import edu.aku.hassannaqvi.naunehal.models.UCs;
 import edu.aku.hassannaqvi.naunehal.models.Users;
 import edu.aku.hassannaqvi.naunehal.models.VersionApp;
+import edu.aku.hassannaqvi.naunehal.models.Villages;
 import edu.aku.hassannaqvi.naunehal.utils.CreateTable;
 
 
@@ -227,20 +229,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         try {
             for (int i = 0; i < Ucslist.length(); i++) {
 
-                JSONObject jsonObjectProvince = Ucslist.getJSONObject(i);
+                JSONObject json = Ucslist.getJSONObject(i);
 
-                UCsContract Ucs = new UCsContract();
-                UCs.Sync(jsonObjectProvince);
+                UCs ucs = new UCs();
+                ucs.Sync(json);
                 ContentValues values = new ContentValues();
 
-                values.put(UCsContract.TableUCs.COLUMN_UC_CODE, UCs.getUCCode());
-                values.put(UCsContract.TableUCs.COLUMN_UC_NAME, UCs.getProv_name());
+                values.put(UCsContract.TableUCs.COLUMN_UC_CODE, ucs.getUcCode());
+                values.put(UCsContract.TableUCs.COLUMN_UC_NAME, ucs.getUcName());
+                values.put(UCsContract.TableUCs.COLUMN_DISTRICT_CODE, ucs.getDistrictCode());
                 long rowID = db.insert(UCsContract.TableUCs.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
             }
 
         } catch (Exception e) {
-            Log.d(TAG, "syncProvince(e): " + e);
+            Log.d(TAG, "syncUcs(e): " + e);
             db.close();
         } finally {
             db.close();
@@ -249,27 +252,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public int syncDistricts(JSONArray Districtslist) {
+    public int syncDistricts(JSONArray list) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(DistrictContract.DistrictTable.TABLE_NAME, null, null);
         int insertCount = 0;
         try {
-            for (int i = 0; i < Districtslist.length(); i++) {
+            for (int i = 0; i < list.length(); i++) {
 
-                JSONObject jsonObjectDistrict = Districtslist.getJSONObject(i);
+                JSONObject json = list.getJSONObject(i);
 
-                DistrictContract District = new DistrictContract();
-                District.Sync(jsonObjectDistrict);
+                Districts dists = new Districts();
+                dists.Sync(json);
                 ContentValues values = new ContentValues();
 
-                values.put(DistrictContract.DistrictTable.COLUMN_DISTRICT_CODE, District.getDistrictCode());
-                values.put(DistrictContract.DistrictTable.COLUMN_DISTRICT_NAME, District.getDistrictName());
+                values.put(DistrictContract.DistrictTable.COLUMN_DISTRICT_CODE, dists.getDistrictCode());
+                values.put(DistrictContract.DistrictTable.COLUMN_DISTRICT_NAME, dists.getDistrictName());
                 long rowID = db.insert(DistrictContract.DistrictTable.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
             }
 
         } catch (Exception e) {
-            Log.d(TAG, "syncDistrict(e): " + e);
+            Log.d(TAG, "syncDistricts(e): " + e);
             db.close();
         } finally {
             db.close();
@@ -278,28 +281,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public int syncVillages(JSONArray Villageslist) {
+    public int syncVillages(JSONArray list) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(VillageContract.VillageTable.TABLE_NAME, null, null);
         int insertCount = 0;
         try {
-            for (int i = 0; i < Villageslist.length(); i++) {
+            for (int i = 0; i < list.length(); i++) {
 
-                JSONObject jsonObjectVillage = Villageslist.getJSONObject(i);
+                JSONObject json = list.getJSONObject(i);
 
-                VillageContract Village = new VillageContract();
-                Village.Sync(jsonObjectVillage);
+                Villages vil = new Villages();
+                vil.Sync(json);
                 ContentValues values = new ContentValues();
 
-                values.put(VillageContract.VillageTable.COLUMN_DCODE, Village.getDistrictCode());
-                values.put(VillageContract.VillageTable.COLUMN_VCODE, Village.getVillageCode());
-                values.put(VillageContract.VillageTable.COLUMN_VNAME, Village.getVillageName());
+                values.put(VillageContract.VillageTable.COLUMN_DCODE, vil.getDistrictCode());
+                values.put(VillageContract.VillageTable.COLUMN_VCODE, vil.getVillageCode());
+                values.put(VillageContract.VillageTable.COLUMN_VNAME, vil.getVillageName());
                 long rowID = db.insert(VillageContract.VillageTable.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
             }
 
         } catch (Exception e) {
-            Log.d(TAG, "syncVillage(e): " + e);
+            Log.d(TAG, "syncVillages(e): " + e);
             db.close();
         } finally {
             db.close();
@@ -349,7 +352,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public Collection<UCsContract> getAllUcs() {
+    public Collection<UCs> getAllUcs() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
@@ -365,7 +368,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy =
                 UCsContract.TableUCs.COLUMN_UC_NAME + " ASC";
 
-        Collection<UCsContract> allDC = new ArrayList<>();
+        Collection<UCs> all = new ArrayList<>();
         try {
             c = db.query(
                     UCsContract.TableUCs.TABLE_NAME,  // The table to query
@@ -377,8 +380,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                UCsContract dc = new UCsContract();
-                allDC.add(dc.HydrateUcs(c));
+                UCs ucs = new UCs();
+                all.add(ucs.HydrateUCs(c));
             }
         } finally {
             if (c != null) {
@@ -388,11 +391,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
-        return allDC;
+        return all;
     }
 
 
-    public Collection<DistrictContract> getAllDistricts(String dcode) {
+    public Collection<Districts> getAllDistricts(String dcode) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
@@ -408,7 +411,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy =
                 DistrictContract.DistrictTable.COLUMN_DISTRICT_NAME + " ASC";
 
-        Collection<DistrictContract> allDC = new ArrayList<>();
+        Collection<Districts> all = new ArrayList<>();
         try {
             c = db.query(
                     DistrictContract.DistrictTable.TABLE_NAME,  // The table to query
@@ -420,8 +423,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                DistrictContract dc = new DistrictContract();
-                allDC.add(dc.HydrateDistrict(c));
+                Districts dists = new Districts();
+                all.add(dists.HydrateDistrict(c));
             }
         } finally {
             if (c != null) {
@@ -431,11 +434,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
-        return allDC;
+        return all;
     }
 
 
-    public Collection<VillageContract> getAllVillages(String dcode) {
+    public Collection<Villages> getAllVillages(String dcode) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
@@ -452,7 +455,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy =
                 VillageContract.VillageTable.COLUMN_VNAME + " ASC";
 
-        Collection<VillageContract> allDC = new ArrayList<>();
+        Collection<Villages> all = new ArrayList<>();
         try {
             c = db.query(
                     VillageContract.VillageTable.TABLE_NAME,  // The table to query
@@ -464,8 +467,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                VillageContract dc = new VillageContract();
-                allDC.add(dc.HydrateVillage(c));
+                Villages vs = new Villages();
+                all.add(vs.HydrateVillage(c));
             }
         } finally {
             if (c != null) {
@@ -475,7 +478,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
-        return allDC;
+        return all;
     }
 
 
@@ -518,13 +521,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         values.put(FormsContract.FormsTable.COLUMN_ISTATUS, form.getIStatus());
         values.put(FormsContract.FormsTable.COLUMN_ISTATUS96x, form.getIStatus96x());
-        values.put(FormsContract.FormsTable.COLUMN_ENDINGDATETIME, form.getEndingdatetime());
+        values.put(FormsContract.FormsTable.COLUMN_ENDINGDATETIME, form.getEndTime());
         values.put(FormsContract.FormsTable.COLUMN_GPS, form.getGps());
 
-        values.put(FormsContract.FormsTable.COLUMN_DEVICETAGID, form.getDevicetagID());
-        values.put(FormsContract.FormsTable.COLUMN_DEVICEID, form.getDeviceID());
-        values.put(FormsContract.FormsTable.COLUMN_APPVERSION, form.getAppversion());
-        values.put(FormsContract.FormsTable.COLUMN_REFNO, form.getAppversion());
+        values.put(FormsContract.FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
+        values.put(FormsContract.FormsTable.COLUMN_DEVICEID, form.getDeviceId());
+        values.put(FormsContract.FormsTable.COLUMN_APPVERSION, form.getAppver());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
