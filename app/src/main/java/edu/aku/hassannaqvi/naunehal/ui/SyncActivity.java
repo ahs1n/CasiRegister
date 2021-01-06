@@ -43,6 +43,7 @@ import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySyncBinding;
 import edu.aku.hassannaqvi.naunehal.models.SyncModel;
+import edu.aku.hassannaqvi.naunehal.models.Users;
 import edu.aku.hassannaqvi.naunehal.workers.DataDownWorkerALL;
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.PROJECT_NAME;
@@ -77,7 +78,7 @@ public class SyncActivity extends AppCompatActivity {
        downloadTables.add(new SyncModel(TableDistricts.TABLE_NAME));
         downloadTables.add(new SyncModel(UCs.TableUCs.TABLE_NAME));
         downloadTables.add(new SyncModel(ClustersContract.TableClusters.TABLE_NAME));*/
-        downloadTables.add(new SyncModel(UsersContract.UsersTable.TABLE_NAME));
+        downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
 
         // Set tables to UPLOAD
         uploadTables.add(new SyncModel("Forms"));
