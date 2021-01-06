@@ -108,6 +108,7 @@
                             android:checked="@{form.se2201.equals(`2`)}"
                             android:onClick="@{()->form.setSe2201(`2`)}"
                             android:text="@string/se220102" />
+
                     </RadioGroup>
 
                 </LinearLayout>
@@ -1137,11 +1138,13 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/se24"
                         android:inputType="number"
-
-
+                        app:maxValue="0"
+                        app:minValue="0"
                         android:text="@={form.se24}"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 
@@ -1178,11 +1181,13 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/se25"
                         android:inputType="number"
-
-
+                        app:maxValue="0"
+                        app:minValue="0"
                         android:text="@={form.se25}"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 
@@ -1219,11 +1224,13 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/se26"
                         android:inputType="number"
-
-
+                        app:maxValue="0"
+                        app:minValue="0"
                         android:text="@={form.se26}"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 
@@ -1713,8 +1720,8 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/se3302"
                         android:inputType="number"
-
-
+                        app:maxValue="0"
+                        app:minValue="0"
                         android:text="@={form.se3302}"
                         app:type="range" />
 
@@ -1734,7 +1741,9 @@
                         app:maxValue="59"
                         app:minValue="1"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 
@@ -1779,11 +1788,13 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/se3402"
                         android:inputType="number"
-
-
+                        app:maxValue="0"
+                        app:minValue="0"
                         android:text="@={form.se3402}"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 

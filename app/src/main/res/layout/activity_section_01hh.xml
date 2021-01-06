@@ -34,38 +34,37 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_hh01"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_hh01"
-                            android:text="@string/hh01" />
-
-                        <TextView
-                            android:id="@+id/q_hh01"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_hh01"
-                            android:layout_alignBottom="@id/qtxt_hh01"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_hh01" />
-                    </RelativeLayout>
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/hh01"
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/hh01" />
+
+                    </LinearLayout>
+
+                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                        android:id="@+id/aa01"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/hh01"
-                        android:inputType="number"
-
-
+                        android:gravity="center"
+                        android:hint="DD-MM-YYYY"
                         android:text="@={form.hh01}"
-                        app:type="range" />
+                        app:dateFormat="dd-MM-yyyy"
+                        app:maxDate="CR_DATE"
+                        app:minDate="CR_DATE"
+                        app:theme="@style/DatePickerStyle" />
 
                 </LinearLayout>
 
@@ -82,44 +81,87 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/hh02" />
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/hh0201" />
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_hh02" />
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/hh0201"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/hh0201"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:text="@={form.hh0201}"
-                        app:maxValue="23"
-                        app:minValue="1"
-                        app:type="range" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/hh02" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/hh0202" />
+                    </LinearLayout>
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/hh0202"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/hh0202"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:text="@={form.hh0202}"
-                        app:maxValue="59"
-                        app:minValue="1"
-                        app:type="range" />
+                        android:layout_marginTop="2dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/hh0201" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/hh0201"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.hh0201}"
+                                app:maxValue="23"
+                                app:minValue="1"
+                                app:type="range" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/hh0202" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/hh0202"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.hh0202}"
+                                app:maxValue="59"
+                                app:minValue="1"
+                                app:type="range" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -136,28 +178,25 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_hh03"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_hh03"
-                            android:text="@string/hh03" />
-
-                        <TextView
-                            android:id="@+id/q_hh03"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_hh03"
-                            android:layout_alignBottom="@id/qtxt_hh03"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_hh03" />
 
-                    </RelativeLayout>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/hh03" />
+
+                    </LinearLayout>
 
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/hh03"
@@ -186,27 +225,25 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_hh04"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_hh04"
-                            android:text="@string/hh04" />
-
-                        <TextView
-                            android:id="@+id/q_hh04"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_hh04"
-                            android:layout_alignBottom="@id/qtxt_hh04"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_hh04" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/hh04" />
+
+                    </LinearLayout>
 
                     <EditText
                         android:id="@+id/hh04"
@@ -214,7 +251,9 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/hh04"
                         android:text="@={form.hh04}" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 
@@ -228,27 +267,25 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_hh05"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_hh05"
-                            android:text="@string/hh05" />
-
-                        <TextView
-                            android:id="@+id/q_hh05"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_hh05"
-                            android:layout_alignBottom="@id/qtxt_hh05"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_hh05" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/hh05" />
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/hh05"
@@ -278,8 +315,11 @@
                             android:checked="@{form.hh05.equals(`3`)}"
                             android:onClick="@{()->form.setHh05(`3`)}"
                             android:text="@string/hh0503" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 
@@ -293,39 +333,35 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_hh06"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_hh06"
-                            android:text="@string/hh06" />
-
-                        <TextView
-                            android:id="@+id/q_hh06"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_hh06"
-                            android:layout_alignBottom="@id/qtxt_hh06"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_hh06" />
-                    </RelativeLayout>
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/hh06" />
+
+                    </LinearLayout>
+
+                    <EditText
                         android:id="@+id/hh06"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/hh06"
-                        android:inputType="number"
+                        android:text="@={form.hh06}" />
 
-
-                        android:text="@={form.hh06}"
-                        app:type="range" />
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 
@@ -339,27 +375,25 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_hh07"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_hh07"
-                            android:text="@string/hh07" />
-
-                        <TextView
-                            android:id="@+id/q_hh07"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_hh07"
-                            android:layout_alignBottom="@id/qtxt_hh07"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_hh07" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/hh07" />
+
+                    </LinearLayout>
 
                     <EditText
                         android:id="@+id/hh07"
@@ -367,7 +401,9 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/hh07"
                         android:text="@={form.hh07}" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 
@@ -381,27 +417,25 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_hh08"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_hh08"
-                            android:text="@string/hh08" />
-
-                        <TextView
-                            android:id="@+id/q_hh08"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_hh08"
-                            android:layout_alignBottom="@id/qtxt_hh08"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_hh08" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/hh08" />
+
+                    </LinearLayout>
 
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/hh08"
@@ -409,11 +443,13 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/hh08"
                         android:inputType="number"
-
-
+                        app:maxValue="999999"
+                        app:minValue="1"
                         android:text="@={form.hh08}"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 
@@ -455,11 +491,13 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/hh09"
                         android:inputType="number"
-
-
+                        app:maxValue="999999"
+                        app:minValue="1"
                         android:text="@={form.hh09}"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 
@@ -846,7 +884,9 @@
                             app:maxValue="17"
                             app:minValue="1"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -1331,7 +1371,9 @@
                             app:maxValue="60"
                             app:minValue="1"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -1378,7 +1420,9 @@
                             app:maxValue="20"
                             app:minValue="1"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -1425,7 +1469,9 @@
                             app:maxValue="20"
                             app:minValue="1"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -1472,7 +1518,9 @@
                             app:maxValue="20"
                             app:minValue="1"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
