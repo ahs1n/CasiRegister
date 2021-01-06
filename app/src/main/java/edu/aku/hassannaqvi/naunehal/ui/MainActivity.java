@@ -21,7 +21,7 @@ import edu.aku.hassannaqvi.naunehal.ui.sections.Section04IMActivity;
 import edu.aku.hassannaqvi.naunehal.ui.sections.Section05PDActivity;
 import edu.aku.hassannaqvi.naunehal.ui.sections.Section06BFActivity;
 import edu.aku.hassannaqvi.naunehal.ui.sections.Section07CVActivity;
-import edu.aku.hassannaqvi.naunehal.ui.sections.Section08SEActivity;
+import edu.aku.hassannaqvi.naunehal.ui.sections.Section081SEActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                 oF = new Intent(this, Section07CVActivity.class);
                 break;
             case R.id.btn08:
-                oF = new Intent(this, Section08SEActivity.class);
+                oF = new Intent(this, Section081SEActivity.class);
                 break;
          /*   case R.id.formI:
                 oF = new Intent(this, SectionI1Activity.class);

@@ -56,7 +56,7 @@ public class Section07CVActivity extends AppCompatActivity {
         // SaveDraft(); //<== This function is no longer needed after DataBinding
         if (/*UpdateDB()*/ true) {
             finish();
-            startActivity(new Intent(this, Section08SEActivity.class));
+            startActivity(new Intent(this, Section081SEActivity.class));
         }
     }
 
