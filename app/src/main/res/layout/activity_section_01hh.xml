@@ -66,7 +66,9 @@
 
                         android:text="@={form.hh01}"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 
@@ -118,7 +120,9 @@
                         app:maxValue="59"
                         app:minValue="1"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 
@@ -152,6 +156,7 @@
                             android:layout_alignTop="@id/qtxt_hh03"
                             android:layout_alignBottom="@id/qtxt_hh03"
                             android:text="@string/Q_hh03" />
+
                     </RelativeLayout>
 
                     <com.edittextpicker.aliazaz.EditTextPicker
@@ -165,7 +170,9 @@
                         app:maxValue="999"
                         app:minValue="1"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 

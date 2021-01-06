@@ -10,25 +10,79 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.sections.Section082SEActivity"></activity>
-        <activity android:name=".ui.sections.Section081SEActivity" />
-        <activity android:name=".ui.sections.Section07CVActivity" />
-        <activity android:name=".ui.sections.Section06BFActivity" />
-        <activity android:name=".ui.sections.Section05PDActivity" />
-        <activity android:name=".ui.sections.Section04IMActivity" />
-        <activity android:name=".ui.sections.Section03CSActivity" />
-        <activity android:name=".ui.sections.Section02CBActivity" />
-        <activity android:name=".ui.sections.Section01HHActivity" />
+
+
+        <activity
+            android:name=".ui.sections.Section082SEActivity"
+            android:label="Section SE"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
+
+        <activity
+            android:name=".ui.sections.Section081SEActivity"
+            android:label="Section SE"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
+
+        <activity
+            android:name=".ui.sections.Section07CVActivity"
+            android:label="Section CV"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
+
+        <activity
+            android:name=".ui.sections.Section06BFActivity"
+            android:label="Section BF"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
+
+        <activity
+            android:name=".ui.sections.Section05PDActivity"
+            android:label="Section PD"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
+
+        <activity
+            android:name=".ui.sections.Section04IMActivity"
+            android:label="Section IM"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
+
+        <activity
+            android:name=".ui.sections.Section03CSActivity"
+            android:label="Section CS"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
+
+        <activity
+            android:name=".ui.sections.Section02CBActivity"
+            android:label="Section CB"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
+
+        <activity
+            android:name=".ui.sections.Section01HHActivity"
+            android:label="Section HH"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
+
+
         <activity
             android:name=".ui.sections.IdentificationSectionActivity"
             android:parentActivityName=".ui.MainActivity" />
+
+
         <activity android:name=".ui.MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
+
     </application>
 
 </manifest>
