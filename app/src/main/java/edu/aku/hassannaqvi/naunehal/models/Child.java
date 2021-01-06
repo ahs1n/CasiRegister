@@ -16,26 +16,6 @@ import edu.aku.hassannaqvi.naunehal.core.MainApp;
 
 public class Child extends BaseObservable {
 
-    // FIELD VARIABLES
-    public String cb01;
-    public String cb02;
-    public String cb03;
-    public String cb04dd;
-    public String cb04mm;
-    public String cb04yy;
-    public String cb0501;
-    public String cb0502;
-    public String cb06;
-    public String cb07;
-    public String cb08;
-    public String cb09;
-    public String cb10;
-    public String cb11;
-    public String cb12;
-    public String cb13;
-    public String cb14;
-    public String cb15;
-    public String cb16;
     // APP VARIABLES
     private String projectName = MainApp.PROJECT_NAME;
     private String id;
@@ -56,8 +36,30 @@ public class Child extends BaseObservable {
     private String iStatus96x;
     private String synced;
     private String syncDate;
+
     // SECTION VARIABLES
     private String sA;
+
+    // FIELD VARIABLES
+    public String cb01;
+    public String cb02;
+    public String cb03;
+    public String cb04dd;
+    public String cb04mm;
+    public String cb04yy;
+    public String cb0501;
+    public String cb0502;
+    public String cb06;
+    public String cb07;
+    public String cb08;
+    public String cb09;
+    public String cb10;
+    public String cb11;
+    public String cb12;
+    public String cb13;
+    public String cb14;
+    public String cb15;
+    public String cb16;
 
 
     public Child() {
