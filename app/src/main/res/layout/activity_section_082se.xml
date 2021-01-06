@@ -70,8 +70,8 @@
 
                     </LinearLayout>
 
-                    //se2201
 
+                    <!--se2201-->
                     <RadioGroup
                         android:id="@+id/se2201"
                         android:layout_width="match_parent"
@@ -106,8 +106,8 @@
 
                     </RadioGroup>
 
-                    //se2202
 
+                    <!--se2202-->
                     <RadioGroup
                         android:id="@+id/se2202"
                         android:layout_width="match_parent"
@@ -142,8 +142,8 @@
 
                     </RadioGroup>
 
-                    //se2203
 
+                    <!--se2203-->
                     <RadioGroup
                         android:id="@+id/se2203"
                         android:layout_width="match_parent"
@@ -178,8 +178,8 @@
 
                     </RadioGroup>
 
-                    //se2204
 
+                    <!--se2204-->
                     <RadioGroup
                         android:id="@+id/se2204"
                         android:layout_width="match_parent"
@@ -214,8 +214,8 @@
 
                     </RadioGroup>
 
-                    //se2205
 
+                    <!--se2205-->
                     <RadioGroup
                         android:id="@+id/se2205"
                         android:layout_width="match_parent"
@@ -250,8 +250,8 @@
 
                     </RadioGroup>
 
-                    //se2206
 
+                    <!--se2206-->
                     <RadioGroup
                         android:id="@+id/se2206"
                         android:layout_width="match_parent"
@@ -286,8 +286,8 @@
 
                     </RadioGroup>
 
-                    //se2207
 
+                    <!--se2207-->
                     <RadioGroup
                         android:id="@+id/se2207"
                         android:layout_width="match_parent"
@@ -322,8 +322,8 @@
 
                     </RadioGroup>
 
-                    //se2208
 
+                    <!--se2208-->
                     <RadioGroup
                         android:id="@+id/se2208"
                         android:layout_width="match_parent"
@@ -358,8 +358,8 @@
 
                     </RadioGroup>
 
-                    //se2209
 
+                    <!--se2209-->
                     <RadioGroup
                         android:id="@+id/se2209"
                         android:layout_width="match_parent"
@@ -394,8 +394,8 @@
 
                     </RadioGroup>
 
-                    //se2210
 
+                    <!--se2210-->
                     <RadioGroup
                         android:id="@+id/se2210"
                         android:layout_width="match_parent"
@@ -430,8 +430,8 @@
 
                     </RadioGroup>
 
-                    //se2211
 
+                    <!--se2211-->
                     <RadioGroup
                         android:id="@+id/se2211"
                         android:layout_width="match_parent"
@@ -466,8 +466,8 @@
 
                     </RadioGroup>
 
-                    //se2212
 
+                    <!--se2212-->
                     <RadioGroup
                         android:id="@+id/se2212"
                         android:layout_width="match_parent"
@@ -502,8 +502,8 @@
 
                     </RadioGroup>
 
-                    //se2213
 
+                    <!--se2213-->
                     <RadioGroup
                         android:id="@+id/se2213"
                         android:layout_width="match_parent"
@@ -538,8 +538,8 @@
 
                     </RadioGroup>
 
-                    //se2214
 
+                    <!--se2214-->
                     <RadioGroup
                         android:id="@+id/se2214"
                         android:layout_width="match_parent"
@@ -574,8 +574,8 @@
 
                     </RadioGroup>
 
-                    //se2215
 
+                    <!--se2215-->
                     <RadioGroup
                         android:id="@+id/se2215"
                         android:layout_width="match_parent"
@@ -610,8 +610,8 @@
 
                     </RadioGroup>
 
-                    //se2216
 
+                    <!--se2216-->
                     <RadioGroup
                         android:id="@+id/se2216"
                         android:layout_width="match_parent"
@@ -646,8 +646,8 @@
 
                     </RadioGroup>
 
-                    //se2217
 
+                    <!--se2217-->
                     <RadioGroup
                         android:id="@+id/se2217"
                         android:layout_width="match_parent"
@@ -682,8 +682,8 @@
 
                     </RadioGroup>
 
-                    //se2218
 
+                    <!--se2218-->
                     <RadioGroup
                         android:id="@+id/se2218"
                         android:layout_width="match_parent"
@@ -717,6 +717,7 @@
                             android:text="@string/se221802" />
 
                     </RadioGroup>
+
 
                 </LinearLayout>
 
