@@ -48,6 +48,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CreateTable.SQL_CREATE_FORMS);
         db.execSQL(CreateTable.SQL_CREATE_FAMILY);
         db.execSQL(CreateTable.SQL_CREATE_CHILD);
+        db.execSQL(CreateTable.SQL_CREATE_IMMUNIZATION);
         db.execSQL(CreateTable.SQL_CREATE_VERSIONAPP);
     }
 
@@ -162,6 +163,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsContract.FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
         values.put(FormsContract.FormsTable.COLUMN_DEVICEID, form.getDeviceId());
         values.put(FormsContract.FormsTable.COLUMN_APPVERSION, form.getAppver());
+        values.put(FormsContract.FormsTable.COLUMN_CHILD_RESPONDENT, form.getChildrespondent());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;

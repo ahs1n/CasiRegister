@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.naunehal.utils
 import edu.aku.hassannaqvi.naunehal.contracts.ChildContract
 import edu.aku.hassannaqvi.naunehal.contracts.FamilyContract
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract
+import edu.aku.hassannaqvi.naunehal.contracts.IMContract
 import edu.aku.hassannaqvi.naunehal.models.Users
 import edu.aku.hassannaqvi.naunehal.models.VersionApp
 
@@ -28,6 +29,7 @@ object CreateTable {
             + FormsContract.FormsTable.COLUMN_SYNCED + " TEXT,"
             + FormsContract.FormsTable.COLUMN_SYNCED_DATE + " TEXT,"
             + FormsContract.FormsTable.COLUMN_APPVERSION + " TEXT,"
+            + FormsContract.FormsTable.COLUMN_CHILD_RESPONDENT + " TEXT,"
             + FormsContract.FormsTable.COLUMN_DCODE + " TEXT,"
             + FormsContract.FormsTable.COLUMN_UCODE + " TEXT,"
             + FormsContract.FormsTable.COLUMN_CLUSTER + " TEXT,"
@@ -91,6 +93,33 @@ object CreateTable {
             + ChildContract.ChildTable.COLUMN_CHILD_NAME + " TEXT,"
             + ChildContract.ChildTable.COLUMN_SERIAL + " TEXT,"
             + ChildContract.ChildTable.COLUMN_SCS + " TEXT"
+            + " );")
+
+    const val SQL_CREATE_IMMUNIZATION = ("CREATE TABLE "
+            + IMContract.IMTable.TABLE_NAME + "("
+            + IMContract.IMTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + IMContract.IMTable.COLUMN_PROJECT_NAME + " TEXT,"
+            + IMContract.IMTable.COLUMN_UID + " TEXT,"
+            + IMContract.IMTable.COLUMN_UUID + " TEXT,"
+            + IMContract.IMTable.COLUMN_USERNAME + " TEXT,"
+            + IMContract.IMTable.COLUMN_SYSDATE + " TEXT,"
+            + IMContract.IMTable.COLUMN_ISTATUS + " TEXT,"
+            + IMContract.IMTable.COLUMN_ISTATUS96x + " TEXT,"
+            + IMContract.IMTable.COLUMN_ENDINGDATETIME + " TEXT,"
+            + IMContract.IMTable.COLUMN_GPS + " TEXT,"
+            + IMContract.IMTable.COLUMN_DEVICEID + " TEXT,"
+            + IMContract.IMTable.COLUMN_DEVICETAGID + " TEXT,"
+            + IMContract.IMTable.COLUMN_SYNCED + " TEXT,"
+            + IMContract.IMTable.COLUMN_SYNCED_DATE + " TEXT,"
+            + IMContract.IMTable.COLUMN_APPVERSION + " TEXT,"
+            + IMContract.IMTable.COLUMN_DCODE + " TEXT,"
+            + IMContract.IMTable.COLUMN_UCODE + " TEXT,"
+            + IMContract.IMTable.COLUMN_CLUSTER + " TEXT,"
+            + IMContract.IMTable.COLUMN_HHNO + " TEXT,"
+            + IMContract.IMTable.COLUMN_RESPONDENT_NAME + " TEXT,"
+            + IMContract.IMTable.COLUMN_CHILD_NAME + " TEXT,"
+            + IMContract.IMTable.COLUMN_SERIAL + " TEXT,"
+            + IMContract.IMTable.COLUMN_SIM + " TEXT"
             + " );")
 
     const val SQL_CREATE_USERS = ("CREATE TABLE " + Users.UsersTable.TABLE_NAME + "("
