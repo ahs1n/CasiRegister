@@ -38,7 +38,7 @@ public class Family extends BaseObservable {
     private String syncDate;
 
     // SECTION VARIABLES
-    private String sA;
+    private String scb;
 
     // FIELD VARIABLES
     public String cb01;
@@ -249,12 +249,12 @@ public class Family extends BaseObservable {
     }
 
 
-    public String getsA() {
-        return sA;
+    public String getScb() {
+        return scb;
     }
 
-    public Family setsA(String sA) {
-        this.sA = sA;
+    public Family setScb(String scb) {
+        this.scb = scb;
         return this;
     }
 
@@ -491,7 +491,7 @@ public class Family extends BaseObservable {
         this.synced = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_SYNCED);
         this.syncDate = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_SYNCED_DATE);
 
-        this.sA = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_SCB);
+        this.scb = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_SCB);
 
         return this;
 
@@ -521,7 +521,7 @@ public class Family extends BaseObservable {
         //For childCount
         //this.s01HH = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_S01HH));
 
-        sAHydrate(cursor.getString(cursor.getColumnIndex(FamilyContract.FamilyTable.COLUMN_SCB)));
+        sCBHydrate(cursor.getString(cursor.getColumnIndex(FamilyContract.FamilyTable.COLUMN_SCB)));
 
         return this;
     }
@@ -534,7 +534,7 @@ public class Family extends BaseObservable {
     }
 
 
-    public String sAtoString() {
+    public String sCBtoString() {
         JSONObject json = new JSONObject();
 
         try {
@@ -593,11 +593,11 @@ public class Family extends BaseObservable {
             //For ChildCount
             //json.put(ChildContract.ChildTable.COLUMN_S08SE, this.s08SE == null ? JSONObject.NULL : this.s08SE);
 
-            json.put(FamilyContract.FamilyTable.COLUMN_SCB, new JSONObject(sAtoString()));
+            json.put(FamilyContract.FamilyTable.COLUMN_SCB, new JSONObject(sCBtoString()));
 
 
-            if (this.sA != null && !this.sA.equals("")) {
-                json.put(FamilyContract.FamilyTable.COLUMN_SCB, new JSONObject(this.sA));
+            if (this.scb != null && !this.scb.equals("")) {
+                json.put(FamilyContract.FamilyTable.COLUMN_SCB, new JSONObject(this.scb));
             }
 
             return json;
@@ -608,7 +608,7 @@ public class Family extends BaseObservable {
     }
 
 
-    private void sAHydrate(String string) {
+    private void sCBHydrate(String string) {
 
         if (string != null) {
 
