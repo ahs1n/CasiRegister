@@ -76,25 +76,7 @@ public class Form extends BaseObservable {
     public String hh24;
     public String hh25;
     public String hh26;
-    public String cb01;
-    public String cb02;
-    public String cb03;
-    public String cb04dd;
-    public String cb04mm;
-    public String cb04yy;
-    public String cb0501;
-    public String cb0502;
-    public String cb06;
-    public String cb07;
-    public String cb08;
-    public String cb09;
-    public String cb10;
-    public String cb11;
-    public String cb12;
-    public String cb13;
-    public String cb14;
-    public String cb15;
-    public String cb16;
+
     public String cs01;
     public String cs02;
     public String cs03;
@@ -975,198 +957,6 @@ public class Form extends BaseObservable {
         this.hh26 = hh26;
         notifyPropertyChanged(BR.hh26);
     }
-
-
-    @Bindable
-    public String getCb01() {
-        return cb01;
-    }
-
-    public void setCb01(String cb01) {
-        this.cb01 = cb01;
-        notifyPropertyChanged(BR.cb01);
-    }
-
-    @Bindable
-    public String getCb02() {
-        return cb02;
-    }
-
-    public void setCb02(String cb02) {
-        this.cb02 = cb02;
-        notifyPropertyChanged(BR.cb02);
-    }
-
-    @Bindable
-    public String getCb03() {
-        return cb03;
-    }
-
-    public void setCb03(String cb03) {
-        this.cb03 = cb03;
-        notifyPropertyChanged(BR.cb03);
-    }
-
-    @Bindable
-    public String getCb04dd() {
-        return cb04dd;
-    }
-
-    public void setCb04dd(String cb04dd) {
-        this.cb04dd = cb04dd;
-        notifyPropertyChanged(BR.cb04dd);
-    }
-
-    @Bindable
-    public String getCb04mm() {
-        return cb04mm;
-    }
-
-    public void setCb04mm(String cb04mm) {
-        this.cb04mm = cb04mm;
-        notifyPropertyChanged(BR.cb04mm);
-    }
-
-    @Bindable
-    public String getCb04yy() {
-        return cb04yy;
-    }
-
-    public void setCb04yy(String cb04yy) {
-        this.cb04yy = cb04yy;
-        notifyPropertyChanged(BR.cb04yy);
-    }
-
-    @Bindable
-    public String getCb0501() {
-        return cb0501;
-    }
-
-    public void setCb0501(String cb0501) {
-        this.cb0501 = cb0501;
-        notifyPropertyChanged(BR.cb0501);
-    }
-
-    @Bindable
-    public String getCb0502() {
-        return cb0502;
-    }
-
-    public void setCb0502(String cb0502) {
-        this.cb0502 = cb0502;
-        notifyPropertyChanged(BR.cb0502);
-    }
-
-    @Bindable
-    public String getCb06() {
-        return cb06;
-    }
-
-    public void setCb06(String cb06) {
-        this.cb06 = cb06;
-        notifyPropertyChanged(BR.cb06);
-    }
-
-    @Bindable
-    public String getCb07() {
-        return cb07;
-    }
-
-    public void setCb07(String cb07) {
-        this.cb07 = cb07;
-        notifyPropertyChanged(BR.cb07);
-    }
-
-    @Bindable
-    public String getCb08() {
-        return cb08;
-    }
-
-    public void setCb08(String cb08) {
-        this.cb08 = cb08;
-        notifyPropertyChanged(BR.cb08);
-    }
-
-    @Bindable
-    public String getCb09() {
-        return cb09;
-    }
-
-    public void setCb09(String cb09) {
-        this.cb09 = cb09;
-        notifyPropertyChanged(BR.cb09);
-    }
-
-    @Bindable
-    public String getCb10() {
-        return cb10;
-    }
-
-    public void setCb10(String cb10) {
-        this.cb10 = cb10;
-        notifyPropertyChanged(BR.cb10);
-    }
-
-    @Bindable
-    public String getCb11() {
-        return cb11;
-    }
-
-    public void setCb11(String cb11) {
-        this.cb11 = cb11;
-        notifyPropertyChanged(BR.cb11);
-    }
-
-    @Bindable
-    public String getCb12() {
-        return cb12;
-    }
-
-    public void setCb12(String cb12) {
-        this.cb12 = cb12;
-        notifyPropertyChanged(BR.cb12);
-    }
-
-    @Bindable
-    public String getCb13() {
-        return cb13;
-    }
-
-    public void setCb13(String cb13) {
-        this.cb13 = cb13;
-        notifyPropertyChanged(BR.cb13);
-    }
-
-    @Bindable
-    public String getCb14() {
-        return cb14;
-    }
-
-    public void setCb14(String cb14) {
-        this.cb14 = cb14;
-        notifyPropertyChanged(BR.cb14);
-    }
-
-    @Bindable
-    public String getCb15() {
-        return cb15;
-    }
-
-    public void setCb15(String cb15) {
-        this.cb15 = cb15;
-        notifyPropertyChanged(BR.cb15);
-    }
-
-    @Bindable
-    public String getCb16() {
-        return cb16;
-    }
-
-    public void setCb16(String cb16) {
-        this.cb16 = cb16;
-        notifyPropertyChanged(BR.cb16);
-    }
-
 
     @Bindable
     public String getCs01() {
@@ -4671,7 +4461,6 @@ public class Form extends BaseObservable {
         //this.s01HH = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_S01HH));
 
         s01HHHydrate(cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_S01HH)));
-        s02CBHydrate(cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_S02CB)));
         s03CSHydrate(cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_S03CS)));
         s04IMHydrate(cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_S04IM)));
         s05PDHydrate(cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_S05PD)));
@@ -4727,39 +4516,6 @@ public class Form extends BaseObservable {
         } catch (JSONException e) {
             e.printStackTrace();
             return "\"error\":, \"" + e.getMessage() + "\"";
-        }
-        return json.toString();
-    }
-
-
-    public String s02CBtoString() {
-        JSONObject json = new JSONObject();
-
-        try {
-            json.put("cb01", cb01)
-                    .put("cb02", cb02)
-                    .put("cb03", cb03)
-                    .put("cb04dd", cb04dd)
-                    .put("cb04mm", cb04mm)
-                    .put("cb04yy", cb04yy)
-                    .put("cb0501", cb0501)
-                    .put("cb0502", cb0502)
-                    .put("cb06", cb06)
-                    .put("cb07", cb07)
-                    .put("cb08", cb08)
-                    .put("cb09", cb09)
-                    .put("cb10", cb10)
-                    .put("cb11", cb11)
-                    .put("cb12", cb12)
-                    .put("cb13", cb13)
-                    .put("cb14", cb14)
-                    .put("cb15", cb15)
-                    .put("cb16", cb16);
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return "\"error\":, \"" + e.getMessage() + "\"";
-
         }
         return json.toString();
     }
@@ -5214,11 +4970,7 @@ public class Form extends BaseObservable {
             json.put(FormsContract.FormsTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
             json.put(FormsContract.FormsTable.COLUMN_SYNCED_DATE, this.syncDate == null ? JSONObject.NULL : this.syncDate);
 
-            //For ChildCount
-            //json.put(FormsContract.FormsTable.COLUMN_S08SE, this.s08SE == null ? JSONObject.NULL : this.s08SE);
-
             json.put(FormsContract.FormsTable.COLUMN_S01HH, new JSONObject(s01HHtoString()));
-            json.put(FormsContract.FormsTable.COLUMN_S02CB, new JSONObject(s02CBtoString()));
             json.put(FormsContract.FormsTable.COLUMN_S03CS, new JSONObject(s03CStoString()));
             json.put(FormsContract.FormsTable.COLUMN_S04IM, new JSONObject(s04IMtoString()));
             json.put(FormsContract.FormsTable.COLUMN_S05PD, new JSONObject(s05PDtoString()));
@@ -5303,41 +5055,6 @@ public class Form extends BaseObservable {
                 this.hh24 = json.getString("hh24");
                 this.hh25 = json.getString("hh25");
                 this.hh26 = json.getString("hh26");
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-
-    private void s02CBHydrate(String string) {
-
-        if (string != null) {
-
-            try {
-                JSONObject json = null;
-                json = new JSONObject(string);
-
-                this.cb01 = json.getString("cb01");
-                this.cb02 = json.getString("cb02");
-                this.cb03 = json.getString("cb03");
-                this.cb04dd = json.getString("cb04dd");
-                this.cb04mm = json.getString("cb04mm");
-                this.cb04yy = json.getString("cb04yy");
-                this.cb0501 = json.getString("cb0501");
-                this.cb0502 = json.getString("cb0502");
-                this.cb06 = json.getString("cb06");
-                this.cb07 = json.getString("cb07");
-                this.cb08 = json.getString("cb08");
-                this.cb09 = json.getString("cb09");
-                this.cb10 = json.getString("cb10");
-                this.cb11 = json.getString("cb11");
-                this.cb12 = json.getString("cb12");
-                this.cb13 = json.getString("cb13");
-                this.cb14 = json.getString("cb14");
-                this.cb15 = json.getString("cb15");
-                this.cb16 = json.getString("cb16");
-
             } catch (JSONException e) {
                 e.printStackTrace();
             }
