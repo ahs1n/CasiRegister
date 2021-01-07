@@ -7,6 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.naunehal.R;
@@ -31,6 +32,17 @@ public class Section082SEActivity extends AppCompatActivity {
     }
 
     private void setupSkips() {
+
+        bi.se23.setOnCheckedChangeListener((radioGroup, i) -> {
+            bi.llse23.setVisibility(View.VISIBLE);
+            if (i == bi.se2302.getId()) {
+                Clear.clearAllFields(bi.llse23);
+                bi.llse23.setVisibility(View.GONE);
+            }
+
+        });
+
+
     }
 
 
