@@ -242,7 +242,9 @@
                         app:maxValue="2021"
                         app:minValue="2015"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 
@@ -778,8 +780,8 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/cb15"
                         android:inputType="number"
-
-
+                        app:maxValue="999999"
+                        app:minValue="1"
                         android:text="@={form.cb15}"
                         app:type="range" />
                 </LinearLayout>

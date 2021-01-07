@@ -24,7 +24,7 @@ public class FormsContract {
         public static final String COLUMN_DCODE = "districtCode";
         public static final String COLUMN_UCODE = "ucCode";
         public static final String COLUMN_CLUSTER = "clusterno";
-        public static final String COLUMN_HHNO = "hh09";
+        public static final String COLUMN_HHNO = "hhno";
         public static final String COLUMN_S01HH = "s01HH";
         public static final String COLUMN_S02CB = "s02CB";
         public static final String COLUMN_S03CS = "s03CS";

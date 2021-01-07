@@ -67,6 +67,7 @@
                             android:layout_alignTop="@id/qtxt_pd01"
                             android:layout_alignBottom="@id/qtxt_pd01"
                             android:text="@string/Q_pd01" />
+
                     </RelativeLayout>
 
                     <com.edittextpicker.aliazaz.EditTextPicker
@@ -80,8 +81,11 @@
                         app:maxValue="99"
                         app:minValue="1"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- pd02  Input   -->
             <androidx.cardview.widget.CardView
@@ -610,8 +614,8 @@
                             android:hint="@string/pd0701"
                             android:inputType="number"
                             android:tag="pd0701"
-
-
+                            app:maxValue="0"
+                            app:minValue="0"
                             android:text="@={form.pd0701x}"
                             android:visibility='@{pd0701.checked? View.VISIBLE : View.GONE}'
                             app:type="range" />
@@ -899,7 +903,9 @@
                         app:maxValue="29"
                         app:minValue="1"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- pd12  Radio   -->
@@ -1482,8 +1488,8 @@
                             android:hint="@string/pd1701"
                             android:inputType="number"
                             android:tag="pd1701"
-
-
+                            app:maxValue="0"
+                            app:minValue="0"
                             android:text="@={form.pd1701x}"
                             android:visibility='@{pd1701.checked? View.VISIBLE : View.GONE}'
                             app:type="range" />
@@ -1503,8 +1509,8 @@
                             android:hint="@string/pd1702"
                             android:inputType="number"
                             android:tag="pd1702"
-
-
+                            app:maxValue="0"
+                            app:minValue="0"
                             android:text="@={form.pd1702x}"
                             android:visibility='@{pd1702.checked? View.VISIBLE : View.GONE}'
                             app:type="range" />
@@ -1524,8 +1530,8 @@
                             android:hint="@string/pd1703"
                             android:inputType="number"
                             android:tag="pd1703"
-
-
+                            app:maxValue="0"
+                            app:minValue="0"
                             android:text="@={form.pd1703x}"
                             android:visibility='@{pd1703.checked? View.VISIBLE : View.GONE}'
                             app:type="range" />
@@ -1584,7 +1590,9 @@
                         app:maxValue="20"
                         app:minValue="1"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- pd19  Radio   -->
@@ -1819,8 +1827,8 @@
                             android:hint="@string/pd2101"
                             android:inputType="number"
                             android:tag="pd2101"
-
-
+                            app:maxValue="0"
+                            app:minValue="0"
                             android:text="@={form.pd2101x}"
                             android:visibility='@{pd2101.checked? View.VISIBLE : View.GONE}'
                             app:type="range" />
@@ -1840,8 +1848,8 @@
                             android:hint="@string/pd2102"
                             android:inputType="number"
                             android:tag="pd2102"
-
-
+                            app:maxValue="0"
+                            app:minValue="0"
                             android:text="@={form.pd2102x}"
                             android:visibility='@{pd2102.checked? View.VISIBLE : View.GONE}'
                             app:type="range" />
@@ -1861,8 +1869,8 @@
                             android:hint="@string/pd2103"
                             android:inputType="number"
                             android:tag="pd2103"
-
-
+                            app:maxValue="0"
+                            app:minValue="0"
                             android:text="@={form.pd2103x}"
                             android:visibility='@{pd2103.checked? View.VISIBLE : View.GONE}'
                             app:type="range" />
@@ -1921,8 +1929,13 @@
                         app:maxValue="20"
                         app:minValue="1"
                         app:type="range" />
+
                 </LinearLayout>
-            </androidx.cardview.widget.CardView><!--EndButton LinearLayout-->
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!--EndButton LinearLayout-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

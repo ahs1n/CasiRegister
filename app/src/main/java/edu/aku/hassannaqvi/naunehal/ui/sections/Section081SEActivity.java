@@ -12,13 +12,12 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
-import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection08seBinding;
-import edu.aku.hassannaqvi.naunehal.ui.EndingActivity;
+import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection081seBinding;
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
 
-public class Section08SEActivity extends AppCompatActivity {
+public class Section081SEActivity extends AppCompatActivity {
 
-    ActivitySection08seBinding bi;
+    ActivitySection081seBinding bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +25,7 @@ public class Section08SEActivity extends AppCompatActivity {
         // only in First Section
         //MainApp.form = new Form();
 
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_08se);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_081se);
         bi.setForm(MainApp.form);
         setupSkips();
     }
@@ -66,13 +65,13 @@ public class Section08SEActivity extends AppCompatActivity {
     }
 
 
-    public void BtnContinue() {
+    public void BtnContinue(View view) {
         if (!formValidation()) return;
 
         // SaveDraft(); //<== This function is no longer needed after DataBinding
         if (/*UpdateDB()*/ true) {
             finish();
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, Section082SEActivity.class));
         }
     }
 
@@ -82,8 +81,10 @@ public class Section08SEActivity extends AppCompatActivity {
     }
 
 
-    public void BtnEnd() {
+    public void BtnEnd(View view) {
         finish();
         startActivity(new Intent(this, MainActivity.class));
     }
+
+
 }

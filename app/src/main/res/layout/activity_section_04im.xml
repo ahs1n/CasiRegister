@@ -350,12 +350,15 @@
                                 android:layout_weight="1"
                                 android:hint="@string/im04yy"
                                 android:inputType="number"
-
-
+                                app:maxValue="0"
+                                app:minValue="0"
                                 android:text="@={form.im04yy}"
                                 app:type="range" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <!-- im05title1  Title   -->
@@ -1820,12 +1823,15 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/im08b"
                         android:inputType="number"
-
-
+                        app:maxValue="0"
+                        app:minValue="0"
                         android:text="@={form.im08b}"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- im09  Radio   -->
             <androidx.cardview.widget.CardView

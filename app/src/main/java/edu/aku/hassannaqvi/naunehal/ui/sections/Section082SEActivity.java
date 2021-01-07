@@ -3,9 +3,6 @@ package edu.aku.hassannaqvi.naunehal.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -13,40 +10,39 @@ import androidx.databinding.DataBindingUtil;
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
-import org.jetbrains.annotations.NotNull;
-
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
-import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection07cvBinding;
+import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection082seBinding;
+import edu.aku.hassannaqvi.naunehal.ui.EndingActivity;
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
 
-public class Section07CVActivity extends AppCompatActivity {
+public class Section082SEActivity extends AppCompatActivity {
 
-    ActivitySection07cvBinding bi;
+    ActivitySection082seBinding bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_07cv);
+        // only in First Section
+        //MainApp.form = new Form();
+
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_082se);
         bi.setForm(MainApp.form);
         setupSkips();
-
     }
-
 
     private void setupSkips() {
-        rgListener(bi.cv01, bi.cv0102, bi.llcv01);
-        rgListener(bi.cv11, bi.cv1102, bi.fldGrpCVcv12);
-        rgListener(bi.cv17, bi.cv1702, bi.fldGrpCVcv18);
-    }
 
+        bi.se23.setOnCheckedChangeListener((radioGroup, i) -> {
+            bi.llse23.setVisibility(View.VISIBLE);
+            if (i == bi.se2302.getId()) {
+                Clear.clearAllFields(bi.llse23);
+                bi.llse23.setVisibility(View.GONE);
+            }
 
-    private void rgListener(@NotNull RadioGroup rg, RadioButton rb, ViewGroup vg) {
-        rg.setOnCheckedChangeListener((radioGroup, i) -> {
-            Clear.clearAllFields(vg);
-            vg.setVisibility(View.VISIBLE);
-            if (i == rb.getId()) vg.setVisibility(View.GONE);
         });
+
+
     }
 
 
@@ -56,7 +52,7 @@ public class Section07CVActivity extends AppCompatActivity {
         // SaveDraft(); //<== This function is no longer needed after DataBinding
         if (/*UpdateDB()*/ true) {
             finish();
-            startActivity(new Intent(this, Section081SEActivity.class));
+            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
         }
     }
 
@@ -70,4 +66,6 @@ public class Section07CVActivity extends AppCompatActivity {
         finish();
         startActivity(new Intent(this, MainActivity.class));
     }
+
+
 }

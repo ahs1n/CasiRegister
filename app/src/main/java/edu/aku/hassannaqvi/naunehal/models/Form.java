@@ -1,8 +1,17 @@
 package edu.aku.hassannaqvi.naunehal.models;
 
+import android.database.Cursor;
+
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
+
+import com.google.gson.GsonBuilder;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import edu.aku.hassannaqvi.naunehal.BR;
+import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 
 public class Form extends BaseObservable {
@@ -12,6 +21,7 @@ public class Form extends BaseObservable {
     private String id;
     private String uid;
     private String userName;
+    private String sysDate;
     private String dcode;
     private String ucode;
     private String cluster;
@@ -19,7 +29,6 @@ public class Form extends BaseObservable {
     private String deviceId;
     private String deviceTag;
     private String appver;
-    private String sysDate;
     private String gps;
     private String endTime;
     private String iStatus;
@@ -67,63 +76,8 @@ public class Form extends BaseObservable {
     public String hh24;
     public String hh25;
     public String hh26;
-    public String cb01;
-    public String cb02;
-    public String cb03;
-    public String cb04dd;
-    public String cb04mm;
-    public String cb04yy;
-    public String cb0501;
-    public String cb0502;
-    public String cb06;
-    public String cb07;
-    public String cb08;
-    public String cb09;
-    public String cb10;
-    public String cb11;
-    public String cb12;
-    public String cb13;
-    public String cb14;
-    public String cb15;
-    public String cb16;
-    public String cs01;
-    public String cs02;
-    public String cs03;
-    public String cs04;
-    public String cs05;
-    public String cs06;
-    public String cs07;
-    public String cs07961x;
-    public String cs07962x;
-    public String cs08;
-    public String cs0801;
-    public String cs0802;
-    public String cs0803;
-    public String cs0804;
-    public String cs0805;
-    public String cs0806;
-    public String cs0807;
-    public String cs0809;
-    public String cs0810;
-    public String cs0896;
-    public String cs0896x;
-    public String cs09;
-    public String cs0996x;
-    public String cs10;
-    public String cs11;
-    public String cs12;
-    public String cs13;
-    public String cs14;
-    public String cs15;
-    public String cs1596x;
-    public String cs16;
-    public String cs17;
-    public String cs17961x;
-    public String cs17962x;
-    public String cs18;
-    public String cs1896x;
-    public String cs19;
-    public String cs1996x;
+
+    //Section IM
     public String im02;
     public String im01;
     public String im03;
@@ -211,6 +165,8 @@ public class Form extends BaseObservable {
     public String im24;
     public String im2496x;
     public String im25;
+
+    //Section PD
     public String pd01;
     public String pd02;
     public String pd03;
@@ -266,6 +222,8 @@ public class Form extends BaseObservable {
     public String pd2102x;
     public String pd2103x;
     public String pd22;
+
+    //Section PF
     public String bf01;
     public String bf02;
     public String bf03;
@@ -286,6 +244,8 @@ public class Form extends BaseObservable {
     public String bf11;
     public String bf12;
     public String bf13;
+
+    //Section CV
     public String cv01;
     public String cv02;
     public String cv03;
@@ -310,6 +270,8 @@ public class Form extends BaseObservable {
     public String cv1896x;
     public String cv19;
     public String cv1996x;
+
+    //Section SE
     public String se01;
     public String se0196x;
     public String se02;
@@ -428,30 +390,7 @@ public class Form extends BaseObservable {
     public String se38;
     public String se39;
     public String se40;
-    // APP VARIABLES
-    private String projectName = MainApp.PROJECT_NAME;
-    private String id;
-    private String uid;
-    private String userName;
-    private String deviceId;
-    private String deviceTag;
-    private String appver;
-    private String sysDate;
-    private String gps;
-    private String endTime;
-    private String iStatus;
-    private String iStatus96x;
-    private String synced;
-    private String syncDate;
-    // SECTION VARIABLES
-    private String sHH;
-    private String sCB;
-    private String sCS;
-    private String sIM;
-    private String sDD;
-    private String sBF;
-    private String sCV;
-    private String sSE;
+
 
     public Form() {
 
@@ -988,578 +927,6 @@ public class Form extends BaseObservable {
     public void setHh26(String hh26) {
         this.hh26 = hh26;
         notifyPropertyChanged(BR.hh26);
-    }
-
-
-    @Bindable
-    public String getCb01() {
-        return cb01;
-    }
-
-    public void setCb01(String cb01) {
-        this.cb01 = cb01;
-        notifyPropertyChanged(BR.cb01);
-    }
-
-    @Bindable
-    public String getCb02() {
-        return cb02;
-    }
-
-    public void setCb02(String cb02) {
-        this.cb02 = cb02;
-        notifyPropertyChanged(BR.cb02);
-    }
-
-    @Bindable
-    public String getCb03() {
-        return cb03;
-    }
-
-    public void setCb03(String cb03) {
-        this.cb03 = cb03;
-        notifyPropertyChanged(BR.cb03);
-    }
-
-    @Bindable
-    public String getCb04dd() {
-        return cb04dd;
-    }
-
-    public void setCb04dd(String cb04dd) {
-        this.cb04dd = cb04dd;
-        notifyPropertyChanged(BR.cb04dd);
-    }
-
-    @Bindable
-    public String getCb04mm() {
-        return cb04mm;
-    }
-
-    public void setCb04mm(String cb04mm) {
-        this.cb04mm = cb04mm;
-        notifyPropertyChanged(BR.cb04mm);
-    }
-
-    @Bindable
-    public String getCb04yy() {
-        return cb04yy;
-    }
-
-    public void setCb04yy(String cb04yy) {
-        this.cb04yy = cb04yy;
-        notifyPropertyChanged(BR.cb04yy);
-    }
-
-    @Bindable
-    public String getCb0501() {
-        return cb0501;
-    }
-
-    public void setCb0501(String cb0501) {
-        this.cb0501 = cb0501;
-        notifyPropertyChanged(BR.cb0501);
-    }
-
-    @Bindable
-    public String getCb0502() {
-        return cb0502;
-    }
-
-    public void setCb0502(String cb0502) {
-        this.cb0502 = cb0502;
-        notifyPropertyChanged(BR.cb0502);
-    }
-
-    @Bindable
-    public String getCb06() {
-        return cb06;
-    }
-
-    public void setCb06(String cb06) {
-        this.cb06 = cb06;
-        notifyPropertyChanged(BR.cb06);
-    }
-
-    @Bindable
-    public String getCb07() {
-        return cb07;
-    }
-
-    public void setCb07(String cb07) {
-        this.cb07 = cb07;
-        notifyPropertyChanged(BR.cb07);
-    }
-
-    @Bindable
-    public String getCb08() {
-        return cb08;
-    }
-
-    public void setCb08(String cb08) {
-        this.cb08 = cb08;
-        notifyPropertyChanged(BR.cb08);
-    }
-
-    @Bindable
-    public String getCb09() {
-        return cb09;
-    }
-
-    public void setCb09(String cb09) {
-        this.cb09 = cb09;
-        notifyPropertyChanged(BR.cb09);
-    }
-
-    @Bindable
-    public String getCb10() {
-        return cb10;
-    }
-
-    public void setCb10(String cb10) {
-        this.cb10 = cb10;
-        notifyPropertyChanged(BR.cb10);
-    }
-
-    @Bindable
-    public String getCb11() {
-        return cb11;
-    }
-
-    public void setCb11(String cb11) {
-        this.cb11 = cb11;
-        notifyPropertyChanged(BR.cb11);
-    }
-
-    @Bindable
-    public String getCb12() {
-        return cb12;
-    }
-
-    public void setCb12(String cb12) {
-        this.cb12 = cb12;
-        notifyPropertyChanged(BR.cb12);
-    }
-
-    @Bindable
-    public String getCb13() {
-        return cb13;
-    }
-
-    public void setCb13(String cb13) {
-        this.cb13 = cb13;
-        notifyPropertyChanged(BR.cb13);
-    }
-
-    @Bindable
-    public String getCb14() {
-        return cb14;
-    }
-
-    public void setCb14(String cb14) {
-        this.cb14 = cb14;
-        notifyPropertyChanged(BR.cb14);
-    }
-
-    @Bindable
-    public String getCb15() {
-        return cb15;
-    }
-
-    public void setCb15(String cb15) {
-        this.cb15 = cb15;
-        notifyPropertyChanged(BR.cb15);
-    }
-
-    @Bindable
-    public String getCb16() {
-        return cb16;
-    }
-
-    public void setCb16(String cb16) {
-        this.cb16 = cb16;
-        notifyPropertyChanged(BR.cb16);
-    }
-
-
-    @Bindable
-    public String getCs01() {
-        return cs01;
-    }
-
-    public void setCs01(String cs01) {
-        this.cs01 = cs01;
-        notifyPropertyChanged(BR.cs01);
-    }
-
-    @Bindable
-    public String getCs02() {
-        return cs02;
-    }
-
-    public void setCs02(String cs02) {
-        this.cs02 = cs02;
-        notifyPropertyChanged(BR.cs02);
-    }
-
-    @Bindable
-    public String getCs03() {
-        return cs03;
-    }
-
-    public void setCs03(String cs03) {
-        this.cs03 = cs03;
-        notifyPropertyChanged(BR.cs03);
-    }
-
-    @Bindable
-    public String getCs04() {
-        return cs04;
-    }
-
-    public void setCs04(String cs04) {
-        this.cs04 = cs04;
-        notifyPropertyChanged(BR.cs04);
-    }
-
-    @Bindable
-    public String getCs05() {
-        return cs05;
-    }
-
-    public void setCs05(String cs05) {
-        this.cs05 = cs05;
-        notifyPropertyChanged(BR.cs05);
-    }
-
-    @Bindable
-    public String getCs06() {
-        return cs06;
-    }
-
-    public void setCs06(String cs06) {
-        this.cs06 = cs06;
-        notifyPropertyChanged(BR.cs06);
-    }
-
-    @Bindable
-    public String getCs07() {
-        return cs07;
-    }
-
-    public void setCs07(String cs07) {
-        this.cs07 = cs07;
-        notifyPropertyChanged(BR.cs07);
-    }
-
-    @Bindable
-    public String getCs07961x() {
-        return cs07961x;
-    }
-
-    public void setCs07961x(String cs07961x) {
-        this.cs07961x = cs07961x;
-        notifyPropertyChanged(BR.cs07961x);
-    }
-
-    @Bindable
-    public String getCs07962x() {
-        return cs07962x;
-    }
-
-    public void setCs07962x(String cs07962x) {
-        this.cs07962x = cs07962x;
-        notifyPropertyChanged(BR.cs07962x);
-    }
-
-    @Bindable
-    public String getCs08() {
-        return cs08;
-    }
-
-    public void setCs08(String cs08) {
-        this.cs08 = cs08;
-        notifyPropertyChanged(BR.cs08);
-    }
-
-    @Bindable
-    public String getCs0801() {
-        return cs0801;
-    }
-
-    public void setCs0801(String cs0801) {
-        this.cs0801 = cs0801;
-        notifyPropertyChanged(BR.cs0801);
-    }
-
-    @Bindable
-    public String getCs0802() {
-        return cs0802;
-    }
-
-    public void setCs0802(String cs0802) {
-        this.cs0802 = cs0802;
-        notifyPropertyChanged(BR.cs0802);
-    }
-
-    @Bindable
-    public String getCs0803() {
-        return cs0803;
-    }
-
-    public void setCs0803(String cs0803) {
-        this.cs0803 = cs0803;
-        notifyPropertyChanged(BR.cs0803);
-    }
-
-    @Bindable
-    public String getCs0804() {
-        return cs0804;
-    }
-
-    public void setCs0804(String cs0804) {
-        this.cs0804 = cs0804;
-        notifyPropertyChanged(BR.cs0804);
-    }
-
-    @Bindable
-    public String getCs0805() {
-        return cs0805;
-    }
-
-    public void setCs0805(String cs0805) {
-        this.cs0805 = cs0805;
-        notifyPropertyChanged(BR.cs0805);
-    }
-
-    @Bindable
-    public String getCs0806() {
-        return cs0806;
-    }
-
-    public void setCs0806(String cs0806) {
-        this.cs0806 = cs0806;
-        notifyPropertyChanged(BR.cs0806);
-    }
-
-    @Bindable
-    public String getCs0807() {
-        return cs0807;
-    }
-
-    public void setCs0807(String cs0807) {
-        this.cs0807 = cs0807;
-        notifyPropertyChanged(BR.cs0807);
-    }
-
-    @Bindable
-    public String getCs0809() {
-        return cs0809;
-    }
-
-    public void setCs0809(String cs0809) {
-        this.cs0809 = cs0809;
-        notifyPropertyChanged(BR.cs0809);
-    }
-
-    @Bindable
-    public String getCs0810() {
-        return cs0810;
-    }
-
-    public void setCs0810(String cs0810) {
-        this.cs0810 = cs0810;
-        notifyPropertyChanged(BR.cs0810);
-    }
-
-    @Bindable
-    public String getCs0896() {
-        return cs0896;
-    }
-
-    public void setCs0896(String cs0896) {
-        this.cs0896 = cs0896;
-        notifyPropertyChanged(BR.cs0896);
-    }
-
-    @Bindable
-    public String getCs0896x() {
-        return cs0896x;
-    }
-
-    public void setCs0896x(String cs0896x) {
-        this.cs0896x = cs0896x;
-        notifyPropertyChanged(BR.cs0896x);
-    }
-
-    @Bindable
-    public String getCs09() {
-        return cs09;
-    }
-
-    public void setCs09(String cs09) {
-        this.cs09 = cs09;
-        notifyPropertyChanged(BR.cs09);
-    }
-
-    @Bindable
-    public String getCs0996x() {
-        return cs0996x;
-    }
-
-    public void setCs0996x(String cs0996x) {
-        this.cs0996x = cs0996x;
-        notifyPropertyChanged(BR.cs0996x);
-    }
-
-    @Bindable
-    public String getCs10() {
-        return cs10;
-    }
-
-    public void setCs10(String cs10) {
-        this.cs10 = cs10;
-        notifyPropertyChanged(BR.cs10);
-    }
-
-    @Bindable
-    public String getCs11() {
-        return cs11;
-    }
-
-    public void setCs11(String cs11) {
-        this.cs11 = cs11;
-        notifyPropertyChanged(BR.cs11);
-    }
-
-    @Bindable
-    public String getCs12() {
-        return cs12;
-    }
-
-    public void setCs12(String cs12) {
-        this.cs12 = cs12;
-        notifyPropertyChanged(BR.cs12);
-    }
-
-    @Bindable
-    public String getCs13() {
-        return cs13;
-    }
-
-    public void setCs13(String cs13) {
-        this.cs13 = cs13;
-        notifyPropertyChanged(BR.cs13);
-    }
-
-    @Bindable
-    public String getCs14() {
-        return cs14;
-    }
-
-    public void setCs14(String cs14) {
-        this.cs14 = cs14;
-        notifyPropertyChanged(BR.cs14);
-    }
-
-    @Bindable
-    public String getCs15() {
-        return cs15;
-    }
-
-    public void setCs15(String cs15) {
-        this.cs15 = cs15;
-        notifyPropertyChanged(BR.cs15);
-    }
-
-    @Bindable
-    public String getCs1596x() {
-        return cs1596x;
-    }
-
-    public void setCs1596x(String cs1596x) {
-        this.cs1596x = cs1596x;
-        notifyPropertyChanged(BR.cs1596x);
-    }
-
-    @Bindable
-    public String getCs16() {
-        return cs16;
-    }
-
-    public void setCs16(String cs16) {
-        this.cs16 = cs16;
-        notifyPropertyChanged(BR.cs16);
-    }
-
-    @Bindable
-    public String getCs17() {
-        return cs17;
-    }
-
-    public void setCs17(String cs17) {
-        this.cs17 = cs17;
-        notifyPropertyChanged(BR.cs17);
-    }
-
-    @Bindable
-    public String getCs17961x() {
-        return cs17961x;
-    }
-
-    public void setCs17961x(String cs17961x) {
-        this.cs17961x = cs17961x;
-        notifyPropertyChanged(BR.cs17961x);
-    }
-
-    @Bindable
-    public String getCs17962x() {
-        return cs17962x;
-    }
-
-    public void setCs17962x(String cs17962x) {
-        this.cs17962x = cs17962x;
-        notifyPropertyChanged(BR.cs17962x);
-    }
-
-    @Bindable
-    public String getCs18() {
-        return cs18;
-    }
-
-    public void setCs18(String cs18) {
-        this.cs18 = cs18;
-        notifyPropertyChanged(BR.cs18);
-    }
-
-    @Bindable
-    public String getCs1896x() {
-        return cs1896x;
-    }
-
-    public void setCs1896x(String cs1896x) {
-        this.cs1896x = cs1896x;
-        notifyPropertyChanged(BR.cs1896x);
-    }
-
-    @Bindable
-    public String getCs19() {
-        return cs19;
-    }
-
-    public void setCs19(String cs19) {
-        this.cs19 = cs19;
-        notifyPropertyChanged(BR.cs19);
-    }
-
-    @Bindable
-    public String getCs1996x() {
-        return cs1996x;
-    }
-
-    public void setCs1996x(String cs1996x) {
-        this.cs1996x = cs1996x;
-        notifyPropertyChanged(BR.cs1996x);
     }
 
 
@@ -4626,4 +3993,993 @@ public class Form extends BaseObservable {
         this.iStatus96x = iStatus96x;
         notifyPropertyChanged(BR.iStatus96x);
     }
+
+
+    public Form Sync(JSONObject jsonObject) throws JSONException {
+        this.id = jsonObject.getString(FormsContract.FormsTable.COLUMN_ID);
+        this.uid = jsonObject.getString(FormsContract.FormsTable.COLUMN_UID);
+        this.userName = jsonObject.getString(FormsContract.FormsTable.COLUMN_USERNAME);
+        this.sysDate = jsonObject.getString(FormsContract.FormsTable.COLUMN_SYSDATE);
+        this.dcode = jsonObject.getString(FormsContract.FormsTable.COLUMN_DCODE);
+        this.ucode = jsonObject.getString(FormsContract.FormsTable.COLUMN_UCODE);
+        this.cluster = jsonObject.getString(FormsContract.FormsTable.COLUMN_CLUSTER);
+        this.hhno = jsonObject.getString(FormsContract.FormsTable.COLUMN_HHNO);
+        this.deviceId = jsonObject.getString(FormsContract.FormsTable.COLUMN_DEVICEID);
+        this.deviceTag = jsonObject.getString(FormsContract.FormsTable.COLUMN_DEVICETAGID);
+        this.appver = jsonObject.getString(FormsContract.FormsTable.COLUMN_APPVERSION);
+        this.gps = jsonObject.getString(FormsContract.FormsTable.COLUMN_GPS);
+        this.endTime = jsonObject.getString(FormsContract.FormsTable.COLUMN_ENDINGDATETIME);
+        this.iStatus = jsonObject.getString(FormsContract.FormsTable.COLUMN_ISTATUS);
+        this.iStatus96x = jsonObject.getString(FormsContract.FormsTable.COLUMN_ISTATUS96x);
+        this.iStatus96x = jsonObject.getString(FormsContract.FormsTable.COLUMN_ISTATUS96x);
+        this.synced = jsonObject.getString(FormsContract.FormsTable.COLUMN_SYNCED);
+        this.syncDate = jsonObject.getString(FormsContract.FormsTable.COLUMN_SYNCED_DATE);
+
+        this.s01HH = jsonObject.getString(FormsContract.FormsTable.COLUMN_S01HH);
+        this.s02CB = jsonObject.getString(FormsContract.FormsTable.COLUMN_S02CB);
+        this.s03CS = jsonObject.getString(FormsContract.FormsTable.COLUMN_S03CS);
+        this.s04IM = jsonObject.getString(FormsContract.FormsTable.COLUMN_S04IM);
+        this.s05PD = jsonObject.getString(FormsContract.FormsTable.COLUMN_S05PD);
+        this.s06BF = jsonObject.getString(FormsContract.FormsTable.COLUMN_S06BF);
+        this.s07CV = jsonObject.getString(FormsContract.FormsTable.COLUMN_S07CV);
+        this.s08SE = jsonObject.getString(FormsContract.FormsTable.COLUMN_S08SE);
+
+        return this;
+
+    }
+
+
+    public Form Hydrate(Cursor cursor) {
+        this.id = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_UID));
+        this.userName = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_SYSDATE));
+        this.dcode = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_DCODE));
+        this.ucode = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_UCODE));
+        this.cluster = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_CLUSTER));
+        this.hhno = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_HHNO));
+        this.deviceId = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_APPVERSION));
+        this.gps = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_GPS));
+        this.endTime = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_ENDINGDATETIME));
+        this.iStatus = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_ISTATUS));
+        this.iStatus96x = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_ISTATUS96x));
+        this.synced = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_SYNCED_DATE));
+
+        //For childCount
+        //this.s01HH = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_S01HH));
+
+        s01HHHydrate(cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_S01HH)));
+        s04IMHydrate(cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_S04IM)));
+        s05PDHydrate(cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_S05PD)));
+        s06BFHydrate(cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_S06BF)));
+        s07CVHydrate(cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_S07CV)));
+        s08SEHydrate(cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_S08SE)));
+
+        return this;
+    }
+
+
+    //TODO: Try this instead of toJSONObject
+    @Override
+    public String toString() {
+        return new GsonBuilder().create().toJson(this, Form.class);
+    }
+
+
+    public String s01HHtoString() {
+        JSONObject json = new JSONObject();
+
+        try {
+            json.put("hh01", hh01)
+                    .put("hh01", hh01)
+                    .put("hh0201", hh0201)
+                    .put("hh0202", hh0202)
+                    .put("hh03", hh03)
+                    .put("hh04", hh04)
+                    .put("hh05", hh05)
+                    .put("hh06", hh06)
+                    .put("hh07", hh07)
+                    .put("hh08", hh08)
+                    .put("hh09", hh09)
+                    .put("hh10", hh10)
+                    .put("hh11", hh11)
+                    .put("hh12", hh12)
+                    .put("hh13", hh13)
+                    .put("hh14", hh14)
+                    .put("hh15", hh15)
+                    .put("hh16", hh16)
+                    .put("hh17", hh17)
+                    .put("hh1796x", hh1796x)
+                    .put("hh18", hh18)
+                    .put("hh19", hh19)
+                    .put("hh20", hh20)
+                    .put("hh2096x", hh2096x)
+                    .put("hh21", hh21)
+                    .put("hh22", hh22)
+                    .put("hh23", hh23)
+                    .put("hh24", hh24)
+                    .put("hh25", hh25)
+                    .put("hh26", hh26);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return "\"error\":, \"" + e.getMessage() + "\"";
+        }
+        return json.toString();
+    }
+
+
+    public String s04IMtoString() {
+        JSONObject json = new JSONObject();
+
+        try {
+            json.put("im02", im02)
+                    .put("im01", im01)
+                    .put("im03", im03)
+                    .put("im04dd", im04dd)
+                    .put("im04mm", im04mm)
+                    .put("im04yy", im04yy)
+                    .put("im0501dd", im0501dd)
+                    .put("im0501mm", im0501mm)
+                    .put("im0501yy", im0501yy)
+                    .put("im0502dd", im0502dd)
+                    .put("im0502mm", im0502mm)
+                    .put("im0502yy", im0502yy)
+                    .put("im0503dd", im0503dd)
+                    .put("im0503mm", im0503mm)
+                    .put("im0503yy", im0503yy)
+                    .put("im0504dd", im0504dd)
+                    .put("im0504mm", im0504mm)
+                    .put("im0504yy", im0504yy)
+                    .put("im0505dd", im0505dd)
+                    .put("im0505mm", im0505mm)
+                    .put("im0505yy", im0505yy)
+                    .put("im0506dd", im0506dd)
+                    .put("im0506mm", im0506mm)
+                    .put("im0506yy", im0506yy)
+                    .put("im0507dd", im0507dd)
+                    .put("im0507mm", im0507mm)
+                    .put("im0507yy", im0507yy)
+                    .put("im0508dd", im0508dd)
+                    .put("im0508mm", im0508mm)
+                    .put("im0508yy", im0508yy)
+                    .put("im0509dd", im0509dd)
+                    .put("im0509mm", im0509mm)
+                    .put("im0509yy", im0509yy)
+                    .put("im0510dd", im0510dd)
+                    .put("im0510mm", im0510mm)
+                    .put("im0510yy", im0510yy)
+                    .put("im0511dd", im0511dd)
+                    .put("im0511mm", im0511mm)
+                    .put("im0511yy", im0511yy)
+                    .put("im0512dd", im0512dd)
+                    .put("im0512mm", im0512mm)
+                    .put("im0512yy", im0512yy)
+                    .put("im0513dd", im0513dd)
+                    .put("im0513mm", im0513mm)
+                    .put("im0513yy", im0513yy)
+                    .put("im0514dd", im0514dd)
+                    .put("im0514mm", im0514mm)
+                    .put("im0514yy", im0514yy)
+                    .put("im0515dd", im0515dd)
+                    .put("im0515mm", im0515mm)
+                    .put("im0515yy", im0515yy)
+                    .put("im0516dd", im0516dd)
+                    .put("im0516mm", im0516mm)
+                    .put("im0516yy", im0516yy)
+                    .put("im07", im07)
+                    .put("im08", im08)
+                    .put("im08a", im08a)
+                    .put("im08b", im08b)
+                    .put("im09", im09)
+                    .put("im10", im10)
+                    .put("im11", im11)
+                    .put("im12", im12)
+                    .put("im1201x", im1201x)
+                    .put("im12a", im12a)
+                    .put("im12a1x", im12a1x)
+                    .put("im13", im13)
+                    .put("im14", im14)
+                    .put("im15", im15)
+                    .put("im1501", im1501)
+                    .put("im16", im16)
+                    .put("im17", im17)
+                    .put("im1701", im1701)
+                    .put("im18", im18)
+                    .put("im19", im19)
+                    .put("im1901x", im1901x)
+                    .put("im20", im20)
+                    .put("im21", im21)
+                    .put("im22", im22)
+                    .put("im2201", im2201)
+                    .put("im23", im23)
+                    .put("im2306x", im2306x)
+                    .put("im23a", im23a)
+                    .put("im23b1", im23b1)
+                    .put("im23b2", im23b2)
+                    .put("im24", im24)
+                    .put("im2496x", im2496x)
+                    .put("im25", im25);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return "\"error\":, \"" + e.getMessage() + "\"";
+
+        }
+        return json.toString();
+    }
+
+
+    public String s05PDtoString() {
+        JSONObject json = new JSONObject();
+
+        try {
+            json.put("pd01", pd01)
+                    .put("pd02", pd02)
+                    .put("pd03", pd03)
+                    .put("pd04", pd04)
+                    .put("pd05", pd05)
+                    .put("pd0596x", pd0596x)
+                    .put("pd06", pd06)
+                    .put("pd06961x", pd06961x)
+                    .put("pd06962x", pd06962x)
+                    .put("pd07", pd07)
+                    .put("pd0701x", pd0701x)
+                    .put("pd08", pd08)
+                    .put("pd09", pd09)
+                    .put("pd10", pd10)
+                    .put("pd1101", pd1101)
+                    .put("pd1102", pd1102)
+                    .put("pd12", pd12)
+                    .put("pd1296x", pd1296x)
+                    .put("pd13", pd13)
+                    .put("pd13961x", pd13961x)
+                    .put("pd13962x", pd13962x)
+                    .put("pd14", pd14)
+                    .put("pd1496x", pd1496x)
+                    .put("pd15", pd15)
+                    .put("pd16", pd16)
+                    .put("pd1601", pd1601)
+                    .put("pd1602", pd1602)
+                    .put("pd1603", pd1603)
+                    .put("pd1604", pd1604)
+                    .put("pd1605", pd1605)
+                    .put("pd1606", pd1606)
+                    .put("pd1607", pd1607)
+                    .put("pd1696", pd1696)
+                    .put("pd1696x", pd1696x)
+                    .put("pd17", pd17)
+                    .put("pd1701x", pd1701x)
+                    .put("pd1702x", pd1702x)
+                    .put("pd1703x", pd1703x)
+                    .put("pd18", pd18)
+                    .put("pd19", pd19)
+                    .put("pd20", pd20)
+                    .put("pd2001", pd2001)
+                    .put("pd2002", pd2002)
+                    .put("pd2003", pd2003)
+                    .put("pd2004", pd2004)
+                    .put("pd2005", pd2005)
+                    .put("pd2006", pd2006)
+                    .put("pd2007", pd2007)
+                    .put("pd2096", pd2096)
+                    .put("pd2096x", pd2096x)
+                    .put("pd21", pd21)
+                    .put("pd2101x", pd2101x)
+                    .put("pd2102x", pd2102x)
+                    .put("pd2103x", pd2103x)
+                    .put("pd22", pd22);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return "\"error\":, \"" + e.getMessage() + "\"";
+
+        }
+        return json.toString();
+    }
+
+
+    public String s06BFtoString() {
+        JSONObject json = new JSONObject();
+
+        try {
+            json.put("bf01", bf01)
+                    .put("bf02", bf02)
+                    .put("bf03", bf03)
+                    .put("bf3y", bf3y)
+                    .put("bf03m", bf03m)
+                    .put("bf3d", bf3d)
+                    .put("bf04", bf04)
+                    .put("bf05", bf05)
+                    .put("bf0502x", bf0502x)
+                    .put("bf0503x", bf0503x)
+                    .put("bf06", bf06)
+                    .put("bf07", bf07)
+                    .put("bf0796x", bf0796x)
+                    .put("bf08", bf08)
+                    .put("bf09", bf09)
+                    .put("bf0996x", bf0996x)
+                    .put("bf10", bf10)
+                    .put("bf11", bf11)
+                    .put("bf12", bf12)
+                    .put("bf13", bf13);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return "\"error\":, \"" + e.getMessage() + "\"";
+
+        }
+        return json.toString();
+    }
+
+
+    public String s07CVtoString() {
+        JSONObject json = new JSONObject();
+
+        try {
+            json.put("cv01", cv01)
+                    .put("cv02", cv02)
+                    .put("cv03", cv03)
+                    .put("cv04", cv04)
+                    .put("cv05", cv05)
+                    .put("cv0596x", cv0596x)
+                    .put("cv06", cv06)
+                    .put("cv07", cv07)
+                    .put("cv08", cv08)
+                    .put("cv09", cv09)
+                    .put("cv10", cv10)
+                    .put("cv11", cv11)
+                    .put("cv12", cv12)
+                    .put("cv1296x", cv1296x)
+                    .put("cv13", cv13)
+                    .put("cv14", cv14)
+                    .put("cv15", cv15)
+                    .put("cv16", cv16)
+                    .put("cv1696x", cv1696x)
+                    .put("cv17", cv17)
+                    .put("cv18", cv18)
+                    .put("cv1896x", cv1896x)
+                    .put("cv19", cv19)
+                    .put("cv1996x", cv1996x);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return "\"error\":, \"" + e.getMessage() + "\"";
+
+        }
+        return json.toString();
+    }
+
+
+    public String s08SEtoString() {
+        JSONObject json = new JSONObject();
+
+        try {
+            json.put("se01", se01)
+                    .put("se0196x", se0196x)
+                    .put("se02", se02)
+                    .put("se0296x", se0296x)
+                    .put("se03", se03)
+                    .put("se0396x", se0396x)
+                    .put("se04", se04)
+                    .put("se0496x", se0496x)
+                    .put("se05", se05)
+                    .put("se0596x", se0596x)
+                    .put("se06a", se06a)
+                    .put("se07a", se07a)
+                    .put("se08", se08)
+                    .put("se0896x", se0896x)
+                    .put("se09", se09)
+                    .put("se10", se10)
+                    .put("se1099x", se1099x)
+                    .put("se11", se11)
+                    .put("se1196x", se1196x)
+                    .put("se12", se12)
+                    .put("se1296x", se1296x)
+                    .put("se13", se13)
+                    .put("se14", se14)
+                    .put("se15", se15)
+                    .put("se16", se16)
+                    .put("se17", se17)
+                    .put("se1701", se1701)
+                    .put("se1702", se1702)
+                    .put("se1703", se1703)
+                    .put("se1704", se1704)
+                    .put("se1705", se1705)
+                    .put("se1801", se1801)
+                    .put("se1802", se1802)
+                    .put("se1803", se1803)
+                    .put("se1804", se1804)
+                    .put("se1805", se1805)
+                    .put("se1896", se1896)
+                    .put("se189601x", se189601x)
+                    .put("se19", se19)
+                    .put("se1996x", se1996x)
+                    .put("se20", se20)
+                    .put("se2001", se2001)
+                    .put("se2002", se2002)
+                    .put("se2003", se2003)
+                    .put("se2004", se2004)
+                    .put("se2005", se2005)
+                    .put("se2096", se2096)
+                    .put("se2096x", se2096x)
+                    .put("se21", se21)
+                    .put("se2101", se2101)
+                    .put("se2102", se2102)
+                    .put("se2103", se2103)
+                    .put("se2104", se2104)
+                    .put("se2105", se2105)
+                    .put("se2196", se2196)
+                    .put("se2196x", se2196x)
+                    .put("se2201", se2201)
+                    .put("se2202", se2202)
+                    .put("se2203", se2203)
+                    .put("se2204", se2204)
+                    .put("se2205", se2205)
+                    .put("se2206", se2206)
+                    .put("se2207", se2207)
+                    .put("se2208", se2208)
+                    .put("se2209", se2209)
+                    .put("se2210", se2210)
+                    .put("se2211", se2211)
+                    .put("se2212", se2212)
+                    .put("se2213", se2213)
+                    .put("se2214", se2214)
+                    .put("se2215", se2215)
+                    .put("se2216", se2216)
+                    .put("se2217", se2217)
+                    .put("se2218", se2218)
+                    .put("se23", se23)
+                    .put("se24", se24)
+                    .put("se25", se25)
+                    .put("se26", se26)
+                    .put("se27", se27)
+                    .put("se2701", se2701)
+                    .put("se2702", se2702)
+                    .put("se2703", se2703)
+                    .put("se2704", se2704)
+                    .put("se28", se28)
+                    .put("se2801", se2801)
+                    .put("se2802", se2802)
+                    .put("se2803", se2803)
+                    .put("se29", se29)
+                    .put("se30", se30)
+                    .put("se3001", se3001)
+                    .put("se3002", se3002)
+                    .put("se3003", se3003)
+                    .put("se3096", se3096)
+                    .put("se3096x", se3096x)
+                    .put("se31", se31)
+                    .put("se3196x", se3196x)
+                    .put("se32", se32)
+                    .put("se3302", se3302)
+                    .put("se3301", se3301)
+                    .put("se3401", se3401)
+                    .put("se3402", se3402)
+                    .put("se35", se35)
+                    .put("se36", se36)
+                    .put("se37", se37)
+                    .put("se3701", se3701)
+                    .put("se3702", se3702)
+                    .put("se3703", se3703)
+                    .put("se3704", se3704)
+                    .put("se3705", se3705)
+                    .put("se3706", se3706)
+                    .put("se3707", se3707)
+                    .put("se3708", se3708)
+                    .put("se3709", se3709)
+                    .put("se3796", se3796)
+                    .put("se3796x", se3796x)
+                    .put("se38", se38)
+                    .put("se39", se39)
+                    .put("se40", se40);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return "\"error\":, \"" + e.getMessage() + "\"";
+
+        }
+        return json.toString();
+    }
+
+
+    public JSONObject toJSONObject() {
+
+        JSONObject json = new JSONObject();
+
+        try {
+            json.put(FormsContract.FormsTable.COLUMN_ID, this.id == null ? JSONObject.NULL : this.id);
+            json.put(FormsContract.FormsTable.COLUMN_UID, this.uid == null ? JSONObject.NULL : this.uid);
+            json.put(FormsContract.FormsTable.COLUMN_USERNAME, this.userName == null ? JSONObject.NULL : this.userName);
+            json.put(FormsContract.FormsTable.COLUMN_SYSDATE, this.sysDate == null ? JSONObject.NULL : this.sysDate);
+            json.put(FormsContract.FormsTable.COLUMN_DCODE, this.dcode == null ? JSONObject.NULL : this.dcode);
+            json.put(FormsContract.FormsTable.COLUMN_UCODE, this.ucode == null ? JSONObject.NULL : this.ucode);
+            json.put(FormsContract.FormsTable.COLUMN_CLUSTER, this.cluster == null ? JSONObject.NULL : this.cluster);
+            json.put(FormsContract.FormsTable.COLUMN_HHNO, this.hhno == null ? JSONObject.NULL : this.hhno);
+            json.put(FormsContract.FormsTable.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
+            json.put(FormsContract.FormsTable.COLUMN_DEVICETAGID, this.deviceTag == null ? JSONObject.NULL : this.deviceTag);
+            json.put(FormsContract.FormsTable.COLUMN_APPVERSION, this.appver == null ? JSONObject.NULL : this.appver);
+            json.put(FormsContract.FormsTable.COLUMN_GPS, this.gps == null ? JSONObject.NULL : this.gps);
+            json.put(FormsContract.FormsTable.COLUMN_ENDINGDATETIME, this.endTime == null ? JSONObject.NULL : this.endTime);
+            json.put(FormsContract.FormsTable.COLUMN_ISTATUS, this.iStatus == null ? JSONObject.NULL : this.iStatus);
+            json.put(FormsContract.FormsTable.COLUMN_ISTATUS96x, this.iStatus96x == null ? JSONObject.NULL : this.iStatus96x);
+            json.put(FormsContract.FormsTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
+            json.put(FormsContract.FormsTable.COLUMN_SYNCED_DATE, this.syncDate == null ? JSONObject.NULL : this.syncDate);
+
+            json.put(FormsContract.FormsTable.COLUMN_S01HH, new JSONObject(s01HHtoString()));
+            json.put(FormsContract.FormsTable.COLUMN_S04IM, new JSONObject(s04IMtoString()));
+            json.put(FormsContract.FormsTable.COLUMN_S05PD, new JSONObject(s05PDtoString()));
+            json.put(FormsContract.FormsTable.COLUMN_S06BF, new JSONObject(s06BFtoString()));
+            json.put(FormsContract.FormsTable.COLUMN_S07CV, new JSONObject(s07CVtoString()));
+            json.put(FormsContract.FormsTable.COLUMN_S08SE, new JSONObject(s08SEtoString()));
+
+
+            if (this.s01HH != null && !this.s01HH.equals("")) {
+                json.put(FormsContract.FormsTable.COLUMN_S01HH, new JSONObject(this.s01HH));
+            }
+
+            if (this.s02CB != null && !this.s02CB.equals("")) {
+                json.put(FormsContract.FormsTable.COLUMN_S02CB, new JSONObject(this.s02CB));
+            }
+
+            if (this.s03CS != null && !this.s03CS.equals("")) {
+                json.put(FormsContract.FormsTable.COLUMN_S03CS, new JSONObject(this.s03CS));
+            }
+
+            if (this.s04IM != null && !this.s04IM.equals("")) {
+                json.put(FormsContract.FormsTable.COLUMN_S04IM, new JSONObject(this.s04IM));
+            }
+
+            if (this.s05PD != null && !this.s05PD.equals("")) {
+                json.put(FormsContract.FormsTable.COLUMN_S05PD, new JSONObject(this.s05PD));
+            }
+
+            if (this.s06BF != null && !this.s06BF.equals("")) {
+                json.put(FormsContract.FormsTable.COLUMN_S06BF, new JSONObject(this.s06BF));
+            }
+
+            if (this.s07CV != null && !this.s07CV.equals("")) {
+                json.put(FormsContract.FormsTable.COLUMN_S07CV, new JSONObject(this.s07CV));
+            }
+
+            if (this.s08SE != null && !this.s08SE.equals("")) {
+                json.put(FormsContract.FormsTable.COLUMN_S08SE, new JSONObject(this.s08SE));
+            }
+
+            return json;
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+
+    private void s01HHHydrate(String string) {
+
+        if (string != null) {
+
+            try {
+                JSONObject json = null;
+                json = new JSONObject(string);
+                this.hh01 = json.getString("hh01");
+                this.hh0201 = json.getString("hh0201");
+                this.hh0202 = json.getString("hh0202");
+                this.hh03 = json.getString("hh03");
+                this.hh04 = json.getString("hh04");
+                this.hh05 = json.getString("hh05");
+                this.hh06 = json.getString("hh06");
+                this.hh07 = json.getString("hh07");
+                this.hh08 = json.getString("hh08");
+                this.hh09 = json.getString("hh09");
+                this.hh10 = json.getString("hh10");
+                this.hh11 = json.getString("hh11");
+                this.hh12 = json.getString("hh12");
+                this.hh13 = json.getString("hh13");
+                this.hh14 = json.getString("hh14");
+                this.hh15 = json.getString("hh15");
+                this.hh16 = json.getString("hh16");
+                this.hh17 = json.getString("hh17");
+                this.hh1796x = json.getString("hh1796x");
+                this.hh18 = json.getString("hh18");
+                this.hh19 = json.getString("hh19");
+                this.hh20 = json.getString("hh20");
+                this.hh2096x = json.getString("hh2096x");
+                this.hh21 = json.getString("hh21");
+                this.hh22 = json.getString("hh22");
+                this.hh23 = json.getString("hh23");
+                this.hh24 = json.getString("hh24");
+                this.hh25 = json.getString("hh25");
+                this.hh26 = json.getString("hh26");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    private void s04IMHydrate(String string) {
+
+        if (string != null) {
+
+            try {
+                JSONObject json = null;
+                json = new JSONObject(string);
+
+                this.im02 = json.getString("im02");
+                this.im01 = json.getString("im01");
+                this.im03 = json.getString("im03");
+                this.im04dd = json.getString("im04dd");
+                this.im04mm = json.getString("im04mm");
+                this.im04yy = json.getString("im04yy");
+                this.im0501dd = json.getString("im0501dd");
+                this.im0501mm = json.getString("im0501mm");
+                this.im0501yy = json.getString("im0501yy");
+                this.im0502dd = json.getString("im0502dd");
+                this.im0502mm = json.getString("im0502mm");
+                this.im0502yy = json.getString("im0502yy");
+                this.im0503dd = json.getString("im0503dd");
+                this.im0503mm = json.getString("im0503mm");
+                this.im0503yy = json.getString("im0503yy");
+                this.im0504dd = json.getString("im0504dd");
+                this.im0504mm = json.getString("im0504mm");
+                this.im0504yy = json.getString("im0504yy");
+                this.im0505dd = json.getString("im0505dd");
+                this.im0505mm = json.getString("im0505mm");
+                this.im0505yy = json.getString("im0505yy");
+                this.im0506dd = json.getString("im0506dd");
+                this.im0506mm = json.getString("im0506mm");
+                this.im0506yy = json.getString("im0506yy");
+                this.im0507dd = json.getString("im0507dd");
+                this.im0507mm = json.getString("im0507mm");
+                this.im0507yy = json.getString("im0507yy");
+                this.im0508dd = json.getString("im0508dd");
+                this.im0508mm = json.getString("im0508mm");
+                this.im0508yy = json.getString("im0508yy");
+                this.im0509dd = json.getString("im0509dd");
+                this.im0509mm = json.getString("im0509mm");
+                this.im0509yy = json.getString("im0509yy");
+                this.im0510dd = json.getString("im0510dd");
+                this.im0510mm = json.getString("im0510mm");
+                this.im0510yy = json.getString("im0510yy");
+                this.im0511dd = json.getString("im0511dd");
+                this.im0511mm = json.getString("im0511mm");
+                this.im0511yy = json.getString("im0511yy");
+                this.im0512dd = json.getString("im0512dd");
+                this.im0512mm = json.getString("im0512mm");
+                this.im0512yy = json.getString("im0512yy");
+                this.im0513dd = json.getString("im0513dd");
+                this.im0513mm = json.getString("im0513mm");
+                this.im0513yy = json.getString("im0513yy");
+                this.im0514dd = json.getString("im0514dd");
+                this.im0514mm = json.getString("im0514mm");
+                this.im0514yy = json.getString("im0514yy");
+                this.im0515dd = json.getString("im0515dd");
+                this.im0515mm = json.getString("im0515mm");
+                this.im0515yy = json.getString("im0515yy");
+                this.im0516dd = json.getString("im0516dd");
+                this.im0516mm = json.getString("im0516mm");
+                this.im0516yy = json.getString("im0516yy");
+                this.im07 = json.getString("im07");
+                this.im08 = json.getString("im08");
+                this.im08a = json.getString("im08a");
+                this.im08b = json.getString("im08b");
+                this.im09 = json.getString("im09");
+                this.im10 = json.getString("im10");
+                this.im11 = json.getString("im11");
+                this.im12 = json.getString("im12");
+                this.im1201x = json.getString("im1201x");
+                this.im12a = json.getString("im12a");
+                this.im12a1x = json.getString("im12a1x");
+                this.im13 = json.getString("im13");
+                this.im14 = json.getString("im14");
+                this.im15 = json.getString("im15");
+                this.im1501 = json.getString("im1501");
+                this.im16 = json.getString("im16");
+                this.im17 = json.getString("im17");
+                this.im1701 = json.getString("im1701");
+                this.im18 = json.getString("im18");
+                this.im19 = json.getString("im19");
+                this.im1901x = json.getString("im1901x");
+                this.im20 = json.getString("im20");
+                this.im21 = json.getString("im21");
+                this.im22 = json.getString("im22");
+                this.im2201 = json.getString("im2201");
+                this.im23 = json.getString("im23");
+                this.im2306x = json.getString("im2306x");
+                this.im23a = json.getString("im23a");
+                this.im23b1 = json.getString("im23b1");
+                this.im23b2 = json.getString("im23b2");
+                this.im24 = json.getString("im24");
+                this.im2496x = json.getString("im2496x");
+                this.im25 = json.getString("im25");
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    private void s05PDHydrate(String string) {
+
+        if (string != null) {
+
+            try {
+                JSONObject json = null;
+                json = new JSONObject(string);
+
+                this.pd01 = json.getString("pd01");
+                this.pd02 = json.getString("pd02");
+                this.pd03 = json.getString("pd03");
+                this.pd04 = json.getString("pd04");
+                this.pd05 = json.getString("pd05");
+                this.pd0596x = json.getString("pd0596x");
+                this.pd06 = json.getString("pd06");
+                this.pd06961x = json.getString("pd06961x");
+                this.pd06962x = json.getString("pd06962x");
+                this.pd07 = json.getString("pd07");
+                this.pd0701x = json.getString("pd0701x");
+                this.pd08 = json.getString("pd08");
+                this.pd09 = json.getString("pd09");
+                this.pd10 = json.getString("pd10");
+                this.pd1101 = json.getString("pd1101");
+                this.pd1102 = json.getString("pd1102");
+                this.pd12 = json.getString("pd12");
+                this.pd1296x = json.getString("pd1296x");
+                this.pd13 = json.getString("pd13");
+                this.pd13961x = json.getString("pd13961x");
+                this.pd13962x = json.getString("pd13962x");
+                this.pd14 = json.getString("pd14");
+                this.pd1496x = json.getString("pd1496x");
+                this.pd15 = json.getString("pd15");
+                this.pd16 = json.getString("pd16");
+                this.pd1601 = json.getString("pd1601");
+                this.pd1602 = json.getString("pd1602");
+                this.pd1603 = json.getString("pd1603");
+                this.pd1604 = json.getString("pd1604");
+                this.pd1605 = json.getString("pd1605");
+                this.pd1606 = json.getString("pd1606");
+                this.pd1607 = json.getString("pd1607");
+                this.pd1696 = json.getString("pd1696");
+                this.pd1696x = json.getString("pd1696x");
+                this.pd17 = json.getString("pd17");
+                this.pd1701x = json.getString("pd1701x");
+                this.pd1702x = json.getString("pd1702x");
+                this.pd1703x = json.getString("pd1703x");
+                this.pd18 = json.getString("pd18");
+                this.pd19 = json.getString("pd19");
+                this.pd20 = json.getString("pd20");
+                this.pd2001 = json.getString("pd2001");
+                this.pd2002 = json.getString("pd2002");
+                this.pd2003 = json.getString("pd2003");
+                this.pd2004 = json.getString("pd2004");
+                this.pd2005 = json.getString("pd2005");
+                this.pd2006 = json.getString("pd2006");
+                this.pd2007 = json.getString("pd2007");
+                this.pd2096 = json.getString("pd2096");
+                this.pd2096x = json.getString("pd2096x");
+                this.pd21 = json.getString("pd21");
+                this.pd2101x = json.getString("pd2101x");
+                this.pd2102x = json.getString("pd2102x");
+                this.pd2103x = json.getString("pd2103x");
+                this.pd22 = json.getString("pd22");
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    private void s06BFHydrate(String string) {
+
+        if (string != null) {
+
+            try {
+                JSONObject json = null;
+                json = new JSONObject(string);
+
+                this.bf01 = json.getString("bf01");
+                this.bf02 = json.getString("bf02");
+                this.bf03 = json.getString("bf03");
+                this.bf3y = json.getString("bf3y");
+                this.bf03m = json.getString("bf03m");
+                this.bf3d = json.getString("bf3d");
+                this.bf04 = json.getString("bf04");
+                this.bf05 = json.getString("bf05");
+                this.bf0502x = json.getString("bf0502x");
+                this.bf0503x = json.getString("bf0503x");
+                this.bf06 = json.getString("bf06");
+                this.bf07 = json.getString("bf07");
+                this.bf0796x = json.getString("bf0796x");
+                this.bf08 = json.getString("bf08");
+                this.bf09 = json.getString("bf09");
+                this.bf0996x = json.getString("bf0996x");
+                this.bf10 = json.getString("bf10");
+                this.bf11 = json.getString("bf11");
+                this.bf12 = json.getString("bf12");
+                this.bf13 = json.getString("bf13");
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    private void s07CVHydrate(String string) {
+
+        if (string != null) {
+
+            try {
+                JSONObject json = null;
+                json = new JSONObject(string);
+
+                this.cv01 = json.getString("cv01");
+                this.cv02 = json.getString("cv02");
+                this.cv03 = json.getString("cv03");
+                this.cv04 = json.getString("cv04");
+                this.cv05 = json.getString("cv05");
+                this.cv0596x = json.getString("cv0596x");
+                this.cv06 = json.getString("cv06");
+                this.cv07 = json.getString("cv07");
+                this.cv08 = json.getString("cv08");
+                this.cv09 = json.getString("cv09");
+                this.cv10 = json.getString("cv10");
+                this.cv11 = json.getString("cv11");
+                this.cv12 = json.getString("cv12");
+                this.cv1296x = json.getString("cv1296x");
+                this.cv13 = json.getString("cv13");
+                this.cv14 = json.getString("cv14");
+                this.cv15 = json.getString("cv15");
+                this.cv16 = json.getString("cv16");
+                this.cv1696x = json.getString("cv1696x");
+                this.cv17 = json.getString("cv17");
+                this.cv18 = json.getString("cv18");
+                this.cv1896x = json.getString("cv1896x");
+                this.cv19 = json.getString("cv19");
+                this.cv1996x = json.getString("cv1996x");
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    private void s08SEHydrate(String string) {
+
+        if (string != null) {
+
+            try {
+                JSONObject json = null;
+                json = new JSONObject(string);
+
+                this.se01 = json.getString("se01");
+                this.se0196x = json.getString("se0196x");
+                this.se02 = json.getString("se02");
+                this.se0296x = json.getString("se0296x");
+                this.se03 = json.getString("se03");
+                this.se0396x = json.getString("se0396x");
+                this.se04 = json.getString("se04");
+                this.se0496x = json.getString("se0496x");
+                this.se05 = json.getString("se05");
+                this.se0596x = json.getString("se0596x");
+                this.se06a = json.getString("se06a");
+                this.se07a = json.getString("se07a");
+                this.se08 = json.getString("se08");
+                this.se0896x = json.getString("se0896x");
+                this.se09 = json.getString("se09");
+                this.se10 = json.getString("se10");
+                this.se1099x = json.getString("se1099x");
+                this.se11 = json.getString("se11");
+                this.se1196x = json.getString("se1196x");
+                this.se12 = json.getString("se12");
+                this.se1296x = json.getString("se1296x");
+                this.se13 = json.getString("se13");
+                this.se14 = json.getString("se14");
+                this.se15 = json.getString("se15");
+                this.se16 = json.getString("se16");
+                this.se17 = json.getString("se17");
+                this.se1701 = json.getString("se1701");
+                this.se1702 = json.getString("se1702");
+                this.se1703 = json.getString("se1703");
+                this.se1704 = json.getString("se1704");
+                this.se1705 = json.getString("se1705");
+                this.se1801 = json.getString("se1801");
+                this.se1802 = json.getString("se1802");
+                this.se1803 = json.getString("se1803");
+                this.se1804 = json.getString("se1804");
+                this.se1805 = json.getString("se1805");
+                this.se1896 = json.getString("se1896");
+                this.se189601x = json.getString("se189601x");
+                this.se19 = json.getString("se19");
+                this.se1996x = json.getString("se1996x");
+                this.se20 = json.getString("se20");
+                this.se2001 = json.getString("se2001");
+                this.se2002 = json.getString("se2002");
+                this.se2003 = json.getString("se2003");
+                this.se2004 = json.getString("se2004");
+                this.se2005 = json.getString("se2005");
+                this.se2096 = json.getString("se2096");
+                this.se2096x = json.getString("se2096x");
+                this.se21 = json.getString("se21");
+                this.se2101 = json.getString("se2101");
+                this.se2102 = json.getString("se2102");
+                this.se2103 = json.getString("se2103");
+                this.se2104 = json.getString("se2104");
+                this.se2105 = json.getString("se2105");
+                this.se2196 = json.getString("se2196");
+                this.se2196x = json.getString("se2196x");
+                this.se2201 = json.getString("se2201");
+                this.se2202 = json.getString("se2202");
+                this.se2203 = json.getString("se2203");
+                this.se2204 = json.getString("se2204");
+                this.se2205 = json.getString("se2205");
+                this.se2206 = json.getString("se2206");
+                this.se2207 = json.getString("se2207");
+                this.se2208 = json.getString("se2208");
+                this.se2209 = json.getString("se2209");
+                this.se2210 = json.getString("se2210");
+                this.se2211 = json.getString("se2211");
+                this.se2212 = json.getString("se2212");
+                this.se2213 = json.getString("se2213");
+                this.se2214 = json.getString("se2214");
+                this.se2215 = json.getString("se2215");
+                this.se2216 = json.getString("se2216");
+                this.se2217 = json.getString("se2217");
+                this.se2218 = json.getString("se2218");
+                this.se23 = json.getString("se23");
+                this.se24 = json.getString("se24");
+                this.se25 = json.getString("se25");
+                this.se26 = json.getString("se26");
+                this.se27 = json.getString("se27");
+                this.se2701 = json.getString("se2701");
+                this.se2702 = json.getString("se2702");
+                this.se2703 = json.getString("se2703");
+                this.se2704 = json.getString("se2704");
+                this.se28 = json.getString("se28");
+                this.se2801 = json.getString("se2801");
+                this.se2802 = json.getString("se2802");
+                this.se2803 = json.getString("se2803");
+                this.se29 = json.getString("se29");
+                this.se30 = json.getString("se30");
+                this.se3001 = json.getString("se3001");
+                this.se3002 = json.getString("se3002");
+                this.se3003 = json.getString("se3003");
+                this.se3096 = json.getString("se3096");
+                this.se3096x = json.getString("se3096x");
+                this.se31 = json.getString("se31");
+                this.se3196x = json.getString("se3196x");
+                this.se32 = json.getString("se32");
+                this.se3302 = json.getString("se3302");
+                this.se3301 = json.getString("se3301");
+                this.se3401 = json.getString("se3401");
+                this.se3402 = json.getString("se3402");
+                this.se35 = json.getString("se35");
+                this.se36 = json.getString("se36");
+                this.se37 = json.getString("se37");
+                this.se3701 = json.getString("se3701");
+                this.se3702 = json.getString("se3702");
+                this.se3703 = json.getString("se3703");
+                this.se3704 = json.getString("se3704");
+                this.se3705 = json.getString("se3705");
+                this.se3706 = json.getString("se3706");
+                this.se3707 = json.getString("se3707");
+                this.se3708 = json.getString("se3708");
+                this.se3709 = json.getString("se3709");
+                this.se3796 = json.getString("se3796");
+                this.se3796x = json.getString("se3796x");
+                this.se38 = json.getString("se38");
+                this.se39 = json.getString("se39");
+                this.se40 = json.getString("se40");
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }
