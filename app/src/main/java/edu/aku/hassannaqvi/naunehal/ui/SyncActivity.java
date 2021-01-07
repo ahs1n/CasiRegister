@@ -37,13 +37,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import edu.aku.hassannaqvi.naunehal.CONSTANTS;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.adapters.SyncListAdapter;
-import edu.aku.hassannaqvi.naunehal.core.MainApp;
+import edu.aku.hassannaqvi.naunehal.contracts.ClustersContract;
+import edu.aku.hassannaqvi.naunehal.contracts.DistrictsContract;
+import edu.aku.hassannaqvi.naunehal.contracts.UCsContract;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySyncBinding;
 import edu.aku.hassannaqvi.naunehal.models.SyncModel;
-import edu.aku.hassannaqvi.naunehal.models.Users;
 import edu.aku.hassannaqvi.naunehal.workers.DataDownWorkerALL;
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.PROJECT_NAME;
@@ -73,12 +75,10 @@ public class SyncActivity extends AppCompatActivity {
         downloadTables = new ArrayList<>();
 
         // Set tables to DOWNLOAD
-
-       /* TODO: ADD DOWNLOAD TABLES HERE * * * * *
-       downloadTables.add(new SyncModel(TableDistricts.TABLE_NAME));
-        downloadTables.add(new SyncModel(UCs.TableUCs.TABLE_NAME));
-        downloadTables.add(new SyncModel(ClustersContract.TableClusters.TABLE_NAME));*/
-        downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
+        downloadTables.add(new SyncModel(DistrictsContract.TableDistricts.TABLE_NAME));
+        downloadTables.add(new SyncModel(UCsContract.TableUCs.TABLE_NAME));
+        downloadTables.add(new SyncModel(ClustersContract.TableClusters.TABLE_NAME));
+        //downloadTables.add(new SyncModel(UsersContract.TableUsers.TABLE_NAME));
 
         // Set tables to UPLOAD
         uploadTables.add(new SyncModel("Forms"));
@@ -92,7 +92,7 @@ public class SyncActivity extends AppCompatActivity {
         db = new DatabaseHelper(this);
         dbBackup();
 
-        boolean sync_flag = getIntent().getBooleanExtra(MainApp.SYNC_LOGIN, false);
+        boolean sync_flag = getIntent().getBooleanExtra(CONSTANTS.SYNC_LOGIN, false);
 /*
         bi.btnSync.setOnClickListener(v -> onSyncDataClick());
         bi.btnUpload.setOnClickListener(v -> syncServer());
@@ -206,7 +206,7 @@ public class SyncActivity extends AppCompatActivity {
 
         for (int i = 0; i < downloadTables.size(); i++) {
             Data data = new Data.Builder()
-                    .putString("VillageTable", downloadTables.get(i).gettableName())
+                    .putString("table", downloadTables.get(i).gettableName())
                     .putInt("position", i)
                     //.putString("columns", "_id, sysdate")
                     // .putString("where", where)
@@ -263,38 +263,44 @@ public class SyncActivity extends AppCompatActivity {
                                     JSONArray jsonArray = new JSONArray();
                                     int insertCount = 0;
                                     switch (tableName) {
-                                        case "User":
+                                        // case TableUsers.TABLE_NAME:
+                                        //   jsonArray = new JSONArray(result);
+                                        //   insertCount = db.syncUser(jsonArray);
+                                        //           position = 0;
+                                        //  break;
+                                        //  case TableVersionApp.TABLE_NAME:
+                                        //        insertCount = db.syncVersionApp(new JSONObject(result));
+                                        //    if (insertCount == 1) jsonArray.put("1");
+                                        //        position = 1;
+                                        //     break;
+                                        case UCsContract.TableUCs.TABLE_NAME:
                                             jsonArray = new JSONArray(result);
-                                            //   insertCount = db.syncUser(jsonArray);
-                                            //           position = 0;
-                                            break;
-                                        case "VersionApp":
-                                            //        insertCount = db.syncVersionApp(new JSONObject(result));
-                                            if (insertCount == 1) jsonArray.put("1");
-                                            //        position = 1;
-                                            break;
-                                        case "Provinces":
-                                            jsonArray = new JSONArray(result);
-                                            //     insertCount = db.syncProvince(jsonArray);
+                                            insertCount = db.syncUCs(jsonArray);
+                                            Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));
                                             //      position = 2;
                                             break;
-                                        case "Districts":
+                                        case DistrictsContract.TableDistricts.TABLE_NAME:
                                             jsonArray = new JSONArray(result);
-                                            // insertCount = db.syncDistricts(jsonArray);
-                                            //       position = 3;
+                                            insertCount = db.syncDistricts(jsonArray);
+                                            Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));
+
+                                            //      position = 3;
                                             break;
-                                        case "Villages":
+                                        case ClustersContract.TableClusters.TABLE_NAME:
                                             jsonArray = new JSONArray(result);
-                                            //       insertCount = db.syncVillages(jsonArray);
-                                            //          position = 4;
+                                            insertCount = db.syncCluster(jsonArray);
+                                            Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));
+
+                                            //       position = 4;
                                             break;
 
                                     }
 
                                     downloadTables.get(position).setmessage("Received: " + jsonArray.length() + ", Saved: " + insertCount);
                                     downloadTables.get(position).setstatus(insertCount == 0 ? "Unsuccessful" : "Successful");
-                                    downloadTables.get(position).setstatusID(insertCount == 0 ? 2 : 3);
+                                    downloadTables.get(position).setstatusID(insertCount == 0 ? 1 : 3);
                                     syncListAdapter.updatesyncList(downloadTables);
+
 //                    pd.show();
                                 } catch (JSONException e) {
                                     e.printStackTrace();
@@ -344,7 +350,7 @@ public class SyncActivity extends AppCompatActivity {
 
         for (int i = 0; i < downloadTables.size(); i++) {
             Data data = new Data.Builder()
-                    .putString("VillageTable", downloadTables.get(i).gettableName())
+                    .putString("table", downloadTables.get(i).gettableName())
                     .putInt("position", i)
                     //.putString("columns", "_id, sysdate")
                     // .putString("where", where)
