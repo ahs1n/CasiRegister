@@ -3,8 +3,10 @@ package edu.aku.hassannaqvi.naunehal.core;
 import android.app.Application;
 import android.view.View;
 
+import edu.aku.hassannaqvi.naunehal.models.Child;
 import edu.aku.hassannaqvi.naunehal.models.Family;
 import edu.aku.hassannaqvi.naunehal.models.Form;
+import edu.aku.hassannaqvi.naunehal.models.Immunization;
 
 public class MainApp extends Application {
 
@@ -20,6 +22,8 @@ public class MainApp extends Application {
     public static final String _PHOTO_UPLOAD_URL = MainApp._IP + _HOST_URL + "uploads.php";
     public static final String _UPDATE_URL = MainApp._IP + "/nns/app/";
     public static Form form;
+    public static Child child;
+    public static Immunization immunization;
     public static Family family;
     public static String DeviceURL = "devices.php";
     public static AppInfo appInfo;

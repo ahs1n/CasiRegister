@@ -2,14 +2,16 @@ package edu.aku.hassannaqvi.naunehal.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection082seBinding;
@@ -28,7 +30,9 @@ public class Section082SEActivity extends AppCompatActivity {
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_082se);
         bi.setForm(MainApp.form);
+        bi.setCallback(this);
         setupSkips();
+        setListeners();
     }
 
     private void setupSkips() {
@@ -56,6 +60,7 @@ public class Section082SEActivity extends AppCompatActivity {
         }
     }
 
+
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
 
@@ -67,5 +72,50 @@ public class Section082SEActivity extends AppCompatActivity {
         startActivity(new Intent(this, MainActivity.class));
     }
 
+    public void setListeners() {
 
+        bi.se25.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (TextUtils.isEmpty(bi.se25.getText()))
+                    return;
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+    }
+
+    public void se25OnTextChanged(CharSequence s, int start, int before, int count) {
+        if (!bi.se25.isRangeTextValidate())
+            return;
+
+        int se25 = Integer.parseInt(bi.se25.getText().toString());
+
+        if (se25 == 0) {
+            bi.fldGrpse25.setVisibility(View.GONE);
+            Clear.clearAllFields(bi.fldGrpse25);
+        } else bi.fldGrpse25.setVisibility(View.VISIBLE);
+    }
+
+    public void se26OnTextChanged(CharSequence s, int start, int before, int count) {
+        if (!bi.se26.isRangeTextValidate())
+            return;
+
+        int se26 = Integer.parseInt(bi.se26.getText().toString());
+
+        if (se26 == 0) {
+            bi.fldGrpse26.setVisibility(View.GONE);
+            Clear.clearAllFields(bi.fldGrpse26);
+        } else bi.fldGrpse26.setVisibility(View.VISIBLE);
+    }
 }
