@@ -491,7 +491,7 @@ public class Family extends BaseObservable {
         this.synced = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_SYNCED);
         this.syncDate = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_SYNCED_DATE);
 
-        this.sA = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_SA);
+        this.sA = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_SCB);
 
         return this;
 
@@ -521,7 +521,7 @@ public class Family extends BaseObservable {
         //For childCount
         //this.s01HH = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_S01HH));
 
-        sAHydrate(cursor.getString(cursor.getColumnIndex(FamilyContract.FamilyTable.COLUMN_SA)));
+        sAHydrate(cursor.getString(cursor.getColumnIndex(FamilyContract.FamilyTable.COLUMN_SCB)));
 
         return this;
     }
@@ -593,11 +593,11 @@ public class Family extends BaseObservable {
             //For ChildCount
             //json.put(ChildContract.ChildTable.COLUMN_S08SE, this.s08SE == null ? JSONObject.NULL : this.s08SE);
 
-            json.put(FamilyContract.FamilyTable.COLUMN_SA, new JSONObject(sAtoString()));
+            json.put(FamilyContract.FamilyTable.COLUMN_SCB, new JSONObject(sAtoString()));
 
 
             if (this.sA != null && !this.sA.equals("")) {
-                json.put(FamilyContract.FamilyTable.COLUMN_SA, new JSONObject(this.sA));
+                json.put(FamilyContract.FamilyTable.COLUMN_SCB, new JSONObject(this.sA));
             }
 
             return json;

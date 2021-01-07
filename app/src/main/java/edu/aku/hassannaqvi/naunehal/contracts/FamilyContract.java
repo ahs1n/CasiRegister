@@ -21,7 +21,7 @@ public class FamilyContract {
         public static final String COLUMN_UCODE = "ucCode";
         public static final String COLUMN_CLUSTER = "clusterno";
         public static final String COLUMN_HHNO = "hhno";
-        public static final String COLUMN_SA = "sa";
+        public static final String COLUMN_SCB = "scb";
 
         public static final String COLUMN_ISTATUS = "istatus";
         public static final String COLUMN_ISTATUS96x = "istatus96x";

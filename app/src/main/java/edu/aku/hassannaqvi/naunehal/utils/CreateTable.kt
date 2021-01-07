@@ -41,7 +41,7 @@ object CreateTable {
             + FormsContract.FormsTable.COLUMN_S08SE + " TEXT"
             + " );")
 
-    const val SQL_CREATE_CHILD = ("CREATE TABLE "
+    const val SQL_CREATE_FAMILY = ("CREATE TABLE "
             + FamilyContract.FamilyTable.TABLE_NAME + "("
             + FamilyContract.FamilyTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + FamilyContract.FamilyTable.COLUMN_PROJECT_NAME + " TEXT,"
@@ -62,7 +62,7 @@ object CreateTable {
             + FamilyContract.FamilyTable.COLUMN_UCODE + " TEXT,"
             + FamilyContract.FamilyTable.COLUMN_CLUSTER + " TEXT,"
             + FamilyContract.FamilyTable.COLUMN_HHNO + " TEXT,"
-            + FamilyContract.FamilyTable.COLUMN_SA + " TEXT"
+            + FamilyContract.FamilyTable.COLUMN_SCB + " TEXT"
             + " );")
 
     const val SQL_CREATE_USERS = ("CREATE TABLE " + Users.UsersTable.TABLE_NAME + "("
