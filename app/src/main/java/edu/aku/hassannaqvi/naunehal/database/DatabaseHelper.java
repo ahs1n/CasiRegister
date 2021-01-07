@@ -46,6 +46,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CreateTable.SQL_CREATE_USERS);
         db.execSQL(CreateTable.SQL_CREATE_FORMS);
+        db.execSQL(CreateTable.SQL_CREATE_FAMILY);
         db.execSQL(CreateTable.SQL_CREATE_CHILD);
         db.execSQL(CreateTable.SQL_CREATE_VERSIONAPP);
     }

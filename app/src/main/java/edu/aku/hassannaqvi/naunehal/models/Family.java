@@ -38,7 +38,7 @@ public class Family extends BaseObservable {
     private String syncDate;
 
     // SECTION VARIABLES
-    private String sA;
+    private String scb;
 
     // FIELD VARIABLES
     public String cb01;
@@ -249,12 +249,12 @@ public class Family extends BaseObservable {
     }
 
 
-    public String getsA() {
-        return sA;
+    public String getScb() {
+        return scb;
     }
 
-    public Family setsA(String sA) {
-        this.sA = sA;
+    public Family setScb(String scb) {
+        this.scb = scb;
         return this;
     }
 
@@ -471,27 +471,27 @@ public class Family extends BaseObservable {
 
 
     public Family Sync(JSONObject jsonObject) throws JSONException {
-        this.id = jsonObject.getString(FamilyContract.ChildTable.COLUMN_ID);
-        this.uid = jsonObject.getString(FamilyContract.ChildTable.COLUMN_UID);
-        this.uuid = jsonObject.getString(FamilyContract.ChildTable.COLUMN_UUID);
-        this.userName = jsonObject.getString(FamilyContract.ChildTable.COLUMN_USERNAME);
-        this.sysDate = jsonObject.getString(FamilyContract.ChildTable.COLUMN_SYSDATE);
-        this.dcode = jsonObject.getString(FamilyContract.ChildTable.COLUMN_DCODE);
-        this.ucode = jsonObject.getString(FamilyContract.ChildTable.COLUMN_UCODE);
-        this.cluster = jsonObject.getString(FamilyContract.ChildTable.COLUMN_CLUSTER);
-        this.hhno = jsonObject.getString(FamilyContract.ChildTable.COLUMN_HHNO);
-        this.deviceId = jsonObject.getString(FamilyContract.ChildTable.COLUMN_DEVICEID);
-        this.deviceTag = jsonObject.getString(FamilyContract.ChildTable.COLUMN_DEVICETAGID);
-        this.appver = jsonObject.getString(FamilyContract.ChildTable.COLUMN_APPVERSION);
-        this.gps = jsonObject.getString(FamilyContract.ChildTable.COLUMN_GPS);
-        this.endTime = jsonObject.getString(FamilyContract.ChildTable.COLUMN_ENDINGDATETIME);
-        this.iStatus = jsonObject.getString(FamilyContract.ChildTable.COLUMN_ISTATUS);
-        this.iStatus96x = jsonObject.getString(FamilyContract.ChildTable.COLUMN_ISTATUS96x);
-        this.iStatus96x = jsonObject.getString(FamilyContract.ChildTable.COLUMN_ISTATUS96x);
-        this.synced = jsonObject.getString(FamilyContract.ChildTable.COLUMN_SYNCED);
-        this.syncDate = jsonObject.getString(FamilyContract.ChildTable.COLUMN_SYNCED_DATE);
+        this.id = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_ID);
+        this.uid = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_UID);
+        this.uuid = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_UUID);
+        this.userName = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_USERNAME);
+        this.sysDate = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_SYSDATE);
+        this.dcode = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_DCODE);
+        this.ucode = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_UCODE);
+        this.cluster = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_CLUSTER);
+        this.hhno = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_HHNO);
+        this.deviceId = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_DEVICEID);
+        this.deviceTag = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_DEVICETAGID);
+        this.appver = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_APPVERSION);
+        this.gps = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_GPS);
+        this.endTime = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_ENDINGDATETIME);
+        this.iStatus = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_ISTATUS);
+        this.iStatus96x = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_ISTATUS96x);
+        this.iStatus96x = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_ISTATUS96x);
+        this.synced = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_SYNCED);
+        this.syncDate = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_SYNCED_DATE);
 
-        this.sA = jsonObject.getString(FamilyContract.ChildTable.COLUMN_SA);
+        this.scb = jsonObject.getString(FamilyContract.FamilyTable.COLUMN_SCB);
 
         return this;
 
@@ -499,29 +499,29 @@ public class Family extends BaseObservable {
 
 
     public Family Hydrate(Cursor cursor) {
-        this.id = cursor.getString(cursor.getColumnIndex(FamilyContract.ChildTable.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndex(FamilyContract.ChildTable.COLUMN_UID));
-        this.uuid = cursor.getString(cursor.getColumnIndex(FamilyContract.ChildTable.COLUMN_UUID));
-        this.userName = cursor.getString(cursor.getColumnIndex(FamilyContract.ChildTable.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndex(FamilyContract.ChildTable.COLUMN_SYSDATE));
-        this.dcode = cursor.getString(cursor.getColumnIndex(FamilyContract.ChildTable.COLUMN_DCODE));
-        this.ucode = cursor.getString(cursor.getColumnIndex(FamilyContract.ChildTable.COLUMN_UCODE));
-        this.cluster = cursor.getString(cursor.getColumnIndex(FamilyContract.ChildTable.COLUMN_CLUSTER));
-        this.hhno = cursor.getString(cursor.getColumnIndex(FamilyContract.ChildTable.COLUMN_HHNO));
-        this.deviceId = cursor.getString(cursor.getColumnIndex(FamilyContract.ChildTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndex(FamilyContract.ChildTable.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndex(FamilyContract.ChildTable.COLUMN_APPVERSION));
-        this.gps = cursor.getString(cursor.getColumnIndex(FamilyContract.ChildTable.COLUMN_GPS));
-        this.endTime = cursor.getString(cursor.getColumnIndex(FamilyContract.ChildTable.COLUMN_ENDINGDATETIME));
-        this.iStatus = cursor.getString(cursor.getColumnIndex(FamilyContract.ChildTable.COLUMN_ISTATUS));
-        this.iStatus96x = cursor.getString(cursor.getColumnIndex(FamilyContract.ChildTable.COLUMN_ISTATUS96x));
-        this.synced = cursor.getString(cursor.getColumnIndex(FamilyContract.ChildTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndex(FamilyContract.ChildTable.COLUMN_SYNCED_DATE));
+        this.id = cursor.getString(cursor.getColumnIndex(FamilyContract.FamilyTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndex(FamilyContract.FamilyTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndex(FamilyContract.FamilyTable.COLUMN_UUID));
+        this.userName = cursor.getString(cursor.getColumnIndex(FamilyContract.FamilyTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndex(FamilyContract.FamilyTable.COLUMN_SYSDATE));
+        this.dcode = cursor.getString(cursor.getColumnIndex(FamilyContract.FamilyTable.COLUMN_DCODE));
+        this.ucode = cursor.getString(cursor.getColumnIndex(FamilyContract.FamilyTable.COLUMN_UCODE));
+        this.cluster = cursor.getString(cursor.getColumnIndex(FamilyContract.FamilyTable.COLUMN_CLUSTER));
+        this.hhno = cursor.getString(cursor.getColumnIndex(FamilyContract.FamilyTable.COLUMN_HHNO));
+        this.deviceId = cursor.getString(cursor.getColumnIndex(FamilyContract.FamilyTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndex(FamilyContract.FamilyTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndex(FamilyContract.FamilyTable.COLUMN_APPVERSION));
+        this.gps = cursor.getString(cursor.getColumnIndex(FamilyContract.FamilyTable.COLUMN_GPS));
+        this.endTime = cursor.getString(cursor.getColumnIndex(FamilyContract.FamilyTable.COLUMN_ENDINGDATETIME));
+        this.iStatus = cursor.getString(cursor.getColumnIndex(FamilyContract.FamilyTable.COLUMN_ISTATUS));
+        this.iStatus96x = cursor.getString(cursor.getColumnIndex(FamilyContract.FamilyTable.COLUMN_ISTATUS96x));
+        this.synced = cursor.getString(cursor.getColumnIndex(FamilyContract.FamilyTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndex(FamilyContract.FamilyTable.COLUMN_SYNCED_DATE));
 
         //For childCount
         //this.s01HH = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_S01HH));
 
-        sAHydrate(cursor.getString(cursor.getColumnIndex(FamilyContract.ChildTable.COLUMN_SA)));
+        sCBHydrate(cursor.getString(cursor.getColumnIndex(FamilyContract.FamilyTable.COLUMN_SCB)));
 
         return this;
     }
@@ -534,7 +534,7 @@ public class Family extends BaseObservable {
     }
 
 
-    public String sAtoString() {
+    public String sCBtoString() {
         JSONObject json = new JSONObject();
 
         try {
@@ -571,33 +571,33 @@ public class Family extends BaseObservable {
         JSONObject json = new JSONObject();
 
         try {
-            json.put(FamilyContract.ChildTable.COLUMN_ID, this.id == null ? JSONObject.NULL : this.id);
-            json.put(FamilyContract.ChildTable.COLUMN_UID, this.uid == null ? JSONObject.NULL : this.uid);
-            json.put(FamilyContract.ChildTable.COLUMN_UUID, this.uuid == null ? JSONObject.NULL : this.uuid);
-            json.put(FamilyContract.ChildTable.COLUMN_USERNAME, this.userName == null ? JSONObject.NULL : this.userName);
-            json.put(FamilyContract.ChildTable.COLUMN_SYSDATE, this.sysDate == null ? JSONObject.NULL : this.sysDate);
-            json.put(FamilyContract.ChildTable.COLUMN_DCODE, this.dcode == null ? JSONObject.NULL : this.dcode);
-            json.put(FamilyContract.ChildTable.COLUMN_UCODE, this.ucode == null ? JSONObject.NULL : this.ucode);
-            json.put(FamilyContract.ChildTable.COLUMN_CLUSTER, this.cluster == null ? JSONObject.NULL : this.cluster);
-            json.put(FamilyContract.ChildTable.COLUMN_HHNO, this.hhno == null ? JSONObject.NULL : this.hhno);
-            json.put(FamilyContract.ChildTable.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
-            json.put(FamilyContract.ChildTable.COLUMN_DEVICETAGID, this.deviceTag == null ? JSONObject.NULL : this.deviceTag);
-            json.put(FamilyContract.ChildTable.COLUMN_APPVERSION, this.appver == null ? JSONObject.NULL : this.appver);
-            json.put(FamilyContract.ChildTable.COLUMN_GPS, this.gps == null ? JSONObject.NULL : this.gps);
-            json.put(FamilyContract.ChildTable.COLUMN_ENDINGDATETIME, this.endTime == null ? JSONObject.NULL : this.endTime);
-            json.put(FamilyContract.ChildTable.COLUMN_ISTATUS, this.iStatus == null ? JSONObject.NULL : this.iStatus);
-            json.put(FamilyContract.ChildTable.COLUMN_ISTATUS96x, this.iStatus96x == null ? JSONObject.NULL : this.iStatus96x);
-            json.put(FamilyContract.ChildTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
-            json.put(FamilyContract.ChildTable.COLUMN_SYNCED_DATE, this.syncDate == null ? JSONObject.NULL : this.syncDate);
+            json.put(FamilyContract.FamilyTable.COLUMN_ID, this.id == null ? JSONObject.NULL : this.id);
+            json.put(FamilyContract.FamilyTable.COLUMN_UID, this.uid == null ? JSONObject.NULL : this.uid);
+            json.put(FamilyContract.FamilyTable.COLUMN_UUID, this.uuid == null ? JSONObject.NULL : this.uuid);
+            json.put(FamilyContract.FamilyTable.COLUMN_USERNAME, this.userName == null ? JSONObject.NULL : this.userName);
+            json.put(FamilyContract.FamilyTable.COLUMN_SYSDATE, this.sysDate == null ? JSONObject.NULL : this.sysDate);
+            json.put(FamilyContract.FamilyTable.COLUMN_DCODE, this.dcode == null ? JSONObject.NULL : this.dcode);
+            json.put(FamilyContract.FamilyTable.COLUMN_UCODE, this.ucode == null ? JSONObject.NULL : this.ucode);
+            json.put(FamilyContract.FamilyTable.COLUMN_CLUSTER, this.cluster == null ? JSONObject.NULL : this.cluster);
+            json.put(FamilyContract.FamilyTable.COLUMN_HHNO, this.hhno == null ? JSONObject.NULL : this.hhno);
+            json.put(FamilyContract.FamilyTable.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
+            json.put(FamilyContract.FamilyTable.COLUMN_DEVICETAGID, this.deviceTag == null ? JSONObject.NULL : this.deviceTag);
+            json.put(FamilyContract.FamilyTable.COLUMN_APPVERSION, this.appver == null ? JSONObject.NULL : this.appver);
+            json.put(FamilyContract.FamilyTable.COLUMN_GPS, this.gps == null ? JSONObject.NULL : this.gps);
+            json.put(FamilyContract.FamilyTable.COLUMN_ENDINGDATETIME, this.endTime == null ? JSONObject.NULL : this.endTime);
+            json.put(FamilyContract.FamilyTable.COLUMN_ISTATUS, this.iStatus == null ? JSONObject.NULL : this.iStatus);
+            json.put(FamilyContract.FamilyTable.COLUMN_ISTATUS96x, this.iStatus96x == null ? JSONObject.NULL : this.iStatus96x);
+            json.put(FamilyContract.FamilyTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
+            json.put(FamilyContract.FamilyTable.COLUMN_SYNCED_DATE, this.syncDate == null ? JSONObject.NULL : this.syncDate);
 
             //For ChildCount
             //json.put(ChildContract.ChildTable.COLUMN_S08SE, this.s08SE == null ? JSONObject.NULL : this.s08SE);
 
-            json.put(FamilyContract.ChildTable.COLUMN_SA, new JSONObject(sAtoString()));
+            json.put(FamilyContract.FamilyTable.COLUMN_SCB, new JSONObject(sCBtoString()));
 
 
-            if (this.sA != null && !this.sA.equals("")) {
-                json.put(FamilyContract.ChildTable.COLUMN_SA, new JSONObject(this.sA));
+            if (this.scb != null && !this.scb.equals("")) {
+                json.put(FamilyContract.FamilyTable.COLUMN_SCB, new JSONObject(this.scb));
             }
 
             return json;
@@ -608,7 +608,7 @@ public class Family extends BaseObservable {
     }
 
 
-    private void sAHydrate(String string) {
+    private void sCBHydrate(String string) {
 
         if (string != null) {
 

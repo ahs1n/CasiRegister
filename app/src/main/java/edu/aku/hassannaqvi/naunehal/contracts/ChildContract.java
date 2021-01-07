@@ -6,9 +6,9 @@ import android.provider.BaseColumns;
  * Created by hassan.naqvi on 11/30/2016.
  */
 
-public class FamilyContract {
+public class ChildContract {
 
-    public static abstract class FamilyTable implements BaseColumns {
+    public static abstract class ChildTable implements BaseColumns {
         public static final String TABLE_NAME = "family";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
@@ -21,7 +21,10 @@ public class FamilyContract {
         public static final String COLUMN_UCODE = "ucCode";
         public static final String COLUMN_CLUSTER = "clusterno";
         public static final String COLUMN_HHNO = "hhno";
-        public static final String COLUMN_SCB = "scb";
+        public static final String COLUMN_RESPONDENT_NAME = "respondentname";
+        public static final String COLUMN_CHILD_NAME = "childname";
+        public static final String COLUMN_SERIAL = "serial";
+        public static final String COLUMN_SCS = "scs";
 
         public static final String COLUMN_ISTATUS = "istatus";
         public static final String COLUMN_ISTATUS96x = "istatus96x";
