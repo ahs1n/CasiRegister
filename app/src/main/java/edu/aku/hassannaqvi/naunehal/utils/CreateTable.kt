@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.naunehal.utils
 
+import edu.aku.hassannaqvi.naunehal.contracts.ChildContract
 import edu.aku.hassannaqvi.naunehal.contracts.FamilyContract
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract
 import edu.aku.hassannaqvi.naunehal.models.Users
@@ -63,6 +64,33 @@ object CreateTable {
             + FamilyContract.FamilyTable.COLUMN_CLUSTER + " TEXT,"
             + FamilyContract.FamilyTable.COLUMN_HHNO + " TEXT,"
             + FamilyContract.FamilyTable.COLUMN_SCB + " TEXT"
+            + " );")
+
+    const val SQL_CREATE_CHILD = ("CREATE TABLE "
+            + ChildContract.ChildTable.TABLE_NAME + "("
+            + ChildContract.ChildTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + ChildContract.ChildTable.COLUMN_PROJECT_NAME + " TEXT,"
+            + ChildContract.ChildTable.COLUMN_UID + " TEXT,"
+            + ChildContract.ChildTable.COLUMN_UUID + " TEXT,"
+            + ChildContract.ChildTable.COLUMN_USERNAME + " TEXT,"
+            + ChildContract.ChildTable.COLUMN_SYSDATE + " TEXT,"
+            + ChildContract.ChildTable.COLUMN_ISTATUS + " TEXT,"
+            + ChildContract.ChildTable.COLUMN_ISTATUS96x + " TEXT,"
+            + ChildContract.ChildTable.COLUMN_ENDINGDATETIME + " TEXT,"
+            + ChildContract.ChildTable.COLUMN_GPS + " TEXT,"
+            + ChildContract.ChildTable.COLUMN_DEVICEID + " TEXT,"
+            + ChildContract.ChildTable.COLUMN_DEVICETAGID + " TEXT,"
+            + ChildContract.ChildTable.COLUMN_SYNCED + " TEXT,"
+            + ChildContract.ChildTable.COLUMN_SYNCED_DATE + " TEXT,"
+            + ChildContract.ChildTable.COLUMN_APPVERSION + " TEXT,"
+            + ChildContract.ChildTable.COLUMN_DCODE + " TEXT,"
+            + ChildContract.ChildTable.COLUMN_UCODE + " TEXT,"
+            + ChildContract.ChildTable.COLUMN_CLUSTER + " TEXT,"
+            + ChildContract.ChildTable.COLUMN_HHNO + " TEXT,"
+            + ChildContract.ChildTable.COLUMN_RESPONDENT_NAME + " TEXT,"
+            + ChildContract.ChildTable.COLUMN_CHILD_NAME + " TEXT,"
+            + ChildContract.ChildTable.COLUMN_SERIAL + " TEXT,"
+            + ChildContract.ChildTable.COLUMN_SCS + " TEXT"
             + " );")
 
     const val SQL_CREATE_USERS = ("CREATE TABLE " + Users.UsersTable.TABLE_NAME + "("
