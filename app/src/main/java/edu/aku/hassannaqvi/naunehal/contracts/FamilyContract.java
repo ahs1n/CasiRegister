@@ -8,7 +8,7 @@ import android.provider.BaseColumns;
 
 public class FamilyContract {
 
-    public static abstract class ChildTable implements BaseColumns {
+    public static abstract class FamilyTable implements BaseColumns {
         public static final String TABLE_NAME = "family";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
@@ -21,7 +21,7 @@ public class FamilyContract {
         public static final String COLUMN_UCODE = "ucCode";
         public static final String COLUMN_CLUSTER = "clusterno";
         public static final String COLUMN_HHNO = "hhno";
-        public static final String COLUMN_SA = "sa";
+        public static final String COLUMN_SCB = "scb";
 
         public static final String COLUMN_ISTATUS = "istatus";
         public static final String COLUMN_ISTATUS96x = "istatus96x";
