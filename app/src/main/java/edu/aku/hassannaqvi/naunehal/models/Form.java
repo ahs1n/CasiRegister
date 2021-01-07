@@ -76,6 +76,8 @@ public class Form extends BaseObservable {
     public String hh24;
     public String hh25;
     public String hh26;
+
+    //Section CB
     public String cb01;
     public String cb02;
     public String cb03;
@@ -95,6 +97,8 @@ public class Form extends BaseObservable {
     public String cb14;
     public String cb15;
     public String cb16;
+
+    //Section CS
     public String cs01;
     public String cs02;
     public String cs03;
@@ -133,6 +137,8 @@ public class Form extends BaseObservable {
     public String cs1896x;
     public String cs19;
     public String cs1996x;
+
+    //Section IM
     public String im02;
     public String im01;
     public String im03;
@@ -220,6 +226,8 @@ public class Form extends BaseObservable {
     public String im24;
     public String im2496x;
     public String im25;
+
+    //Section PD
     public String pd01;
     public String pd02;
     public String pd03;
@@ -275,6 +283,8 @@ public class Form extends BaseObservable {
     public String pd2102x;
     public String pd2103x;
     public String pd22;
+
+    //Section PF
     public String bf01;
     public String bf02;
     public String bf03;
@@ -295,6 +305,8 @@ public class Form extends BaseObservable {
     public String bf11;
     public String bf12;
     public String bf13;
+
+    //Section CV
     public String cv01;
     public String cv02;
     public String cv03;
@@ -319,6 +331,8 @@ public class Form extends BaseObservable {
     public String cv1896x;
     public String cv19;
     public String cv1996x;
+
+    //Section SE
     public String se01;
     public String se0196x;
     public String se02;
