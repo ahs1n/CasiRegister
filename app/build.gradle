@@ -118,5 +118,6 @@ dependencies {
 
     //Permissions
     implementation 'com.nabinbhandari.android:permissions:3.8'
+    implementation 'com.google.code.gson:gson:2.8.6'
 
 }
