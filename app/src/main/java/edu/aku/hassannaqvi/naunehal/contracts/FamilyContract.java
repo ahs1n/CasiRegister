@@ -6,10 +6,10 @@ import android.provider.BaseColumns;
  * Created by hassan.naqvi on 11/30/2016.
  */
 
-public class ChildContract {
+public class FamilyContract {
 
     public static abstract class ChildTable implements BaseColumns {
-        public static final String TABLE_NAME = "child";
+        public static final String TABLE_NAME = "family";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
