@@ -15,7 +15,13 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Date;
 
+import edu.aku.hassannaqvi.naunehal.contracts.ClustersContract;
+import edu.aku.hassannaqvi.naunehal.contracts.ClustersContract.TableClusters;
+import edu.aku.hassannaqvi.naunehal.contracts.DistrictsContract;
+import edu.aku.hassannaqvi.naunehal.contracts.DistrictsContract.TableDistricts;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
+import edu.aku.hassannaqvi.naunehal.contracts.UCsContract;
+import edu.aku.hassannaqvi.naunehal.contracts.UCsContract.TableUCs;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.models.Form;
 import edu.aku.hassannaqvi.naunehal.models.Users;
@@ -331,4 +337,92 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return alc;
         }
     }
+
+    public int syncDistricts(JSONArray Districtslist) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(DistrictsContract.TableDistricts.TABLE_NAME, null, null);
+        int insertCount = 0;
+        try {
+            for (int i = 0; i < Districtslist.length(); i++) {
+                JSONObject jsonObjectDistrict = Districtslist.getJSONObject(i);
+                DistrictsContract District = new DistrictsContract();
+                District.sync(jsonObjectDistrict);
+                ContentValues values = new ContentValues();
+
+                values.put(TableDistricts.COLUMN_DISTRICT_CODE, District.getDistrictCode());
+                values.put(TableDistricts.COLUMN_DISTRICT_NAME, District.getDistrictName());
+                long rowID = db.insert(TableDistricts.TABLE_NAME, null, values);
+                if (rowID != -1) insertCount++;
+            }
+
+        } catch (Exception e) {
+            Log.d(TAG, "syncDistrict(e): " + e);
+            db.close();
+        } finally {
+            db.close();
+        }
+        return insertCount;
+    }
+
+    public int syncCluster(JSONArray clusterList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TableClusters.TABLE_NAME, null, null);
+        int insertCount = 0;
+        try {
+
+            for (int i = 0; i < clusterList.length(); i++) {
+                JSONObject jsonObjectCluster = clusterList.getJSONObject(i);
+                ClustersContract cluster = new ClustersContract();
+                cluster.sync(jsonObjectCluster);
+                ContentValues values = new ContentValues();
+
+                values.put(TableClusters.COLUMN_CLUSTER_CODE, cluster.getClusterCode());
+                values.put(TableClusters.COLUMN_CLUSTER_NAME, cluster.getClustername());
+                values.put(TableClusters.COLUMN_UC_CODE, cluster.getUcCode());
+
+                long rowID = db.insert(TableClusters.TABLE_NAME, null, values);
+                if (rowID != -1) insertCount++;
+            }
+            db.close();
+
+        } catch (Exception e) {
+            Log.d(TAG, "syncCluster(e): " + e);
+            db.close();
+        } finally {
+            db.close();
+        }
+        return insertCount;
+    }
+
+
+    public int syncUCs(JSONArray ucList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TableUCs.TABLE_NAME, null, null);
+        int insertCount = 0;
+        try {
+
+            for (int i = 0; i < ucList.length(); i++) {
+                JSONObject jsonObjectUc = ucList.getJSONObject(i);
+                UCsContract uc = new UCsContract();
+                uc.sync(jsonObjectUc);
+                ContentValues values = new ContentValues();
+
+                values.put(TableUCs.COLUMN_UC_CODE, uc.getUcCode());
+                values.put(TableUCs.COLUMN_UC_NAME, uc.getUcName());
+                values.put(TableUCs.COLUMN_DISTRICT_CODE, uc.getDistrictCode());
+
+                long rowID = db.insert(TableUCs.TABLE_NAME, null, values);
+                if (rowID != -1) insertCount++;
+            }
+            db.close();
+
+        } catch (Exception e) {
+            Log.d(TAG, "syncUc(e): " + e);
+            db.close();
+        } finally {
+            db.close();
+        }
+        return insertCount;
+    }
+
 }

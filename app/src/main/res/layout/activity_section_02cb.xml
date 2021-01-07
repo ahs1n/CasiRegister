@@ -8,8 +8,8 @@
         <import type="android.view.View" />
 
         <variable
-            name="form"
-            type="edu.aku.hassannaqvi.naunehal.models.Form" />
+            name="family"
+            type="edu.aku.hassannaqvi.naunehal.models.Family" />
     </data>
 
 
@@ -68,7 +68,7 @@
                         android:hint="@string/cb01"
                         android:inputType="number"
                         android:maxLength="2"
-                        android:text="@={form.cb01}"
+                        android:text="@={family.cb01}"
                         app:maxValue="99"
                         app:minValue="1"
                         app:type="range" />
@@ -115,7 +115,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/cb02"
-                        android:text="@={form.cb02}" />
+                        android:text="@={family.cb02}" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -161,16 +161,16 @@
                             android:id="@+id/cb0301"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.cb03.equals(`1`)}"
-                            android:onClick="@{()->form.setCb03(`1`)}"
+                            android:checked="@{family.cb03.equals(`1`)}"
+                            android:onClick="@{()->family.setCb03(`1`)}"
                             android:text="@string/cb0301" />
 
                         <RadioButton
                             android:id="@+id/cb0302"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.cb03.equals(`2`)}"
-                            android:onClick="@{()->form.setCb03(`2`)}"
+                            android:checked="@{family.cb03.equals(`2`)}"
+                            android:onClick="@{()->family.setCb03(`2`)}"
                             android:text="@string/cb0302" />
                     </RadioGroup>
                 </LinearLayout>
@@ -204,7 +204,7 @@
                         android:hint="@string/cb04dd"
                         android:inputType="number"
                         android:maxLength="2"
-                        android:text="@={form.cb04dd}"
+                        android:text="@={family.cb04dd}"
                         app:maxValue="29"
                         app:minValue="1"
                         app:type="range" />
@@ -221,7 +221,7 @@
                         android:hint="@string/cb04mm"
                         android:inputType="number"
                         android:maxLength="2"
-                        android:text="@={form.cb04mm}"
+                        android:text="@={family.cb04mm}"
                         app:maxValue="11"
                         app:minValue="1"
                         app:type="range" />
@@ -238,7 +238,7 @@
                         android:hint="@string/cb04yy"
                         android:inputType="number"
                         android:maxLength="4"
-                        android:text="@={form.cb04yy}"
+                        android:text="@={family.cb04yy}"
                         app:maxValue="2021"
                         app:minValue="2015"
                         app:type="range" />
@@ -275,7 +275,7 @@
                         android:hint="@string/cb0501"
                         android:inputType="number"
                         android:maxLength="1"
-                        android:text="@={form.cb0501}"
+                        android:text="@={family.cb0501}"
                         app:maxValue="5"
                         app:minValue="1"
                         app:type="range" />
@@ -292,7 +292,7 @@
                         android:hint="@string/cb0502"
                         android:inputType="number"
                         android:maxLength="2"
-                        android:text="@={form.cb0502}"
+                        android:text="@={family.cb0502}"
                         app:maxValue="11"
                         app:minValue="1"
                         app:type="range" />
@@ -341,32 +341,32 @@
                             android:id="@+id/cb0601"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.cb06.equals(`1`)}"
-                            android:onClick="@{()->form.setCb06(`1`)}"
+                            android:checked="@{family.cb06.equals(`1`)}"
+                            android:onClick="@{()->family.setCb06(`1`)}"
                             android:text="@string/cb0601" />
 
                         <RadioButton
                             android:id="@+id/cb0602"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.cb06.equals(`2`)}"
-                            android:onClick="@{()->form.setCb06(`2`)}"
+                            android:checked="@{family.cb06.equals(`2`)}"
+                            android:onClick="@{()->family.setCb06(`2`)}"
                             android:text="@string/cb0602" />
 
                         <RadioButton
                             android:id="@+id/cb0603"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.cb06.equals(`3`)}"
-                            android:onClick="@{()->form.setCb06(`3`)}"
+                            android:checked="@{family.cb06.equals(`3`)}"
+                            android:onClick="@{()->family.setCb06(`3`)}"
                             android:text="@string/cb0603" />
 
                         <RadioButton
                             android:id="@+id/cb0696"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.cb06.equals(`4`)}"
-                            android:onClick="@{()->form.setCb06(`4`)}"
+                            android:checked="@{family.cb06.equals(`4`)}"
+                            android:onClick="@{()->family.setCb06(`4`)}"
                             android:text="@string/cb0696" />
 
                     </RadioGroup>
@@ -413,7 +413,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/cb07"
-                        android:text="@={form.cb07}" />
+                        android:text="@={family.cb07}" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -457,7 +457,7 @@
                         android:hint="@string/cb08"
                         android:inputType="number"
                         android:maxLength="2"
-                        android:text="@={form.cb08}"
+                        android:text="@={family.cb08}"
                         app:maxValue="99"
                         app:minValue="12"
                         app:type="range" />
@@ -504,7 +504,7 @@
                         android:hint="@string/cb09"
                         android:inputType="number"
                         android:maxLength="2"
-                        android:text="@={form.cb09}"
+                        android:text="@={family.cb09}"
                         app:maxValue="17"
                         app:minValue="1"
                         app:type="range" />
@@ -549,7 +549,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/cb10"
-                        android:text="@={form.cb10}" />
+                        android:text="@={family.cb10}" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -595,16 +595,16 @@
                             android:id="@+id/cb1101"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.cb11.equals(`1`)}"
-                            android:onClick="@{()->form.setCb11(`1`)}"
+                            android:checked="@{family.cb11.equals(`1`)}"
+                            android:onClick="@{()->family.setCb11(`1`)}"
                             android:text="@string/cb1101" />
 
                         <RadioButton
                             android:id="@+id/cb1102"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.cb11.equals(`2`)}"
-                            android:onClick="@{()->form.setCb11(`2`)}"
+                            android:checked="@{family.cb11.equals(`2`)}"
+                            android:onClick="@{()->family.setCb11(`2`)}"
                             android:text="@string/cb1102" />
                     </RadioGroup>
                 </LinearLayout>
@@ -648,7 +648,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/cb12"
-                        android:text="@={form.cb12}" />
+                        android:text="@={family.cb12}" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -692,7 +692,7 @@
                         android:hint="@string/cb13"
                         android:inputType="number"
                         android:maxLength="2"
-                        android:text="@={form.cb13}"
+                        android:text="@={family.cb13}"
                         app:maxValue="17"
                         app:minValue="1"
                         app:type="range" />
@@ -737,7 +737,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/cb14"
-                        android:text="@={form.cb14}" />
+                        android:text="@={family.cb14}" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -782,7 +782,7 @@
                         android:inputType="number"
                         app:maxValue="999999"
                         app:minValue="1"
-                        android:text="@={form.cb15}"
+                        android:text="@={family.cb15}"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -829,24 +829,24 @@
                             android:id="@+id/cb1601"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.cb16.equals(`1`)}"
-                            android:onClick="@{()->form.setCb16(`1`)}"
+                            android:checked="@{family.cb16.equals(`1`)}"
+                            android:onClick="@{()->family.setCb16(`1`)}"
                             android:text="@string/cb1601" />
 
                         <RadioButton
                             android:id="@+id/cb1602"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.cb16.equals(`2`)}"
-                            android:onClick="@{()->form.setCb16(`2`)}"
+                            android:checked="@{family.cb16.equals(`2`)}"
+                            android:onClick="@{()->family.setCb16(`2`)}"
                             android:text="@string/cb1602" />
 
                         <RadioButton
                             android:id="@+id/cb1603"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.cb16.equals(`3`)}"
-                            android:onClick="@{()->form.setCb16(`3`)}"
+                            android:checked="@{family.cb16.equals(`3`)}"
+                            android:onClick="@{()->family.setCb16(`3`)}"
                             android:text="@string/cb1603" />
 
                     </RadioGroup>
