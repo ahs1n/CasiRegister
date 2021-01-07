@@ -1,18 +1,17 @@
-package edu.aku.hassannaqvi.naunehal.utils;
+package edu.aku.hassannaqvi.naunehal.utils
 
+import edu.aku.hassannaqvi.naunehal.contracts.ChildContract
+import edu.aku.hassannaqvi.naunehal.contracts.FormsContract
+import edu.aku.hassannaqvi.naunehal.models.Users
+import edu.aku.hassannaqvi.naunehal.models.VersionApp
 
-import edu.aku.hassannaqvi.naunehal.contracts.ChildContract;
-import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
-import edu.aku.hassannaqvi.naunehal.models.Users;
+object CreateTable {
+    private const val PROJECT_NAME = "SMK_PWD2020"
+    const val DATABASE_NAME = "$PROJECT_NAME.db"
+    const val DATABASE_COPY = "${PROJECT_NAME}_copy.db"
+    const val DATABASE_VERSION = 1
 
-public final class CreateTable {
-
-    public static final String PROJECT_NAME = "SMK_PWD2020";
-    public static final String DATABASE_NAME = PROJECT_NAME + ".db";
-    public static final String DATABASE_COPY = PROJECT_NAME + "_copy.db";
-    public static final int DATABASE_VERSION = 1;
-
-    public static final String SQL_CREATE_FORMS = "CREATE TABLE "
+    const val SQL_CREATE_FORMS = ("CREATE TABLE "
             + FormsContract.FormsTable.TABLE_NAME + "("
             + FormsContract.FormsTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + FormsContract.FormsTable.COLUMN_PROJECT_NAME + " TEXT,"
@@ -40,10 +39,9 @@ public final class CreateTable {
             + FormsContract.FormsTable.COLUMN_S06BF + " TEXT,"
             + FormsContract.FormsTable.COLUMN_S07CV + " TEXT,"
             + FormsContract.FormsTable.COLUMN_S08SE + " TEXT"
+            + " );")
 
-            + " );";
-
-    public static final String SQL_CREATE_CHILD = "CREATE TABLE "
+    const val SQL_CREATE_CHILD = ("CREATE TABLE "
             + ChildContract.ChildTable.TABLE_NAME + "("
             + ChildContract.ChildTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + ChildContract.ChildTable.COLUMN_PROJECT_NAME + " TEXT,"
@@ -65,22 +63,19 @@ public final class CreateTable {
             + ChildContract.ChildTable.COLUMN_CLUSTER + " TEXT,"
             + ChildContract.ChildTable.COLUMN_HHNO + " TEXT,"
             + ChildContract.ChildTable.COLUMN_SA + " TEXT"
-            + " );";
+            + " );")
 
-
-    public static final String SQL_CREATE_USERS = "CREATE TABLE " + Users.UsersTable.TABLE_NAME + "("
+    const val SQL_CREATE_USERS = ("CREATE TABLE " + Users.UsersTable.TABLE_NAME + "("
             + Users.UsersTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + Users.UsersTable.COLUMN_USERNAME + " TEXT,"
             + Users.UsersTable.COLUMN_PASSWORD + " TEXT,"
             + Users.UsersTable.COLUMN_FULLNAME + " TEXT"
-            + " );";
+            + " );")
 
-
-    /*public static final String SQL_CREATE_VERSIONAPP = "CREATE TABLE " + VersionAppContract.VersionAppTable.TABLE_NAME + " (" +
-            VersionAppContract.VersionAppTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-            VersionAppContract.VersionAppTable.COLUMN_VERSION_CODE + " TEXT, " +
-            VersionAppContract.VersionAppTable.COLUMN_VERSION_NAME + " TEXT, " +
-            VersionAppContract.VersionAppTable.COLUMN_PATH_NAME + " TEXT " +
-            ");";*/
-
+    const val SQL_CREATE_VERSIONAPP = "CREATE TABLE " + VersionApp.VersionAppTable.TABLE_NAME + " (" +
+            VersionApp.VersionAppTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            VersionApp.VersionAppTable.COLUMN_VERSION_CODE + " TEXT, " +
+            VersionApp.VersionAppTable.COLUMN_VERSION_NAME + " TEXT, " +
+            VersionApp.VersionAppTable.COLUMN_PATH_NAME + " TEXT " +
+            ");"
 }
