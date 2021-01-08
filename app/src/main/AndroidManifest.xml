@@ -18,6 +18,13 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
 
+
+        <activity
+            android:name=".ui.EndingActivity"
+            android:label="Section SE"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
+
         <activity
             android:name=".ui.sections.Section081SEActivity"
             android:label="Section SE"

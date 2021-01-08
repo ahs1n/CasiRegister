@@ -4,7 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.MatrixCursor;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -23,16 +22,20 @@ import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.contracts.UCsContract;
 import edu.aku.hassannaqvi.naunehal.contracts.UCsContract.TableUCs;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
+import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
 import edu.aku.hassannaqvi.naunehal.models.Form;
+import edu.aku.hassannaqvi.naunehal.contracts.FormsContract.FormsTable;
+import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract.ChildInfoTable;
+import edu.aku.hassannaqvi.naunehal.models.FormIndicatorsModel;
 import edu.aku.hassannaqvi.naunehal.models.Users;
 import edu.aku.hassannaqvi.naunehal.models.Users.UsersTable;
 import edu.aku.hassannaqvi.naunehal.models.VersionApp;
 import edu.aku.hassannaqvi.naunehal.models.VersionApp.VersionAppTable;
 import edu.aku.hassannaqvi.naunehal.utils.CreateTable;
 
-
 /**
- * Created by hassan.naqvi on 11/30/2016.
+ * @author hassan.naqvi on 11/30/2016.
+ * @update ali azaz on 01/07/21
  */
 
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -48,6 +51,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CreateTable.SQL_CREATE_FORMS);
         db.execSQL(CreateTable.SQL_CREATE_FAMILY);
         db.execSQL(CreateTable.SQL_CREATE_CHILD);
+        db.execSQL(CreateTable.SQL_CREATE_IMMUNIZATION);
         db.execSQL(CreateTable.SQL_CREATE_VERSIONAPP);
     }
 
@@ -58,7 +62,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             case 2:
         }
     }
-
 
     public int syncVersionApp(JSONObject VersionList) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -85,7 +88,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return (int) count;
     }
-
 
     public int syncUser(JSONArray userList) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -116,24 +118,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return insertCount;
     }
 
-
-    public boolean Login(String username, String password) throws SQLException {
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        Cursor mCursor = db.rawQuery("SELECT * FROM " + UsersTable.TABLE_NAME + " WHERE " + UsersTable.COLUMN_USERNAME + "=? AND " + UsersTable.COLUMN_PASSWORD + "=?", new String[]{username, password});
-        if (mCursor != null) {
-            if (mCursor.getCount() > 0) {
-
-                if (mCursor.moveToFirst()) {
-//                    MainApp.DIST_ID = mCursor.getString(mCursor.getColumnIndex(Users.UsersTable.ROW_USERNAME));
-                }
-                return true;
-            }
-        }
-        return false;
-    }
-
-
+    /*
+     * Addition in DB
+     * */
     public Long addForm(Form form) {
 
         // Gets the data repository in write mode
@@ -162,6 +149,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsContract.FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
         values.put(FormsContract.FormsTable.COLUMN_DEVICEID, form.getDeviceId());
         values.put(FormsContract.FormsTable.COLUMN_APPVERSION, form.getAppver());
+        values.put(FormsContract.FormsTable.COLUMN_CHILD_RESPONDENT, form.getChildrespondent());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
@@ -172,6 +160,200 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
+    public Long addChildInformation(ChildInformation form) {
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(FormsContract.FormsTable.COLUMN_PROJECT_NAME, form.getProjectName());
+        values.put(ChildInfoTable.COLUMN_UID, form.getUid());
+        values.put(ChildInfoTable.COLUMN_UUID, form.getUuid());
+        values.put(ChildInfoTable.COLUMN_USERNAME, form.getUserName());
+        values.put(ChildInfoTable.COLUMN_SYSDATE, form.getSysDate());
+        values.put(ChildInfoTable.COLUMN_DCODE, form.getDcode());
+        values.put(ChildInfoTable.COLUMN_UCODE, form.getUcode());
+        values.put(ChildInfoTable.COLUMN_CLUSTER, form.getCluster());
+        values.put(ChildInfoTable.COLUMN_HHNO, form.getHhno());
+        values.put(ChildInfoTable.COLUMN_SCB, form.sCBtoString());
+        values.put(ChildInfoTable.COLUMN_DEVICEID, form.getDeviceId());
+        values.put(ChildInfoTable.COLUMN_DEVICETAGID, form.getDeviceTag());
+        values.put(ChildInfoTable.COLUMN_SYNCED, form.getSynced());
+        values.put(ChildInfoTable.COLUMN_SYNCED_DATE, form.getSyncDate());
+        values.put(ChildInfoTable.COLUMN_APPVERSION, form.getAppver());
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                ChildInfoTable.TABLE_NAME,
+                ChildInfoTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+
+    /*
+     * Functions that dealing with table data
+     * */
+    public Users getLoginUser(String username, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                UsersTable.COLUMN_ID,
+                UsersTable.COLUMN_USERNAME,
+                UsersTable.COLUMN_PASSWORD,
+                UsersTable.COLUMN_FULLNAME,
+        };
+        String whereClause = UsersTable.COLUMN_USERNAME + "=? AND " + UsersTable.COLUMN_PASSWORD + "=?";
+        String[] whereArgs = {username, password};
+        String groupBy = null;
+        String having = null;
+        String orderBy = UsersTable.COLUMN_ID + " ASC";
+
+        Users allForms = null;
+        try {
+            c = db.query(
+                    UsersTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allForms = new Users().hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allForms;
+    }
+
+    public ArrayList<Form> getFormsByDate(String sysdate) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                FormsTable._ID,
+                FormsTable.COLUMN_UID,
+                FormsTable.COLUMN_SYSDATE,
+                FormsTable.COLUMN_USERNAME,
+                FormsTable.COLUMN_ISTATUS,
+                FormsTable.COLUMN_ISTATUS96x,
+                FormsTable.COLUMN_ENDINGDATETIME,
+                FormsTable.COLUMN_SYNCED,
+
+        };
+        String whereClause = FormsTable.COLUMN_SYSDATE + " Like ? ";
+        String[] whereArgs = new String[]{"%" + sysdate + " %"};
+        String groupBy = null;
+        String having = null;
+        String orderBy = FormsTable.COLUMN_ID + " ASC";
+        ArrayList<Form> allForms = new ArrayList<>();
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Form forms = new Form();
+                forms.setId(c.getString(c.getColumnIndex(FormsTable.COLUMN_ID)));
+                forms.setUid(c.getString(c.getColumnIndex(FormsTable.COLUMN_UID)));
+                forms.setSysDate(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYSDATE)));
+                forms.setUserName(c.getString(c.getColumnIndex(FormsTable.COLUMN_USERNAME)));
+                allForms.add(forms);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allForms;
+    }
+
+    public FormIndicatorsModel getFormStatusCount(String sysdate) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        FormIndicatorsModel count = new FormIndicatorsModel();
+        Cursor mCursor = db.rawQuery(
+                String.format("select " +
+                        "sum(case when %s = 1 then 1 else 0 end) as completed," +
+                        "sum(case when %s != 1 OR %s is null then 1 else 0 end) as notCompleted " +
+                        "from %s WHERE %s Like ?", FormsTable.COLUMN_ISTATUS, FormsTable.COLUMN_ISTATUS, FormsTable.COLUMN_ISTATUS, FormsTable.TABLE_NAME, FormsTable.COLUMN_SYSDATE),
+                new String[]{"%" + sysdate + " %"}, null);
+        if (mCursor != null && mCursor.moveToFirst()) {
+            count = count.copy(Integer.parseInt(mCursor.getString(0)),
+                    Integer.parseInt(mCursor.getString(1)));
+            mCursor.close();
+        }
+        return count;
+    }
+
+    public FormIndicatorsModel getUploadStatusCount() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        FormIndicatorsModel count = new FormIndicatorsModel();
+        Cursor mCursor = db.rawQuery(
+                String.format("select " +
+                        "sum(case when %s = 1 then 1 else 0 end) as completed," +
+                        "sum(case when %s is null OR %s = '' then 1 else 0 end) as notCompleted " +
+                        "from %s", FormsTable.COLUMN_SYNCED, FormsTable.COLUMN_SYNCED, FormsTable.COLUMN_SYNCED, FormsTable.TABLE_NAME),
+                null, null);
+        if (mCursor != null && mCursor.moveToFirst()) {
+            count = count.copy(Integer.parseInt(mCursor.getString(0)),
+                    Integer.parseInt(mCursor.getString(1)));
+            mCursor.close();
+        }
+        return count;
+    }
+
+    public ArrayList<ChildInformation> getFamilyFromDB(String cluster, String hhno, String uuid) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String whereClause = ChildInfoTable.COLUMN_CLUSTER + " =? AND "
+                + ChildInfoTable.COLUMN_HHNO + " =? AND "
+                + ChildInfoTable.COLUMN_UUID + " =?";
+        String[] whereArgs = {cluster, hhno, uuid};
+        String groupBy = null;
+        String having = null;
+        String orderBy = FormsTable.COLUMN_ID + " ASC";
+        ArrayList<ChildInformation> allForms = new ArrayList<>();
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    null,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allForms.add(new ChildInformation().Hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allForms;
+    }
 
 
     /*   public int updateFormID() {
@@ -192,26 +374,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
            return count;
        }
    */
-
-    public int updateEnding() {
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        // New value for one column
-        ContentValues values = new ContentValues();
-        values.put(FormsContract.FormsTable.COLUMN_ISTATUS, MainApp.form.getIStatus());
-        values.put(FormsContract.FormsTable.COLUMN_ISTATUS96x, MainApp.form.getIStatus96x());
-        values.put(FormsContract.FormsTable.COLUMN_ENDINGDATETIME, MainApp.form.getEndTime());
-
-        // Which row to update, based on the ID
-        String selection = FormsContract.FormsTable.COLUMN_ID + " =? ";
-        String[] selectionArgs = {String.valueOf(MainApp.form.getId())};
-
-        return db.update(FormsContract.FormsTable.TABLE_NAME,
-                values,
-                selection,
-                selectionArgs);
-    }
-
     //Get BLRandom data
     /*public BLRandom getHHFromBLRandom(String subAreaCode, String hh) {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -265,7 +427,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allBL;
     }*/
 
-    //Generic update FormColumn
+
+    /*
+     * Update data in tables
+     * */
+    public int updatesChildInformationColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = ChildInfoTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.childInformation.getId())};
+
+        return db.update(ChildInfoTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
     public int updatesFormColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -281,7 +461,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
-    //Generic Un-Synced Forms
     public void updateSyncedForms(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -299,6 +478,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values,
                 where,
                 whereArgs);
+    }
+
+    public int updateEnding() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FormsContract.FormsTable.COLUMN_ISTATUS, MainApp.form.getIStatus());
+        values.put(FormsContract.FormsTable.COLUMN_ISTATUS96x, MainApp.form.getIStatus96x());
+        values.put(FormsContract.FormsTable.COLUMN_ENDINGDATETIME, MainApp.form.getEndTime());
+
+        // Which row to update, based on the ID
+        String selection = FormsContract.FormsTable.COLUMN_ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.form.getId())};
+
+        return db.update(FormsContract.FormsTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
     }
 
 
@@ -394,7 +592,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return insertCount;
     }
-
 
     public int syncUCs(JSONArray ucList) {
         SQLiteDatabase db = this.getWritableDatabase();

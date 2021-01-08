@@ -6,10 +6,10 @@ import android.provider.BaseColumns;
  * Created by hassan.naqvi on 11/30/2016.
  */
 
-public class ChildContract {
+public class IMContract {
 
-    public static abstract class ChildTable implements BaseColumns {
-        public static final String TABLE_NAME = "family";
+    public static abstract class IMTable implements BaseColumns {
+        public static final String TABLE_NAME = "Immunization";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
@@ -24,7 +24,7 @@ public class ChildContract {
         public static final String COLUMN_RESPONDENT_NAME = "respondentname";
         public static final String COLUMN_CHILD_NAME = "childname";
         public static final String COLUMN_SERIAL = "serial";
-        public static final String COLUMN_SCS = "scs";
+        public static final String COLUMN_SIM = "sim";
 
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";

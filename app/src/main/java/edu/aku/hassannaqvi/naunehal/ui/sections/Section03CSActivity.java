@@ -1,12 +1,5 @@
 package edu.aku.hassannaqvi.naunehal.ui.sections;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-import edu.aku.hassannaqvi.naunehal.R;
-import edu.aku.hassannaqvi.naunehal.core.MainApp;
-import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection03csBinding;
-import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +7,13 @@ import android.widget.RadioGroup;
 
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import edu.aku.hassannaqvi.naunehal.R;
+import edu.aku.hassannaqvi.naunehal.core.MainApp;
+import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection03csBinding;
+import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
 
 public class Section03CSActivity extends AppCompatActivity {
 
@@ -26,7 +26,7 @@ public class Section03CSActivity extends AppCompatActivity {
         //MainApp.form = new Form();
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_03cs);
-        bi.setForm(MainApp.form);
+        bi.setForm(MainApp.child);
         setupSkips();
 
     }
