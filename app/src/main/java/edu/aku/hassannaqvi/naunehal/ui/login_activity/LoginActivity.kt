@@ -90,7 +90,7 @@ class LoginActivity : AppCompatActivity(), LoginUISource {
             Toast.makeText(this, "Network connection not available!", Toast.LENGTH_SHORT).show()
             return
         }
-        startActivity(Intent(this, SyncActivity::class.java))
+        gotoActivity(SyncActivity::class.java)
     }
 
     /*
