@@ -62,6 +62,15 @@ public class Section081SEActivity extends AppCompatActivity {
                 bi.fldGrpCVse17.setVisibility(View.VISIBLE);
             }
         });
+
+        // se1705
+        bi.se1705.setOnCheckedChangeListener((compoundButton, id) -> {
+            if (id) {
+                Clear.clearAllFields(bi.se17check, false);
+            } else {
+                Clear.clearAllFields(bi.se17check, true);
+            }
+        });
     }
 
 
