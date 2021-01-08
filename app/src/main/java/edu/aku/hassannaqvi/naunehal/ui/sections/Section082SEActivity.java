@@ -33,7 +33,6 @@ public class Section082SEActivity extends AppCompatActivity {
         bi.setForm(MainApp.form);
         bi.setCallback(this);
         setupSkips();
-        setListeners();
     }
 
     private void setupSkips() {
@@ -46,11 +45,23 @@ public class Section082SEActivity extends AppCompatActivity {
             }
         });
 
-        bi.se23.setOnCheckedChangeListener((radioGroup, i) -> {
-            bi.llse23.setVisibility(View.VISIBLE);
-            if (i == bi.se2302.getId()) {
-                Clear.clearAllFields(bi.llse23);
-                bi.llse23.setVisibility(View.GONE);
+
+        bi.se25.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (TextUtils.isEmpty(bi.se25.getText()))
+                    return;
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
             }
         });
 
@@ -80,28 +91,7 @@ public class Section082SEActivity extends AppCompatActivity {
         startActivity(new Intent(this, MainActivity.class));
     }
 
-    public void setListeners() {
 
-        bi.se25.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if (TextUtils.isEmpty(bi.se25.getText()))
-                    return;
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-
-    }
 
     public void se25OnTextChanged(CharSequence s, int start, int before, int count) {
         if (!bi.se25.isRangeTextValidate())
