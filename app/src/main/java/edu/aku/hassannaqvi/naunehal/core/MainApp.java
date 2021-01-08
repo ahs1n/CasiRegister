@@ -4,7 +4,7 @@ import android.app.Application;
 import android.view.View;
 
 import edu.aku.hassannaqvi.naunehal.models.Child;
-import edu.aku.hassannaqvi.naunehal.models.Family;
+import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
 import edu.aku.hassannaqvi.naunehal.models.Form;
 import edu.aku.hassannaqvi.naunehal.models.Immunization;
 
@@ -24,7 +24,7 @@ public class MainApp extends Application {
     public static Form form;
     public static Child child;
     public static Immunization immunization;
-    public static Family family;
+    public static ChildInformation childInformation;
     public static String DeviceURL = "devices.php";
     public static AppInfo appInfo;
 

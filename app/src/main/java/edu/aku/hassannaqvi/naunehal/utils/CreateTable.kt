@@ -1,7 +1,7 @@
 package edu.aku.hassannaqvi.naunehal.utils
 
 import edu.aku.hassannaqvi.naunehal.contracts.ChildContract
-import edu.aku.hassannaqvi.naunehal.contracts.FamilyContract
+import edu.aku.hassannaqvi.naunehal.contracts.ChildInfoContract
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract
 import edu.aku.hassannaqvi.naunehal.contracts.IMContract
 import edu.aku.hassannaqvi.naunehal.models.Users
@@ -45,27 +45,27 @@ object CreateTable {
             + " );")
 
     const val SQL_CREATE_FAMILY = ("CREATE TABLE "
-            + FamilyContract.FamilyTable.TABLE_NAME + "("
-            + FamilyContract.FamilyTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + FamilyContract.FamilyTable.COLUMN_PROJECT_NAME + " TEXT,"
-            + FamilyContract.FamilyTable.COLUMN_UID + " TEXT,"
-            + FamilyContract.FamilyTable.COLUMN_UUID + " TEXT,"
-            + FamilyContract.FamilyTable.COLUMN_USERNAME + " TEXT,"
-            + FamilyContract.FamilyTable.COLUMN_SYSDATE + " TEXT,"
-            + FamilyContract.FamilyTable.COLUMN_ISTATUS + " TEXT,"
-            + FamilyContract.FamilyTable.COLUMN_ISTATUS96x + " TEXT,"
-            + FamilyContract.FamilyTable.COLUMN_ENDINGDATETIME + " TEXT,"
-            + FamilyContract.FamilyTable.COLUMN_GPS + " TEXT,"
-            + FamilyContract.FamilyTable.COLUMN_DEVICEID + " TEXT,"
-            + FamilyContract.FamilyTable.COLUMN_DEVICETAGID + " TEXT,"
-            + FamilyContract.FamilyTable.COLUMN_SYNCED + " TEXT,"
-            + FamilyContract.FamilyTable.COLUMN_SYNCED_DATE + " TEXT,"
-            + FamilyContract.FamilyTable.COLUMN_APPVERSION + " TEXT,"
-            + FamilyContract.FamilyTable.COLUMN_DCODE + " TEXT,"
-            + FamilyContract.FamilyTable.COLUMN_UCODE + " TEXT,"
-            + FamilyContract.FamilyTable.COLUMN_CLUSTER + " TEXT,"
-            + FamilyContract.FamilyTable.COLUMN_HHNO + " TEXT,"
-            + FamilyContract.FamilyTable.COLUMN_SCB + " TEXT"
+            + ChildInfoContract.ChildInfoTable.TABLE_NAME + "("
+            + ChildInfoContract.ChildInfoTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + ChildInfoContract.ChildInfoTable.COLUMN_PROJECT_NAME + " TEXT,"
+            + ChildInfoContract.ChildInfoTable.COLUMN_UID + " TEXT,"
+            + ChildInfoContract.ChildInfoTable.COLUMN_UUID + " TEXT,"
+            + ChildInfoContract.ChildInfoTable.COLUMN_USERNAME + " TEXT,"
+            + ChildInfoContract.ChildInfoTable.COLUMN_SYSDATE + " TEXT,"
+            + ChildInfoContract.ChildInfoTable.COLUMN_ISTATUS + " TEXT,"
+            + ChildInfoContract.ChildInfoTable.COLUMN_ISTATUS96x + " TEXT,"
+            + ChildInfoContract.ChildInfoTable.COLUMN_ENDINGDATETIME + " TEXT,"
+            + ChildInfoContract.ChildInfoTable.COLUMN_GPS + " TEXT,"
+            + ChildInfoContract.ChildInfoTable.COLUMN_DEVICEID + " TEXT,"
+            + ChildInfoContract.ChildInfoTable.COLUMN_DEVICETAGID + " TEXT,"
+            + ChildInfoContract.ChildInfoTable.COLUMN_SYNCED + " TEXT,"
+            + ChildInfoContract.ChildInfoTable.COLUMN_SYNCED_DATE + " TEXT,"
+            + ChildInfoContract.ChildInfoTable.COLUMN_APPVERSION + " TEXT,"
+            + ChildInfoContract.ChildInfoTable.COLUMN_DCODE + " TEXT,"
+            + ChildInfoContract.ChildInfoTable.COLUMN_UCODE + " TEXT,"
+            + ChildInfoContract.ChildInfoTable.COLUMN_CLUSTER + " TEXT,"
+            + ChildInfoContract.ChildInfoTable.COLUMN_HHNO + " TEXT,"
+            + ChildInfoContract.ChildInfoTable.COLUMN_SCB + " TEXT"
             + " );")
 
     const val SQL_CREATE_CHILD = ("CREATE TABLE "

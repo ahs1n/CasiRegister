@@ -120,4 +120,7 @@ dependencies {
     implementation 'com.nabinbhandari.android:permissions:3.8'
     implementation 'com.google.code.gson:gson:2.8.6'
 
+    //Float Button
+    implementation 'com.github.leinardi:FloatingActionButtonSpeedDial:3.1.1'
+
 }

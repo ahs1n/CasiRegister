@@ -6,14 +6,19 @@ import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.view.LayoutInflater
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.databinding.DataBindingUtil
 import edu.aku.hassannaqvi.naunehal.CONSTANTS
 import edu.aku.hassannaqvi.naunehal.R
 import edu.aku.hassannaqvi.naunehal.core.MainApp
+import edu.aku.hassannaqvi.naunehal.databinding.ChildEndDialogBinding
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity
+import java.io.Serializable
 import java.util.*
 
 private fun checkPermission(context: Context): IntArray {
@@ -63,8 +68,8 @@ fun openEndActivity(activity: Activity, childEndingActivity: Boolean = false) {
     dialog.findViewById<View>(R.id.btnNo).setOnClickListener { view: View? -> dialog.dismiss() }
 }
 
-fun openSectionMainActivityI(activity: Activity) {
-    val dialog = Dialog(activity)
+fun AppCompatActivity.openSectionEndingActivity() {
+    val dialog = Dialog(this)
     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
     dialog.setContentView(R.layout.item_dialog_2)
     dialog.setCancelable(false)
@@ -75,11 +80,10 @@ fun openSectionMainActivityI(activity: Activity) {
     dialog.show()
     dialog.window!!.attributes = params
     dialog.findViewById<View>(R.id.btnOk).setOnClickListener { view: View? ->
-
-        activity.finish()
-        val intent = Intent(activity, MainActivity::class.java)
+        this.finish()
+        val intent = Intent(this, EndSectionActivity::class.java)
                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        activity.startActivity(intent)
+        this.startActivity(intent)
     }
     dialog.findViewById<View>(R.id.btnNo).setOnClickListener { view: View? -> dialog.dismiss() }
 }
@@ -119,11 +123,40 @@ fun contextEndActivity(activity: Activity) {
     dialog.findViewById<View>(R.id.btnNo).setOnClickListener { view: View? -> dialog.dismiss() }
 }
 
-/*fun getMemberIcon(gender: Int, age: String): Int {
-    val memAge = age.toInt()
-    return if (memAge == -1) R.drawable.boy else if (memAge > 10) if (gender == 1) R.drawable.ctr_male else R.drawable.ctr_female else if (gender == 1) R.drawable.ctr_childboy else R.drawable.ctr_childgirl
-}*/
+@JvmOverloads
+fun AppCompatActivity.openWarningActivity(title: String, message: String, btnYesTxt: String = "YES", btnNoTxt: String = "NO", data: Any? = null) {
+    val dialog = Dialog(this)
+    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+    val bi: ChildEndDialogBinding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.child_end_dialog, null, false)
+    dialog.setContentView(bi.root)
+    bi.alertTitle.text = title
+    bi.alertTitle.setTextColor(ContextCompat.getColor(this, R.color.green))
+    bi.content.text = message
+    bi.btnOk.text = btnYesTxt
+    bi.btnOk.setBackgroundColor(ContextCompat.getColor(this, R.color.green))
+    bi.btnNo.text = btnNoTxt
+    bi.btnNo.setBackgroundColor(ContextCompat.getColor(this, R.color.gray))
+    dialog.setCancelable(false)
+    val params = WindowManager.LayoutParams()
+    params.copyFrom(dialog.window!!.attributes)
+    params.width = WindowManager.LayoutParams.WRAP_CONTENT
+    params.height = WindowManager.LayoutParams.WRAP_CONTENT
+    dialog.window!!.attributes = params
+    dialog.show()
+    bi.btnOk.setOnClickListener {
+        val warningActivity = this as WarningActivityInterface
+        warningActivity.callWarningActivity(data)
+        dialog.dismiss()
+    }
+    bi.btnNo.setOnClickListener {
+        dialog.dismiss()
+    }
+}
 
 interface EndSectionActivity {
     fun endSecActivity(flag: Boolean)
+}
+
+interface WarningActivityInterface {
+    fun callWarningActivity(item: Any? = null)
 }

@@ -6,9 +6,9 @@ import android.provider.BaseColumns;
  * Created by hassan.naqvi on 11/30/2016.
  */
 
-public class FamilyContract {
+public class ChildInfoContract {
 
-    public static abstract class FamilyTable implements BaseColumns {
+    public static abstract class ChildInfoTable implements BaseColumns {
         public static final String TABLE_NAME = "family";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";

@@ -144,7 +144,7 @@
     <string name="cb0601">Mother</string>
     <string name="cb0602">Father</string>
     <string name="cb0603">Primary Caretaker  (not parents)</string>
-    <string name="cb0696">Other family member</string>
+    <string name="cb0696">Other childInformation member</string>
     <string name="cb07">Name of Mother</string>
     <string name="cb08">Age</string>
     <string name="cb09">Education</string>
@@ -215,7 +215,7 @@
     <string name="cs0901">Fear of COVID-19</string>
     <string name="cs0902">Confidence that child will get better himself</string>
     <string name="cs0903">Someone you knew advised treatment</string>
-    <string name="cs0904">Family knew management themselves</string>
+    <string name="cs0904">ChildInformation knew management themselves</string>
     <string name="cs0905">Financial reasons</string>
     <string name="cs0906">Limitations of transport</string>
     <string name="cs0996">Others Please Specify</string>
@@ -271,7 +271,7 @@
     <string name="cs1901">Fear of COVID-19</string>
     <string name="cs1902">Confidence that child will get better himself</string>
     <string name="cs1903">Someone you knew advised treatment</string>
-    <string name="cs1904">Family knew management themselves</string>
+    <string name="cs1904">ChildInformation knew management themselves</string>
     <string name="cs1905">Financial reasons</string>
     <string name="cs1906">Limitations of transport</string>
     <string name="cs1996">Others Please Specify</string>
@@ -449,7 +449,7 @@
     <string name="im2504">Not Observed</string>
     <string name="im2402">Time of immunization not convenient </string>
     <string name="im2403">Mother too busy </string>
-    <string name="im2404">Family problem including mother ill</string>
+    <string name="im2404">ChildInformation problem including mother ill</string>
     <string name="im2405">Child ill, not brought </string>
     <string name="im2406">Child ill, brought but not vaccinated</string>
     <string name="im2407">Long wait </string>
@@ -462,7 +462,7 @@
     <string name="im2414">Took child facility closed</string>
     <string name="im2415">Child was sick </string>
     <string name="im2416">Took child but not vaccination day</string>
-    <string name="im2417">COVID-19-related (fear of going out, sickness in family)</string>
+    <string name="im2417">COVID-19-related (fear of going out, sickness in childInformation)</string>
     <string name="im2498">Don’t Know </string>
     <string name="im2496">Others Please Specify</string>
     <string name="pd_title1">Section PD: Care seeking during pregnancy and delivery  (To be administered to the mother of the youngest under-five child in the household)</string>
@@ -511,7 +511,7 @@
     <string name="pd0801">Fear of COVID-19</string>
     <string name="pd0802">Assumption that care is not needed during pregnancy</string>
     <string name="pd0803">On the advice of a relative or friend</string>
-    <string name="pd0804">Family knew how to care for you themselves</string>
+    <string name="pd0804">ChildInformation knew how to care for you themselves</string>
     <string name="pd0805">Financial reasons</string>
     <string name="pd0806">Limitations of transport</string>
     <string name="pd09">Have you ever taken any iron folic acid (IFA) while you were pregnant?</string>
@@ -550,7 +550,7 @@
     <string name="pd14">If at home, why was the delivery not in a facility?</string>
     <string name="pd1401">Fear of COVID-19</string>
     <string name="pd1402">All my deliveries have been at home</string>
-    <string name="pd1403">My family did not want me to go to  a facility</string>
+    <string name="pd1403">My childInformation did not want me to go to  a facility</string>
     <string name="pd1404">Financial reasons</string>
     <string name="pd1405">Limitations of transport </string>
     <string name="pd1496">Others Please Specify</string>
@@ -957,7 +957,7 @@
     <string name="se1911">Animal Dung</string>
     <string name="se1912">No Food Cooked In Household</string>
     <string name="se1996">Others Please Specify </string>
-    <string name="se20">What transport does most of the family members of this HH usually use? (select all that apply)</string>
+    <string name="se20">What transport does most of the childInformation members of this HH usually use? (select all that apply)</string>
     <string name="se2001">Private car</string>
     <string name="se2002">Company car</string>
     <string name="se2003">Motorcycle Public transport</string>
@@ -1049,11 +1049,11 @@
     <string name="se3002">My husband/wife My father-in-law/father</string>
     <string name="se3003">Children</string>
     <string name="se3096">Others Please Specify</string>
-    <string name="se31">Where do your family members usually go to seek care?</string>
+    <string name="se31">Where do your childInformation members usually go to seek care?</string>
     <string name="se3101">Govt. Health care facility</string>
     <string name="se3102">Private health care facility</string>
     <string name="se3196">Others Please Specify</string>
-    <string name="se32">From whom do your family members usually seek care? </string>
+    <string name="se32">From whom do your childInformation members usually seek care? </string>
     <string name="se32title1">HEALTH PERSONNEL</string>
     <string name="se3201">Doctor</string>
     <string name="se3202">Nurse</string>

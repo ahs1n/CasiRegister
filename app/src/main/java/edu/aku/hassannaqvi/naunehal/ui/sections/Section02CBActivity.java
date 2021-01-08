@@ -13,7 +13,6 @@ import com.validatorcrawler.aliazaz.Validator;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection02cbBinding;
-import edu.aku.hassannaqvi.naunehal.models.Family;
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
 
 public class Section02CBActivity extends AppCompatActivity {
@@ -26,10 +25,10 @@ public class Section02CBActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_02cb);
 
         // TODO: Move this line to onCreate of childlist activity (recycler) and implement fetchChildrenByUUID() from TABLE_FAMILY in Database.
-        MainApp.family = new Family();
+//        MainApp.childInfo = new ChildInfo();
 
         // TODO: After itemClick on childlist fetchChildByUID() from TABLE_FAMILY and update contents MainApp.Family before entering this activity.
-        bi.setFamily(MainApp.family);
+        bi.setChildInformation(MainApp.childInformation);
         setupSkips();
 
     }
@@ -65,6 +64,7 @@ public class Section02CBActivity extends AppCompatActivity {
 
         // SaveDraft(); //<== This function is no longer needed after DataBinding
         if (/*UpdateDB()*/ true) {
+            ChildrenListActivity.Companion.setSerial(Integer.parseInt(MainApp.childInformation.cb01) + 1);
             finish();
             startActivity(new Intent(this, Section03CSActivity.class));
         }

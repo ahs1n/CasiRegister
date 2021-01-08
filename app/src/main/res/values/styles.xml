@@ -313,5 +313,7 @@
     </style>
 
 
-    <color name="redOverlay">#d6ef0000</color>
+    <style name="Default_Layout"  parent="Theme.AppCompat.Light.DarkActionBar"/>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
 </resources>
