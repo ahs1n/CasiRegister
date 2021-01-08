@@ -84,7 +84,7 @@ public class Section01HHActivity extends AppCompatActivity {
 
         if (/*UpdateDB()*/ true) {
             finish();
-            startActivity(new Intent(this, Section02CBActivity.class));
+            startActivity(new Intent(this, ChildrenListActivity.class));
         }
     }
 

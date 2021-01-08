@@ -31,6 +31,7 @@ public class MainApp extends Application {
     public static String DeviceURL = "devices.php";
     public static AppInfo appInfo;
     public static Users user;
+    public static Boolean admin = false;
 
     public static void hideSystemUI(View decorView) {
         // Enables regular immersive mode.

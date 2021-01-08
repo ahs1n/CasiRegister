@@ -124,4 +124,7 @@ dependencies {
     //Float Button
     implementation 'com.github.leinardi:FloatingActionButtonSpeedDial:3.1.1'
 
+    // ShowCaseView
+    implementation 'com.github.amlcurran.showcaseview:library:5.4.3'
+
 }

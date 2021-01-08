@@ -2,10 +2,13 @@ package edu.aku.hassannaqvi.naunehal.utils
 
 import android.Manifest
 import android.app.Activity
+import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.Window
@@ -160,3 +163,21 @@ interface EndSectionActivity {
 interface WarningActivityInterface {
     fun callWarningActivity(item: Any? = null)
 }
+
+fun showGPSAlert(context: Context) {
+    val alertDialogBuilder = AlertDialog.Builder(context)
+    alertDialogBuilder
+            .setMessage("GPS is disabled in your device. Enable it?")
+            .setCancelable(false)
+            .setPositiveButton("Enable GPS"
+            ) { dialog: DialogInterface?, id: Int ->
+                val callGPSSettingIntent = Intent(
+                        Settings.ACTION_LOCATION_SOURCE_SETTINGS)
+                context.startActivity(callGPSSettingIntent)
+            }
+    alertDialogBuilder.setNegativeButton("Cancel"
+    ) { dialog: DialogInterface, id: Int -> dialog.cancel() }
+    val alert = alertDialogBuilder.create()
+    alert.show()
+}
+
