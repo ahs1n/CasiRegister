@@ -26,10 +26,6 @@ public class ChildContract {
         public static final String COLUMN_SERIAL = "serial";
         public static final String COLUMN_SCS = "scs";
 
-        public static final String COLUMN_ISTATUS = "istatus";
-        public static final String COLUMN_ISTATUS96x = "istatus96x";
-        public static final String COLUMN_ENDINGDATETIME = "endingdatetime";
-        public static final String COLUMN_GPS = "gps";
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";
         public static final String COLUMN_SYNCED = "synced";

@@ -25,7 +25,7 @@ import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
 import edu.aku.hassannaqvi.naunehal.models.Form;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract.FormsTable;
-import edu.aku.hassannaqvi.naunehal.contracts.ChildInfoContract.ChildInfoTable;
+import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract.ChildInfoTable;
 import edu.aku.hassannaqvi.naunehal.models.FormIndicatorsModel;
 import edu.aku.hassannaqvi.naunehal.models.Users;
 import edu.aku.hassannaqvi.naunehal.models.Users.UsersTable;
@@ -156,6 +156,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         newRowId = db.insert(
                 FormsContract.FormsTable.TABLE_NAME,
                 FormsContract.FormsTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+    public Long addChildInformation(ChildInformation form) {
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(FormsContract.FormsTable.COLUMN_PROJECT_NAME, form.getProjectName());
+        values.put(ChildInfoTable.COLUMN_UID, form.getUid());
+        values.put(ChildInfoTable.COLUMN_UUID, form.getUuid());
+        values.put(ChildInfoTable.COLUMN_USERNAME, form.getUserName());
+        values.put(ChildInfoTable.COLUMN_SYSDATE, form.getSysDate());
+        values.put(ChildInfoTable.COLUMN_DCODE, form.getDcode());
+        values.put(ChildInfoTable.COLUMN_UCODE, form.getUcode());
+        values.put(ChildInfoTable.COLUMN_CLUSTER, form.getCluster());
+        values.put(ChildInfoTable.COLUMN_HHNO, form.getHhno());
+        values.put(ChildInfoTable.COLUMN_SCB, form.sCBtoString());
+        values.put(ChildInfoTable.COLUMN_DEVICEID, form.getDeviceId());
+        values.put(ChildInfoTable.COLUMN_DEVICETAGID, form.getDeviceTag());
+        values.put(ChildInfoTable.COLUMN_SYNCED, form.getSynced());
+        values.put(ChildInfoTable.COLUMN_SYNCED_DATE, form.getSyncDate());
+        values.put(ChildInfoTable.COLUMN_APPVERSION, form.getAppver());
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                ChildInfoTable.TABLE_NAME,
+                ChildInfoTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -399,6 +431,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     /*
      * Update data in tables
      * */
+    public int updatesChildInformationColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = ChildInfoTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.childInformation.getId())};
+
+        return db.update(ChildInfoTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
     public int updatesFormColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase();
 

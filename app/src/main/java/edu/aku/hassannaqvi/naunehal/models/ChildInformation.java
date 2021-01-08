@@ -11,7 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.naunehal.BR;
-import edu.aku.hassannaqvi.naunehal.contracts.ChildInfoContract;
+import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 
 public class ChildInformation extends BaseObservable {
@@ -496,27 +496,22 @@ public class ChildInformation extends BaseObservable {
 
 
     public ChildInformation Sync(JSONObject jsonObject) throws JSONException {
-        this.id = jsonObject.getString(ChildInfoContract.ChildInfoTable.COLUMN_ID);
-        this.uid = jsonObject.getString(ChildInfoContract.ChildInfoTable.COLUMN_UID);
-        this.uuid = jsonObject.getString(ChildInfoContract.ChildInfoTable.COLUMN_UUID);
-        this.userName = jsonObject.getString(ChildInfoContract.ChildInfoTable.COLUMN_USERNAME);
-        this.sysDate = jsonObject.getString(ChildInfoContract.ChildInfoTable.COLUMN_SYSDATE);
-        this.dcode = jsonObject.getString(ChildInfoContract.ChildInfoTable.COLUMN_DCODE);
-        this.ucode = jsonObject.getString(ChildInfoContract.ChildInfoTable.COLUMN_UCODE);
-        this.cluster = jsonObject.getString(ChildInfoContract.ChildInfoTable.COLUMN_CLUSTER);
-        this.hhno = jsonObject.getString(ChildInfoContract.ChildInfoTable.COLUMN_HHNO);
-        this.deviceId = jsonObject.getString(ChildInfoContract.ChildInfoTable.COLUMN_DEVICEID);
-        this.deviceTag = jsonObject.getString(ChildInfoContract.ChildInfoTable.COLUMN_DEVICETAGID);
-        this.appver = jsonObject.getString(ChildInfoContract.ChildInfoTable.COLUMN_APPVERSION);
-        this.gps = jsonObject.getString(ChildInfoContract.ChildInfoTable.COLUMN_GPS);
-        this.endTime = jsonObject.getString(ChildInfoContract.ChildInfoTable.COLUMN_ENDINGDATETIME);
-        this.iStatus = jsonObject.getString(ChildInfoContract.ChildInfoTable.COLUMN_ISTATUS);
-        this.iStatus96x = jsonObject.getString(ChildInfoContract.ChildInfoTable.COLUMN_ISTATUS96x);
-        this.iStatus96x = jsonObject.getString(ChildInfoContract.ChildInfoTable.COLUMN_ISTATUS96x);
-        this.synced = jsonObject.getString(ChildInfoContract.ChildInfoTable.COLUMN_SYNCED);
-        this.syncDate = jsonObject.getString(ChildInfoContract.ChildInfoTable.COLUMN_SYNCED_DATE);
+        this.id = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_ID);
+        this.uid = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_UID);
+        this.uuid = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_UUID);
+        this.userName = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_USERNAME);
+        this.sysDate = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_SYSDATE);
+        this.dcode = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_DCODE);
+        this.ucode = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_UCODE);
+        this.cluster = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_CLUSTER);
+        this.hhno = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_HHNO);
+        this.deviceId = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_DEVICEID);
+        this.deviceTag = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_DEVICETAGID);
+        this.appver = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_APPVERSION);
+        this.synced = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_SYNCED);
+        this.syncDate = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_SYNCED_DATE);
 
-        this.scb = jsonObject.getString(ChildInfoContract.ChildInfoTable.COLUMN_SCB);
+        this.scb = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_SCB);
 
         return this;
 
@@ -524,29 +519,25 @@ public class ChildInformation extends BaseObservable {
 
 
     public ChildInformation Hydrate(Cursor cursor) {
-        this.id = cursor.getString(cursor.getColumnIndex(ChildInfoContract.ChildInfoTable.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndex(ChildInfoContract.ChildInfoTable.COLUMN_UID));
-        this.uuid = cursor.getString(cursor.getColumnIndex(ChildInfoContract.ChildInfoTable.COLUMN_UUID));
-        this.userName = cursor.getString(cursor.getColumnIndex(ChildInfoContract.ChildInfoTable.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndex(ChildInfoContract.ChildInfoTable.COLUMN_SYSDATE));
-        this.dcode = cursor.getString(cursor.getColumnIndex(ChildInfoContract.ChildInfoTable.COLUMN_DCODE));
-        this.ucode = cursor.getString(cursor.getColumnIndex(ChildInfoContract.ChildInfoTable.COLUMN_UCODE));
-        this.cluster = cursor.getString(cursor.getColumnIndex(ChildInfoContract.ChildInfoTable.COLUMN_CLUSTER));
-        this.hhno = cursor.getString(cursor.getColumnIndex(ChildInfoContract.ChildInfoTable.COLUMN_HHNO));
-        this.deviceId = cursor.getString(cursor.getColumnIndex(ChildInfoContract.ChildInfoTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndex(ChildInfoContract.ChildInfoTable.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndex(ChildInfoContract.ChildInfoTable.COLUMN_APPVERSION));
-        this.gps = cursor.getString(cursor.getColumnIndex(ChildInfoContract.ChildInfoTable.COLUMN_GPS));
-        this.endTime = cursor.getString(cursor.getColumnIndex(ChildInfoContract.ChildInfoTable.COLUMN_ENDINGDATETIME));
-        this.iStatus = cursor.getString(cursor.getColumnIndex(ChildInfoContract.ChildInfoTable.COLUMN_ISTATUS));
-        this.iStatus96x = cursor.getString(cursor.getColumnIndex(ChildInfoContract.ChildInfoTable.COLUMN_ISTATUS96x));
-        this.synced = cursor.getString(cursor.getColumnIndex(ChildInfoContract.ChildInfoTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndex(ChildInfoContract.ChildInfoTable.COLUMN_SYNCED_DATE));
+        this.id = cursor.getString(cursor.getColumnIndex(ChildInformationContract.ChildInfoTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndex(ChildInformationContract.ChildInfoTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndex(ChildInformationContract.ChildInfoTable.COLUMN_UUID));
+        this.userName = cursor.getString(cursor.getColumnIndex(ChildInformationContract.ChildInfoTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndex(ChildInformationContract.ChildInfoTable.COLUMN_SYSDATE));
+        this.dcode = cursor.getString(cursor.getColumnIndex(ChildInformationContract.ChildInfoTable.COLUMN_DCODE));
+        this.ucode = cursor.getString(cursor.getColumnIndex(ChildInformationContract.ChildInfoTable.COLUMN_UCODE));
+        this.cluster = cursor.getString(cursor.getColumnIndex(ChildInformationContract.ChildInfoTable.COLUMN_CLUSTER));
+        this.hhno = cursor.getString(cursor.getColumnIndex(ChildInformationContract.ChildInfoTable.COLUMN_HHNO));
+        this.deviceId = cursor.getString(cursor.getColumnIndex(ChildInformationContract.ChildInfoTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndex(ChildInformationContract.ChildInfoTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndex(ChildInformationContract.ChildInfoTable.COLUMN_APPVERSION));
+        this.synced = cursor.getString(cursor.getColumnIndex(ChildInformationContract.ChildInfoTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndex(ChildInformationContract.ChildInfoTable.COLUMN_SYNCED_DATE));
 
         //For childCount
         //this.s01HH = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_S01HH));
 
-        sCBHydrate(cursor.getString(cursor.getColumnIndex(ChildInfoContract.ChildInfoTable.COLUMN_SCB)));
+        sCBHydrate(cursor.getString(cursor.getColumnIndex(ChildInformationContract.ChildInfoTable.COLUMN_SCB)));
 
         return this;
     }
@@ -596,29 +587,25 @@ public class ChildInformation extends BaseObservable {
         JSONObject json = new JSONObject();
 
         try {
-            json.put(ChildInfoContract.ChildInfoTable.COLUMN_ID, this.id == null ? JSONObject.NULL : this.id);
-            json.put(ChildInfoContract.ChildInfoTable.COLUMN_UID, this.uid == null ? JSONObject.NULL : this.uid);
-            json.put(ChildInfoContract.ChildInfoTable.COLUMN_UUID, this.uuid == null ? JSONObject.NULL : this.uuid);
-            json.put(ChildInfoContract.ChildInfoTable.COLUMN_USERNAME, this.userName == null ? JSONObject.NULL : this.userName);
-            json.put(ChildInfoContract.ChildInfoTable.COLUMN_SYSDATE, this.sysDate == null ? JSONObject.NULL : this.sysDate);
-            json.put(ChildInfoContract.ChildInfoTable.COLUMN_DCODE, this.dcode == null ? JSONObject.NULL : this.dcode);
-            json.put(ChildInfoContract.ChildInfoTable.COLUMN_UCODE, this.ucode == null ? JSONObject.NULL : this.ucode);
-            json.put(ChildInfoContract.ChildInfoTable.COLUMN_CLUSTER, this.cluster == null ? JSONObject.NULL : this.cluster);
-            json.put(ChildInfoContract.ChildInfoTable.COLUMN_HHNO, this.hhno == null ? JSONObject.NULL : this.hhno);
-            json.put(ChildInfoContract.ChildInfoTable.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
-            json.put(ChildInfoContract.ChildInfoTable.COLUMN_DEVICETAGID, this.deviceTag == null ? JSONObject.NULL : this.deviceTag);
-            json.put(ChildInfoContract.ChildInfoTable.COLUMN_APPVERSION, this.appver == null ? JSONObject.NULL : this.appver);
-            json.put(ChildInfoContract.ChildInfoTable.COLUMN_GPS, this.gps == null ? JSONObject.NULL : this.gps);
-            json.put(ChildInfoContract.ChildInfoTable.COLUMN_ENDINGDATETIME, this.endTime == null ? JSONObject.NULL : this.endTime);
-            json.put(ChildInfoContract.ChildInfoTable.COLUMN_ISTATUS, this.iStatus == null ? JSONObject.NULL : this.iStatus);
-            json.put(ChildInfoContract.ChildInfoTable.COLUMN_ISTATUS96x, this.iStatus96x == null ? JSONObject.NULL : this.iStatus96x);
-            json.put(ChildInfoContract.ChildInfoTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
-            json.put(ChildInfoContract.ChildInfoTable.COLUMN_SYNCED_DATE, this.syncDate == null ? JSONObject.NULL : this.syncDate);
+            json.put(ChildInformationContract.ChildInfoTable.COLUMN_ID, this.id == null ? JSONObject.NULL : this.id);
+            json.put(ChildInformationContract.ChildInfoTable.COLUMN_UID, this.uid == null ? JSONObject.NULL : this.uid);
+            json.put(ChildInformationContract.ChildInfoTable.COLUMN_UUID, this.uuid == null ? JSONObject.NULL : this.uuid);
+            json.put(ChildInformationContract.ChildInfoTable.COLUMN_USERNAME, this.userName == null ? JSONObject.NULL : this.userName);
+            json.put(ChildInformationContract.ChildInfoTable.COLUMN_SYSDATE, this.sysDate == null ? JSONObject.NULL : this.sysDate);
+            json.put(ChildInformationContract.ChildInfoTable.COLUMN_DCODE, this.dcode == null ? JSONObject.NULL : this.dcode);
+            json.put(ChildInformationContract.ChildInfoTable.COLUMN_UCODE, this.ucode == null ? JSONObject.NULL : this.ucode);
+            json.put(ChildInformationContract.ChildInfoTable.COLUMN_CLUSTER, this.cluster == null ? JSONObject.NULL : this.cluster);
+            json.put(ChildInformationContract.ChildInfoTable.COLUMN_HHNO, this.hhno == null ? JSONObject.NULL : this.hhno);
+            json.put(ChildInformationContract.ChildInfoTable.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
+            json.put(ChildInformationContract.ChildInfoTable.COLUMN_DEVICETAGID, this.deviceTag == null ? JSONObject.NULL : this.deviceTag);
+            json.put(ChildInformationContract.ChildInfoTable.COLUMN_APPVERSION, this.appver == null ? JSONObject.NULL : this.appver);
+            json.put(ChildInformationContract.ChildInfoTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
+            json.put(ChildInformationContract.ChildInfoTable.COLUMN_SYNCED_DATE, this.syncDate == null ? JSONObject.NULL : this.syncDate);
 
-            json.put(ChildInfoContract.ChildInfoTable.COLUMN_SCB, new JSONObject(sCBtoString()));
+            json.put(ChildInformationContract.ChildInfoTable.COLUMN_SCB, new JSONObject(sCBtoString()));
 
             if (this.scb != null && !this.scb.equals("")) {
-                json.put(ChildInfoContract.ChildInfoTable.COLUMN_SCB, new JSONObject(this.scb));
+                json.put(ChildInformationContract.ChildInfoTable.COLUMN_SCB, new JSONObject(this.scb));
             }
 
             return json;

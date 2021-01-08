@@ -1268,11 +1268,6 @@ public class Immunization extends BaseObservable {
         this.deviceId = jsonObject.getString(IMContract.IMTable.COLUMN_DEVICEID);
         this.deviceTag = jsonObject.getString(IMContract.IMTable.COLUMN_DEVICETAGID);
         this.appver = jsonObject.getString(IMContract.IMTable.COLUMN_APPVERSION);
-        this.gps = jsonObject.getString(IMContract.IMTable.COLUMN_GPS);
-        this.endTime = jsonObject.getString(IMContract.IMTable.COLUMN_ENDINGDATETIME);
-        this.iStatus = jsonObject.getString(IMContract.IMTable.COLUMN_ISTATUS);
-        this.iStatus96x = jsonObject.getString(IMContract.IMTable.COLUMN_ISTATUS96x);
-        this.iStatus96x = jsonObject.getString(IMContract.IMTable.COLUMN_ISTATUS96x);
         this.synced = jsonObject.getString(IMContract.IMTable.COLUMN_SYNCED);
         this.syncDate = jsonObject.getString(IMContract.IMTable.COLUMN_SYNCED_DATE);
         this.respondentname = jsonObject.getString(IMContract.IMTable.COLUMN_RESPONDENT_NAME);
@@ -1299,10 +1294,6 @@ public class Immunization extends BaseObservable {
         this.deviceId = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_DEVICEID));
         this.deviceTag = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_DEVICETAGID));
         this.appver = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_APPVERSION));
-        this.gps = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_GPS));
-        this.endTime = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_ENDINGDATETIME));
-        this.iStatus = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_ISTATUS));
-        this.iStatus96x = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_ISTATUS96x));
         this.synced = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_SYNCED_DATE));
         this.respondentname = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_RESPONDENT_NAME));
@@ -1443,10 +1434,6 @@ public class Immunization extends BaseObservable {
             json.put(IMContract.IMTable.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
             json.put(IMContract.IMTable.COLUMN_DEVICETAGID, this.deviceTag == null ? JSONObject.NULL : this.deviceTag);
             json.put(IMContract.IMTable.COLUMN_APPVERSION, this.appver == null ? JSONObject.NULL : this.appver);
-            json.put(IMContract.IMTable.COLUMN_GPS, this.gps == null ? JSONObject.NULL : this.gps);
-            json.put(IMContract.IMTable.COLUMN_ENDINGDATETIME, this.endTime == null ? JSONObject.NULL : this.endTime);
-            json.put(IMContract.IMTable.COLUMN_ISTATUS, this.iStatus == null ? JSONObject.NULL : this.iStatus);
-            json.put(IMContract.IMTable.COLUMN_ISTATUS96x, this.iStatus96x == null ? JSONObject.NULL : this.iStatus96x);
             json.put(IMContract.IMTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
             json.put(IMContract.IMTable.COLUMN_SYNCED_DATE, this.syncDate == null ? JSONObject.NULL : this.syncDate);
             json.put(IMContract.IMTable.COLUMN_RESPONDENT_NAME, this.respondentname == null ? JSONObject.NULL : this.respondentname);

@@ -6,7 +6,7 @@ import android.provider.BaseColumns;
  * Created by hassan.naqvi on 11/30/2016.
  */
 
-public class ChildInfoContract {
+public class ChildInformationContract {
 
     public static abstract class ChildInfoTable implements BaseColumns {
         public static final String TABLE_NAME = "family";
@@ -23,10 +23,6 @@ public class ChildInfoContract {
         public static final String COLUMN_HHNO = "hhno";
         public static final String COLUMN_SCB = "scb";
 
-        public static final String COLUMN_ISTATUS = "istatus";
-        public static final String COLUMN_ISTATUS96x = "istatus96x";
-        public static final String COLUMN_ENDINGDATETIME = "endingdatetime";
-        public static final String COLUMN_GPS = "gps";
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";
         public static final String COLUMN_SYNCED = "synced";

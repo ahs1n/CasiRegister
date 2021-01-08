@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.naunehal.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -11,7 +12,9 @@ import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.naunehal.R;
+import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
+import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection02cbBinding;
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
 
@@ -63,10 +66,31 @@ public class Section02CBActivity extends AppCompatActivity {
         if (!formValidation()) return;
 
         // SaveDraft(); //<== This function is no longer needed after DataBinding
-        if (/*UpdateDB()*/ true) {
+        if (UpdateDB()) {
             ChildrenListActivity.Companion.setSerial(Integer.parseInt(MainApp.childInformation.cb01) + 1);
             finish();
             startActivity(new Intent(this, Section03CSActivity.class));
+        }
+    }
+
+    private boolean UpdateDB() {
+        DatabaseHelper db = MainApp.appInfo.dbHelper;
+        Long updcount = db.addChildInformation(MainApp.childInformation);
+        MainApp.childInformation.setId(updcount.toString());
+        if (updcount > 0) {
+            MainApp.childInformation.setUid(MainApp.childInformation.getDeviceId() + MainApp.childInformation.getId());
+            int count = db.updatesChildInformationColumn(ChildInformationContract.ChildInfoTable.COLUMN_UID, MainApp.childInformation.getUid());
+            if (count > 0)
+                count = db.updatesChildInformationColumn(ChildInformationContract.ChildInfoTable.COLUMN_SCB, MainApp.childInformation.sCBtoString());
+            if (count > 0)
+                return true;
+            else {
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        } else {
+            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+            return false;
         }
     }
 
