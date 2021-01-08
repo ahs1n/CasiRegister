@@ -9,6 +9,7 @@ import com.google.gson.GsonBuilder;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.threeten.bp.LocalDate;
 
 import edu.aku.hassannaqvi.naunehal.BR;
 import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract;
@@ -64,6 +65,23 @@ public class ChildInformation extends BaseObservable {
     //Not saving in db
     public String resName;
     public boolean flag = true;
+    private LocalDate localDate = null, calculatedDOB = null;
+
+    public LocalDate getLocalDate() {
+        return localDate;
+    }
+
+    public void setLocalDate(LocalDate localDate) {
+        this.localDate = localDate;
+    }
+
+    public LocalDate getCalculatedDOB() {
+        return calculatedDOB;
+    }
+
+    public void setCalculatedDOB(LocalDate calculatedDOB) {
+        this.calculatedDOB = calculatedDOB;
+    }
 
     public String getResName() {
         return resName;

@@ -62,7 +62,7 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
                 }
                 R.id.fab_finish -> {
                     if (serial == 1) {
-                        Snackbar.make(findViewById(android.R.id.content), "Please add childrens for proceeding to the next section", Snackbar.LENGTH_LONG)
+                        Snackbar.make(findViewById(android.R.id.content), "Please add children's for proceeding to the next section", Snackbar.LENGTH_LONG)
                                 .show()
                         return@setOnActionSelectedListener false
                     }

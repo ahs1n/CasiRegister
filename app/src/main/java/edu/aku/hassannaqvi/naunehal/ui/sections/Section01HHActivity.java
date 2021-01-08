@@ -1,19 +1,27 @@
 package edu.aku.hassannaqvi.naunehal.ui.sections;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.google.gson.JsonObject;
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONObject;
 
 import java.util.Date;
 import java.util.Locale;
@@ -28,6 +36,7 @@ public class Section01HHActivity extends AppCompatActivity {
 
     ActivitySection01hhBinding bi;
     private DatabaseHelper db;
+    private String ucCode = "", dCode = "";
 
 
     @Override
@@ -46,7 +55,7 @@ public class Section01HHActivity extends AppCompatActivity {
         // TODO: Check if form already exist in database.
         if (/*!formExists()*/ false)  //<== If form exist in database formExists() will also populateForm() and return true;
         {
-            initializeForm(); //<== If form does not exist in database (New Form)
+            initForm(); //<== If form does not exist in database (New Form)
         }
 
         bi.setForm(MainApp.form);
@@ -88,16 +97,42 @@ public class Section01HHActivity extends AppCompatActivity {
     public void initForm() {
         // TODO: need work on appinfo
         MainApp.form.setSysDate(new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault()).format(new Date().getTime()));
-        MainApp.form.setUserName(MainApp.username);
-        MainApp.form.setDcode(___);
-        MainApp.form.setUcode(___);
-        MainApp.form.setCluster(___);
-        MainApp.form.setHhno(___);
+        MainApp.form.setUserName(MainApp.user.getUserName());
+        MainApp.form.setDcode(dCode);
+        MainApp.form.setUcode(ucCode);
+        MainApp.form.setCluster(bi.hh08.getText().toString());
+        MainApp.form.setHhno(bi.hh09.getText().toString());
         MainApp.form.setDeviceId(MainApp.appInfo.getDeviceID());
         MainApp.form.setDeviceTag(MainApp.appInfo.getTagName());
         MainApp.form.setAppver(MainApp.appInfo.getAppVersion());
-        MainApp.form.setGps(___);
+        MainApp.form.setGps(getGPS(this).toString());
         // MainApp.setGPS({"gpsLng":"12444",...});
+    }
+
+    private JSONObject getGPS(Activity activity) {
+        JSONObject json = new JSONObject();
+        SharedPreferences GPSPref = activity.getSharedPreferences("GPSCoordinates", Context.MODE_PRIVATE);
+        try {
+            String lat = GPSPref.getString("Latitude", "0");
+            String lang = GPSPref.getString("Longitude", "0");
+
+            if (lat.equals("0") && lang.equals("0")) {
+                Toast.makeText(activity, "Could not obtained GPS points", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(activity, "GPS set", Toast.LENGTH_SHORT).show();
+            }
+
+            String date = DateFormat.format("dd-MM-yyyy HH:mm", Long.parseLong(GPSPref.getString("Time", "0"))).toString();
+            json.put("gpslat", GPSPref.getString("Latitude", "0"));
+            json.put("gpslng", GPSPref.getString("Longitude", "0"));
+            json.put("gpsacc", GPSPref.getString("Accuracy", "0"));
+            json.put("gpsdate", date);
+
+            return json;
+        } catch (Exception e) {
+            Log.e("GPS", "setGPS: " + e.getMessage());
+        }
+        return null;
     }
 
 }
