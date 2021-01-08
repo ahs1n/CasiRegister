@@ -16,36 +16,6 @@ import edu.aku.hassannaqvi.naunehal.core.MainApp;
 
 public class Form extends BaseObservable {
 
-    // APP VARIABLES
-    private String projectName = MainApp.PROJECT_NAME;
-    private String id;
-    private String uid;
-    private String userName;
-    private String sysDate;
-    private String dcode;
-    private String ucode;
-    private String cluster;
-    private String hhno;
-    private String deviceId;
-    private String deviceTag;
-    private String appver;
-    private String gps;
-    private String endTime;
-    private String iStatus;
-    private String iStatus96x;
-    private String synced;
-    private String syncDate;
-
-    // SECTION VARIABLES
-    private String s01HH;
-    private String s02CB;
-    private String s03CS;
-    private String s04IM;
-    private String s05PD;
-    private String s06BF;
-    private String s07CV;
-    private String s08SE;
-
     // FIELD VARIABLES
     public String hh01;
     public String hh0201;
@@ -76,7 +46,6 @@ public class Form extends BaseObservable {
     public String hh24;
     public String hh25;
     public String hh26;
-
     //Section IM
     public String im02;
     public String im01;
@@ -165,7 +134,6 @@ public class Form extends BaseObservable {
     public String im24;
     public String im2496x;
     public String im25;
-
     //Section PD
     public String pd01;
     public String pd02;
@@ -222,7 +190,6 @@ public class Form extends BaseObservable {
     public String pd2102x;
     public String pd2103x;
     public String pd22;
-
     //Section PF
     public String bf01;
     public String bf02;
@@ -244,7 +211,6 @@ public class Form extends BaseObservable {
     public String bf11;
     public String bf12;
     public String bf13;
-
     //Section CV
     public String cv01;
     public String cv02;
@@ -270,7 +236,6 @@ public class Form extends BaseObservable {
     public String cv1896x;
     public String cv19;
     public String cv1996x;
-
     //Section SE
     public String se01;
     public String se0196x;
@@ -390,10 +355,50 @@ public class Form extends BaseObservable {
     public String se38;
     public String se39;
     public String se40;
-
+    // APP VARIABLES
+    public String projectName = MainApp.PROJECT_NAME;
+    public String id;
+    public String uid;
+    public String userName;
+    public String sysDate;
+    public String dcode;
+    public String ucode;
+    public String cluster;
+    public String hhno;
+    public String deviceId;
+    public String deviceTag;
+    public String appver;
+    public String gps;
+    public String endTime;
+    public String iStatus;
+    public String iStatus96x;
+    public String synced;
+    public String syncDate;
+    // SECTION VARIABLES
+    public String s01HH;
+    public String s02CB;
+    public String s03CS;
+    public String s04IM;
+    public String s05PD;
+    public String s06BF;
+    public String s07CV;
+    public String s08SE;
 
     public Form() {
 
+    }
+
+    public void setForm(String userName, String sysDate, String dcode, String ucode, String cluster, String hhno, String deviceId, String deviceTag, String appver, String gps) {
+        this.userName = userName;
+        this.sysDate = sysDate;
+        this.dcode = dcode;
+        this.ucode = ucode;
+        this.cluster = cluster;
+        this.hhno = hhno;
+        this.deviceId = deviceId;
+        this.deviceTag = deviceTag;
+        this.appver = appver;
+        this.gps = gps;
     }
 
     @Bindable
@@ -4556,7 +4561,7 @@ public class Form extends BaseObservable {
     }
 
 
-    private void s01HHHydrate(String string) {
+    public void s01HHHydrate(String string) {
 
         if (string != null) {
 
@@ -4599,7 +4604,7 @@ public class Form extends BaseObservable {
     }
 
 
-    private void s04IMHydrate(String string) {
+    public void s04IMHydrate(String string) {
 
         if (string != null) {
 
@@ -4702,7 +4707,7 @@ public class Form extends BaseObservable {
     }
 
 
-    private void s05PDHydrate(String string) {
+    public void s05PDHydrate(String string) {
 
         if (string != null) {
 
@@ -4773,7 +4778,7 @@ public class Form extends BaseObservable {
     }
 
 
-    private void s06BFHydrate(String string) {
+    public void s06BFHydrate(String string) {
 
         if (string != null) {
 
@@ -4809,7 +4814,7 @@ public class Form extends BaseObservable {
     }
 
 
-    private void s07CVHydrate(String string) {
+    public void s07CVHydrate(String string) {
 
         if (string != null) {
 
@@ -4849,7 +4854,7 @@ public class Form extends BaseObservable {
     }
 
 
-    private void s08SEHydrate(String string) {
+    public void s08SEHydrate(String string) {
 
         if (string != null) {
 

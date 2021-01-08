@@ -15,6 +15,9 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Date;
+import java.util.Locale;
+
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
@@ -68,7 +71,8 @@ public class Section01HHActivity extends AppCompatActivity {
     public void BtnContinue(View view) {
         if (!formValidation()) return;
 
-        // SaveDraft(); //<== This function is no longer needed after DataBinding
+        initForm(); //<== This function is no longer needed after DataBinding
+
         if (/*UpdateDB()*/ true) {
             finish();
             startActivity(new Intent(this, Section02CBActivity.class));
@@ -81,15 +85,18 @@ public class Section01HHActivity extends AppCompatActivity {
     }
 
     // Only in First Section of every Table.
-    public void initializeForm() {
+    public void initForm() {
         // TODO: need work on appinfo
-        //ainApp.form.setSysDate(new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault()).format(new Date().getTime()));
-        //ainApp.form.setUserName(MainApp.userName);
-        //ainApp.form.setDeviceId(MainApp.appInfo.getDeviceID());
-        //ainApp.form.setDeviceTag(MainApp.appInfo.getTagName());
-        //ainApp.form.setAppver(MainApp.appInfo.getAppVersion());
-        //ainApp.setGPS(this);
-        // TODO: From now on we will save GPS as JSON
+        MainApp.form.setSysDate(new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault()).format(new Date().getTime()));
+        MainApp.form.setUserName(MainApp.username);
+        MainApp.form.setDcode(___);
+        MainApp.form.setUcode(___);
+        MainApp.form.setCluster(___);
+        MainApp.form.setHhno(___);
+        MainApp.form.setDeviceId(MainApp.appInfo.getDeviceID());
+        MainApp.form.setDeviceTag(MainApp.appInfo.getTagName());
+        MainApp.form.setAppver(MainApp.appInfo.getAppVersion());
+        MainApp.form.setGps(___);
         // MainApp.setGPS({"gpsLng":"12444",...});
     }
 
