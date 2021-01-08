@@ -3,10 +3,13 @@ package edu.aku.hassannaqvi.naunehal.core;
 import android.app.Application;
 import android.view.View;
 
+import com.jakewharton.threetenabp.AndroidThreeTen;
+
 import edu.aku.hassannaqvi.naunehal.models.Child;
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
 import edu.aku.hassannaqvi.naunehal.models.Form;
 import edu.aku.hassannaqvi.naunehal.models.Immunization;
+import edu.aku.hassannaqvi.naunehal.models.Users;
 
 public class MainApp extends Application {
 
@@ -27,6 +30,7 @@ public class MainApp extends Application {
     public static ChildInformation childInformation;
     public static String DeviceURL = "devices.php";
     public static AppInfo appInfo;
+    public static Users user;
 
     public static void hideSystemUI(View decorView) {
         // Enables regular immersive mode.
@@ -48,6 +52,9 @@ public class MainApp extends Application {
     public void onCreate() {
         super.onCreate();
 
+        //Initiate DateTime
+        AndroidThreeTen.init(this);
+        //Initializ App info
         appInfo = new AppInfo(this);
     }
 }

@@ -17,9 +17,10 @@ class ChildViewHolder(private val bi: ChildViewBinding) :
 
     fun bind(item: ChildInformation) {
 //        bi.setVariable(BR.item, item)
-        bi.serial.text = String.format("Child-ID: %s", item.cb01)
-        bi.resName.text = String.format("Mother: %s", item.resName)
+        bi.serial.text = item.cb01
+        bi.resName.text = String.format("Respondent: %s", item.resName)
         bi.name.text = item.cb02
+        bi.age.text = item.cb0501.toInt().times(12).plus(item.cb0502.toInt()).toString()
         val imageRes: Int = if (item.cb03 == "1") R.drawable.ctr_childboy else R.drawable.ctr_childgirl
         /*when (item.formFlag) {
             0 -> {
