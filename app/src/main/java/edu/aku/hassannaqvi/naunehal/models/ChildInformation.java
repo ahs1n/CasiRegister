@@ -32,8 +32,7 @@ public class ChildInformation extends BaseObservable {
     private String appver;
     private String gps;
     private String endTime;
-    private String iStatus;
-    private String iStatus96x;
+    private String status;
     private String synced;
     private String syncDate;
 
@@ -475,23 +474,13 @@ public class ChildInformation extends BaseObservable {
     }
 
     @Bindable
-    public String getIStatus() {
-        return iStatus;
+    public String getStatus() {
+        return status;
     }
 
-    public void setIStatus(String iStatus) {
-        this.iStatus = iStatus;
-        notifyPropertyChanged(BR.iStatus);
-    }
-
-    @Bindable
-    public String getIStatus96x() {
-        return iStatus96x;
-    }
-
-    public void setIStatus96x(String iStatus96x) {
-        this.iStatus96x = iStatus96x;
-        notifyPropertyChanged(BR.iStatus96x);
+    public void setStatus(String status) {
+        this.status = status;
+        notifyPropertyChanged(BR.status);
     }
 
 
@@ -510,6 +499,7 @@ public class ChildInformation extends BaseObservable {
         this.appver = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_APPVERSION);
         this.synced = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_SYNCED);
         this.syncDate = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_SYNCED_DATE);
+        this.status = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_STATUS);
 
         this.scb = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_SCB);
 
@@ -533,6 +523,7 @@ public class ChildInformation extends BaseObservable {
         this.appver = cursor.getString(cursor.getColumnIndex(ChildInformationContract.ChildInfoTable.COLUMN_APPVERSION));
         this.synced = cursor.getString(cursor.getColumnIndex(ChildInformationContract.ChildInfoTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndex(ChildInformationContract.ChildInfoTable.COLUMN_SYNCED_DATE));
+        this.status = cursor.getString(cursor.getColumnIndex(ChildInformationContract.ChildInfoTable.COLUMN_STATUS));
 
         //For childCount
         //this.s01HH = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_S01HH));
@@ -601,6 +592,7 @@ public class ChildInformation extends BaseObservable {
             json.put(ChildInformationContract.ChildInfoTable.COLUMN_APPVERSION, this.appver == null ? JSONObject.NULL : this.appver);
             json.put(ChildInformationContract.ChildInfoTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
             json.put(ChildInformationContract.ChildInfoTable.COLUMN_SYNCED_DATE, this.syncDate == null ? JSONObject.NULL : this.syncDate);
+            json.put(ChildInformationContract.ChildInfoTable.COLUMN_STATUS, this.status == null ? JSONObject.NULL : this.status);
 
             json.put(ChildInformationContract.ChildInfoTable.COLUMN_SCB, new JSONObject(sCBtoString()));
 

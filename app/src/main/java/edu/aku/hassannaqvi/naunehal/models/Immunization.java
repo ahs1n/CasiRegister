@@ -123,8 +123,7 @@ public class Immunization extends BaseObservable {
     private String appver;
     private String gps;
     private String endTime;
-    private String iStatus;
-    private String iStatus96x;
+    private String status;
     private String synced;
     private String syncDate;
     // SECTION VARIABLES
@@ -1235,23 +1234,13 @@ public class Immunization extends BaseObservable {
 
 
     @Bindable
-    public String getIStatus() {
-        return iStatus;
+    public String getStatus() {
+        return status;
     }
 
-    public void setIStatus(String iStatus) {
-        this.iStatus = iStatus;
-        notifyPropertyChanged(BR.iStatus);
-    }
-
-    @Bindable
-    public String getIStatus96x() {
-        return iStatus96x;
-    }
-
-    public void setIStatus96x(String iStatus96x) {
-        this.iStatus96x = iStatus96x;
-        notifyPropertyChanged(BR.iStatus96x);
+    public void setStatus(String status) {
+        this.status = status;
+        notifyPropertyChanged(BR.status);
     }
 
 
@@ -1270,6 +1259,7 @@ public class Immunization extends BaseObservable {
         this.appver = jsonObject.getString(IMContract.IMTable.COLUMN_APPVERSION);
         this.synced = jsonObject.getString(IMContract.IMTable.COLUMN_SYNCED);
         this.syncDate = jsonObject.getString(IMContract.IMTable.COLUMN_SYNCED_DATE);
+        this.status = jsonObject.getString(IMContract.IMTable.COLUMN_STATUS);
         this.respondentname = jsonObject.getString(IMContract.IMTable.COLUMN_RESPONDENT_NAME);
         this.childname = jsonObject.getString(IMContract.IMTable.COLUMN_CHILD_NAME);
         this.serial = jsonObject.getString(IMContract.IMTable.COLUMN_SERIAL);
@@ -1296,6 +1286,7 @@ public class Immunization extends BaseObservable {
         this.appver = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_APPVERSION));
         this.synced = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_SYNCED_DATE));
+        this.status = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_STATUS));
         this.respondentname = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_RESPONDENT_NAME));
         this.childname = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_CHILD_NAME));
         this.serial = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_SERIAL));
@@ -1436,6 +1427,7 @@ public class Immunization extends BaseObservable {
             json.put(IMContract.IMTable.COLUMN_APPVERSION, this.appver == null ? JSONObject.NULL : this.appver);
             json.put(IMContract.IMTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
             json.put(IMContract.IMTable.COLUMN_SYNCED_DATE, this.syncDate == null ? JSONObject.NULL : this.syncDate);
+            json.put(IMContract.IMTable.COLUMN_STATUS, this.status == null ? JSONObject.NULL : this.status);
             json.put(IMContract.IMTable.COLUMN_RESPONDENT_NAME, this.respondentname == null ? JSONObject.NULL : this.respondentname);
             json.put(IMContract.IMTable.COLUMN_CHILD_NAME, this.childname == null ? JSONObject.NULL : this.childname);
             json.put(IMContract.IMTable.COLUMN_SERIAL, this.serial == null ? JSONObject.NULL : this.serial);

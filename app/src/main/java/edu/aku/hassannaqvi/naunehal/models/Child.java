@@ -72,10 +72,9 @@ public class Child extends BaseObservable {
     private String appver;
     private String gps;
     private String endTime;
-    private String iStatus;
-    private String iStatus96x;
     private String synced;
     private String syncDate;
+    private String status;
     // SECTION VARIABLES
     private String respondentname;
     private String childname;
@@ -266,6 +265,16 @@ public class Child extends BaseObservable {
 
     public Child setSyncDate(String syncDate) {
         this.syncDate = syncDate;
+        return this;
+    }
+
+
+    public String getStatus() {
+        return status;
+    }
+
+    public Child setStatus(String status) {
+        this.status = status;
         return this;
     }
 
@@ -690,26 +699,6 @@ public class Child extends BaseObservable {
         notifyPropertyChanged(BR.cs1996x);
     }
 
-    @Bindable
-    public String getIStatus() {
-        return iStatus;
-    }
-
-    public void setIStatus(String iStatus) {
-        this.iStatus = iStatus;
-        notifyPropertyChanged(BR.iStatus);
-    }
-
-    @Bindable
-    public String getIStatus96x() {
-        return iStatus96x;
-    }
-
-    public void setIStatus96x(String iStatus96x) {
-        this.iStatus96x = iStatus96x;
-        notifyPropertyChanged(BR.iStatus96x);
-    }
-
 
     public Child Sync(JSONObject jsonObject) throws JSONException {
         this.id = jsonObject.getString(ChildContract.ChildTable.COLUMN_ID);
@@ -726,6 +715,7 @@ public class Child extends BaseObservable {
         this.appver = jsonObject.getString(ChildContract.ChildTable.COLUMN_APPVERSION);
         this.synced = jsonObject.getString(ChildContract.ChildTable.COLUMN_SYNCED);
         this.syncDate = jsonObject.getString(ChildContract.ChildTable.COLUMN_SYNCED_DATE);
+        this.status = jsonObject.getString(ChildContract.ChildTable.COLUMN_STATUS);
         this.respondentname = jsonObject.getString(ChildContract.ChildTable.COLUMN_RESPONDENT_NAME);
         this.childname = jsonObject.getString(ChildContract.ChildTable.COLUMN_CHILD_NAME);
         this.serial = jsonObject.getString(ChildContract.ChildTable.COLUMN_SERIAL);
@@ -752,6 +742,7 @@ public class Child extends BaseObservable {
         this.appver = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_APPVERSION));
         this.synced = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_SYNCED_DATE));
+        this.status = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_STATUS));
         this.respondentname = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_RESPONDENT_NAME));
         this.childname = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_CHILD_NAME));
         this.serial = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_SERIAL));
@@ -843,6 +834,7 @@ public class Child extends BaseObservable {
             json.put(ChildContract.ChildTable.COLUMN_APPVERSION, this.appver == null ? JSONObject.NULL : this.appver);
             json.put(ChildContract.ChildTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
             json.put(ChildContract.ChildTable.COLUMN_SYNCED_DATE, this.syncDate == null ? JSONObject.NULL : this.syncDate);
+            json.put(ChildContract.ChildTable.COLUMN_STATUS, this.status == null ? JSONObject.NULL : this.status);
             json.put(ChildContract.ChildTable.COLUMN_RESPONDENT_NAME, this.respondentname == null ? JSONObject.NULL : this.respondentname);
             json.put(ChildContract.ChildTable.COLUMN_CHILD_NAME, this.childname == null ? JSONObject.NULL : this.childname);
             json.put(ChildContract.ChildTable.COLUMN_SERIAL, this.serial == null ? JSONObject.NULL : this.serial);

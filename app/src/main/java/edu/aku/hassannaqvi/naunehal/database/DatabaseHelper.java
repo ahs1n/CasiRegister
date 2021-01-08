@@ -14,19 +14,23 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Date;
 
+import edu.aku.hassannaqvi.naunehal.contracts.ChildContract;
+import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract.ChildInfoTable;
 import edu.aku.hassannaqvi.naunehal.contracts.ClustersContract;
 import edu.aku.hassannaqvi.naunehal.contracts.ClustersContract.TableClusters;
 import edu.aku.hassannaqvi.naunehal.contracts.DistrictsContract;
 import edu.aku.hassannaqvi.naunehal.contracts.DistrictsContract.TableDistricts;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
+import edu.aku.hassannaqvi.naunehal.contracts.FormsContract.FormsTable;
+import edu.aku.hassannaqvi.naunehal.contracts.IMContract;
 import edu.aku.hassannaqvi.naunehal.contracts.UCsContract;
 import edu.aku.hassannaqvi.naunehal.contracts.UCsContract.TableUCs;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
+import edu.aku.hassannaqvi.naunehal.models.Child;
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
 import edu.aku.hassannaqvi.naunehal.models.Form;
-import edu.aku.hassannaqvi.naunehal.contracts.FormsContract.FormsTable;
-import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract.ChildInfoTable;
 import edu.aku.hassannaqvi.naunehal.models.FormIndicatorsModel;
+import edu.aku.hassannaqvi.naunehal.models.Immunization;
 import edu.aku.hassannaqvi.naunehal.models.Users;
 import edu.aku.hassannaqvi.naunehal.models.Users.UsersTable;
 import edu.aku.hassannaqvi.naunehal.models.VersionApp;
@@ -49,7 +53,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CreateTable.SQL_CREATE_USERS);
         db.execSQL(CreateTable.SQL_CREATE_FORMS);
-        db.execSQL(CreateTable.SQL_CREATE_FAMILY);
+        db.execSQL(CreateTable.SQL_CREATE_CHILD_INFO);
         db.execSQL(CreateTable.SQL_CREATE_CHILD);
         db.execSQL(CreateTable.SQL_CREATE_IMMUNIZATION);
         db.execSQL(CreateTable.SQL_CREATE_VERSIONAPP);
@@ -160,6 +164,39 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
+    public Long addChild(Child form) {
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(FormsContract.FormsTable.COLUMN_PROJECT_NAME, form.getProjectName());
+        values.put(ChildContract.ChildTable.COLUMN_UID, form.getUid());
+        values.put(ChildContract.ChildTable.COLUMN_UUID, form.getUuid());
+        values.put(ChildContract.ChildTable.COLUMN_USERNAME, form.getUserName());
+        values.put(ChildContract.ChildTable.COLUMN_SYSDATE, form.getSysDate());
+        values.put(ChildContract.ChildTable.COLUMN_DCODE, form.getDcode());
+        values.put(ChildContract.ChildTable.COLUMN_UCODE, form.getUcode());
+        values.put(ChildContract.ChildTable.COLUMN_CLUSTER, form.getCluster());
+        values.put(ChildContract.ChildTable.COLUMN_HHNO, form.getHhno());
+        values.put(ChildContract.ChildTable.COLUMN_SCS, form.s03CStoString());
+        values.put(ChildContract.ChildTable.COLUMN_DEVICEID, form.getDeviceId());
+        values.put(ChildContract.ChildTable.COLUMN_DEVICETAGID, form.getDeviceTag());
+        values.put(ChildContract.ChildTable.COLUMN_SYNCED, form.getSynced());
+        values.put(ChildContract.ChildTable.COLUMN_SYNCED_DATE, form.getSyncDate());
+        values.put(ChildContract.ChildTable.COLUMN_APPVERSION, form.getAppver());
+        values.put(ChildContract.ChildTable.COLUMN_STATUS, form.getStatus());
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                ChildInfoTable.TABLE_NAME,
+                ChildInfoTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
     public Long addChildInformation(ChildInformation form) {
 
         // Gets the data repository in write mode
@@ -182,6 +219,40 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildInfoTable.COLUMN_SYNCED, form.getSynced());
         values.put(ChildInfoTable.COLUMN_SYNCED_DATE, form.getSyncDate());
         values.put(ChildInfoTable.COLUMN_APPVERSION, form.getAppver());
+        values.put(ChildInfoTable.COLUMN_STATUS, form.getStatus());
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                ChildInfoTable.TABLE_NAME,
+                ChildInfoTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+    public Long addIM(Immunization form) {
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(FormsContract.FormsTable.COLUMN_PROJECT_NAME, form.getProjectName());
+        values.put(IMContract.IMTable.COLUMN_UID, form.getUid());
+        values.put(IMContract.IMTable.COLUMN_UUID, form.getUuid());
+        values.put(IMContract.IMTable.COLUMN_USERNAME, form.getUserName());
+        values.put(IMContract.IMTable.COLUMN_SYSDATE, form.getSysDate());
+        values.put(IMContract.IMTable.COLUMN_DCODE, form.getDcode());
+        values.put(IMContract.IMTable.COLUMN_UCODE, form.getUcode());
+        values.put(IMContract.IMTable.COLUMN_CLUSTER, form.getCluster());
+        values.put(IMContract.IMTable.COLUMN_HHNO, form.getHhno());
+        values.put(IMContract.IMTable.COLUMN_SIM, form.s04IMtoString());
+        values.put(IMContract.IMTable.COLUMN_DEVICEID, form.getDeviceId());
+        values.put(IMContract.IMTable.COLUMN_DEVICETAGID, form.getDeviceTag());
+        values.put(IMContract.IMTable.COLUMN_SYNCED, form.getSynced());
+        values.put(IMContract.IMTable.COLUMN_SYNCED_DATE, form.getSyncDate());
+        values.put(IMContract.IMTable.COLUMN_APPVERSION, form.getAppver());
+        values.put(IMContract.IMTable.COLUMN_STATUS, form.getStatus());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
@@ -441,6 +512,36 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] selectionArgs = {String.valueOf(MainApp.childInformation.getId())};
 
         return db.update(ChildInfoTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updatesChild(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = ChildContract.ChildTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.child.getId())};
+
+        return db.update(ChildContract.ChildTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updatesIM(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = IMContract.IMTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.immunization.getId())};
+
+        return db.update(IMContract.IMTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
