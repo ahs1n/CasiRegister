@@ -505,7 +505,7 @@
                                 android:hint="@string/cs07961"
                                 android:tag="cs07961"
                                 android:text="@={form.cs07961x}"
-                                android:visibility='@{cs07961.checked? View.VISIBLE : View.GONE}' />
+                                android:visibility='@{cs07961.checked ? View.VISIBLE : View.GONE}' />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -725,7 +725,7 @@
                                 android:hint="@string/cs0896"
                                 android:tag="cs0896"
                                 android:text="@={form.cs0896x}"
-                                android:visibility='@{cs0896.checked? View.VISIBLE : View.GONE}' />
+                                android:visibility="@{cs0896.checked ? View.VISIBLE : View.GONE}" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

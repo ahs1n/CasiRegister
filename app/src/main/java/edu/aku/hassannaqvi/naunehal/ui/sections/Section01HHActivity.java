@@ -21,6 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,6 +37,8 @@ public class Section01HHActivity extends AppCompatActivity {
     ActivitySection01hhBinding bi;
     private DatabaseHelper db;
     private String ucCode = "", dCode = "";
+
+    List<String> ucName;
 
 
     @Override
@@ -98,10 +101,10 @@ public class Section01HHActivity extends AppCompatActivity {
             return Validator.emptyCustomTextBox(this, bi.hh21, "Invalid Count");
         } else if (totalmember != Integer.parseInt(bi.hh21.getText().toString())) {
             return Validator.emptyCustomTextBox(this, bi.hh21, "Invalid Count");
-        } else if (Integer.parseInt(bi.hh24.getText().toString()) > Integer.parseInt(bi.hh22.getText().toString())) {
-            return Validator.emptyCustomTextBox(this, bi.hh24, "Total male childs cannot be greater than HH22");
-        } else if (Integer.parseInt(bi.hh25.getText().toString()) > Integer.parseInt(bi.hh23.getText().toString())) {
-            return Validator.emptyCustomTextBox(this, bi.hh25, "Total female childs cannot be greater than HH22");
+        } else if (Integer.parseInt(bi.hh24.getText().toString()) >= Integer.parseInt(bi.hh22.getText().toString())) {
+            return Validator.emptyCustomTextBox(this, bi.hh24, "Total male childs cannot be greater or equal than HH22");
+        } else if (Integer.parseInt(bi.hh25.getText().toString()) >= Integer.parseInt(bi.hh23.getText().toString())) {
+            return Validator.emptyCustomTextBox(this, bi.hh25, "Total female childs cannot be greater or equal than HH22");
         }
         return true;
     }
