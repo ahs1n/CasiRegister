@@ -505,7 +505,7 @@
                                 android:hint="@string/cs07961"
                                 android:tag="cs07961"
                                 android:text="@={form.cs07961x}"
-                                android:visibility='@{cs07961.checked ? View.VISIBLE : View.GONE}' />
+                                android:visibility='@{form.cs07.equals(`961`)? View.VISIBLE : View.GONE}' />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -725,10 +725,14 @@
                                 android:hint="@string/cs0896"
                                 android:tag="cs0896"
                                 android:text="@={form.cs0896x}"
-                                android:visibility="@{cs0896.checked ? View.VISIBLE : View.GONE}" />
+                                android:visibility='@{form.cs0896.equals(`96`)? View.VISIBLE : View.GONE}' />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cs09  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1196,7 +1200,7 @@
                             android:hint="@string/cs1596"
                             android:tag="cs1596"
                             android:text="@={form.cs1596x}"
-                            android:visibility='@{cs1596.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.cs15.equals(`96`)? View.VISIBLE : View.GONE}' />
                     </RadioGroup>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -1342,7 +1346,7 @@
                             android:hint="@string/cs17961"
                             android:tag="cs17961"
                             android:text="@={form.cs17961x}"
-                            android:visibility='@{cs17961.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.cs17.equals(`961`)? View.VISIBLE : View.GONE}' />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -1430,10 +1434,14 @@
                             android:hint="@string/cs17962"
                             android:tag="cs17962"
                             android:text="@={form.cs17962x}"
-                            android:visibility='@{cs17962.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.cs17.equals(`962`)? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- cs18  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1544,10 +1552,14 @@
                             android:hint="@string/cs1896"
                             android:tag="cs1896"
                             android:text="@={form.cs1896x}"
-                            android:visibility='@{cs1896.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.cs18.equals(`96`)? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- cs19  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1650,9 +1662,12 @@
                             android:hint="@string/cs1996"
                             android:tag="cs1996"
                             android:text="@={form.cs1996x}"
-                            android:visibility='@{cs1996.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.cs19.equals(`96`)? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 

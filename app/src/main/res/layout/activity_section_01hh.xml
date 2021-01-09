@@ -1067,7 +1067,7 @@
                                     android:hint="@string/hh1796"
                                     android:tag="hh1796"
                                     android:text="@={form.hh1796x}"
-                                    android:visibility='@{hh1796.checked? View.VISIBLE : View.GONE}' />
+                                    android:visibility='@{form.hh17.equals(`96`)? View.VISIBLE : View.GONE}' />
 
                             </RadioGroup>
 
@@ -1338,7 +1338,7 @@
                                         android:hint="@string/hh2096"
                                         android:tag="hh2096"
                                         android:text="@={form.hh2096x}"
-                                        android:visibility='@{hh2096.checked? View.VISIBLE : View.GONE}' />
+                                        android:visibility='@{form.hh20.equals(`96`)? View.VISIBLE : View.GONE}' />
 
                                 </RadioGroup>
 

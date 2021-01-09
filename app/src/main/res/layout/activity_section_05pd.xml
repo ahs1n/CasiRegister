@@ -399,10 +399,14 @@
                             android:hint="@string/pd0596"
                             android:tag="pd0596"
                             android:text="@={form.pd0596x}"
-                            android:visibility='@{pd0596.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.pd05.equals(`96`)? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- pd06  Radio   -->
             <androidx.cardview.widget.CardView
@@ -509,7 +513,7 @@
                             android:hint="@string/pd06961"
                             android:tag="pd06961"
                             android:text="@={form.pd06961x}"
-                            android:visibility='@{pd06961.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.pd06.equals(`961`)? View.VISIBLE : View.GONE}' />
 
                         <TextView
                             android:layout_width="match_parent"
