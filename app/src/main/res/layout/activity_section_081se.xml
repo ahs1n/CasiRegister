@@ -147,7 +147,7 @@
                             android:hint="@string/se0196"
                             android:tag="se0196"
                             android:text="@={form.se0196x}"
-                            android:visibility='@{se0196.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.se01.equals(`96`) ? View.VISIBLE : View.GONE}' />
 
                     </RadioGroup>
 
@@ -311,7 +311,7 @@
                             android:hint="@string/se0296"
                             android:tag="se0296"
                             android:text="@={form.se0296x}"
-                            android:visibility='@{se0296.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.se02.equals(`96`) ? View.VISIBLE : View.GONE}' />
 
                     </RadioGroup>
 
@@ -523,7 +523,8 @@
                             android:hint="@string/se0396"
                             android:tag="se0396"
                             android:text="@={form.se0396x}"
-                            android:visibility='@{se0396.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.se03.equals(`96`) ? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
 
                 </LinearLayout>
@@ -718,7 +719,7 @@
                             android:hint="@string/se0496"
                             android:tag="se0496"
                             android:text="@={form.se0496x}"
-                            android:visibility='@{se0496.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.se04.equals(`96`) ? View.VISIBLE : View.GONE}' />
                     </RadioGroup>
 
                 </LinearLayout>
@@ -799,7 +800,7 @@
                             android:hint="@string/se0596"
                             android:tag="se0596"
                             android:text="@={form.se0596x}"
-                            android:visibility='@{se0596.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.se05.equals(`96`) ? View.VISIBLE : View.GONE}' />
 
                     </RadioGroup>
 
@@ -1113,7 +1114,7 @@
                             android:hint="@string/se0896"
                             android:tag="se0896"
                             android:text="@={form.se0896x}"
-                            android:visibility='@{se0896.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.se08.equals(`96`) ? View.VISIBLE : View.GONE}' />
                     </RadioGroup>
 
                 </LinearLayout>
@@ -1292,7 +1293,7 @@
                             android:hint="@string/se1099"
                             android:tag="se1099"
                             android:text="@={form.se1099x}"
-                            android:visibility='@{se1099.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.se10.equals(`99`) ? View.VISIBLE : View.GONE}' />
 
                     </RadioGroup>
 
@@ -1458,7 +1459,7 @@
                             android:hint="@string/se1196"
                             android:tag="se1196"
                             android:text="@={form.se1196x}"
-                            android:visibility='@{se1196.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.se11.equals(`96`) ? View.VISIBLE : View.GONE}' />
                     </RadioGroup>
 
                 </LinearLayout>
@@ -1539,7 +1540,7 @@
                             android:hint="@string/se1296"
                             android:tag="se1296"
                             android:text="@={form.se1296x}"
-                            android:visibility='@{se1296.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.se12.equals(`96`) ? View.VISIBLE : View.GONE}' />
                     </RadioGroup>
 
                 </LinearLayout>
@@ -2232,7 +2233,7 @@
                             android:hint="@string/se189601"
                             android:tag="se189601"
                             android:text="@={form.se189601x}"
-                            android:visibility='@{se189601.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.se1896.equals(`1`) ? View.VISIBLE : View.GONE}' />
 
                         <RadioButton
                             android:id="@+id/se189602"
@@ -2394,7 +2395,7 @@
                             android:hint="@string/se1996"
                             android:tag="se1996"
                             android:text="@={form.se1996x}"
-                            android:visibility='@{se1996.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.se19.equals(`96`) ? View.VISIBLE : View.GONE}' />
                     </RadioGroup>
 
                 </LinearLayout>
@@ -2493,7 +2494,8 @@
                             android:hint="@string/se2096"
                             android:tag="se2096"
                             android:text="@={form.se2096x}"
-                            android:visibility='@{se2096.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.se2096.equals(`96`) ? View.VISIBLE : View.GONE}' />
+
                     </LinearLayout>
 
                 </LinearLayout>
@@ -2592,7 +2594,8 @@
                             android:hint="@string/se2196"
                             android:tag="se2196"
                             android:text="@={form.se2196x}"
-                            android:visibility='@{se2196.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.se2196.equals(`96`) ? View.VISIBLE : View.GONE}' />
+
                     </LinearLayout>
 
                 </LinearLayout>

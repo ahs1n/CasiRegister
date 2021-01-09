@@ -339,7 +339,7 @@
                             app:maxValue="0"
                             app:minValue="0"
                             android:text="@={form.bf0502x}"
-                            android:visibility='@{bf0502.checked? View.VISIBLE : View.GONE}'
+                            android:visibility='@{form.bf05.equals(`1`) ? View.VISIBLE : View.GONE}'
                             app:type="range" />
 
                         <RadioButton
@@ -360,7 +360,7 @@
                             app:maxValue="0"
                             app:minValue="0"
                             android:text="@={form.bf0503x}"
-                            android:visibility='@{bf0503.checked? View.VISIBLE : View.GONE}'
+                            android:visibility='@{form.bf05.equals(`2`) ? View.VISIBLE : View.GONE}'
                             app:type="range" />
 
                         <RadioButton
@@ -370,9 +370,13 @@
                             android:checked="@{form.bf05.equals(`66`)}"
                             android:onClick="@{()->form.setBf05(`66`)}"
                             android:text="@string/bf0504" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- bf06  Radio   -->
             <androidx.cardview.widget.CardView
@@ -515,10 +519,14 @@
                             android:hint="@string/bf0796"
                             android:tag="bf0796"
                             android:text="@={form.bf0796x}"
-                            android:visibility='@{bf0796.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.bf07.equals(`96`) ? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- bf08  Radio   -->
             <androidx.cardview.widget.CardView
@@ -725,10 +733,14 @@
                             android:hint="@string/bf0996"
                             android:tag="bf0996"
                             android:text="@={form.bf0996x}"
-                            android:visibility='@{bf0996.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.bf09.equals(`96`) ? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- bf10  Radio   -->
             <androidx.cardview.widget.CardView
