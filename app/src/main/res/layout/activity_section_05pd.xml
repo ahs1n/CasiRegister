@@ -561,10 +561,14 @@
                             android:hint="@string/pd06962"
                             android:tag="pd06962"
                             android:text="@={form.pd06962x}"
-                            android:visibility='@{pd06962.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.pd06.equals(`962`) ? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- pd07  Radio   -->
             <androidx.cardview.widget.CardView
@@ -596,6 +600,7 @@
                             android:layout_alignTop="@id/qtxt_pd07"
                             android:layout_alignBottom="@id/qtxt_pd07"
                             android:text="@string/Q_pd07" />
+
                     </RelativeLayout>
 
                     <RadioGroup
@@ -621,7 +626,7 @@
                             app:maxValue="0"
                             app:minValue="0"
                             android:text="@={form.pd0701x}"
-                            android:visibility='@{pd0701.checked? View.VISIBLE : View.GONE}'
+                            android:visibility='@{form.pd07.equals(`0`) ? View.VISIBLE : View.GONE}'
                             app:type="range" />
 
                         <RadioButton
@@ -631,9 +636,13 @@
                             android:checked="@{form.pd07.equals(`98`)}"
                             android:onClick="@{()->form.setPd07(`98`)}"
                             android:text="@string/pd0798" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- pd08  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1033,10 +1042,14 @@
                             android:hint="@string/pd1296"
                             android:tag="pd1296"
                             android:text="@={form.pd1296x}"
-                            android:visibility='@{pd1296.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.pd12.equals(`96`) ? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- pd13  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1139,7 +1152,7 @@
                             android:hint="@string/pd13961"
                             android:tag="pd13961"
                             android:text="@={form.pd13961x}"
-                            android:visibility='@{pd13961.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.pd13.equals(`961`) ? View.VISIBLE : View.GONE}' />
 
                         <RadioButton
                             android:id="@+id/pd1307"
@@ -1165,10 +1178,14 @@
                             android:hint="@string/pd13962"
                             android:tag="pd13962"
                             android:text="@={form.pd13962x}"
-                            android:visibility='@{pd13962.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.pd13.equals(`962`) ? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- pd14  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1263,10 +1280,14 @@
                             android:hint="@string/pd1496"
                             android:tag="pd1496"
                             android:text="@={form.pd1496x}"
-                            android:visibility='@{pd1496.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.pd14.equals(`96`) ? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- pd15  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1435,10 +1456,14 @@
                             android:hint="@string/pd1696"
                             android:tag="pd1696"
                             android:text="@={form.pd1696x}"
-                            android:visibility='@{pd1696.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.pd1696.equals(`96`) ? View.VISIBLE : View.GONE}' />
+
                     </LinearLayout>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- pd17  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1495,7 +1520,7 @@
                             app:maxValue="0"
                             app:minValue="0"
                             android:text="@={form.pd1701x}"
-                            android:visibility='@{pd1701.checked? View.VISIBLE : View.GONE}'
+                            android:visibility='@{form.pd17.equals(`1`) ? View.VISIBLE : View.GONE}'
                             app:type="range" />
 
                         <RadioButton
@@ -1516,7 +1541,7 @@
                             app:maxValue="0"
                             app:minValue="0"
                             android:text="@={form.pd1702x}"
-                            android:visibility='@{pd1702.checked? View.VISIBLE : View.GONE}'
+                            android:visibility='@{form.pd17.equals(`2`) ? View.VISIBLE : View.GONE}'
                             app:type="range" />
 
                         <RadioButton
@@ -1537,7 +1562,7 @@
                             app:maxValue="0"
                             app:minValue="0"
                             android:text="@={form.pd1703x}"
-                            android:visibility='@{pd1703.checked? View.VISIBLE : View.GONE}'
+                            android:visibility='@{form.pd17.equals(`3`) ? View.VISIBLE : View.GONE}'
                             app:type="range" />
 
                         <RadioButton
@@ -1774,10 +1799,14 @@
                             android:hint="@string/pd2096"
                             android:tag="pd2096"
                             android:text="@={form.pd2096x}"
-                            android:visibility='@{pd2096.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.pd2096.equals(`96`) ? View.VISIBLE : View.GONE}' />
+
                     </LinearLayout>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- pd21  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1834,7 +1863,7 @@
                             app:maxValue="0"
                             app:minValue="0"
                             android:text="@={form.pd2101x}"
-                            android:visibility='@{pd2101.checked? View.VISIBLE : View.GONE}'
+                            android:visibility='@{form.pd21.equals(`1`) ? View.VISIBLE : View.GONE}'
                             app:type="range" />
 
                         <RadioButton
@@ -1855,7 +1884,7 @@
                             app:maxValue="0"
                             app:minValue="0"
                             android:text="@={form.pd2102x}"
-                            android:visibility='@{pd2102.checked? View.VISIBLE : View.GONE}'
+                            android:visibility='@{form.pd21.equals(`2`) ? View.VISIBLE : View.GONE}'
                             app:type="range" />
 
                         <RadioButton
@@ -1876,7 +1905,7 @@
                             app:maxValue="0"
                             app:minValue="0"
                             android:text="@={form.pd2103x}"
-                            android:visibility='@{pd2103.checked? View.VISIBLE : View.GONE}'
+                            android:visibility='@{form.pd21.equals(`3`) ? View.VISIBLE : View.GONE}'
                             app:type="range" />
 
                         <RadioButton
@@ -1886,9 +1915,13 @@
                             android:checked="@{form.pd21.equals(`98`)}"
                             android:onClick="@{()->form.setPd21(`98`)}"
                             android:text="@string/pd2198" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- pd22  Input-Numeric   -->
             <androidx.cardview.widget.CardView

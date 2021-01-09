@@ -1189,7 +1189,7 @@
                                     android:hint="@string/se3096"
                                     android:tag="se3096"
                                     android:text="@={form.se3096x}"
-                                    android:visibility='@{se3096.checked? View.VISIBLE : View.GONE}' />
+                                    android:visibility='@{form.se3096.equals(`96`) ? View.VISIBLE : View.GONE}' />
 
                             </LinearLayout>
 
@@ -1263,7 +1263,7 @@
                                     android:hint="@string/se3196"
                                     android:tag="se3196"
                                     android:text="@={form.se3196x}"
-                                    android:visibility='@{se3196.checked? View.VISIBLE : View.GONE}' />
+                                    android:visibility='@{form.se31.equals(`96`) ? View.VISIBLE : View.GONE}' />
 
                             </RadioGroup>
 
@@ -1740,10 +1740,14 @@
                             android:hint="@string/se3796"
                             android:tag="se3796"
                             android:text="@={form.se3796x}"
-                            android:visibility='@{se3796.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.se3796.equals(`96`) ? View.VISIBLE : View.GONE}' />
+
                     </LinearLayout>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             </LinearLayout>
 

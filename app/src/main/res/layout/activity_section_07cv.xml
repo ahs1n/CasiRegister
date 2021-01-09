@@ -443,10 +443,14 @@
                                 android:hint="@string/cv0596"
                                 android:tag="cv0596"
                                 android:text="@={form.cv0596x}"
-                                android:visibility='@{cv0596.checked? View.VISIBLE : View.GONE}' />
+                                android:visibility='@{form.cv05.equals(`96`) ? View.VISIBLE : View.GONE}' />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cv06  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1141,10 +1145,14 @@
                                 android:hint="@string/cv1296"
                                 android:tag="cv1296"
                                 android:text="@={form.cv1296x}"
-                                android:visibility='@{cv1296.checked? View.VISIBLE : View.GONE}' />
+                                android:visibility='@{form.cv12.equals(`96`) ? View.VISIBLE : View.GONE}' />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cv13  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1415,10 +1423,14 @@
                                 android:hint="@string/cv1696"
                                 android:tag="cv1696"
                                 android:text="@={form.cv1696x}"
-                                android:visibility='@{cv1696.checked? View.VISIBLE : View.GONE}' />
+                                android:visibility='@{form.cv16.equals(`96`) ? View.VISIBLE : View.GONE}' />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cv17  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1577,10 +1589,14 @@
                                 android:hint="@string/cv1896"
                                 android:tag="cv1896"
                                 android:text="@={form.cv1896x}"
-                                android:visibility='@{cv1896.checked? View.VISIBLE : View.GONE}' />
+                                android:visibility='@{form.cv18.equals(`96`) ? View.VISIBLE : View.GONE}' />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cv19  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1683,9 +1699,12 @@
                                 android:hint="@string/cv1996"
                                 android:tag="cv1996"
                                 android:text="@={form.cv1996x}"
-                                android:visibility='@{cv1996.checked? View.VISIBLE : View.GONE}' />
+                                android:visibility='@{form.cv19.equals(`96`) ? View.VISIBLE : View.GONE}' />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
