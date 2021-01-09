@@ -27,6 +27,8 @@ import java.util.Date;
 import java.util.Locale;
 
 import edu.aku.hassannaqvi.naunehal.R;
+import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract;
+import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection01hhBinding;
@@ -82,9 +84,30 @@ public class Section01HHActivity extends AppCompatActivity {
 
         initForm(); //<== This function is no longer needed after DataBinding
 
-        if (/*UpdateDB()*/ true) {
+        if (UpdateDB()) {
             finish();
             startActivity(new Intent(this, ChildrenListActivity.class));
+        }
+    }
+
+    private boolean UpdateDB() {
+        DatabaseHelper db = MainApp.appInfo.dbHelper;
+        Long updcount = db.addForm(MainApp.form);
+        MainApp.form.setId(updcount.toString());
+        if (updcount > 0) {
+            MainApp.form.setUid(MainApp.form.getDeviceId() + MainApp.form.getId());
+            int count = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_UID, MainApp.form.getUid());
+            if (count > 0)
+                count = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_S01HH, MainApp.form.getS01HH());
+            if (count > 0)
+                return true;
+            else {
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        } else {
+            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+            return false;
         }
     }
 
