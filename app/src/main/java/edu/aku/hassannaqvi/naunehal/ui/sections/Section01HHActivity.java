@@ -26,6 +26,7 @@ import java.util.Locale;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
@@ -71,7 +72,6 @@ public class Section01HHActivity extends AppCompatActivity {
         rgListener(bi.hh18, bi.hh1801, bi.llhh18);
     }
 
-
     private void rgListener(@NotNull RadioGroup rg, RadioButton rb, ViewGroup vg) {
         rg.setOnCheckedChangeListener((radioGroup, i) -> {
             Clear.clearAllFields(vg);
@@ -79,7 +79,6 @@ public class Section01HHActivity extends AppCompatActivity {
             if (i == rb.getId()) vg.setVisibility(View.GONE);
         });
     }
-
 
     public void BtnContinue(View view) {
         if (!formValidation()) return;
@@ -90,6 +89,11 @@ public class Section01HHActivity extends AppCompatActivity {
             finish();
             startActivity(new Intent(this, ChildrenListActivity.class));
         }
+    }
+
+    public void checkHHExist(View view) {
+        Clear.clearAllFields(bi.fldGrpcheck);
+        bi.fldGrpcheck.setVisibility(View.VISIBLE);
     }
 
     private boolean UpdateDB() {

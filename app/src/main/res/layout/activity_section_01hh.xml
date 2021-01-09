@@ -109,159 +109,16 @@
 
                         <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
                             android:id="@+id/hh0201"
+                            android:focusable="false"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="hh02"></io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText>
-
-                        <!--                        <LinearLayout-->
-                        <!--                            android:layout_width="0dp"-->
-                        <!--                            android:layout_height="wrap_content"-->
-                        <!--                            android:layout_weight="1"-->
-                        <!--                            android:orientation="vertical">-->
-
-                        <!--                            <TextView-->
-                        <!--                                android:layout_width="match_parent"-->
-                        <!--                                android:layout_height="wrap_content"-->
-                        <!--                                android:gravity="center"-->
-                        <!--                                android:text="@string/hh0201" />-->
-
-                        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
-                        <!--                                android:id="@+id/hh0201"-->
-                        <!--                                android:layout_width="match_parent"-->
-                        <!--                                android:layout_height="wrap_content"-->
-                        <!--                                android:gravity="center"-->
-                        <!--                                android:hint="##"-->
-                        <!--                                android:inputType="number"-->
-                        <!--                                android:maxLength="2"-->
-                        <!--                                android:text="@={form.hh0201}"-->
-                        <!--                                app:maxValue="23"-->
-                        <!--                                app:minValue="1"-->
-                        <!--                                app:type="range" />-->
-
-                        <!--                        </LinearLayout>-->
-
-                        <!--                        <LinearLayout-->
-                        <!--                            android:layout_width="0dp"-->
-                        <!--                            android:layout_height="wrap_content"-->
-                        <!--                            android:layout_weight="1"-->
-                        <!--                            android:orientation="vertical">-->
-
-                        <!--                            <TextView-->
-                        <!--                                android:layout_width="match_parent"-->
-                        <!--                                android:layout_height="wrap_content"-->
-                        <!--                                android:gravity="center"-->
-                        <!--                                android:text="@string/hh0202" />-->
-
-                        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
-                        <!--                                android:id="@+id/hh0202"-->
-                        <!--                                android:layout_width="match_parent"-->
-                        <!--                                android:layout_height="wrap_content"-->
-                        <!--                                android:gravity="center"-->
-                        <!--                                android:hint="##"-->
-                        <!--                                android:inputType="number"-->
-                        <!--                                android:maxLength="2"-->
-                        <!--                                android:text="@={form.hh0202}"-->
-                        <!--                                app:maxValue="59"-->
-                        <!--                                app:minValue="1"-->
-                        <!--                                app:type="range" />-->
-
-                        <!--                        </LinearLayout>-->
+                            android:hint="hh02" />
 
                     </LinearLayout>
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
-
-
-            <!-- hh03  Input-Numeric   -->
-            <!--            <androidx.cardview.widget.CardView-->
-            <!--                android:id="@+id/fldGrpCVhh03"-->
-            <!--                style="@style/cardView">-->
-
-            <!--                <LinearLayout-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:orientation="vertical">-->
-
-            <!--                    <LinearLayout-->
-            <!--                        android:layout_width="match_parent"-->
-            <!--                        android:layout_height="wrap_content"-->
-            <!--                        android:background="@drawable/bottom"-->
-            <!--                        android:orientation="horizontal">-->
-
-            <!--                        <TextView-->
-            <!--                            style="@style/quesNum"-->
-            <!--                            android:layout_width="wrap_content"-->
-            <!--                            android:layout_height="match_parent"-->
-            <!--                            android:text="@string/Q_hh03" />-->
-
-            <!--                        <TextView-->
-            <!--                            android:layout_width="0dp"-->
-            <!--                            android:layout_height="match_parent"-->
-            <!--                            android:layout_weight="1"-->
-            <!--                            android:text="@string/hh03" />-->
-
-            <!--                    </LinearLayout>-->
-
-            <!--                    <com.edittextpicker.aliazaz.EditTextPicker-->
-            <!--                        android:id="@+id/hh03"-->
-            <!--                        android:layout_width="match_parent"-->
-            <!--                        android:layout_height="wrap_content"-->
-            <!--                        android:hint="@string/hh03"-->
-            <!--                        android:inputType="number"-->
-            <!--                        android:maxLength="3"-->
-            <!--                        android:text="@={form.hh03}"-->
-            <!--                        app:maxValue="999"-->
-            <!--                        app:minValue="1"-->
-            <!--                        app:type="range" />-->
-
-            <!--                </LinearLayout>-->
-
-            <!--            </androidx.cardview.widget.CardView>-->
-
-
-            <!-- hh04  Input   -->
-            <!--            <androidx.cardview.widget.CardView-->
-            <!--                android:id="@+id/fldGrpCVhh04"-->
-            <!--                style="@style/cardView">-->
-
-            <!--                <LinearLayout-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:orientation="vertical">-->
-
-            <!--                    <LinearLayout-->
-            <!--                        android:layout_width="match_parent"-->
-            <!--                        android:layout_height="wrap_content"-->
-            <!--                        android:background="@drawable/bottom"-->
-            <!--                        android:orientation="horizontal">-->
-
-            <!--                        <TextView-->
-            <!--                            style="@style/quesNum"-->
-            <!--                            android:layout_width="wrap_content"-->
-            <!--                            android:layout_height="match_parent"-->
-            <!--                            android:text="@string/Q_hh04" />-->
-
-            <!--                        <TextView-->
-            <!--                            android:layout_width="0dp"-->
-            <!--                            android:layout_height="match_parent"-->
-            <!--                            android:layout_weight="1"-->
-            <!--                            android:text="@string/hh04" />-->
-
-            <!--                    </LinearLayout>-->
-
-            <!--                    <EditText-->
-            <!--                        android:id="@+id/hh04"-->
-            <!--                        android:layout_width="match_parent"-->
-            <!--                        android:layout_height="wrap_content"-->
-            <!--                        android:hint="@string/hh04"-->
-            <!--                        android:text="@={form.hh04}" />-->
-
-            <!--                </LinearLayout>-->
-
-            <!--            </androidx.cardview.widget.CardView>-->
-
 
             <!-- hh05  Radio   -->
             <androidx.cardview.widget.CardView
@@ -519,20 +376,23 @@
 
             </androidx.cardview.widget.CardView>
 
-            <CheckBox
-                android:id="@+id/check"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/checkHH"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/white"
+                android:onClick="checkHHExist"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:layout_margin="15dp"
                 android:layout_height="wrap_content"
-                android:tag="-1"
-                android:text="Check" />
+                android:text="CHECK HH Exist" />
 
             <LinearLayout
                 android:id="@+id/fldGrpcheck"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility='@{check.checked? View.GONE : View.VISIBLE}'>
-
+                android:orientation="vertical">
 
                 <!-- hh10  Input   -->
                 <androidx.cardview.widget.CardView
