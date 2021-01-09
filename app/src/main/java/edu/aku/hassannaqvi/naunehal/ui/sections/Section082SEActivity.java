@@ -7,12 +7,11 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection082seBinding;
@@ -64,7 +63,6 @@ public class Section082SEActivity extends AppCompatActivity {
 
             }
         });
-
 
     }
 

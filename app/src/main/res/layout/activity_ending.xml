@@ -122,7 +122,7 @@
                             android:tag="istatus96"
                             android:text="@={form.i}"
                             android:text='@={istatus96.checked ? istatus96x.getText().toString(): ""}'
-                            android:visibility='@{istatus96.checked ? View.VISIBLE : View.GONE}' />-->
+                            android:visibility='@{form.hh26.equals(`96`)? View.VISIBLE : View.GONE}' />-->
 
                     </RadioGroup>
 

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
@@ -13,10 +14,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
-import com.google.gson.JsonObject;
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
@@ -24,8 +21,11 @@ import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
@@ -39,6 +39,8 @@ public class Section01HHActivity extends AppCompatActivity {
     ActivitySection01hhBinding bi;
     private DatabaseHelper db;
     private String ucCode = "", dCode = "";
+
+    List<String> ucName;
 
 
     @Override
@@ -112,8 +114,22 @@ public class Section01HHActivity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName))
+            return false;
 
+        int totalmember = (TextUtils.isEmpty(bi.hh22.getText()) ? 0 : Integer.parseInt(bi.hh22.getText().toString().trim()))
+                + (TextUtils.isEmpty(bi.hh23.getText()) ? 0 : Integer.parseInt(bi.hh23.getText().toString().trim()));
+
+        if (totalmember == 0) {
+            return Validator.emptyCustomTextBox(this, bi.hh21, "Invalid Count");
+        } else if (totalmember != Integer.parseInt(bi.hh21.getText().toString())) {
+            return Validator.emptyCustomTextBox(this, bi.hh21, "Invalid Count");
+        } else if (Integer.parseInt(bi.hh24.getText().toString()) >= Integer.parseInt(bi.hh22.getText().toString())) {
+            return Validator.emptyCustomTextBox(this, bi.hh24, "Total male childs cannot be greater or equal than HH22");
+        } else if (Integer.parseInt(bi.hh25.getText().toString()) >= Integer.parseInt(bi.hh23.getText().toString())) {
+            return Validator.emptyCustomTextBox(this, bi.hh25, "Total female childs cannot be greater or equal than HH22");
+        }
+        return true;
     }
 
     // Only in First Section of every Table.
