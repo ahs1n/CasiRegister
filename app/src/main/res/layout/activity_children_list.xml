@@ -37,7 +37,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     app:layout_collapseMode="pin"
-                    app:popupTheme="@style/AppTheme.PopupOverlay"
                     app:title="Childrens" />
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>

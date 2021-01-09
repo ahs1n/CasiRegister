@@ -343,6 +343,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            style="@style/textView3Head"
                             android:gravity="center"
                             android:text="@string/cb0501" />
 
@@ -365,6 +366,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
+                            style="@style/textView3Head"
                             android:text="@string/cb0502" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
