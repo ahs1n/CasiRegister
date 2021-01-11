@@ -19,14 +19,22 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
+import org.threeten.bp.Instant;
+import org.threeten.bp.LocalDateTime;
+import org.threeten.bp.ZoneId;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+
 import edu.aku.hassannaqvi.naunehal.R;
+import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract;
+import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection01hhBinding;
@@ -69,7 +77,6 @@ public class Section01HHActivity extends AppCompatActivity {
         rgListener(bi.hh18, bi.hh1801, bi.llhh18);
     }
 
-
     private void rgListener(@NotNull RadioGroup rg, RadioButton rb, ViewGroup vg) {
         rg.setOnCheckedChangeListener((radioGroup, i) -> {
             Clear.clearAllFields(vg);
@@ -78,15 +85,40 @@ public class Section01HHActivity extends AppCompatActivity {
         });
     }
 
-
     public void BtnContinue(View view) {
         if (!formValidation()) return;
 
         initForm(); //<== This function is no longer needed after DataBinding
 
-        if (/*UpdateDB()*/ true) {
+        if (UpdateDB()) {
             finish();
             startActivity(new Intent(this, ChildrenListActivity.class));
+        }
+    }
+
+    public void checkHHExist(View view) {
+        Clear.clearAllFields(bi.fldGrpcheck);
+        bi.fldGrpcheck.setVisibility(View.VISIBLE);
+    }
+
+    private boolean UpdateDB() {
+        DatabaseHelper db = MainApp.appInfo.dbHelper;
+        Long updcount = db.addForm(MainApp.form);
+        MainApp.form.setId(updcount.toString());
+        if (updcount > 0) {
+            MainApp.form.setUid(MainApp.form.getDeviceId() + MainApp.form.getId());
+            int count = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_UID, MainApp.form.getUid());
+            if (count > 0)
+                count = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_S01HH, MainApp.form.getS01HH());
+            if (count > 0)
+                return true;
+            else {
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        } else {
+            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+            return false;
         }
     }
 
@@ -123,6 +155,14 @@ public class Section01HHActivity extends AppCompatActivity {
         MainApp.form.setAppver(MainApp.appInfo.getAppVersion());
         MainApp.form.setGps(getGPS(this).toString());
         // MainApp.setGPS({"gpsLng":"12444",...});
+
+        //Setting Date
+        try {
+            Instant instant = Instant.parse(new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).format(new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH).parse(bi.aa01.getText().toString())) + "T06:24:01Z");
+            MainApp.form.setLocalDate(LocalDateTime.ofInstant(instant, ZoneId.systemDefault()).toLocalDate());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 
     private JSONObject getGPS(Activity activity) {

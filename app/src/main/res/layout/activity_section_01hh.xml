@@ -109,159 +109,16 @@
 
                         <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
                             android:id="@+id/hh0201"
+                            android:focusable="false"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="hh02"></io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText>
-
-                        <!--                        <LinearLayout-->
-                        <!--                            android:layout_width="0dp"-->
-                        <!--                            android:layout_height="wrap_content"-->
-                        <!--                            android:layout_weight="1"-->
-                        <!--                            android:orientation="vertical">-->
-
-                        <!--                            <TextView-->
-                        <!--                                android:layout_width="match_parent"-->
-                        <!--                                android:layout_height="wrap_content"-->
-                        <!--                                android:gravity="center"-->
-                        <!--                                android:text="@string/hh0201" />-->
-
-                        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
-                        <!--                                android:id="@+id/hh0201"-->
-                        <!--                                android:layout_width="match_parent"-->
-                        <!--                                android:layout_height="wrap_content"-->
-                        <!--                                android:gravity="center"-->
-                        <!--                                android:hint="##"-->
-                        <!--                                android:inputType="number"-->
-                        <!--                                android:maxLength="2"-->
-                        <!--                                android:text="@={form.hh0201}"-->
-                        <!--                                app:maxValue="23"-->
-                        <!--                                app:minValue="1"-->
-                        <!--                                app:type="range" />-->
-
-                        <!--                        </LinearLayout>-->
-
-                        <!--                        <LinearLayout-->
-                        <!--                            android:layout_width="0dp"-->
-                        <!--                            android:layout_height="wrap_content"-->
-                        <!--                            android:layout_weight="1"-->
-                        <!--                            android:orientation="vertical">-->
-
-                        <!--                            <TextView-->
-                        <!--                                android:layout_width="match_parent"-->
-                        <!--                                android:layout_height="wrap_content"-->
-                        <!--                                android:gravity="center"-->
-                        <!--                                android:text="@string/hh0202" />-->
-
-                        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
-                        <!--                                android:id="@+id/hh0202"-->
-                        <!--                                android:layout_width="match_parent"-->
-                        <!--                                android:layout_height="wrap_content"-->
-                        <!--                                android:gravity="center"-->
-                        <!--                                android:hint="##"-->
-                        <!--                                android:inputType="number"-->
-                        <!--                                android:maxLength="2"-->
-                        <!--                                android:text="@={form.hh0202}"-->
-                        <!--                                app:maxValue="59"-->
-                        <!--                                app:minValue="1"-->
-                        <!--                                app:type="range" />-->
-
-                        <!--                        </LinearLayout>-->
+                            android:hint="hh02" />
 
                     </LinearLayout>
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
-
-
-            <!-- hh03  Input-Numeric   -->
-            <!--            <androidx.cardview.widget.CardView-->
-            <!--                android:id="@+id/fldGrpCVhh03"-->
-            <!--                style="@style/cardView">-->
-
-            <!--                <LinearLayout-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:orientation="vertical">-->
-
-            <!--                    <LinearLayout-->
-            <!--                        android:layout_width="match_parent"-->
-            <!--                        android:layout_height="wrap_content"-->
-            <!--                        android:background="@drawable/bottom"-->
-            <!--                        android:orientation="horizontal">-->
-
-            <!--                        <TextView-->
-            <!--                            style="@style/quesNum"-->
-            <!--                            android:layout_width="wrap_content"-->
-            <!--                            android:layout_height="match_parent"-->
-            <!--                            android:text="@string/Q_hh03" />-->
-
-            <!--                        <TextView-->
-            <!--                            android:layout_width="0dp"-->
-            <!--                            android:layout_height="match_parent"-->
-            <!--                            android:layout_weight="1"-->
-            <!--                            android:text="@string/hh03" />-->
-
-            <!--                    </LinearLayout>-->
-
-            <!--                    <com.edittextpicker.aliazaz.EditTextPicker-->
-            <!--                        android:id="@+id/hh03"-->
-            <!--                        android:layout_width="match_parent"-->
-            <!--                        android:layout_height="wrap_content"-->
-            <!--                        android:hint="@string/hh03"-->
-            <!--                        android:inputType="number"-->
-            <!--                        android:maxLength="3"-->
-            <!--                        android:text="@={form.hh03}"-->
-            <!--                        app:maxValue="999"-->
-            <!--                        app:minValue="1"-->
-            <!--                        app:type="range" />-->
-
-            <!--                </LinearLayout>-->
-
-            <!--            </androidx.cardview.widget.CardView>-->
-
-
-            <!-- hh04  Input   -->
-            <!--            <androidx.cardview.widget.CardView-->
-            <!--                android:id="@+id/fldGrpCVhh04"-->
-            <!--                style="@style/cardView">-->
-
-            <!--                <LinearLayout-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:orientation="vertical">-->
-
-            <!--                    <LinearLayout-->
-            <!--                        android:layout_width="match_parent"-->
-            <!--                        android:layout_height="wrap_content"-->
-            <!--                        android:background="@drawable/bottom"-->
-            <!--                        android:orientation="horizontal">-->
-
-            <!--                        <TextView-->
-            <!--                            style="@style/quesNum"-->
-            <!--                            android:layout_width="wrap_content"-->
-            <!--                            android:layout_height="match_parent"-->
-            <!--                            android:text="@string/Q_hh04" />-->
-
-            <!--                        <TextView-->
-            <!--                            android:layout_width="0dp"-->
-            <!--                            android:layout_height="match_parent"-->
-            <!--                            android:layout_weight="1"-->
-            <!--                            android:text="@string/hh04" />-->
-
-            <!--                    </LinearLayout>-->
-
-            <!--                    <EditText-->
-            <!--                        android:id="@+id/hh04"-->
-            <!--                        android:layout_width="match_parent"-->
-            <!--                        android:layout_height="wrap_content"-->
-            <!--                        android:hint="@string/hh04"-->
-            <!--                        android:text="@={form.hh04}" />-->
-
-            <!--                </LinearLayout>-->
-
-            <!--            </androidx.cardview.widget.CardView>-->
-
 
             <!-- hh05  Radio   -->
             <androidx.cardview.widget.CardView
@@ -458,7 +315,9 @@
                         android:id="@+id/hh08"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/hh08"
+                        android:gravity="center"
+                        android:hint="######"
+                        android:maxLength="6"
                         android:inputType="number"
                         app:maxValue="999999"
                         app:minValue="1"
@@ -504,7 +363,9 @@
                         android:id="@+id/hh09"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/hh09"
+                        android:gravity="center"
+                        android:hint="######"
+                        android:maxLength="6"
                         android:inputType="number"
                         app:maxValue="999999"
                         app:minValue="1"
@@ -515,19 +376,23 @@
 
             </androidx.cardview.widget.CardView>
 
-            <CheckBox
-                android:id="@+id/check"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/checkHH"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/white"
+                android:onClick="checkHHExist"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:layout_margin="15dp"
                 android:layout_height="wrap_content"
-                android:text="Check"></CheckBox>
+                android:text="CHECK HH Exist" />
 
             <LinearLayout
                 android:id="@+id/fldGrpcheck"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility='@{check.checked? View.GONE : View.VISIBLE}'>
-
+                android:orientation="vertical">
 
                 <!-- hh10  Input   -->
                 <androidx.cardview.widget.CardView
@@ -712,7 +577,8 @@
                                 android:id="@+id/hh13"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/hh13"
+                                android:gravity="center"
+                                android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={form.hh13}"
@@ -899,7 +765,8 @@
                                 android:id="@+id/hh16"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/hh16"
+                                android:gravity="center"
+                                android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={form.hh16}"
@@ -1067,7 +934,7 @@
                                     android:hint="@string/hh1796"
                                     android:tag="hh1796"
                                     android:text="@={form.hh1796x}"
-                                    android:visibility='@={form.hh17.equals(`96`)? View.VISIBLE : View.GONE}' />
+                                    android:visibility='@{form.hh17.equals(`96`)? View.VISIBLE : View.GONE}' />
 
                             </RadioGroup>
 
@@ -1338,7 +1205,7 @@
                                         android:hint="@string/hh2096"
                                         android:tag="hh2096"
                                         android:text="@={form.hh2096x}"
-                                        android:visibility='@{hh2096.checked? View.VISIBLE : View.GONE}' />
+                                        android:visibility='@{form.hh20.equals(`96`)? View.VISIBLE : View.GONE}' />
 
                                 </RadioGroup>
 
@@ -1383,7 +1250,8 @@
                                 android:id="@+id/hh21"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/hh21"
+                                android:gravity="center"
+                                android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={form.hh21}"
@@ -1430,7 +1298,8 @@
                                 android:id="@+id/hh22"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/hh22"
+                                android:gravity="center"
+                                android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={form.hh22}"
@@ -1477,7 +1346,8 @@
                                 android:id="@+id/hh23"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/hh23"
+                                android:gravity="center"
+                                android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={form.hh23}"
@@ -1524,7 +1394,8 @@
                                 android:id="@+id/hh24"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/hh24"
+                                android:gravity="center"
+                                android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={form.hh24}"
@@ -1571,7 +1442,8 @@
                                 android:id="@+id/hh25"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/hh25"
+                                android:gravity="center"
+                                android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={form.hh25}"

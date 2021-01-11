@@ -2074,7 +2074,7 @@
                             android:hint="@string/im1201"
                             android:tag="im1201"
                             android:text="@={form.im1201x}"
-                            android:visibility='@{im1201.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.im12.equals(`1`) ? View.VISIBLE : View.GONE}' />
 
                         <RadioButton
                             android:id="@+id/im1298"
@@ -2083,9 +2083,13 @@
                             android:checked="@{form.im12.equals(`98`)}"
                             android:onClick="@{()->form.setIm12(`98`)}"
                             android:text="@string/im1298" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- im12a  Radio   -->
             <androidx.cardview.widget.CardView
@@ -2139,7 +2143,7 @@
                             android:hint="@string/im12a1"
                             android:tag="im12a1"
                             android:text="@={form.im12a1x}"
-                            android:visibility='@{im12a1.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.im12a.equals(`1`) ? View.VISIBLE : View.GONE}' />
 
                         <RadioButton
                             android:id="@+id/im12a98"
@@ -2148,9 +2152,13 @@
                             android:checked="@{form.im12a.equals(`98`)}"
                             android:onClick="@{()->form.setIm12a(`98`)}"
                             android:text="@string/im12a98" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- im13  Radio   -->
             <androidx.cardview.widget.CardView
@@ -2564,7 +2572,7 @@
                             android:hint="@string/im1901"
                             android:tag="im1901"
                             android:text="@={form.im1901x}"
-                            android:visibility='@{im1901.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.im19.equals(`1`) ? View.VISIBLE : View.GONE}' />
 
                         <RadioButton
                             android:id="@+id/im1998"
@@ -2573,8 +2581,11 @@
                             android:checked="@{form.im19.equals(`98`)}"
                             android:onClick="@{()->form.setIm19(`98`)}"
                             android:text="@string/im1998" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- im20  Radio   -->
@@ -2833,9 +2844,12 @@
                             android:hint="@string/im2306"
                             android:tag="im2306"
                             android:text="@={form.im2306x}"
-                            android:visibility='@{im2306.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.im23.equals(`96`) ? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- im23a  Radio   -->
@@ -3155,10 +3169,14 @@
                             android:hint="@string/im2496"
                             android:tag="im2496"
                             android:text="@={form.im2496x}"
-                            android:visibility='@{im2496.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.im24.equals(`96`)? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- im25  Radio   -->
             <androidx.cardview.widget.CardView

@@ -37,7 +37,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     app:layout_collapseMode="pin"
-                    app:popupTheme="@style/AppTheme.PopupOverlay"
                     app:title="Childrens" />
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -60,6 +59,7 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/childList"
+                    android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
