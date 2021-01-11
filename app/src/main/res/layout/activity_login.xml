@@ -183,7 +183,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="2"
                                         android:background="@drawable/login_eyestyle"
-                                        android:onClick="@{callback.onShowPasswordClick}"
+                                        android:onClick="@{callback::onShowPasswordClick}"
                                         android:src="@drawable/ic_login_eye"
                                         android:textSize="20sp" />
 
@@ -204,7 +204,7 @@
                                     android:layout_marginTop="16dp"
                                     android:layout_marginBottom="16dp"
                                     android:background="@color/colorPrimaryDark"
-                                    android:onClick="@{callback.onLoginClick}"
+                                    android:onClick="@{callback::onLoginClick}"
                                     android:paddingStart="12dp"
                                     android:paddingEnd="12dp"
                                     android:text="Login"
@@ -222,7 +222,7 @@
                                     android:background="@color/colorPrimaryBeta"
                                     android:drawableStart="@drawable/ic_upload"
                                     android:drawablePadding="12dp"
-                                    android:onClick="@{callback.onSyncDataClick}"
+                                    android:onClick="@{callback::onSyncDataClick}"
                                     android:paddingStart="12dp"
                                     android:paddingEnd="12dp"
                                     android:text="Download User Data"
