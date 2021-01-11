@@ -15,9 +15,10 @@
             android:id="@+id/parentLayout"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_85sdp"
+            android:layout_margin="@dimen/_3sdp"
+            app:cardBackgroundColor="#7fffffff"
             app:cardCornerRadius="@dimen/_6sdp"
             app:cardElevation="@dimen/_2sdp"
-            app:cardBackgroundColor="#7fffffff"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -133,6 +134,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
@@ -144,10 +146,10 @@
                         android:scaleType="fitXY"
                         android:src="@drawable/ctr_childboy" />
 
-                    <com.google.android.material.button.MaterialButton
+                    <Button
+                        android:id="@+id/addSiblings"
                         style="@style/Widget.MaterialComponents.Button.TextButton"
                         android:layout_width="wrap_content"
-                        android:id="@+id/addSiblings"
                         android:layout_height="@dimen/_23sdp"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:drawableLeft="@drawable/ic_add_siblings"

@@ -1,218 +1,182 @@
-package edu.aku.hassannaqvi.naunehal.ui.sections;
+package edu.aku.hassannaqvi.naunehal.ui.sections
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.os.Bundle
+import android.text.Editable
+import android.text.TextUtils
+import android.text.TextWatcher
+import android.view.View
+import android.widget.EditText
+import android.widget.RadioGroup
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import com.validatorcrawler.aliazaz.Clear
+import com.validatorcrawler.aliazaz.Validator
+import edu.aku.hassannaqvi.naunehal.BR
+import edu.aku.hassannaqvi.naunehal.R
+import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract
+import edu.aku.hassannaqvi.naunehal.core.MainApp
+import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection02cbBinding
+import edu.aku.hassannaqvi.naunehal.ui.sections.ChildrenListActivity.Companion.serial
+import edu.aku.hassannaqvi.naunehal.utils.datecollection.AgeModel
+import edu.aku.hassannaqvi.naunehal.utils.datecollection.DateRepository.Companion.getCalculatedAge
+import edu.aku.hassannaqvi.naunehal.utils.openWarningDialog
+import org.threeten.bp.Instant
+import org.threeten.bp.LocalDateTime
+import org.threeten.bp.ZoneId
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.*
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
+class Section02CBActivity : AppCompatActivity() {
+    lateinit var bi: ActivitySection02cbBinding
+    var dtFlag = false
 
-import com.validatorcrawler.aliazaz.Clear;
-import com.validatorcrawler.aliazaz.Validator;
-
-import org.threeten.bp.Instant;
-import org.threeten.bp.LocalDateTime;
-import org.threeten.bp.ZoneId;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
-import edu.aku.hassannaqvi.naunehal.R;
-import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract;
-import edu.aku.hassannaqvi.naunehal.core.MainApp;
-import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
-import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection02cbBinding;
-import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
-import edu.aku.hassannaqvi.naunehal.utils.datecollection.AgeModel;
-import edu.aku.hassannaqvi.naunehal.utils.datecollection.DateRepository;
-
-import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.openSectionEndingActivity;
-import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.openWarningDialog;
-
-public class Section02CBActivity extends AppCompatActivity {
-
-    ActivitySection02cbBinding bi;
-    boolean dtFlag = false;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_02cb);
-        bi.setCallback(this);
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_02cb)
+        bi.callback = this
 
         // TODO: Move this line to onCreate of childlist activity (recycler) and implement fetchChildrenByUUID() from TABLE_FAMILY in Database.
 //        MainApp.childInfo = new ChildInfo();
 
         // TODO: After itemClick on childlist fetchChildByUID() from TABLE_FAMILY and update contents MainApp.Family before entering this activity.
-        bi.setChildInformation(MainApp.childInformation);
-        setupSkips();
+        bi.setVariable(BR.childInformation, MainApp.childInformation)
+        setupSkips()
 
         /*
          * Setup Listeners
          * */
-        EditText[] txtListener = new EditText[]{bi.cb04dd, bi.cb04mm};
-        for (EditText txtItem : txtListener) {
-
-            txtItem.addTextChangedListener(new TextWatcher() {
-                @Override
-                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
+        val txtListener = arrayOf<EditText>(bi.cb04dd, bi.cb04mm)
+        for (txtItem in txtListener) {
+            txtItem.addTextChangedListener(object : TextWatcher {
+                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                    bi.cb0501.text = null
+                    bi.cb0502.text = null
+                    bi.cb04yy.text = null
                 }
 
-                @Override
-                public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    bi.cb0501.setText(null);
-                    bi.cb0502.setText(null);
-                    bi.cb04yy.setText(null);
-                }
-
-                @Override
-                public void afterTextChanged(Editable s) {
-
-                }
-            });
+                override fun afterTextChanged(s: Editable) {}
+            })
         }
     }
 
-    private void setupSkips() {
-
-        bi.cb06.setOnCheckedChangeListener((radioGroup, i) -> {
-            Clear.clearAllFields(bi.fldGrpCVcb07);
-            Clear.clearAllFields(bi.fldGrpCVcb08);
-            Clear.clearAllFields(bi.fldGrpCVcb09);
-            Clear.clearAllFields(bi.fldGrpCVcb12);
-            Clear.clearAllFields(bi.fldGrpCVcb13);
-            bi.fldGrpCVcb07.setVisibility(View.VISIBLE);
-            bi.fldGrpCVcb08.setVisibility(View.VISIBLE);
-            bi.fldGrpCVcb09.setVisibility(View.VISIBLE);
-            bi.fldGrpCVcb12.setVisibility(View.VISIBLE);
-            bi.fldGrpCVcb13.setVisibility(View.VISIBLE);
-            if (i == bi.cb0601.getId()) {
-                bi.fldGrpCVcb07.setVisibility(View.GONE);
-                bi.fldGrpCVcb08.setVisibility(View.GONE);
-                bi.fldGrpCVcb09.setVisibility(View.GONE);
-            } else if (i == bi.cb0602.getId()) {
-                bi.fldGrpCVcb12.setVisibility(View.GONE);
-                bi.fldGrpCVcb13.setVisibility(View.GONE);
+    private fun setupSkips() {
+        bi.cb06.setOnCheckedChangeListener { radioGroup: RadioGroup?, i: Int ->
+            Clear.clearAllFields(bi.fldGrpCVcb07)
+            Clear.clearAllFields(bi.fldGrpCVcb08)
+            Clear.clearAllFields(bi.fldGrpCVcb09)
+            Clear.clearAllFields(bi.fldGrpCVcb12)
+            Clear.clearAllFields(bi.fldGrpCVcb13)
+            bi.fldGrpCVcb07.visibility = View.VISIBLE
+            bi.fldGrpCVcb08.visibility = View.VISIBLE
+            bi.fldGrpCVcb09.visibility = View.VISIBLE
+            bi.fldGrpCVcb12.visibility = View.VISIBLE
+            bi.fldGrpCVcb13.visibility = View.VISIBLE
+            if (i == bi.cb0601.id) {
+                bi.fldGrpCVcb07.visibility = View.GONE
+                bi.fldGrpCVcb08.visibility = View.GONE
+                bi.fldGrpCVcb09.visibility = View.GONE
+            } else if (i == bi.cb0602.id) {
+                bi.fldGrpCVcb12.visibility = View.GONE
+                bi.fldGrpCVcb13.visibility = View.GONE
             }
-        });
-
-    }
-
-
-    public void BtnContinue(View view) {
-        if (!formValidation()) return;
-        initForm();
-        // SaveDraft(); //<== This function is no longer needed after DataBinding
-        if (UpdateDB()) {
-            ChildrenListActivity.Companion.setSerial(Integer.parseInt(MainApp.childInformation.cb01) + 1);
-            finish();
         }
     }
 
-    private boolean UpdateDB() {
-        DatabaseHelper db = MainApp.appInfo.dbHelper;
-        Long updcount = db.addChildInformation(MainApp.childInformation);
-        MainApp.childInformation.setId(updcount.toString());
-        if (updcount > 0) {
-            MainApp.childInformation.setUid(MainApp.childInformation.getDeviceId() + MainApp.childInformation.getId());
-            int count = db.updatesChildInformationColumn(ChildInformationContract.ChildInfoTable.COLUMN_UID, MainApp.childInformation.getUid());
-            if (count > 0)
-                count = db.updatesChildInformationColumn(ChildInformationContract.ChildInfoTable.COLUMN_SCB, MainApp.childInformation.sCBtoString());
-            if (count > 0)
-                return true;
-            else {
-                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
-                return false;
+    fun BtnContinue(view: View) {
+        if (!formValidation()) return
+        initForm()
+        // SaveDraft(); //<== This function is no longer needed after DataBinding
+        if (updateDB()) {
+            serial = MainApp.childInformation.cb01.toInt() + 1
+            finish()
+        }
+    }
+
+    private fun updateDB(): Boolean {
+        val db = MainApp.appInfo.dbHelper
+        val updcount = db.addChildInformation(MainApp.childInformation)
+        MainApp.childInformation.id = updcount.toString()
+        return if (updcount > 0) {
+            MainApp.childInformation.uid = MainApp.childInformation.deviceId + MainApp.childInformation.id
+            var count = db.updatesChildInformationColumn(ChildInformationContract.ChildInfoTable.COLUMN_UID, MainApp.childInformation.uid)
+            if (count > 0) count = db.updatesChildInformationColumn(ChildInformationContract.ChildInfoTable.COLUMN_SCB, MainApp.childInformation.sCBtoString())
+            if (count > 0) true else {
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show()
+                false
             }
         } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
-            return false;
+            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show()
+            false
         }
     }
 
-    private boolean formValidation() {
-        if (!Validator.emptyCheckingContainer(this, bi.GrpName))
-            return false;
-        int totalMonths = Integer.parseInt(bi.cb0501.getText().toString()) * 12 + Integer.parseInt(bi.cb0502.getText().toString());
+    private fun formValidation(): Boolean {
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false
+        val totalMonths = bi.cb0501.text.toString().toInt() * 12 + bi.cb0502.text.toString().toInt()
         if (totalMonths > 59) {
-            openWarningDialog(this, "Warning", "Add children having age of less then or equal to 59 Months");
-            return false;
+            this.openWarningDialog("Warning", "Add children having age of less then or equal to 59 Months")
+            return false
         }
-        return true;
+        return true
     }
 
-    public void BtnEnd(View view) {
-        finish();
+    fun BtnEnd(view: View) {
+        finish()
     }
-
 
     // Only in First Section of every Table.
-    public void initForm() {
-        MainApp.childInformation.setSysDate(new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        MainApp.childInformation.setUuid(MainApp.form.getUid());
-        MainApp.childInformation.setUserName(MainApp.user.getUserName());
-        MainApp.childInformation.setDcode(MainApp.form.getDcode());
-        MainApp.childInformation.setUcode(MainApp.form.getUcode());
-        MainApp.childInformation.setCluster(MainApp.form.getCluster());
-        MainApp.childInformation.setHhno(MainApp.form.getHhno());
-        MainApp.childInformation.setDeviceId(MainApp.appInfo.getDeviceID());
-        MainApp.childInformation.setDeviceTag(MainApp.appInfo.getTagName());
-        MainApp.childInformation.setAppver(MainApp.appInfo.getAppVersion());
+    private fun initForm() {
+        MainApp.childInformation.sysDate = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(Date().time)
+        MainApp.childInformation.uuid = MainApp.form.uid
+        MainApp.childInformation.userName = MainApp.user.userName
+        MainApp.childInformation.dcode = MainApp.form.dcode
+        MainApp.childInformation.ucode = MainApp.form.ucode
+        MainApp.childInformation.cluster = MainApp.form.cluster
+        MainApp.childInformation.hhno = MainApp.form.hhno
+        MainApp.childInformation.deviceId = MainApp.appInfo.deviceID
+        MainApp.childInformation.deviceTag = MainApp.appInfo.tagName
+        MainApp.childInformation.appver = MainApp.appInfo.appVersion
     }
 
-
-    public void cb04yyOnTextChanged(CharSequence s, int start, int before, int count) {
-        bi.cb0502.setEnabled(false);
-        bi.cb0502.setText(null);
-        bi.cb0501.setEnabled(false);
-        bi.cb0501.setText(null);
-        MainApp.childInformation.setCalculatedDOB(null);
-        if (TextUtils.isEmpty(bi.cb04dd.getText()) || TextUtils.isEmpty(bi.cb04mm.getText()) || TextUtils.isEmpty(bi.cb04yy.getText()))
-            return;
-        if (!bi.cb04dd.isRangeTextValidate() || !bi.cb04mm.isRangeTextValidate() || !bi.cb04yy.isRangeTextValidate())
-            return;
-        if (bi.cb04dd.getText().toString().equals("98") && bi.cb04mm.getText().toString().equals("98") && bi.cb04yy.getText().toString().equals("9998")) {
-            bi.cb0502.setEnabled(true);
-            bi.cb0501.setEnabled(true);
-            dtFlag = true;
-            return;
+    fun cb04yyOnTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+        bi.cb0502.isEnabled = false
+        bi.cb0502.text = null
+        bi.cb0501.isEnabled = false
+        bi.cb0501.text = null
+        MainApp.childInformation.calculatedDOB = null
+        if (TextUtils.isEmpty(bi.cb04dd.text) || TextUtils.isEmpty(bi.cb04mm.text) || TextUtils.isEmpty(bi.cb04yy.text)) return
+        if (!bi.cb04dd.isRangeTextValidate || !bi.cb04mm.isRangeTextValidate || !bi.cb04yy.isRangeTextValidate) return
+        if (bi.cb04dd.text.toString() == "98" && bi.cb04mm.text.toString() == "98" && bi.cb04yy.text.toString() == "9998") {
+            bi.cb0502.isEnabled = true
+            bi.cb0501.isEnabled = true
+            dtFlag = true
+            return
         }
-        int day = bi.cb04dd.getText().toString().equals("98") ? 15 : Integer.parseInt(bi.cb04dd.getText().toString());
-        int month = Integer.parseInt(bi.cb04mm.getText().toString());
-        int year = Integer.parseInt(bi.cb04yy.getText().toString());
-
-        AgeModel age;
-        if (MainApp.form.getLocalDate() != null)
-            age = DateRepository.Companion.getCalculatedAge(MainApp.form.getLocalDate(), year, month, day);
-        else
-            age = DateRepository.Companion.getCalculatedAge(year, month, day);
+        val day = if (bi.cb04dd.text.toString() == "98") 15 else bi.cb04dd.text.toString().toInt()
+        val month = bi.cb04mm.text.toString().toInt()
+        val year = bi.cb04yy.text.toString().toInt()
+        val age: AgeModel?
+        age = if (MainApp.form.localDate != null) getCalculatedAge(MainApp.form.localDate, year, month, day) else getCalculatedAge(year = year, month = month, day = day)
         if (age == null) {
-            bi.cb04yy.setError("Invalid date!!");
-            dtFlag = false;
-            return;
+            bi.cb04yy.error = "Invalid date!!"
+            dtFlag = false
+            return
         }
-        dtFlag = true;
-        bi.cb0502.setText(String.valueOf(age.getMonth()));
-        bi.cb0501.setText(String.valueOf(age.getYear()));
+        dtFlag = true
+        bi.cb0502.setText(age.month.toString())
+        bi.cb0501.setText(age.year.toString())
 
         //Setting Date
         try {
-            Instant instant = Instant.parse(new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).format(new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH).parse(
-                    day + "-" + month + "-" + year
-            )) + "T06:24:01Z");
-            MainApp.childInformation.setCalculatedDOB(LocalDateTime.ofInstant(instant, ZoneId.systemDefault()).toLocalDate());
-        } catch (ParseException e) {
-            e.printStackTrace();
+            val instant = Instant.parse(SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).format(SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH).parse(
+                    "$day-$month-$year"
+            )) + "T06:24:01Z")
+            MainApp.childInformation.calculatedDOB = LocalDateTime.ofInstant(instant, ZoneId.systemDefault()).toLocalDate()
+        } catch (e: ParseException) {
+            e.printStackTrace()
         }
-
     }
-
 }

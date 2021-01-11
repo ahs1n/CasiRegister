@@ -47,9 +47,6 @@ public class Section01HHActivity extends AppCompatActivity {
     private DatabaseHelper db;
     private String ucCode = "", dCode = "";
 
-    List<String> ucName;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,8 +55,8 @@ public class Section01HHActivity extends AppCompatActivity {
         bi.hh05.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList("....", "Test")));
         bi.hh06.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList("....", "Test")));
 
-        /** ONLY in First Section of every Table
-         *
+        /*
+         *  ONLY in First Section of every Table
          *  Below statement will be called only in first section (in identification or section A ).
          *  We will decide this later after checking functionality and flow of the app
          */

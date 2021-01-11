@@ -8,6 +8,7 @@ import com.bumptech.glide.Glide
 import edu.aku.hassannaqvi.naunehal.R
 import edu.aku.hassannaqvi.naunehal.databinding.ChildViewBinding
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation
+import edu.aku.hassannaqvi.naunehal.utils.convertStringToUpperCase
 
 /*
 * @author Ali Azaz Alam dt. 01.08.21
@@ -16,9 +17,8 @@ class ChildViewHolder(private val bi: ChildViewBinding) :
         RecyclerView.ViewHolder(bi.root) {
 
     fun bind(item: ChildInformation) {
-//        bi.setVariable(BR.item, item)
-        bi.serial.text = item.cb01
-        bi.resName.text = String.format("Respondent: %s", item.resName)
+        bi.serial.text = item.cb01.convertStringToUpperCase()
+        bi.resName.text = String.format("Respondent: %s", (if (item.cb07 == "") item.cb12 else item.cb07).convertStringToUpperCase())
         bi.name.text = item.cb02
         bi.age.text = item.cb0501.toInt().times(12).plus(item.cb0502.toInt()).toString()
         val imageRes: Int = if (item.cb03 == "1") R.drawable.ctr_childboy else R.drawable.ctr_childgirl

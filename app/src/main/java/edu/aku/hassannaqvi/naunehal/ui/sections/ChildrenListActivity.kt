@@ -48,7 +48,7 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
         * */
         bi.toolbarLayout.title = "Children List [${MainApp.form.cluster} / ${MainApp.form.hhno})"
         bi.toolbarLayout.setCollapsedTitleTextColor(ContextCompat.getColor(this, R.color.black))
-        bi.toolbarLayout.setExpandedTitleColor(ContextCompat.getColor(this, R.color.green))
+        bi.toolbarLayout.setExpandedTitleColor(ContextCompat.getColor(this, R.color.black_overlay))
 
 
         /*
