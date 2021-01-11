@@ -1,9 +1,7 @@
 package edu.aku.hassannaqvi.naunehal.models;
 
 import android.database.Cursor;
-
-import androidx.databinding.BaseObservable;
-import androidx.databinding.Bindable;
+import android.util.Log;
 
 import com.google.gson.GsonBuilder;
 
@@ -11,11 +9,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.threeten.bp.LocalDate;
 
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
 import edu.aku.hassannaqvi.naunehal.BR;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 
 public class Form extends BaseObservable {
+
+    private String TAG = "Form";
 
     // APP VARIABLES
     private String projectName = MainApp.PROJECT_NAME;
@@ -314,6 +316,7 @@ public class Form extends BaseObservable {
     public void setLocalDate(LocalDate localDate) {
         this.localDate = localDate;
     }
+
 
     public Form() {
 
@@ -2269,16 +2272,6 @@ public class Form extends BaseObservable {
     }
 
     @Bindable
-    public String getSe20() {
-        return se20;
-    }
-
-    public void setSe20(String se20) {
-        this.se20 = se20;
-        notifyPropertyChanged(BR.se20);
-    }
-
-    @Bindable
     public String getSe2001() {
         return se2001;
     }
@@ -2330,13 +2323,23 @@ public class Form extends BaseObservable {
 
     @Bindable
     public String getSe2096() {
+        Log.d(TAG, "getSe2096: " + this.se2096);
         return se2096;
     }
 
     public void setSe2096(String se2096) {
-        this.se2096 = se2096;
-        notifyPropertyChanged(BR.se2096);
+        if (this.se2096 != se2096) {
+            this.se2096 = se2096;
+            Log.d(TAG, "setSe2096: " + this.se2096);
+            notifyPropertyChanged(BR.se2096);
+        }
     }
+    
+  /*  if (this.a303 != a303) {
+        this.a303 = a303;
+        notifyPropertyChanged(BR.a303);
+        Log.d(TAG, "setA303: " + this.a303);
+    }*/
 
     @Bindable
     public String getSe2096x() {
@@ -3371,7 +3374,6 @@ public class Form extends BaseObservable {
                     .put("se189601x", se189601x)
                     .put("se19", se19)
                     .put("se1996x", se1996x)
-                    .put("se20", se20)
                     .put("se2001", se2001)
                     .put("se2002", se2002)
                     .put("se2003", se2003)
@@ -3379,7 +3381,6 @@ public class Form extends BaseObservable {
                     .put("se2005", se2005)
                     .put("se2096", se2096)
                     .put("se2096x", se2096x)
-                    .put("se21", se21)
                     .put("se2101", se2101)
                     .put("se2102", se2102)
                     .put("se2103", se2103)

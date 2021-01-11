@@ -47,7 +47,7 @@
             android:name=".ui.SyncActivity"
             android:label="Download and Upload Data Activity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1" />
+             />
 
         <activity
             android:name=".ui.sections.ChildrenListActivity"

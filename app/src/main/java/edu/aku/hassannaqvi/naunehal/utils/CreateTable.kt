@@ -1,9 +1,6 @@
 package edu.aku.hassannaqvi.naunehal.utils
 
-import edu.aku.hassannaqvi.naunehal.contracts.ChildContract
-import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract
-import edu.aku.hassannaqvi.naunehal.contracts.FormsContract
-import edu.aku.hassannaqvi.naunehal.contracts.IMContract
+import edu.aku.hassannaqvi.naunehal.contracts.*
 import edu.aku.hassannaqvi.naunehal.models.Users
 import edu.aku.hassannaqvi.naunehal.models.VersionApp
 
@@ -119,6 +116,25 @@ object CreateTable {
             + Users.UsersTable.COLUMN_PASSWORD + " TEXT,"
             + Users.UsersTable.COLUMN_FULLNAME + " TEXT"
             + " );")
+    const val SQL_CREATE_DISTRICTS = ("CREATE TABLE " + DistrictsContract.TableDistricts.TABLE_NAME + "("
+            + DistrictsContract.TableDistricts.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + DistrictsContract.TableDistricts.COLUMN_DISTRICT_NAME + " TEXT,"
+            + DistrictsContract.TableDistricts.COLUMN_DISTRICT_CODE + " TEXT"
+            + " );")
+
+    const val SQL_CREATE_UCS = ("CREATE TABLE " + UCsContract.TableUCs.TABLE_NAME + "("
+            + UCsContract.TableUCs.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + UCsContract.TableUCs.COLUMN_UC_NAME + " TEXT,"
+            + UCsContract.TableUCs.COLUMN_UC_CODE + " TEXT,"
+            + UCsContract.TableUCs.COLUMN_DISTRICT_CODE + " TEXT"
+            + " );")
+    const val SQL_CREATE_CLUSTERS = ("CREATE TABLE " + ClustersContract.TableClusters.TABLE_NAME + "("
+            + ClustersContract.TableClusters.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + ClustersContract.TableClusters.COLUMN_UC_CODE + " TEXT,"
+            + ClustersContract.TableClusters.COLUMN_CLUSTER_NAME + " TEXT,"
+            + ClustersContract.TableClusters.COLUMN_CLUSTER_CODE + " TEXT"
+            + " );")
+
 
     const val SQL_CREATE_VERSIONAPP = "CREATE TABLE " + VersionApp.VersionAppTable.TABLE_NAME + " (" +
             VersionApp.VersionAppTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +

@@ -63,9 +63,9 @@ public class ClustersContract {
 
     public static abstract class TableClusters implements BaseColumns {
 
-        public static final String TABLE_NAME = "Clusters";
+        public static final String TABLE_NAME = "clusters";
         public static final String COLUMN_NAME_NULLABLE = "nullColumnHack";
-        public static final String _ID = "_id";
+        public static final String COLUMN_ID = "_id";
         public static final String COLUMN_CLUSTER_CODE = "clusterCode";
         public static final String COLUMN_CLUSTER_NAME = "clusterName";
         public static final String COLUMN_UC_CODE = "ucCode";

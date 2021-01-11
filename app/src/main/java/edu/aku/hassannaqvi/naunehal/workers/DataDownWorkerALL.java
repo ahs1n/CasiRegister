@@ -38,6 +38,7 @@ public class DataDownWorkerALL extends Worker {
 
     // to be initialised by workParams
     private final Context mContext;
+    private final int position;
     HttpURLConnection urlConnection;
     private String uploadTable;
     private String uploadColumns;
@@ -51,7 +52,9 @@ public class DataDownWorkerALL extends Worker {
     public DataDownWorkerALL(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
         mContext = context;
-        uploadTable = workerParams.getInputData().getString("VillageTable");
+        uploadTable = workerParams.getInputData().getString("table");
+        position = workerParams.getInputData().getInt("position", -2);
+        Log.d(TAG, "DataDownWorkerALL: position " + position);
         //uploadColumns = workerParams.getInputData().getString("columns");
         uploadWhere = workerParams.getInputData().getString("where");
 
@@ -104,11 +107,11 @@ public class DataDownWorkerALL extends Worker {
             JSONObject jsonTable = new JSONObject();
             JSONArray jsonParam = new JSONArray();
 
-            jsonTable.put("VillageTable", uploadTable);
+            jsonTable.put("table", uploadTable);
             //jsonTable.put("select", uploadColumns);
             jsonTable.put("filter", uploadWhere);
-            jsonTable.put("limit", "3");
-            jsonTable.put("orderby", "rand()");
+            //jsonTable.put("limit", "3");
+            //jsonTable.put("orderby", "rand()");
             //jsonSync.put(uploadData);
             jsonParam
                     .put(jsonTable);
@@ -139,6 +142,16 @@ public class DataDownWorkerALL extends Worker {
                     result.append(line);
 
                 }
+
+                if (result.equals("[]")) {
+                    Log.d(TAG, "No data received from server: " + result);
+
+                    data = new Data.Builder()
+                            .putString("error", "No data received from server: " + result)
+                            .putInt("position", this.position)
+                            .build();
+                    return Result.failure(data);
+                }
                 //displayNotification(nTitle, "Received Data");
                 Log.d(TAG, "doWork(EN): " + result.toString());
             } else {
@@ -146,21 +159,27 @@ public class DataDownWorkerALL extends Worker {
                 Log.d(TAG, "Connection Response (Server Failure): " + urlConnection.getResponseCode());
 
                 data = new Data.Builder()
-                        .putString("error", String.valueOf(urlConnection.getResponseCode())).build();
+                        .putString("error", String.valueOf(urlConnection.getResponseCode()))
+                        .putInt("position", this.position)
+                        .build();
                 return Result.failure(data);
             }
         } catch (java.net.SocketTimeoutException e) {
             Log.d(TAG, "doWork (Timeout): " + e.getMessage());
             //displayNotification(nTitle, "Timeout Error: " + e.getMessage());
             data = new Data.Builder()
-                    .putString("error", String.valueOf(e.getMessage())).build();
+                    .putString("error", String.valueOf(e.getMessage()))
+                    .putInt("position", this.position)
+                    .build();
             return Result.failure(data);
 
         } catch (IOException | JSONException e) {
             Log.d(TAG, "doWork (IO Error): " + e.getMessage());
             //displayNotification(nTitle, "IO Error: " + e.getMessage());
             data = new Data.Builder()
-                    .putString("error", String.valueOf(e.getMessage())).build();
+                    .putString("error", String.valueOf(e.getMessage()))
+                    .putInt("position", this.position)
+                    .build();
 
             return Result.failure(data);
 
@@ -184,20 +203,27 @@ public class DataDownWorkerALL extends Worker {
             ///BE CAREFULL DATA.BUILDER CAN HAVE ONLY 1024O BYTES. EACH CHAR HAS 8 BYTES
             if (result.toString().length() > 10240) {
                 data = new Data.Builder()
-                        .putString("data", String.valueOf(result).substring(0, (10240 - 1) / 8)).build();
+                        .putString("data", String.valueOf(result).substring(0, (10240 - 1) / 8))
+                        .putInt("position", this.position)
+                        .build();
             } else {
 
                 data = new Data.Builder()
-                        .putString("data", String.valueOf(result)).build();
+                        .putString("data", String.valueOf(result))
+                        .putInt("position", this.position)
+                        .build();
             }
 
             //displayNotification(nTitle, "Uploaded successfully");
             Log.d(TAG, "doWork: " + result);
+            Log.d(TAG, "doWork (success) : position " + data.getInt("position", -1));
             return Result.success(data);
 
         } else {
             data = new Data.Builder()
-                    .putString("error", String.valueOf(result)).build();
+                    .putString("error", String.valueOf(result))
+                    .putInt("position", this.position)
+                    .build();
             //displayNotification(nTitle, "Error Received");
             return Result.failure(data);
         }
