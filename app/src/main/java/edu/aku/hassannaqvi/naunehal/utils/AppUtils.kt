@@ -156,6 +156,29 @@ fun AppCompatActivity.openWarningActivity(title: String, message: String, btnYes
     }
 }
 
+@JvmOverloads
+fun AppCompatActivity.openWarningDialog(title: String, message: String, btnYesTxt: String = "OK") {
+    val dialog = Dialog(this)
+    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+    val bi: ChildEndDialogBinding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.child_end_dialog, null, false)
+    dialog.setContentView(bi.root)
+    bi.alertTitle.text = title
+    bi.alertTitle.setTextColor(ContextCompat.getColor(this, R.color.green))
+    bi.content.text = message
+    bi.btnOk.text = btnYesTxt
+    bi.btnOk.setBackgroundColor(ContextCompat.getColor(this, R.color.green))
+    bi.btnNo.visibility = View.GONE
+    val params = WindowManager.LayoutParams()
+    params.copyFrom(dialog.window!!.attributes)
+    params.width = WindowManager.LayoutParams.WRAP_CONTENT
+    params.height = WindowManager.LayoutParams.WRAP_CONTENT
+    dialog.window!!.attributes = params
+    dialog.show()
+    bi.btnOk.setOnClickListener {
+        dialog.dismiss()
+    }
+}
+
 interface EndSectionActivity {
     fun endSecActivity(flag: Boolean)
 }

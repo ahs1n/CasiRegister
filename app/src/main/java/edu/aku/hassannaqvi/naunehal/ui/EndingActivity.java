@@ -96,7 +96,7 @@ public class EndingActivity extends AppCompatActivity {
                     : "0");
 
             MainApp.form.setIstatus96x(bi.istatus96x.getText().toString());
-            MainApp.form.setEndingdatetime(new SimpleDateFormat("dd-MM-yy HH:mm", Locale.getDefault()).format(new Date().getTime()));
+            MainApp.form.setEndingdatetime(new SimpleDateFormat("dd-MM-yy HH:mm", Locale.ENGLISH).format(new Date().getTime()));
         }*/
     }
 
