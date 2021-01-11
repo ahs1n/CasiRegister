@@ -31,6 +31,7 @@ import edu.aku.hassannaqvi.naunehal.core.MainApp;
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.PROJECT_NAME;
 
+
 public class DataUpWorkerALL extends Worker {
 
     private static final Object APP_NAME = PROJECT_NAME;
@@ -50,7 +51,7 @@ public class DataUpWorkerALL extends Worker {
     public DataUpWorkerALL(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
         mContext = context;
-        uploadTable = workerParams.getInputData().getString("VillageTable");
+        uploadTable = workerParams.getInputData().getString("table");
         try {
             uploadData = new JSONObject(workerParams.getInputData().getString("data"));
         } catch (JSONException e) {
@@ -106,7 +107,7 @@ public class DataUpWorkerALL extends Worker {
             JSONObject jsonTable = new JSONObject();
             JSONArray jsonParam = new JSONArray();
 
-            jsonTable.put("VillageTable", uploadTable);
+            jsonTable.put("table", uploadTable);
             jsonSync.put(uploadData);
             jsonParam
                     .put(jsonTable)
