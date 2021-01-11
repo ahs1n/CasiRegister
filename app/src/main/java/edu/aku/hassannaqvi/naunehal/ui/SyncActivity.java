@@ -488,4 +488,6 @@ public class SyncActivity extends AppCompatActivity {
     }
 
 
+    public void uploadPhotos(View view) {
+    }
 }
