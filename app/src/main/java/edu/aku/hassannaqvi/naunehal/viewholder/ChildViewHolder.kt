@@ -17,9 +17,9 @@ class ChildViewHolder(private val bi: ChildViewBinding) :
         RecyclerView.ViewHolder(bi.root) {
 
     fun bind(item: ChildInformation) {
-        bi.serial.text = item.cb01.convertStringToUpperCase()
+        bi.serial.text = item.cb01
         bi.resName.text = String.format("Respondent: %s", (if (item.cb07 == "") item.cb12 else item.cb07).convertStringToUpperCase())
-        bi.name.text = item.cb02
+        bi.name.text = item.cb02.convertStringToUpperCase()
         bi.age.text = item.cb0501.toInt().times(12).plus(item.cb0502.toInt()).toString()
         val imageRes: Int = if (item.cb03 == "1") R.drawable.ctr_childboy else R.drawable.ctr_childgirl
         /*when (item.formFlag) {
