@@ -34,6 +34,7 @@ import edu.aku.hassannaqvi.naunehal.utils.datecollection.AgeModel;
 import edu.aku.hassannaqvi.naunehal.utils.datecollection.DateRepository;
 
 import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.openSectionEndingActivity;
+import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.openWarningDialog;
 
 public class Section02CBActivity extends AppCompatActivity {
 
@@ -138,9 +139,15 @@ public class Section02CBActivity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName))
+            return false;
+        int totalMonths = Integer.parseInt(bi.cb0501.getText().toString()) * 12 + Integer.parseInt(bi.cb0502.getText().toString());
+        if (totalMonths > 59) {
+            openWarningDialog(this, "Warning", "Add children having age of less then or equal to 59 Months");
+            return false;
+        }
+        return true;
     }
-
 
     public void BtnEnd(View view) {
         finish();
@@ -149,7 +156,7 @@ public class Section02CBActivity extends AppCompatActivity {
 
     // Only in First Section of every Table.
     public void initForm() {
-        MainApp.childInformation.setSysDate(new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault()).format(new Date().getTime()));
+        MainApp.childInformation.setSysDate(new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         MainApp.childInformation.setUuid(MainApp.form.getUid());
         MainApp.childInformation.setUserName(MainApp.user.getUserName());
         MainApp.childInformation.setDcode(MainApp.form.getDcode());

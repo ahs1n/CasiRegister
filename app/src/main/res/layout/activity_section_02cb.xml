@@ -70,6 +70,7 @@
                         android:inputType="number"
                         android:maxLength="2"
                         android:text="@={childInformation.cb01}"
+                        android:textAlignment="center"
                         app:maxValue="99"
                         app:minValue="1"
                         app:type="range" />
@@ -219,34 +220,6 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="2dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                style="@style/textView3Head"
-                                android:text="@string/cb04yy" />
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/cb04yy"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/year"
-                                android:inputType="number"
-                                android:maxLength="4"
-                                android:onTextChanged="@{callback.cb04yyOnTextChanged}"
-                                android:text="@={childInformation.cb04yy}"
-                                app:defaultValue="9998"
-                                app:maxValue="2020"
-                                app:minValue="2015"
-                                app:type="range" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="2dp"
                             android:layout_weight="1"
                             android:orientation="vertical">
 
@@ -291,6 +264,33 @@
                                 app:defaultValue="98"
                                 app:maxValue="31"
                                 app:minValue="1"
+                                app:type="range" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/textView3Head"
+                                android:text="@string/cb04yy" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/cb04yy"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/year"
+                                android:inputType="number"
+                                android:maxLength="4"
+                                android:onTextChanged="@{callback.cb04yyOnTextChanged}"
+                                android:text="@={childInformation.cb04yy}"
+                                app:defaultValue="9998"
+                                app:maxValue="2020"
+                                app:minValue="2015"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -340,10 +340,10 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            style="@style/textView3Head"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            style="@style/textView3Head"
                             android:gravity="center"
                             android:text="@string/cb0501" />
 
@@ -362,11 +362,11 @@
                             app:type="range" />
 
                         <TextView
+                            style="@style/textView3Head"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            style="@style/textView3Head"
                             android:text="@string/cb0502" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker

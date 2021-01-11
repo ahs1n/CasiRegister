@@ -144,7 +144,7 @@ public class Section01HHActivity extends AppCompatActivity {
     // Only in First Section of every Table.
     public void initForm() {
         // TODO: need work on appinfo
-        MainApp.form.setSysDate(new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault()).format(new Date().getTime()));
+        MainApp.form.setSysDate(new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         MainApp.form.setUserName(MainApp.user.getUserName());
         MainApp.form.setDcode(dCode);
         MainApp.form.setUcode(ucCode);

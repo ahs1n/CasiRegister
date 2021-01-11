@@ -62,6 +62,6 @@ class AppInfo {
     }
 
     fun getAppInfo(): String {
-        return """Ver. $versionName.$versionCode ( Last Updated: ${SimpleDateFormat("dd MMM. yyyy", Locale.getDefault()).format(Date(getInfo().installedOn))} )"""
+        return """Ver. $versionName.$versionCode ( Last Updated: ${SimpleDateFormat("dd MMM. yyyy", Locale.ENGLISH).format(Date(getInfo().installedOn))} )"""
     }
 }

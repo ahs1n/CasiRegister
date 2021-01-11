@@ -28,6 +28,10 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
     lateinit var adapter: ChildListAdapter
     lateinit var bi: ActivityChildrenListBinding
 
+    /*
+    * Using old approach to visible viewmodel in all sub classes
+    * Serial no increment on every new entry
+    * */
     companion object {
         lateinit var viewModel: ChildListViewModel
         var serial = 1
@@ -42,18 +46,18 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
         /*
         * Nested Toolbar
         * */
-        bi.toolbarLayout.title = "Children List [C-${MainApp.form.cluster} / H-${MainApp.form.hhno})"
+        bi.toolbarLayout.title = "Children List [${MainApp.form.cluster} / ${MainApp.form.hhno})"
         bi.toolbarLayout.setCollapsedTitleTextColor(ContextCompat.getColor(this, R.color.black))
-        bi.toolbarLayout.setExpandedTitleColor(ContextCompat.getColor(this, R.color.black))
+        bi.toolbarLayout.setExpandedTitleColor(ContextCompat.getColor(this, R.color.green))
 
 
         /*
         * Setting Floating button functionality
         * */
         val actionItems = mutableListOf<SpeedDialActionItem>(
-                SpeedDialActionItem.Builder(R.id.fab_add, R.drawable.ic_add).setLabel("Add Children").create(),
+                SpeedDialActionItem.Builder(R.id.fab_exit, R.drawable.ic_exit).setLabel("Force exit").create(),
                 SpeedDialActionItem.Builder(R.id.fab_finish, R.drawable.ic_finish).setLabel("Finish").create(),
-                SpeedDialActionItem.Builder(R.id.fab_exit, R.drawable.ic_exit).setLabel("Force exit").create()
+                SpeedDialActionItem.Builder(R.id.fab_add, R.drawable.ic_add).setLabel("Add Children").create()
         )
         bi.speedDial.addAllActionItems(actionItems)
         bi.speedDial.setOnActionSelectedListener { actionItem ->
@@ -105,6 +109,9 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
 
     }
 
+    /*
+    * Callback call after pressing finish button in speedDial
+    * */
     override fun callWarningActivity(item: Any?) {
         MainApp.childInformation = item as ChildInformation
         gotoActivity(Section02CBActivity::class.java)
@@ -130,6 +137,9 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
         bi.childList.adapter = adapter
     }
 
+    /*
+    * Get childList on resume event
+    * */
     override fun onResume() {
         super.onResume()
 
