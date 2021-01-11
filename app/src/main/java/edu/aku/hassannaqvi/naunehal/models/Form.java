@@ -9,6 +9,7 @@ import com.google.gson.GsonBuilder;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.threeten.bp.LocalDate;
 
 import edu.aku.hassannaqvi.naunehal.BR;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
@@ -303,6 +304,16 @@ public class Form extends BaseObservable {
     public String se39;
     public String se40;
 
+    //Not saving in DB
+    private LocalDate localDate = null;
+
+    public LocalDate getLocalDate() {
+        return localDate;
+    }
+
+    public void setLocalDate(LocalDate localDate) {
+        this.localDate = localDate;
+    }
 
     public Form() {
 

@@ -350,7 +350,7 @@
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/cb0501"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="2"
                             android:enabled="false"
                             android:hint="@string/year"
@@ -372,7 +372,7 @@
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/cb0502"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="2"
                             android:enabled="false"
                             android:hint="@string/month"

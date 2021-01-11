@@ -400,11 +400,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] whereArgs = {cluster, hhno, uuid};
         String groupBy = null;
         String having = null;
-        String orderBy = FormsTable.COLUMN_ID + " ASC";
+        String orderBy = ChildInfoTable.COLUMN_ID + " ASC";
         ArrayList<ChildInformation> allForms = new ArrayList<>();
         try {
             c = db.query(
-                    FormsTable.TABLE_NAME,  // The table to query
+                    ChildInfoTable.TABLE_NAME,  // The table to query
                     null,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause

@@ -19,7 +19,12 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
+import org.threeten.bp.Instant;
+import org.threeten.bp.LocalDateTime;
+import org.threeten.bp.ZoneId;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -150,6 +155,14 @@ public class Section01HHActivity extends AppCompatActivity {
         MainApp.form.setAppver(MainApp.appInfo.getAppVersion());
         MainApp.form.setGps(getGPS(this).toString());
         // MainApp.setGPS({"gpsLng":"12444",...});
+
+        //Setting Date
+        try {
+            Instant instant = Instant.parse(new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).format(new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH).parse(bi.aa01.getText().toString())) + "T06:24:01Z");
+            MainApp.form.setLocalDate(LocalDateTime.ofInstant(instant, ZoneId.systemDefault()).toLocalDate());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 
     private JSONObject getGPS(Activity activity) {

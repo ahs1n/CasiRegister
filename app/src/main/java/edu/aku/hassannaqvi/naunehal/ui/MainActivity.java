@@ -76,6 +76,9 @@ public class MainActivity extends AppCompatActivity {
     public void openForm(View view) {
         Intent oF = null;
         switch (view.getId()) {
+            case R.id.startInterview:
+                oF = new Intent(this, Section01HHActivity.class);
+                break;
             case R.id.btn01:
                 oF = new Intent(this, Section01HHActivity.class);
                 break;

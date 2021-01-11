@@ -42,7 +42,7 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
         /*
         * Nested Toolbar
         * */
-        bi.toolbarLayout.title = "Children List (${MainApp.form.cluster} -> ${MainApp.form.hhno})"
+        bi.toolbarLayout.title = "Children List [C-${MainApp.form.cluster} / H-${MainApp.form.hhno})"
         bi.toolbarLayout.setCollapsedTitleTextColor(ContextCompat.getColor(this, R.color.black))
         bi.toolbarLayout.setExpandedTitleColor(ContextCompat.getColor(this, R.color.black))
 
@@ -51,7 +51,7 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
         * Setting Floating button functionality
         * */
         val actionItems = mutableListOf<SpeedDialActionItem>(
-                SpeedDialActionItem.Builder(R.id.fab_add, R.drawable.ic_finish).setLabel("Add Children").create(),
+                SpeedDialActionItem.Builder(R.id.fab_add, R.drawable.ic_add).setLabel("Add Children").create(),
                 SpeedDialActionItem.Builder(R.id.fab_finish, R.drawable.ic_finish).setLabel("Finish").create(),
                 SpeedDialActionItem.Builder(R.id.fab_exit, R.drawable.ic_exit).setLabel("Force exit").create()
         )

@@ -44,6 +44,7 @@ public class Section02CBActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_02cb);
+        bi.setCallback(this);
 
         // TODO: Move this line to onCreate of childlist activity (recycler) and implement fetchChildrenByUUID() from TABLE_FAMILY in Database.
 //        MainApp.childInfo = new ChildInfo();
@@ -149,6 +150,7 @@ public class Section02CBActivity extends AppCompatActivity {
     // Only in First Section of every Table.
     public void initForm() {
         MainApp.childInformation.setSysDate(new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault()).format(new Date().getTime()));
+        MainApp.childInformation.setUuid(MainApp.form.getUid());
         MainApp.childInformation.setUserName(MainApp.user.getUserName());
         MainApp.childInformation.setDcode(MainApp.form.getDcode());
         MainApp.childInformation.setUcode(MainApp.form.getUcode());
@@ -181,8 +183,8 @@ public class Section02CBActivity extends AppCompatActivity {
         int year = Integer.parseInt(bi.cb04yy.getText().toString());
 
         AgeModel age;
-        if (MainApp.childInformation.getLocalDate() != null)
-            age = DateRepository.Companion.getCalculatedAge(MainApp.childInformation.getLocalDate(), year, month, day);
+        if (MainApp.form.getLocalDate() != null)
+            age = DateRepository.Companion.getCalculatedAge(MainApp.form.getLocalDate(), year, month, day);
         else
             age = DateRepository.Companion.getCalculatedAge(year, month, day);
         if (age == null) {

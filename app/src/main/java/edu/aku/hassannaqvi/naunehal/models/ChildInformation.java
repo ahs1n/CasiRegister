@@ -64,15 +64,7 @@ public class ChildInformation extends BaseObservable {
     //Not saving in db
     public String resName;
     public boolean flag = true;
-    private LocalDate localDate = null, calculatedDOB = null;
-
-    public LocalDate getLocalDate() {
-        return localDate;
-    }
-
-    public void setLocalDate(LocalDate localDate) {
-        this.localDate = localDate;
-    }
+    private LocalDate calculatedDOB = null;
 
     public LocalDate getCalculatedDOB() {
         return calculatedDOB;
