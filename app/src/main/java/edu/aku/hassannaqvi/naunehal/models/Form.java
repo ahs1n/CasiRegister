@@ -272,6 +272,9 @@ public class Form extends BaseObservable {
     public String se38 = "";
     public String se39 = "";
     public String se40 = "";
+    private String TAG = "Form";
+    // APP VARIABLES
+    private String projectName = MainApp.PROJECT_NAME;
     private String id = "";
     private String uid = "";
     private String userName = "";
@@ -303,17 +306,16 @@ public class Form extends BaseObservable {
     //Not saving in DB
     private LocalDate localDate = null;
 
+    public Form() {
+
+    }
+
     public LocalDate getLocalDate() {
         return localDate;
     }
 
     public void setLocalDate(LocalDate localDate) {
         this.localDate = localDate;
-    }
-
-
-    public Form() {
-
     }
 
     public void setForm(String userName, String sysDate, String dcode, String ucode, String cluster, String hhno, String deviceId, String deviceTag, String appver, String gps) {

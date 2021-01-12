@@ -20,41 +20,43 @@
             android:id="@+id/fldGrpEnd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
 
             <!-- status Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVstatus"
-                style="@style/cardView">
+                style="@style/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
-
-                        <TextView
-                            android:id="@+id/qtxt_status"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_status"
-                            android:text="@string/hh26" />
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
                             android:id="@+id/q_status"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_status"
-                            android:layout_alignBottom="@id/qtxt_status"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_hh26" />
 
-                    </RelativeLayout>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_toEndOf="@id/q_status"
+                            android:layout_weight="1"
+                            android:text="@string/hh26" />
+
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/istatus"
@@ -128,30 +130,27 @@
                             android:visibility='@{form.hh26.equals(`96`)? View.VISIBLE : View.GONE}' />-->
 
                     </RadioGroup>
-
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
 
 
             <!--EndButton LinearLayout-->
             <LinearLayout
-                android:layout_gravity="end"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="end"
                 android:layout_marginTop="18dp"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/btn_End"
-                    android:onClick="BtnEnd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="BtnEnd"
                     android:text="Save" />
 
             </LinearLayout>
             <!--EndButton LinearLayout-->
-
 
         </LinearLayout>
 
