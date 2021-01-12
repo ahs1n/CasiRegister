@@ -125,4 +125,7 @@ dependencies {
     // ShowCaseView
     implementation 'com.github.amlcurran.showcaseview:library:5.4.3'
 
+    //Image Compressor
+    implementation 'id.zelory:compressor:2.1.0'
+
 }
