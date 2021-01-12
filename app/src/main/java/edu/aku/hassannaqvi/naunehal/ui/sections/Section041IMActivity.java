@@ -14,8 +14,6 @@ import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.threeten.bp.Instant;
-import org.threeten.bp.LocalDateTime;
-import org.threeten.bp.ZoneId;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -32,7 +30,6 @@ import edu.aku.hassannaqvi.naunehal.utils.datecollection.AgeModel;
 import edu.aku.hassannaqvi.naunehal.utils.datecollection.DateRepository;
 import kotlin.Pair;
 
-import static edu.aku.hassannaqvi.naunehal.core.MainApp.child;
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.immunization;
 import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.openChildEndActivity;
@@ -212,7 +209,7 @@ public class Section041IMActivity extends AppCompatActivity implements EndSectio
 
     public void BtnContinue() {
 
-        if (formValidation()) {
+        /*if (formValidation()) {
             //Calculate months
             boolean monthFlag = true;
             if (child.getCalculatedDOB() != null || dtInstant != null) {
@@ -233,7 +230,7 @@ public class Section041IMActivity extends AppCompatActivity implements EndSectio
             } else
                 openWarningActivity(this, "Current Child age leads to End this form.\nDo you want to Continue?");
 
-        }
+        }*/
 
     }
 
@@ -268,15 +265,15 @@ public class Section041IMActivity extends AppCompatActivity implements EndSectio
 
     public void takePhoto(int id) {
 
-        Intent intent = new Intent(this, TakePhoto.class);
+        /*//Intent intent = new Intent(this, TakePhoto.class);
 
         intent.putExtra("picID", MainApp.child.getCluster() + "_" + MainApp.child.getHhno() + "_" + MainApp.child.getSerial() + "_");
         intent.putExtra("childName", MainApp.child.getChildname());
 
-/*
+*//*
         intent.putExtra("picID", "901001" + "_" + "A-0001-001" + "_" + "1" + "_");
         intent.putExtra("childName", "Hassan");
-*/
+*//*
 
         if (id == 1) {
             intent.putExtra("picView", "front".toUpperCase());
@@ -284,7 +281,7 @@ public class Section041IMActivity extends AppCompatActivity implements EndSectio
         } else {
             intent.putExtra("picView", "back".toUpperCase());
             startActivityForResult(intent, 2); // Activity is started with requestCode 2 = Back
-        }
+        }*/
     }
 
     // Call Back method  to get the Message form other Activity
@@ -335,6 +332,11 @@ public class Section041IMActivity extends AppCompatActivity implements EndSectio
 
     @Override
     public void endSecActivity(boolean flag) {
+
+    }
+
+    /*@Override
+    public void endSecActivity(boolean flag) {
         if (UpdateDB()) {
             finish();
             startActivity(new Intent(this, ChildEndingActivity.class)
@@ -342,5 +344,5 @@ public class Section041IMActivity extends AppCompatActivity implements EndSectio
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }
-    }
+    }*/
 }

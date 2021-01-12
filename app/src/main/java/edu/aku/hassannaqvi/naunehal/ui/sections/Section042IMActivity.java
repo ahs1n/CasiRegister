@@ -27,18 +27,13 @@ import org.threeten.bp.ZoneId;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Objects;
 
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.IMContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection042imBinding;
-import edu.aku.hassannaqvi.naunehal.utils.JSONUtils;
-import edu.aku.hassannaqvi.naunehal.utils.datecollection.AgeModel;
-import edu.aku.hassannaqvi.naunehal.utils.datecollection.DateRepository;
 
-import static edu.aku.hassannaqvi.naunehal.core.MainApp.child;
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.immunization;
 
 public class Section042IMActivity extends AppCompatActivity {
@@ -51,7 +46,7 @@ public class Section042IMActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_042im);
-        setTitle(R.string.im05title1);
+        //setTitle(R.string.im05title1);
         setupListeners();
         setupTextWatchers();
 
@@ -162,12 +157,12 @@ public class Section042IMActivity extends AppCompatActivity {
         EditTextPicker editTextPicker02 = editTextsArray[1];
         EditTextPicker editTextPicker03 = editTextsArray[2];
 
-        if (child.getCalculatedDOB() != null) {
+       /* if (child.getCalculatedDOB() != null) {
             int minYears = child.getCalculatedDOB().getYear();
             int maxYears = child.getLocalDate().getYear();
             editTextPicker03.setMinvalue(minYears);
             editTextPicker03.setMaxvalue(maxYears);
-        }
+        }*/
 
         editTextPicker01.addTextChangedListener(new TextWatcher() {
             @Override
@@ -227,7 +222,7 @@ public class Section042IMActivity extends AppCompatActivity {
             }
         });
 
-        editTextPicker03.addTextChangedListener(new TextWatcher() {
+        /*editTextPicker03.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -296,21 +291,21 @@ public class Section042IMActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
 
             }
-        });
+        });*/
 
 
     }
 
     private void setupListeners() {
 
-        boolean flag = getIntent().getBooleanExtra(IM01FLAG, true);
+       /* boolean flag = getIntent().getBooleanExtra(IM01FLAG, true);
         if (!flag) imFlag = true;
         Clear.clearAllFields(bi.fldGrpSecChc2, flag);
 
         if (!flag) {
             bi.imsub.setText(getResources().getString(R.string.im05title3));
             bi.scrollSecCD.post(() -> bi.scrollSecCD.smoothScrollTo(0, bi.fldGrpCVim08.getTop()));
-        }
+        }*/
 
         bi.im07.setOnCheckedChangeListener((radioGroup, i) -> {
             if (i == bi.im0701.getId()) {
@@ -467,11 +462,11 @@ public class Section042IMActivity extends AppCompatActivity {
 
 
         //imo7 Check
-        im07 = getIntent().getBooleanExtra(IM02CARDSEEN, false);
+        /*im07 = getIntent().getBooleanExtra(IM02CARDSEEN, false);
         if (im07) {
             Clear.clearAllFields(bi.fldGrpCVim07, false);
             bi.im071.setChecked(true);
-        }
+        }*/
 
     }
 
@@ -544,35 +539,35 @@ public class Section042IMActivity extends AppCompatActivity {
                                 bi.im063.isChecked() ? "98" :
                                         "0");*/
         json.put("im07",
-                bi.im071.isChecked() ? "1" :
-                        bi.im072.isChecked() ? "2" :
-                                bi.im073.isChecked() ? "98" :
-                                        "0");
+                bi.im0701.isChecked() ? "1" :
+                        bi.im0702.isChecked() ? "2" :
+                                //bi.im0703.isChecked() ? "98" :
+                                "0");
         json.put("im08",
-                bi.im081.isChecked() ? "1" :
-                        bi.im082.isChecked() ? "2" :
-                                bi.im083.isChecked() ? "98" :
+                bi.im0801.isChecked() ? "1" :
+                        bi.im0802.isChecked() ? "2" :
+                                bi.im0803.isChecked() ? "98" :
                                         "0");
         json.put("im09",
-                bi.im091.isChecked() ? "1" :
-                        bi.im092.isChecked() ? "2" :
-                                bi.im093.isChecked() ? "98" :
+                bi.im0901.isChecked() ? "1" :
+                        bi.im0902.isChecked() ? "2" :
+                                bi.im0903.isChecked() ? "98" :
                                         "0");
         json.put("im10",
-                bi.im101.isChecked() ? "1" :
-                        bi.im102.isChecked() ? "2" :
-                                bi.im103.isChecked() ? "98" :
+                bi.im1001.isChecked() ? "1" :
+                        bi.im1002.isChecked() ? "2" :
+                                bi.im1003.isChecked() ? "98" :
                                         "0");
         json.put("im11",
-                bi.im111.isChecked() ? "1" :
-                        bi.im112.isChecked() ? "2" :
-                                bi.im113.isChecked() ? "98" :
+                bi.im1101.isChecked() ? "1" :
+                        bi.im1102.isChecked() ? "2" :
+                                bi.im1103.isChecked() ? "98" :
                                         "0");
         json.put("im12", bi.im12.getText().toString());
         json.put("im12dk", bi.im1298.isChecked() ? "98" : "0");
 
         json.put("im12a", bi.im12a.getText().toString());
-        json.put("im12d", bi.im12d.isChecked() ? "98" : "0");
+        json.put("im12d", bi.im12a98.isChecked() ? "98" : "0");
 
 /*        json.put("im13",
                 bi.im131.isChecked() ? "1" :
@@ -580,47 +575,47 @@ public class Section042IMActivity extends AppCompatActivity {
                                 bi.im133.isChecked() ? "98" :
                                         "0");*/
         json.put("im14",
-                bi.im141.isChecked() ? "1" :
-                        bi.im142.isChecked() ? "2" :
-                                bi.im143.isChecked() ? "98" :
+                bi.im1401.isChecked() ? "1" :
+                        bi.im1402.isChecked() ? "2" :
+                                bi.im1403.isChecked() ? "98" :
                                         "0");
         json.put("im15", bi.im15.getText().toString());
         json.put("im15dk", bi.im1598.isChecked() ? "98" : "0");
 
         json.put("im16",
-                bi.im161.isChecked() ? "1" :
-                        bi.im162.isChecked() ? "2" :
-                                bi.im163.isChecked() ? "98" :
+                bi.im1601.isChecked() ? "1" :
+                        bi.im1602.isChecked() ? "2" :
+                                bi.im1603.isChecked() ? "98" :
                                         "0");
         json.put("im17", bi.im17.getText().toString());
         json.put("im17dk", bi.im1798.isChecked() ? "98" : "0");
 
-        json.put("im18", bi.im181.isChecked() ? "1"
-                : bi.im182.isChecked() ? "2"
-                : bi.im183.isChecked() ? "98"
+        json.put("im18", bi.im1801.isChecked() ? "1"
+                : bi.im1802.isChecked() ? "2"
+                : bi.im1803.isChecked() ? "98"
                 : "0");
         json.put("im19", bi.im19.getText().toString());
         json.put("im19dk", bi.im1998.isChecked() ? "98" : "0");
 
-        json.put("im20", bi.im201.isChecked() ? "1"
-                : bi.im202.isChecked() ? "2"
-                : bi.im203.isChecked() ? "98"
+        json.put("im20", bi.im2001.isChecked() ? "1"
+                : bi.im2002.isChecked() ? "2"
+                : bi.im2003.isChecked() ? "98"
                 : "0");
 
-        json.put("im21", bi.im211.isChecked() ? "1"
-                : bi.im212.isChecked() ? "2"
-                : bi.im213.isChecked() ? "98"
+        json.put("im21", bi.im2101.isChecked() ? "1"
+                : bi.im2102.isChecked() ? "2"
+                : bi.im2103.isChecked() ? "98"
                 : "0");
         json.put("im22", bi.im22.getText().toString());
         json.put("im22dk", bi.im2298.isChecked() ? "98" : "0");
 
-        json.put("im23", bi.im231.isChecked() ? "1"
-                : bi.im232.isChecked() ? "2"
-                : bi.im233.isChecked() ? "3"
-                : bi.im234.isChecked() ? "4"
-                : bi.im236.isChecked() ? "6"
+        json.put("im23", bi.im2301.isChecked() ? "1"
+                : bi.im2302.isChecked() ? "2"
+                : bi.im2303.isChecked() ? "3"
+                //: bi.im2304.isChecked() ? "4"
+                : bi.im2306.isChecked() ? "6"
                 : "0");
-        json.put("im236x", bi.im236x.getText().toString());
+        json.put("im236x", bi.im2306x.getText().toString());
 
         json.put("im23a", bi.im23a1.isChecked() ? "1"
                 : bi.im23a2.isChecked() ? "2"
@@ -650,14 +645,14 @@ public class Section042IMActivity extends AppCompatActivity {
         json.put("im2417x", bi.im2417x.getText().toString());
 
 
-        try {
+       /* try {
             JSONObject json_merge = JSONUtils.mergeJSONObjects(new JSONObject(child.getsCC()), json);
 
             child.setsCC(String.valueOf(json_merge));
 
         } catch (JSONException e) {
             e.printStackTrace();
-        }
+        }*/
 
     }
 
@@ -685,7 +680,7 @@ public class Section042IMActivity extends AppCompatActivity {
     }
 
     public void BtnEnd() {
-        openChildEndActivity(this);
+        /* openChildEndActivity(this);*/
     }
 
     @Override

@@ -14,6 +14,7 @@ import edu.aku.hassannaqvi.naunehal.contracts.IMContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection043imBinding;
+import edu.aku.hassannaqvi.naunehal.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.immunization;
 import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.openChildEndActivity;
@@ -52,7 +53,7 @@ public class Section043IMActivity extends AppCompatActivity {
         if (!formValidation()) return;
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, ChildEndingActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }
