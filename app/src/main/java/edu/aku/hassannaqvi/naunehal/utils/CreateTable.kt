@@ -5,7 +5,7 @@ import edu.aku.hassannaqvi.naunehal.models.Users
 import edu.aku.hassannaqvi.naunehal.models.VersionApp
 
 object CreateTable {
-    private const val PROJECT_NAME = "NAUNEHAL2021"
+    public const val PROJECT_NAME = "NAUNEHAL2021"
     const val DATABASE_NAME = "$PROJECT_NAME.db"
     const val DATABASE_COPY = "${PROJECT_NAME}_copy.db"
     const val DATABASE_VERSION = 1
