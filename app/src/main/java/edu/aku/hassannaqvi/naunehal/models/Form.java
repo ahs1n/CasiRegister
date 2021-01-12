@@ -272,9 +272,8 @@ public class Form extends BaseObservable {
     public String se38 = "";
     public String se39 = "";
     public String se40 = "";
-    private String TAG = "Form";
+
     // APP VARIABLES
-    private String projectName = MainApp.PROJECT_NAME;
     private String id = "";
     private String uid = "";
     private String userName = "";
