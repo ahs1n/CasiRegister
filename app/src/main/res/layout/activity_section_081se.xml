@@ -1799,6 +1799,7 @@
                             android:checked="@{form.se16.equals(`2`)}"
                             android:onClick="@{()->form.setSe16(`2`)}"
                             android:text="@string/se1602" />
+
                     </RadioGroup>
 
                 </LinearLayout>

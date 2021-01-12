@@ -110,6 +110,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+
                 <!-- cv02  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcv02"
@@ -140,6 +141,7 @@
                                 android:layout_alignTop="@id/qtxt_cv02"
                                 android:layout_alignBottom="@id/qtxt_cv02"
                                 android:text="@string/Q_cv02" />
+
                         </RelativeLayout>
 
                         <RadioGroup
@@ -186,9 +188,13 @@
                                 android:checked="@{form.cv02.equals(`5`)}"
                                 android:onClick="@{()->form.setCv02(`5`)}"
                                 android:text="@string/cv0205" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cv03  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -253,6 +259,7 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cv04  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -333,6 +340,7 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cv05  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -588,6 +596,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- cv07  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcv07"
@@ -651,6 +660,7 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cv08  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -764,6 +774,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- cv09  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcv09"
@@ -875,6 +886,7 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cv10  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -996,6 +1008,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- cv11  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcv11"
@@ -1051,6 +1064,7 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cv12  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1210,6 +1224,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- cv14  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcv14"
@@ -1266,6 +1281,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- cv15  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcv15"
@@ -1321,6 +1337,7 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cv16  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1487,6 +1504,7 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cv18  Radio   -->
                 <androidx.cardview.widget.CardView

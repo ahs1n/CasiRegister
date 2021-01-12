@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -10,9 +11,11 @@
             type="edu.aku.hassannaqvi.naunehal.models.Immunization" />
     </data>
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
 
         <LinearLayout
             android:id="@+id/GrpName"
@@ -22,50 +25,50 @@
 
 
             <!-- im1_title1  Title   -->
-    <androidx.cardview.widget.CardView style="@style/cardView">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im1_title1" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im02  Radio   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
+            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:text="@string/im1_title1" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- im02  Radio   -->
+            <androidx.cardview.widget.CardView style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_im02"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im02"
-                            android:text="@string/im02" />
-
-                        <TextView
-                            android:id="@+id/q_im02"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im02"
-                            android:layout_alignBottom="@id/qtxt_im02"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im02" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im02" />
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/im02"
@@ -87,9 +90,13 @@
                             android:checked="@{form.im02.equals(`2`)}"
                             android:onClick="@{()->form.setIm02(`2`)}"
                             android:text="@string/im0202" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- im01  Radio   -->
             <androidx.cardview.widget.CardView
@@ -101,27 +108,25 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:orientation="horizontal"
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_im01"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im01"
-                            android:text="@string/im01" />
-
-                        <TextView
-                            android:id="@+id/q_im01"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im01"
-                            android:layout_alignBottom="@id/qtxt_im01"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im01" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im01" />
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/im01"
@@ -143,9 +148,13 @@
                             android:checked="@{form.im01.equals(`2`)}"
                             android:onClick="@{()->form.setIm01(`2`)}"
                             android:text="@string/im0102" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <LinearLayout
                 android:id="@+id/llim01"
@@ -163,27 +172,25 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <RelativeLayout
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:orientation="horizontal"
                             android:background="@drawable/bottom">
 
                             <TextView
-                                android:id="@+id/qtxt_im03"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_im03"
-                                android:text="@string/im03" />
-
-                            <TextView
-                                android:id="@+id/q_im03"
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_im03"
-                                android:layout_alignBottom="@id/qtxt_im03"
+                                android:layout_height="match_parent"
                                 android:text="@string/Q_im03" />
-                        </RelativeLayout>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/im03" />
+
+                        </LinearLayout>
 
                         <RadioGroup
                             android:id="@+id/im03"
@@ -245,9 +252,13 @@
                                 android:checked="@{form.im03.equals(`96`)}"
                                 android:onClick="@{()->form.setIm03(`96`)}"
                                 android:text="@string/im0396" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im04  Title   -->
                 <androidx.cardview.widget.CardView style="@style/cardView">
@@ -257,27 +268,25 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <RelativeLayout
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:orientation="horizontal"
                             android:background="@drawable/bottom">
 
                             <TextView
-                                android:id="@+id/qtxt_im04"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_im04"
-                                android:text="@string/im04" />
-
-                            <TextView
-                                android:id="@+id/q_im04"
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_im04"
-                                android:layout_alignBottom="@id/qtxt_im04"
+                                android:layout_height="match_parent"
                                 android:text="@string/Q_im04" />
-                        </RelativeLayout>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/im04" />
+
+                        </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -320,7 +329,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im04dd"
+                                android:gravity="center"
+                                android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={form.im04dd}"
@@ -334,7 +344,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im04mm"
+                                android:gravity="center"
+                                android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={form.im04mm}"
@@ -348,11 +359,12 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im04yy"
+                                android:gravity="center"
+                                android:hint="####"
                                 android:inputType="number"
+                                android:text="@={form.im04yy}"
                                 app:maxValue="0"
                                 app:minValue="0"
-                                android:text="@={form.im04yy}"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -360,6 +372,7 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im05title1  Title   -->
                 <TextView
@@ -386,27 +399,28 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
                             android:orientation="horizontal">
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_marginTop="12dp"
+                                android:gravity="center"
                                 android:text="@string/im0501dd" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_marginTop="12dp"
+                                android:gravity="center"
                                 android:text="@string/im0501mm" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_marginTop="12dp"
+                                android:gravity="center"
                                 android:text="@string/im0501yy" />
 
                         </LinearLayout>
@@ -416,35 +430,53 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0501dd"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0501dd"
-                                android:text="@={form.im0501dd}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0501dd}"
+                                app:defaultValue="97"
+                                app:maxValue="31"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0501mm"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0501mm"
-                                android:text="@={form.im0501mm}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0501mm}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0501yy"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0501yy"
-                                android:text="@={form.im0501yy}" />
+                                android:gravity="center"
+                                android:hint="20##"
+                                android:maxLength="4"
+                                android:text="@={form.im0501yy}"
+                                app:mask="20##"
+                                app:maxValue="2020"
+                                app:minValue="2015"
+                                app:type="range" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im0502  Title   -->
                 <androidx.cardview.widget.CardView style="@style/cardView">
@@ -463,27 +495,28 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
                             android:orientation="horizontal">
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_marginTop="12dp"
+                                android:gravity="center"
                                 android:text="@string/im0502dd" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_marginTop="12dp"
+                                android:gravity="center"
                                 android:text="@string/im0502mm" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0502yy" />
 
                         </LinearLayout>
@@ -493,35 +526,53 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0502dd"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0502dd"
-                                android:text="@={form.im0502dd}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0502dd}"
+                                app:defaultValue="97"
+                                app:maxValue="31"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0502mm"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0502mm"
-                                android:text="@={form.im0502mm}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0502mm}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0502yy"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0502yy"
-                                android:text="@={form.im0502yy}" />
+                                android:gravity="center"
+                                android:hint="20##"
+                                android:maxLength="4"
+                                android:text="@={form.im0502yy}"
+                                app:mask="20##"
+                                app:maxValue="2020"
+                                app:minValue="2015"
+                                app:type="range" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im0503  Title   -->
                 <androidx.cardview.widget.CardView style="@style/cardView">
@@ -540,27 +591,28 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
                             android:orientation="horizontal">
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0503dd" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0503mm" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0503yy" />
 
                         </LinearLayout>
@@ -570,34 +622,53 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0503dd"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0503dd"
-                                android:text="@={form.im0503dd}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0503dd}"
+                                app:defaultValue="97"
+                                app:maxValue="31"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0503mm"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0503mm"
-                                android:text="@={form.im0503mm}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0503mm}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
 
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0503yy"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0503yy"
-                                android:text="@={form.im0503yy}" />
+                                android:gravity="center"
+                                android:hint="20##"
+                                android:maxLength="4"
+                                android:text="@={form.im0503yy}"
+                                app:mask="20##"
+                                app:maxValue="2020"
+                                app:minValue="2015"
+                                app:type="range" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im0504  Title   -->
                 <androidx.cardview.widget.CardView style="@style/cardView">
@@ -608,35 +679,36 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/sub_labels"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            style="@style/sub_labels"
                             android:text="@string/im0504" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
                             android:orientation="horizontal">
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0504dd" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0504mm" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0504yy" />
 
                         </LinearLayout>
@@ -646,35 +718,53 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0504dd"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0504dd"
-                                android:text="@={form.im0504dd}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0504dd}"
+                                app:defaultValue="97"
+                                app:maxValue="31"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0504mm"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0504mm"
-                                android:text="@={form.im0504mm}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0504mm}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0504yy"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0504yy"
-                                android:text="@={form.im0504yy}" />
+                                android:gravity="center"
+                                android:hint="20##"
+                                android:maxLength="4"
+                                android:text="@={form.im0504yy}"
+                                app:mask="20##"
+                                app:maxValue="2020"
+                                app:minValue="2015"
+                                app:type="range" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im0505  Title   -->
                 <androidx.cardview.widget.CardView style="@style/cardView">
@@ -685,35 +775,36 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/sub_labels"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            style="@style/sub_labels"
                             android:text="@string/im0505" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
                             android:orientation="horizontal">
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0505dd" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0505mm" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0505yy" />
 
                         </LinearLayout>
@@ -723,35 +814,53 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0505dd"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0505dd"
-                                android:text="@={form.im0505dd}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0505dd}"
+                                app:defaultValue="97"
+                                app:maxValue="31"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0505mm"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0505mm"
-                                android:text="@={form.im0505mm}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0505mm}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0505yy"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0505yy"
-                                android:text="@={form.im0505yy}" />
+                                android:gravity="center"
+                                android:hint="20##"
+                                android:maxLength="4"
+                                android:text="@={form.im0505yy}"
+                                app:mask="20##"
+                                app:maxValue="2020"
+                                app:minValue="2015"
+                                app:type="range" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im0506  Title   -->
                 <androidx.cardview.widget.CardView style="@style/cardView">
@@ -762,35 +871,36 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/sub_labels"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            style="@style/sub_labels"
                             android:text="@string/im0506" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
                             android:orientation="horizontal">
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0506dd" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0506mm" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0506yy" />
 
                         </LinearLayout>
@@ -800,35 +910,53 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0506dd"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0506dd"
-                                android:text="@={form.im0506dd}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0506dd}"
+                                app:defaultValue="97"
+                                app:maxValue="31"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0506mm"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0506mm"
-                                android:text="@={form.im0506mm}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0506mm}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0506yy"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0506yy"
-                                android:text="@={form.im0506yy}" />
+                                android:gravity="center"
+                                android:hint="20##"
+                                android:maxLength="4"
+                                android:text="@={form.im0506yy}"
+                                app:mask="20##"
+                                app:maxValue="2020"
+                                app:minValue="2015"
+                                app:type="range" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im0507  Title   -->
                 <androidx.cardview.widget.CardView style="@style/cardView">
@@ -839,36 +967,36 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/sub_labels"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            style="@style/sub_labels"
                             android:text="@string/im0507" />
-
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
                             android:orientation="horizontal">
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0507dd" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0507mm" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0507yy" />
 
                         </LinearLayout>
@@ -878,35 +1006,53 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0507dd"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0507dd"
-                                android:text="@={form.im0507dd}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0507dd}"
+                                app:defaultValue="97"
+                                app:maxValue="31"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0507mm"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0507mm"
-                                android:text="@={form.im0507mm}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0507mm}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0507yy"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0507yy"
-                                android:text="@={form.im0507yy}" />
+                                android:gravity="center"
+                                android:hint="20##"
+                                android:maxLength="4"
+                                android:text="@={form.im0507yy}"
+                                app:mask="20##"
+                                app:maxValue="2020"
+                                app:minValue="2015"
+                                app:type="range" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im0508  Title   -->
                 <androidx.cardview.widget.CardView style="@style/cardView">
@@ -917,36 +1063,36 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/sub_labels"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            style="@style/sub_labels"
                             android:text="@string/im0508" />
-
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
                             android:orientation="horizontal">
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0508dd" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0508mm" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0508yy" />
 
                         </LinearLayout>
@@ -956,35 +1102,53 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0508dd"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0508dd"
-                                android:text="@={form.im0508dd}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0508dd}"
+                                app:defaultValue="97"
+                                app:maxValue="31"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0508mm"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0508mm"
-                                android:text="@={form.im0508mm}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0508mm}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0508yy"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0508yy"
-                                android:text="@={form.im0508yy}" />
+                                android:gravity="center"
+                                android:hint="20##"
+                                android:maxLength="4"
+                                android:text="@={form.im0508yy}"
+                                app:mask="20##"
+                                app:maxValue="2020"
+                                app:minValue="2015"
+                                app:type="range" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im0509  Title   -->
                 <androidx.cardview.widget.CardView style="@style/cardView">
@@ -995,35 +1159,36 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/sub_labels"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            style="@style/sub_labels"
                             android:text="@string/im0509" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
                             android:orientation="horizontal">
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0509dd" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0509mm" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0509yy" />
 
                         </LinearLayout>
@@ -1033,35 +1198,53 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0509dd"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0509dd"
-                                android:text="@={form.im0509dd}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0509dd}"
+                                app:defaultValue="97"
+                                app:maxValue="31"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0509mm"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0509mm"
-                                android:text="@={form.im0509mm}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0509mm}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0509yy"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0509yy"
-                                android:text="@={form.im0509yy}" />
+                                android:gravity="center"
+                                android:hint="20##"
+                                android:maxLength="4"
+                                android:text="@={form.im0509yy}"
+                                app:mask="20##"
+                                app:maxValue="2020"
+                                app:minValue="2015"
+                                app:type="range" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im0510  Title   -->
                 <androidx.cardview.widget.CardView style="@style/cardView">
@@ -1072,35 +1255,36 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/sub_labels"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            style="@style/sub_labels"
                             android:text="@string/im0510" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
                             android:orientation="horizontal">
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0510dd" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0510mm" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0510yy" />
 
                         </LinearLayout>
@@ -1110,35 +1294,53 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0510dd"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0510dd"
-                                android:text="@={form.im0510dd}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0510dd}"
+                                app:defaultValue="97"
+                                app:maxValue="31"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0510mm"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0510mm"
-                                android:text="@={form.im0510mm}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0510mm}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0510yy"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0510yy"
-                                android:text="@={form.im0510yy}" />
+                                android:gravity="center"
+                                android:hint="20##"
+                                android:maxLength="4"
+                                android:text="@={form.im0510yy}"
+                                app:mask="20##"
+                                app:maxValue="2020"
+                                app:minValue="2015"
+                                app:type="range" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im0511  Title   -->
                 <androidx.cardview.widget.CardView style="@style/cardView">
@@ -1146,39 +1348,39 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/sub_labels"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            style="@style/sub_labels"
                             android:text="@string/im0511" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
                             android:orientation="horizontal">
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0511dd" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0511mm" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0511yy" />
 
                         </LinearLayout>
@@ -1188,35 +1390,53 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0511dd"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0511dd"
-                                android:text="@={form.im0511dd}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0511dd}"
+                                app:defaultValue="97"
+                                app:maxValue="31"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0511mm"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0511mm"
-                                android:text="@={form.im0511mm}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0511mm}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0511yy"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0511yy"
-                                android:text="@={form.im0511yy}" />
+                                android:gravity="center"
+                                android:hint="20##"
+                                android:maxLength="4"
+                                android:text="@={form.im0511yy}"
+                                app:mask="20##"
+                                app:maxValue="2020"
+                                app:minValue="2015"
+                                app:type="range" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im0512  Title   -->
                 <androidx.cardview.widget.CardView style="@style/cardView">
@@ -1227,6 +1447,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/sub_labels"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/im0512" />
@@ -1234,27 +1455,28 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
                             android:orientation="horizontal">
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0512dd" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0512mm" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0512yy" />
 
                         </LinearLayout>
@@ -1264,35 +1486,53 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0512dd"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0512dd"
-                                android:text="@={form.im0512dd}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0512dd}"
+                                app:defaultValue="97"
+                                app:maxValue="31"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0512mm"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0512mm"
-                                android:text="@={form.im0512mm}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0512mm}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0512yy"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0512yy"
-                                android:text="@={form.im0512yy}" />
+                                android:gravity="center"
+                                android:hint="20##"
+                                android:maxLength="4"
+                                android:text="@={form.im0512yy}"
+                                app:mask="20##"
+                                app:maxValue="2020"
+                                app:minValue="2015"
+                                app:type="range" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im0513  Title   -->
                 <androidx.cardview.widget.CardView style="@style/cardView">
@@ -1303,35 +1543,36 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/sub_labels"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            style="@style/sub_labels"
                             android:text="@string/im0513" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
                             android:orientation="horizontal">
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0513dd" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0513mm" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0513yy" />
 
                         </LinearLayout>
@@ -1341,35 +1582,53 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0513dd"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0513dd"
-                                android:text="@={form.im0513dd}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0513dd}"
+                                app:defaultValue="97"
+                                app:maxValue="31"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0513mm"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0513mm"
-                                android:text="@={form.im0513mm}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0513mm}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0513yy"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0513yy"
-                                android:text="@={form.im0513yy}" />
+                                android:gravity="center"
+                                android:hint="20##"
+                                android:maxLength="4"
+                                android:text="@={form.im0513yy}"
+                                app:mask="20##"
+                                app:maxValue="2020"
+                                app:minValue="2015"
+                                app:type="range" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im0514  Title   -->
                 <androidx.cardview.widget.CardView style="@style/cardView">
@@ -1380,6 +1639,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/sub_labels"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/im0514" />
@@ -1387,27 +1647,28 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
                             android:orientation="horizontal">
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0514dd" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0514mm" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0514yy" />
 
                         </LinearLayout>
@@ -1417,35 +1678,53 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0514dd"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0514dd"
-                                android:text="@={form.im0514dd}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0514dd}"
+                                app:defaultValue="97"
+                                app:maxValue="31"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0514mm"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0514mm"
-                                android:text="@={form.im0514mm}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0514mm}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0514yy"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0514yy"
-                                android:text="@={form.im0514yy}" />
+                                android:gravity="center"
+                                android:hint="20##"
+                                android:maxLength="4"
+                                android:text="@={form.im0514yy}"
+                                app:mask="20##"
+                                app:maxValue="2020"
+                                app:minValue="2015"
+                                app:type="range" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im0515  Title   -->
                 <androidx.cardview.widget.CardView style="@style/cardView">
@@ -1456,35 +1735,36 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/sub_labels"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            style="@style/sub_labels"
                             android:text="@string/im0515" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
                             android:orientation="horizontal">
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0515dd" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0515mm" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0515yy" />
 
                         </LinearLayout>
@@ -1494,35 +1774,53 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0515dd"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0515dd"
-                                android:text="@={form.im0515dd}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0515dd}"
+                                app:defaultValue="97"
+                                app:maxValue="31"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0515mm"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0515mm"
-                                android:text="@={form.im0515mm}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0515mm}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0515yy"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0515yy"
-                                android:text="@={form.im0515yy}" />
+                                android:gravity="center"
+                                android:hint="20##"
+                                android:maxLength="4"
+                                android:text="@={form.im0515yy}"
+                                app:mask="20##"
+                                app:maxValue="2020"
+                                app:minValue="2015"
+                                app:type="range" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im0516  Title   -->
                 <androidx.cardview.widget.CardView style="@style/cardView">
@@ -1533,35 +1831,36 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/sub_labels"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            style="@style/sub_labels"
                             android:text="@string/im0516" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
                             android:orientation="horizontal">
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0516dd" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0516mm" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="12dp"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/im0516yy" />
 
                         </LinearLayout>
@@ -1571,38 +1870,56 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0516dd"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0516dd"
-                                android:text="@={form.im0516dd}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0516dd}"
+                                app:defaultValue="97"
+                                app:maxValue="31"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0516mm"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0516mm"
-                                android:text="@={form.im0516mm}" />
+                                android:gravity="center"
+                                android:hint="##"
+                                android:maxLength="2"
+                                android:text="@={form.im0516mm}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
 
-
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im0516yy"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/im0516yy"
-                                android:text="@={form.im0516yy}" />
+                                android:gravity="center"
+                                android:hint="20##"
+                                android:maxLength="4"
+                                android:text="@={form.im0516yy}"
+                                app:mask="20##"
+                                app:maxValue="2020"
+                                app:minValue="2015"
+                                app:type="range" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
             </LinearLayout>
+
 
             <!-- im07  Radio   -->
             <androidx.cardview.widget.CardView
@@ -1614,27 +1931,25 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:orientation="horizontal"
                         android:background="@drawable/bottom">
 
                         <TextView
-                            android:id="@+id/qtxt_im07"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im07"
-                            android:text="@string/im07" />
-
-                        <TextView
-                            android:id="@+id/q_im07"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im07"
-                            android:layout_alignBottom="@id/qtxt_im07"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im07" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im07" />
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/im07"
@@ -1656,40 +1971,41 @@
                             android:checked="@{form.im07.equals(`2`)}"
                             android:onClick="@{()->form.setIm07(`2`)}"
                             android:text="@string/im0702" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
+
             <!-- im08  Radio   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
+            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_im08"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im08"
-                            android:text="@string/im08" />
-
-                        <TextView
-                            android:id="@+id/q_im08"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im08"
-                            android:layout_alignBottom="@id/qtxt_im08"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im08" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im08" />
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/im08"
@@ -1719,40 +2035,41 @@
                             android:checked="@{form.im08.equals(`98`)}"
                             android:onClick="@{()->form.setIm08(`98`)}"
                             android:text="@string/im0803" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
+
             <!-- im08a  Radio   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
+            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_im08a"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im08a"
-                            android:text="@string/im08a" />
-
-                        <TextView
-                            android:id="@+id/q_im08a"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im08a"
-                            android:layout_alignBottom="@id/qtxt_im08a"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im08a" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im08a" />
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/im08a"
@@ -1786,36 +2103,34 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- im08b  Input-Numeric   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
+            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_im08b"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im08b"
-                            android:text="@string/im08b" />
-
-                        <TextView
-                            android:id="@+id/q_im08b"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im08b"
-                            android:layout_alignBottom="@id/qtxt_im08b"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im08b" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im08b" />
+
+                    </LinearLayout>
 
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/im08b"
@@ -1823,9 +2138,9 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/im08b"
                         android:inputType="number"
+                        android:text="@={form.im08b}"
                         app:maxValue="0"
                         app:minValue="0"
-                        android:text="@={form.im08b}"
                         app:type="range" />
 
                 </LinearLayout>
@@ -1834,35 +2149,32 @@
 
 
             <!-- im09  Radio   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
+            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_im09"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im09"
-                            android:text="@string/im09" />
-
-                        <TextView
-                            android:id="@+id/q_im09"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im09"
-                            android:layout_alignBottom="@id/qtxt_im09"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im09" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im09" />
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/im09"
@@ -1892,40 +2204,41 @@
                             android:checked="@{form.im09.equals(`98`)}"
                             android:onClick="@{()->form.setIm09(`98`)}"
                             android:text="@string/im0903" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
+
             <!-- im10  Radio   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
+            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_im10"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im10"
-                            android:text="@string/im10" />
-
-                        <TextView
-                            android:id="@+id/q_im10"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im10"
-                            android:layout_alignBottom="@id/qtxt_im10"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im10" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im10" />
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/im10"
@@ -1959,36 +2272,34 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- im11  Radio   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
+            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_im11"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im11"
-                            android:text="@string/im11" />
-
-                        <TextView
-                            android:id="@+id/q_im11"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im11"
-                            android:layout_alignBottom="@id/qtxt_im11"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im11" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im11" />
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/im11"
@@ -2022,69 +2333,74 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- im12  Radio   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
+            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_im12"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im12"
-                            android:text="@string/im12" />
-
-                        <TextView
-                            android:id="@+id/q_im12"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im12"
-                            android:layout_alignBottom="@id/qtxt_im12"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im12" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im12" />
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/im12"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/im1201"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:checked="@{form.im12.equals(`1`)}"
                             android:onClick="@{()->form.setIm12(`1`)}"
                             android:text="@string/im1201" />
 
-                        <EditText
-                            android:id="@+id/im1201x"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:hint="@string/im1201"
-                            android:tag="im1201"
-                            android:text="@={form.im1201x}"
-                            android:visibility='@{form.im12.equals(`1`) ? View.VISIBLE : View.GONE}' />
-
                         <RadioButton
                             android:id="@+id/im1298"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:checked="@{form.im12.equals(`98`)}"
                             android:onClick="@{()->form.setIm12(`98`)}"
                             android:text="@string/im1298" />
 
                     </RadioGroup>
+
+                    <com.edittextpicker.aliazaz.EditTextPicker
+                        android:id="@+id/im1201x"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:hint="@string/im1201"
+                        android:inputType="number"
+                        android:tag="im1201"
+                        android:text="@={form.im1201x}"
+                        android:visibility='@{form.im12.equals(`1`) ? View.VISIBLE : View.GONE}'
+                        app:maxValue="0"
+                        app:minValue="0"
+                        app:type="range" />
 
                 </LinearLayout>
 
@@ -2092,68 +2408,72 @@
 
 
             <!-- im12a  Radio   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
+            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_im12a"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im12a"
-                            android:text="@string/im12a" />
-
-                        <TextView
-                            android:id="@+id/q_im12a"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im12a"
-                            android:layout_alignBottom="@id/qtxt_im12a"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im12a" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im12a" />
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/im12a"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/im12a1"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:checked="@{form.im12a.equals(`1`)}"
                             android:onClick="@{()->form.setIm12a(`1`)}"
                             android:text="@string/im12a1" />
 
-                        <EditText
-                            android:id="@+id/im12a1x"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:hint="@string/im12a1"
-                            android:tag="im12a1"
-                            android:text="@={form.im12a1x}"
-                            android:visibility='@{form.im12a.equals(`1`) ? View.VISIBLE : View.GONE}' />
-
                         <RadioButton
                             android:id="@+id/im12a98"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:checked="@{form.im12a.equals(`98`)}"
                             android:onClick="@{()->form.setIm12a(`98`)}"
                             android:text="@string/im12a98" />
 
                     </RadioGroup>
+
+                    <com.edittextpicker.aliazaz.EditTextPicker
+                        android:id="@+id/im12a1x"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:hint="#"
+                        android:inputType="number"
+                        android:tag="im12a1"
+                        android:text="@={form.im12a1x}"
+                        android:visibility='@{form.im12a.equals(`1`) ? View.VISIBLE : View.GONE}'
+                        app:maxValue="0"
+                        app:minValue="0"
+                        app:type="range" />
 
                 </LinearLayout>
 
@@ -2161,35 +2481,32 @@
 
 
             <!-- im13  Radio   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
+            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_im13"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im13"
-                            android:text="@string/im13" />
-
-                        <TextView
-                            android:id="@+id/q_im13"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im13"
-                            android:layout_alignBottom="@id/qtxt_im13"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im13" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im13" />
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/im13"
@@ -2219,40 +2536,41 @@
                             android:checked="@{form.im13.equals(`98`)}"
                             android:onClick="@{()->form.setIm13(`98`)}"
                             android:text="@string/im1303" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
+
             <!-- im14  Radio   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
+            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_im14"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im14"
-                            android:text="@string/im14" />
-
-                        <TextView
-                            android:id="@+id/q_im14"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im14"
-                            android:layout_alignBottom="@id/qtxt_im14"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im14" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im14" />
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/im14"
@@ -2282,94 +2600,114 @@
                             android:checked="@{form.im14.equals(`98`)}"
                             android:onClick="@{()->form.setIm14(`98`)}"
                             android:text="@string/im1403" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
+
             <!-- im15  Input-Numeric   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
+            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_im15"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im15"
-                            android:text="@string/im15" />
-
-                        <TextView
-                            android:id="@+id/q_im15"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im15"
-                            android:layout_alignBottom="@id/qtxt_im15"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im15" />
-                    </RelativeLayout>
 
-                    <TextView
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im15" />
+
+                    </LinearLayout>
+
+                    <RadioGroup
+                        android:id="@+id/im15"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/im1501" />
+                        android:orientation="horizontal">
 
-                    <EditText
+                        <RadioButton
+                            android:id="@+id/im15a"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="@{form.im15.equals(`1`)}"
+                            android:onClick="@{()->form.setIm15(`1`)}"
+                            android:text="@string/im1501" />
+
+                        <RadioButton
+                            android:id="@+id/im1598"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="@{form.im15.equals(`98`)}"
+                            android:onClick="@{()->form.setIm15(`98`)}"
+                            android:text="@string/im1598" />
+
+                    </RadioGroup>
+
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/im1501"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/im1501"
-                        android:text="@={form.im1501}" />
+                        android:gravity="center"
+                        android:hint="#"
+                        android:inputType="number"
+                        android:tag="im15a"
+                        android:text="@={form.im1501}"
+                        android:visibility='@{form.im1501.equals(`1`) ? View.VISIBLE : View.GONE}'
+                        app:maxValue="0"
+                        app:minValue="0"
+                        app:type="range" />
 
-                    <RadioButton
-                        android:id="@+id/im1598"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:checked="@{form.im15.equals(`98`)}"
-                        android:onClick="@{()->form.setIm15(`98`)}"
-                        android:text="@string/im1598" />
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
+
             <!-- im16  Radio   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
+            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_im16"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im16"
-                            android:text="@string/im16" />
-
-                        <TextView
-                            android:id="@+id/q_im16"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im16"
-                            android:layout_alignBottom="@id/qtxt_im16"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im16" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im16" />
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/im16"
@@ -2399,40 +2737,41 @@
                             android:checked="@{form.im16.equals(`98`)}"
                             android:onClick="@{()->form.setIm16(`98`)}"
                             android:text="@string/im1603" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
+
             <!-- im17  Input-Numeric   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
+            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_im17"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im17"
-                            android:text="@string/im17" />
-
-                        <TextView
-                            android:id="@+id/q_im17"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im17"
-                            android:layout_alignBottom="@id/qtxt_im17"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im17" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im17" />
+
+                    </LinearLayout>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -2454,39 +2793,39 @@
                         android:checked="@{form.im17.equals(`98`)}"
                         android:onClick="@{()->form.setIm17(`98`)}"
                         android:text="@string/im1798" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
+
             <!-- im18  Radio   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
+            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_im18"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im18"
-                            android:text="@string/im18" />
-
-                        <TextView
-                            android:id="@+id/q_im18"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im18"
-                            android:layout_alignBottom="@id/qtxt_im18"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im18" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im18" />
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/im18"
@@ -2516,40 +2855,41 @@
                             android:checked="@{form.im18.equals(`98`)}"
                             android:onClick="@{()->form.setIm18(`98`)}"
                             android:text="@string/im1803" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
+
             <!-- im19  Radio   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
+            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_im19"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im19"
-                            android:text="@string/im19" />
-
-                        <TextView
-                            android:id="@+id/q_im19"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im19"
-                            android:layout_alignBottom="@id/qtxt_im19"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im19" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im19" />
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/im19"
@@ -2588,36 +2928,34 @@
 
             </androidx.cardview.widget.CardView>
 
+
             <!-- im20  Radio   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
+            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_im20"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im20"
-                            android:text="@string/im20" />
-
-                        <TextView
-                            android:id="@+id/q_im20"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im20"
-                            android:layout_alignBottom="@id/qtxt_im20"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im20" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im20" />
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/im20"
@@ -2647,40 +2985,41 @@
                             android:checked="@{form.im20.equals(`98`)}"
                             android:onClick="@{()->form.setIm20(`98`)}"
                             android:text="@string/im2003" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
+
             <!-- im21  Radio   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
+            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_im21"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im21"
-                            android:text="@string/im21" />
-
-                        <TextView
-                            android:id="@+id/q_im21"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im21"
-                            android:layout_alignBottom="@id/qtxt_im21"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im21" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im21" />
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/im21"
@@ -2710,40 +3049,41 @@
                             android:checked="@{form.im21.equals(`98`)}"
                             android:onClick="@{()->form.setIm21(`98`)}"
                             android:text="@string/im2103" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
+
             <!-- im22  Input-Numeric   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
+            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_im22"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im22"
-                            android:text="@string/im22" />
-
-                        <TextView
-                            android:id="@+id/q_im22"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im22"
-                            android:layout_alignBottom="@id/qtxt_im22"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im22" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im22" />
+
+                    </LinearLayout>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -2765,39 +3105,39 @@
                         android:checked="@{form.im22.equals(`98`)}"
                         android:onClick="@{()->form.setIm22(`98`)}"
                         android:text="@string/im2298" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
+
             <!-- im23  Radio   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
+            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_im23"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im23"
-                            android:text="@string/im23" />
-
-                        <TextView
-                            android:id="@+id/q_im23"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im23"
-                            android:layout_alignBottom="@id/qtxt_im23"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im23" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im23" />
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/im23"
@@ -2852,36 +3192,34 @@
 
             </androidx.cardview.widget.CardView>
 
+
             <!-- im23a  Radio   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
+            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_im23a"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im23a"
-                            android:text="@string/im23a" />
-
-                        <TextView
-                            android:id="@+id/q_im23a"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im23a"
-                            android:layout_alignBottom="@id/qtxt_im23a"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im23a" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im23a" />
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/im23a"
@@ -2919,90 +3257,130 @@
                             android:checked="@{form.im23a.equals(`96`)}"
                             android:onClick="@{()->form.setIm23a(`96`)}"
                             android:text="@string/im23a96" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- im23b  Title   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
+            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/im23b" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im23b1" />
-
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/im23b1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im23b1"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:text="@={form.im23b1}"
-                        app:maxValue="10"
-                        app:minValue="1"
-                        app:type="range" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/im23b2" />
-
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/im23b2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/im23b2"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:text="@={form.im23b2}"
-                        app:maxValue="59"
-                        app:minValue="1"
-                        app:type="range" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- im24  Radio   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_im24"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im24"
-                            android:text="@string/im24" />
-
-                        <TextView
-                            android:id="@+id/q_im24"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_im23b" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im23b" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im24"
-                            android:layout_alignBottom="@id/qtxt_im24"
+                            android:layout_weight="1"
+                            android:text="@string/im23b1" />
+
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/im23b2" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/im23b1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="##"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:text="@={form.im23b1}"
+                            app:maxValue="10"
+                            app:minValue="1"
+                            app:type="range" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/im23b2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="##"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:text="@={form.im23b2}"
+                            app:maxValue="59"
+                            app:minValue="1"
+                            app:type="range" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- im24  Radio   -->
+            <androidx.cardview.widget.CardView style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im24" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im24" />
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/im24"
@@ -3179,35 +3557,32 @@
 
 
             <!-- im25  Radio   -->
-            <androidx.cardview.widget.CardView
-                style="@style/cardView">
+            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/qtxt_im25"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/q_im25"
-                            android:text="@string/im25" />
-
-                        <TextView
-                            android:id="@+id/q_im25"
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@id/qtxt_im25"
-                            android:layout_alignBottom="@id/qtxt_im25"
+                            android:layout_height="match_parent"
                             android:text="@string/Q_im25" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/im25" />
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/im25"
@@ -3245,9 +3620,15 @@
                             android:checked="@{form.im25.equals(`4`)}"
                             android:onClick="@{()->form.setIm25(`4`)}"
                             android:text="@string/im2504" />
+
                     </RadioGroup>
+
                 </LinearLayout>
-            </androidx.cardview.widget.CardView><!--EndButton LinearLayout-->
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!--EndButton LinearLayout-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -3274,7 +3655,13 @@
                     android:onClick="BtnContinue"
                     android:text="Save"
                     android:textColor="@color/white" />
+
             </LinearLayout>
+            <!--EndButton LinearLayout-->
+
+
         </LinearLayout>
+
     </ScrollView>
+
 </layout>
