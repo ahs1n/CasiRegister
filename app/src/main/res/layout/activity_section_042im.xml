@@ -31,7 +31,7 @@
                     android:id="@+id/imsub"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/im05title2"
+                    android:text="@string/im1_title1"
                     android:textAlignment="textStart" />
 
             </LinearLayout>
@@ -3242,7 +3242,7 @@
                     android:layout_marginTop="24dp"
                     android:orientation="horizontal">
 
-                    <Button
+                    <!--<Button
                         android:id="@+id/btnNext"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -3260,7 +3260,7 @@
                         android:layout_margin="12dp"
                         android:background="@color/grayOverlay"
                         android:onClick="@{() -> callback.BtnEnd()}"
-                        android:text="@string/end_interview" />
+                        android:text="@string/end_interview" />-->
 
 
                 </LinearLayout>

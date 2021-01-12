@@ -37,7 +37,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/im1title1" />
+                        android:text="@string/im1_title1" />
 
                 </LinearLayout>
 
@@ -58,7 +58,7 @@
                         style="@style/info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/imtitle2" />
+                        android:text="@string/im05_title1" />
 
                 </LinearLayout>
 
@@ -410,7 +410,7 @@
                             android:id="@+id/im0497"
                             style="@style/checkbox"
                             android:tag="-1"
-                            android:text="@string/im0497" />
+                            android:text="@string/im04yy" />
 
                     </LinearLayout>
 
@@ -433,7 +433,7 @@
                             android:gravity="center_horizontal"
                             android:orientation="horizontal">
 
-                            <Button
+                            <!--<Button
                                 android:id="@+id/frontPhoto"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -459,7 +459,7 @@
                                 android:background="@drawable/outline_btn"
                                 android:onClick="@{(v) -> callback.takePhoto(2)}"
                                 android:text="Take Back Photo"
-                                android:textColor="@color/red_overlay" />
+                                android:textColor="@color/red_overlay" />-->
 
                         </LinearLayout>
 
@@ -509,7 +509,7 @@
                     android:id="@+id/btnNext"
                     style="@style/button"
                     android:background="@android:color/holo_green_light"
-                    android:onClick="@{() -> callback.BtnContinue()}"
+                    android:onClick="BtnContinue"
                     android:text="NEXT"
                     android:textColor="@color/white" />
 
@@ -517,7 +517,7 @@
                     android:id="@+id/btnEnd"
                     style="@style/button"
                     android:background="@android:color/holo_red_light"
-                    android:onClick="@{() -> callback.BtnEnd()}"
+                    android:onClick="BtnEnd"
                     android:text="END" />
 
             </LinearLayout>

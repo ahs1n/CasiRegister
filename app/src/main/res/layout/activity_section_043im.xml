@@ -110,7 +110,7 @@
 
 
             <!-- im26a  TextArea   -->
-            <androidx.cardview.widget.CardView
+            <!--<androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVim26a"
                 style="@style/cardView">
 
@@ -129,13 +129,13 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_im26a" />
+                            android:text="@string/Q_im26" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="@string/im26a" />
+                            android:text="@string/im2" />
 
                     </LinearLayout>
 
@@ -150,145 +150,146 @@
 
                 </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>-->
 
 
             <!-- im26b  TextArea   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVim26b"
-                style="@style/cardView">
+            <!-- <androidx.cardview.widget.CardView
+                 android:id="@+id/fldGrpCVim26b"
+                 style="@style/cardView">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:background="@drawable/bottom"
+                         android:orientation="horizontal">
 
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_im26b" />
+                         <TextView
+                             style="@style/quesNum"
+                             android:layout_width="wrap_content"
+                             android:layout_height="match_parent"
+                             android:text="@string/Q_im26b" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/im26b" />
+                         <TextView
+                             android:layout_width="0dp"
+                             android:layout_height="match_parent"
+                             android:layout_weight="1"
+                             android:text="@string/im26b" />
 
-                    </LinearLayout>
+                     </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/im26b"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789-,"
-                        android:ems="10"
-                        android:gravity="start|top"
-                        android:inputType="textMultiLine" />
+                     <EditText
+                         android:id="@+id/im26b"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789-,"
+                         android:ems="10"
+                         android:gravity="start|top"
+                         android:inputType="textMultiLine" />
 
-                </LinearLayout>
+                 </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
-
-
-            <!-- im26c  TextArea   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVim26c"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_im26c" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/im26c" />
-
-                    </LinearLayout>
-
-                    <EditText
-                        android:id="@+id/im26c"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789-,"
-                        android:ems="10"
-                        android:gravity="start|top"
-                        android:inputType="textMultiLine" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
+             </androidx.cardview.widget.CardView>
 
 
-            <!-- im26d  TextArea   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVim26d"
-                style="@style/cardView">
+             &lt;!&ndash; im26c  TextArea   &ndash;&gt;
+             <androidx.cardview.widget.CardView
+                 android:id="@+id/fldGrpCVim26c"
+                 style="@style/cardView">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:background="@drawable/bottom"
+                         android:orientation="horizontal">
 
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_im26d" />
+                         <TextView
+                             style="@style/quesNum"
+                             android:layout_width="wrap_content"
+                             android:layout_height="match_parent"
+                             android:text="@string/Q_im26c" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/im26d" />
+                         <TextView
+                             android:layout_width="0dp"
+                             android:layout_height="match_parent"
+                             android:layout_weight="1"
+                             android:text="@string/im26c" />
 
-                    </LinearLayout>
+                     </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/im26d"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789-,"
-                        android:ems="10"
-                        android:gravity="start|top"
-                        android:inputType="textMultiLine"
-                        android:tag="-1" />
+                     <EditText
+                         android:id="@+id/im26c"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789-,"
+                         android:ems="10"
+                         android:gravity="start|top"
+                         android:inputType="textMultiLine" />
 
-                </LinearLayout>
+                 </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
+             </androidx.cardview.widget.CardView>
+
+
+             &lt;!&ndash; im26d  TextArea   &ndash;&gt;
+             <androidx.cardview.widget.CardView
+                 android:id="@+id/fldGrpCVim26d"
+                 style="@style/cardView">
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:orientation="vertical">
+
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:background="@drawable/bottom"
+                         android:orientation="horizontal">
+
+                         <TextView
+                             style="@style/quesNum"
+                             android:layout_width="wrap_content"
+                             android:layout_height="match_parent"
+                             android:text="@string/Q_im26d" />
+
+                         <TextView
+                             android:layout_width="0dp"
+                             android:layout_height="match_parent"
+                             android:layout_weight="1"
+                             android:text="@string/im26d" />
+
+                     </LinearLayout>
+
+                     <EditText
+                         android:id="@+id/im26d"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789-,"
+                         android:ems="10"
+                         android:gravity="start|top"
+                         android:inputType="textMultiLine"
+                         android:tag="-1" />
+
+                 </LinearLayout>
+
+             </androidx.cardview.widget.CardView>-->
 
 
             <!--ENDBUTTON linearlayout-->
-            <LinearLayout
-                style="@style/hlinearlayout"
+            <!--<LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:layout_marginTop="24dp">
 
@@ -313,7 +314,7 @@
                     android:text="@string/end_interview" />
 
 
-            </LinearLayout>
+            </LinearLayout>-->
 
         </LinearLayout>
 
