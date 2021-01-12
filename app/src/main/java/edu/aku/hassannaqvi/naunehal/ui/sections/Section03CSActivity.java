@@ -27,7 +27,7 @@ public class Section03CSActivity extends AppCompatActivity {
         MainApp.child = new Child();
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_03cs);
-        bi.setChild(MainApp.child);
+        bi.setForm(MainApp.child);
         setupSkips();
 
     }
