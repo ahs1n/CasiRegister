@@ -62,9 +62,9 @@ public class UCsContract {
 
     public static abstract class TableUCs implements BaseColumns {
 
-        public static final String TABLE_NAME = "UCs";
+        public static final String TABLE_NAME = "ucs";
         public static final String COLUMN_NAME_NULLABLE = "nullColumnHack";
-        public static final String _ID = "_ID";
+        public static final String COLUMN_ID = "_ID";
         public static final String COLUMN_UC_CODE = "ucCode";
         public static final String COLUMN_UC_NAME = "ucName";
         public static final String COLUMN_DISTRICT_CODE = "districtCode";

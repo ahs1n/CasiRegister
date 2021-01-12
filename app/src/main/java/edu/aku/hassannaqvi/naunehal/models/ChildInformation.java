@@ -62,8 +62,7 @@ public class ChildInformation extends BaseObservable {
     public String cb16;
 
     //Not saving in db
-    public String resName;
-    public boolean flag = true;
+    private boolean flag = true;
     private LocalDate calculatedDOB = null;
 
     public LocalDate getCalculatedDOB() {
@@ -72,14 +71,6 @@ public class ChildInformation extends BaseObservable {
 
     public void setCalculatedDOB(LocalDate calculatedDOB) {
         this.calculatedDOB = calculatedDOB;
-    }
-
-    public String getResName() {
-        return resName;
-    }
-
-    public void setResName(String resName) {
-        this.resName = resName;
     }
 
     public boolean isFlag() {

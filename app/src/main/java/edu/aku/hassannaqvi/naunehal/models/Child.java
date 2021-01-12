@@ -2,14 +2,13 @@ package edu.aku.hassannaqvi.naunehal.models;
 
 import android.database.Cursor;
 
-import androidx.databinding.BaseObservable;
-import androidx.databinding.Bindable;
-
 import com.google.gson.GsonBuilder;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
 import edu.aku.hassannaqvi.naunehal.BR;
 import edu.aku.hassannaqvi.naunehal.contracts.ChildContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -517,6 +516,7 @@ public class Child extends BaseObservable {
     public void setCs0896(String cs0896) {
         this.cs0896 = cs0896;
         notifyPropertyChanged(BR.cs0896);
+        notifyPropertyChanged(BR.cs0896x);
     }
 
     @Bindable
