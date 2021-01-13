@@ -67,13 +67,17 @@ class Section02CBActivity : AppCompatActivity() {
             Clear.clearAllFields(bi.fldGrpCVcb07)
             Clear.clearAllFields(bi.fldGrpCVcb08)
             Clear.clearAllFields(bi.fldGrpCVcb09)
+            Clear.clearAllFields(bi.fldGrpCVcb10)
             Clear.clearAllFields(bi.fldGrpCVcb12)
             Clear.clearAllFields(bi.fldGrpCVcb13)
+            Clear.clearAllFields(bi.fldGrpCVcb14)
             bi.fldGrpCVcb07.visibility = View.VISIBLE
             bi.fldGrpCVcb08.visibility = View.VISIBLE
             bi.fldGrpCVcb09.visibility = View.VISIBLE
+            bi.fldGrpCVcb10.visibility = View.VISIBLE
             bi.fldGrpCVcb12.visibility = View.VISIBLE
             bi.fldGrpCVcb13.visibility = View.VISIBLE
+            bi.fldGrpCVcb14.visibility = View.VISIBLE
             if (i == bi.cb0601.id) {
                 bi.fldGrpCVcb07.visibility = View.GONE
                 bi.fldGrpCVcb08.visibility = View.GONE
