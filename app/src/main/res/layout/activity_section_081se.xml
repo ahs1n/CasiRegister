@@ -9,6 +9,10 @@
             name="form"
             type="edu.aku.hassannaqvi.naunehal.models.Form" />
 
+        <variable
+            name="callback"
+            type="edu.aku.hassannaqvi.naunehal.ui.sections.Section081SEActivity" />
+
     </data>
 
 
