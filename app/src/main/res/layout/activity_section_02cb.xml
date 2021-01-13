@@ -348,6 +348,7 @@
                             android:text="@string/cb0501" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
+                            android:gravity="center"
                             android:id="@+id/cb0501"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
@@ -370,6 +371,7 @@
                             android:text="@string/cb0502" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
+                            android:gravity="center"
                             android:id="@+id/cb0502"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"

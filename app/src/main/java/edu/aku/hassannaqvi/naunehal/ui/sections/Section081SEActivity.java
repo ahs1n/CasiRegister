@@ -26,7 +26,6 @@ public class Section081SEActivity extends AppCompatActivity {
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_081se);
         bi.setForm(MainApp.form);
-        bi.setCallback(this);
 
         setupSkips();
     }
