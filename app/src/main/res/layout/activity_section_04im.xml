@@ -241,6 +241,16 @@
                             android:onClick="@{()->form.setIm03(`96`)}"
                             android:text="@string/im0396" />
 
+                        <EditText
+                            android:id="@+id/im03096x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/im0396"
+                            android:tag="im03096"
+                            android:text="@={form.im0396x}"
+                            android:visibility='@{form.im03.equals(`96`)? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
 
                 </LinearLayout>
