@@ -40,18 +40,12 @@ class Section01HHActivity : AppCompatActivity() {
         bi.hh05.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList("....", "Test"))
         bi.hh06.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList("....", "Test"))
 
-        /*
-         *  ONLY in First Section of every Table
-         *  Below statement will be called only in first section (in identification or section A ).
-         *  We will decide this later after checking functionality and flow of the app
-         */MainApp.form = Form()
-
         // TODO: Check if form already exist in database.
-        if ( /*!formExists()*/false) //<== If form exist in database formExists() will also populateForm() and return true;
+        if ( /*!formExists()*/true) //<== If form exist in database formExists() will also populateForm() and return true;
         {
             initForm() //<== If form does not exist in database (New Form)
         }
-        bi.setForm(MainApp.form)
+        bi.form = MainApp.form
         setupSkips()
     }
 
@@ -118,7 +112,7 @@ class Section01HHActivity : AppCompatActivity() {
 
     // Only in First Section of every Table.
     private fun initForm() {
-        // TODO: need work on appinfo
+        MainApp.form = Form()
         MainApp.form.sysDate = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(Date().time)
         MainApp.form.userName = MainApp.user.userName
         MainApp.form.dcode = dCode
@@ -132,8 +126,13 @@ class Section01HHActivity : AppCompatActivity() {
 
         //Setting Date
         try {
-            val instant = Instant.parse(SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).format(SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH).parse(bi.aa01.text.toString())) + "T06:24:01Z")
-            MainApp.form.localDate = LocalDateTime.ofInstant(instant, ZoneId.systemDefault()).toLocalDate()
+            bi.aa01.text?.let {
+                val instant = Instant.parse(SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH)
+                        .format(
+                                SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH).parse(it.toString())
+                        ) + "T06:24:01Z")
+                MainApp.form.localDate = LocalDateTime.ofInstant(instant, ZoneId.systemDefault()).toLocalDate()
+            }
         } catch (e: ParseException) {
             e.printStackTrace()
         }
