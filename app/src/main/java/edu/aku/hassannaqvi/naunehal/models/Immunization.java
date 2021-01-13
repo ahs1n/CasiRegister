@@ -2,14 +2,13 @@ package edu.aku.hassannaqvi.naunehal.models;
 
 import android.database.Cursor;
 
-import androidx.databinding.BaseObservable;
-import androidx.databinding.Bindable;
-
 import com.google.gson.GsonBuilder;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
 import edu.aku.hassannaqvi.naunehal.BR;
 import edu.aku.hassannaqvi.naunehal.contracts.IMContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -20,6 +19,7 @@ public class Immunization extends BaseObservable {
     public String im02;
     public String im01;
     public String im03;
+    public String im0396x;
     public String im04dd;
     public String im04mm;
     public String im04yy;
@@ -389,6 +389,16 @@ public class Immunization extends BaseObservable {
         this.im03 = im03;
         notifyPropertyChanged(BR.im03);
     }
+
+    @Bindable
+    public String getIm0396x() {
+        return im0396x;
+    }
+
+    public void setIm0396x(String im0396x) {
+        this.im0396x = im0396x;
+    }
+
 
     @Bindable
     public String getIm04dd() {
@@ -1314,6 +1324,7 @@ public class Immunization extends BaseObservable {
             json.put("im02", im02)
                     .put("im01", im01)
                     .put("im03", im03)
+                    .put("im0396x", im0396x)
                     .put("im04dd", im04dd)
                     .put("im04mm", im04mm)
                     .put("im04yy", im04yy)
@@ -1461,6 +1472,7 @@ public class Immunization extends BaseObservable {
                 this.im02 = json.getString("im02");
                 this.im01 = json.getString("im01");
                 this.im03 = json.getString("im03");
+                this.im0396x = json.getString("im0396x");
                 this.im04dd = json.getString("im04dd");
                 this.im04mm = json.getString("im04mm");
                 this.im04yy = json.getString("im04yy");

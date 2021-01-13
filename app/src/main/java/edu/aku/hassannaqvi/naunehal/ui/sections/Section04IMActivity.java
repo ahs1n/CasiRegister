@@ -12,9 +12,6 @@ import com.edittextpicker.aliazaz.EditTextPicker;
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import org.threeten.bp.Instant;
 import org.threeten.bp.LocalDate;
 import org.threeten.bp.LocalDateTime;
@@ -26,6 +23,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Objects;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection04imBinding;
@@ -58,7 +57,7 @@ public class Section04IMActivity extends AppCompatActivity {
          * */
         if (form.getLocalDate() != null) {
             int maxYears = form.getLocalDate().getYear();
-            int minYears = form.getLocalDate().minusYears(2).getYear();
+            int minYears = form.getLocalDate().minusYears(3).getYear();
             bi.im04yy.setMinvalue(minYears);
             bi.im04yy.setMaxvalue(maxYears);
         }
@@ -67,38 +66,43 @@ public class Section04IMActivity extends AppCompatActivity {
 
     private void setupSkips() {
 
-        bi.im02.setOnCheckedChangeListener((radioGroup, i) -> {
-            if (i == bi.im0201.getId()) {
-                bi.fldGrpCVim01.setVisibility(View.VISIBLE);
-                bi.fldGrpCVim03.setVisibility(View.GONE);
+        bi.im01.setOnCheckedChangeListener((radioGroup, i) -> {
+            if (i == bi.im0101.getId()) {
+                bi.fldGrpCVim02.setVisibility(View.VISIBLE);
+
                 Clear.clearAllFields(bi.fldGrpCVim03);
-            } else if (i == bi.im0202.getId()) {
+                bi.fldGrpCVim03.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.llim01);
+                bi.llim01.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.fldGrpDOBCheck03);
+                bi.fldGrpDOBCheck03.setVisibility(View.GONE);
+
+            } else if (i == bi.im0102.getId()) {
                 bi.fldGrpCVim03.setVisibility(View.VISIBLE);
-                Clear.clearAllFields(bi.fldGrpCVim01);
-                bi.fldGrpCVim01.setVisibility(View.GONE);
-            } else {
-                Clear.clearAllFields(bi.fldGrpCVim01);
-                Clear.clearAllFields(bi.fldGrpCVim03);
-                bi.fldGrpCVim01.setVisibility(View.GONE);
-                bi.fldGrpCVim03.setVisibility(View.GONE);
+                bi.fldGrpDOBCheck03.setVisibility(View.VISIBLE);
+
+                bi.llim01.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.llim01);
+                Clear.clearAllFields(bi.fldGrpCVim02);
+                bi.fldGrpCVim02.setVisibility(View.GONE);
             }
         });
 
-        bi.im01.setOnCheckedChangeListener((radioGroup, i) -> {
-            Clear.clearAllFields(bi.llim01);
-            Clear.clearAllFields(bi.fldGrpCVim07);
-            bi.llim01.setVisibility(View.GONE);
-            bi.fldGrpCVim07.setVisibility(View.GONE);
-            bi.frontPhoto.setEnabled(i == bi.im0101.getId());
-            bi.backPhoto.setEnabled(i == bi.im0101.getId());
-            bi.frontPhoto.setBackground(getResources().getDrawable(R.drawable.outline_btn));
-            bi.backPhoto.setBackground(getResources().getDrawable(R.drawable.outline_btn));
-            bi.frontFileName.setText(null);
-            bi.backFileName.setText(null);
-
-            if (i == bi.im0101.getId()) {
+        bi.im02.setOnCheckedChangeListener((radioGroup, i) -> {
+            if (i == bi.im0201.getId()) {
+                bi.fldGrpDOBCheck03.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.fldGrpDOBCheck03);
+                bi.fldGrpCVim03.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.fldGrpCVim03);
                 bi.llim01.setVisibility(View.VISIBLE);
-                bi.fldGrpCVim07.setVisibility(View.VISIBLE);
+            } else if (i == bi.im0202.getId()) {
+                bi.fldGrpDOBCheck03.setVisibility(View.VISIBLE);
+                bi.llim01.setVisibility(View.GONE);
+                bi.fldGrpCVim03.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.fldGrpCVim03);
+                Clear.clearAllFields(bi.llim01);
+                bi.frontFileName.setText(null);
+                bi.backFileName.setText(null);
             }
         });
 
@@ -111,8 +115,6 @@ public class Section04IMActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 calculatedDOB = null;
-                bi.fldGrpDOBCheck01.setVisibility(View.GONE);
-                bi.fldGrpDOBCheck02.setVisibility(View.GONE);
                 if (!bi.im0201.isChecked()) return;
                 String txt01, txt02, txt03;
                 bi.im04dd.setEnabled(true);
@@ -161,9 +163,11 @@ public class Section04IMActivity extends AppCompatActivity {
                             if (monthFlag) {
                                 bi.fldGrpDOBCheck01.setVisibility(View.GONE);
                                 bi.fldGrpDOBCheck02.setVisibility(View.GONE);
+                                bi.fldGrpDOBCheck03.setVisibility(View.GONE);
                             } else {
                                 bi.fldGrpDOBCheck01.setVisibility(View.VISIBLE);
                                 bi.fldGrpDOBCheck02.setVisibility(View.VISIBLE);
+                                bi.fldGrpDOBCheck03.setVisibility(View.VISIBLE);
                             }
                         }
 
@@ -188,6 +192,7 @@ public class Section04IMActivity extends AppCompatActivity {
         if (calculatedDOB == null) {
             Clear.clearAllFields(bi.fldGrpDOBCheck01);
             Clear.clearAllFields(bi.fldGrpDOBCheck02);
+            Clear.clearAllFields(bi.fldGrpDOBCheck03);
         }
 
 

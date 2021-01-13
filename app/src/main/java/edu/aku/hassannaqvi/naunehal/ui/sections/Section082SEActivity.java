@@ -64,6 +64,8 @@ public class Section082SEActivity extends AppCompatActivity {
             }
         });
 
+        bi.se36.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpse36));
+
     }
 
 
