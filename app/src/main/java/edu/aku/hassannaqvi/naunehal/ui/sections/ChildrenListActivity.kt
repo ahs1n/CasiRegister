@@ -72,6 +72,7 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
                                 .show()
                         return@setOnActionSelectedListener false
                     }
+                    gotoActivity(Section03CSActivity::class.java)
 //                    val flag = adapter.mList.find { item -> item.memFlag == 3 }
 //                    finish()
 //                    startActivity(Intent(this, EndingActivity::class.java).putExtra("complete", flag == null).putExtra(CONSTANTS.NOT_IN_HOME_END, flag != null))
