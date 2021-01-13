@@ -714,7 +714,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs0896.equals(`96`)}"
-                                android:onClick="@{()->form.setCs0896(form.cs0896.equals(`96`)?``:`96`)}"
+                                android:onCheckedChanged="@{()->form.setCs0896(form.cs0896.equals(`96`)?``:`96`)}"
                                 android:text="@string/cs0896" />
 
                             <EditText
@@ -725,7 +725,7 @@
                                 android:hint="@string/cs0896"
                                 android:tag="cs0896"
                                 android:text="@={form.cs0896x}"
-                                android:visibility="@{cs0896.checked ? View.VISIBLE : View.GONE}" />
+                                android:visibility="@{form.cs0896.equals(`96`) ? View.VISIBLE : View.GONE}" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
