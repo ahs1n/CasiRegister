@@ -39,7 +39,7 @@ class Users {
     }
 
     object UsersTable {
-        const val TABLE_NAME = "Users"
+        const val TABLE_NAME = "users"
         const val COLUMN_ID = "_id"
         const val COLUMN_USERNAME = "username"
         const val COLUMN_PASSWORD = "password"

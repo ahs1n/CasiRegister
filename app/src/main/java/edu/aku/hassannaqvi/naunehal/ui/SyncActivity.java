@@ -46,9 +46,11 @@ import edu.aku.hassannaqvi.naunehal.contracts.UCsContract;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySyncBinding;
 import edu.aku.hassannaqvi.naunehal.models.SyncModel;
+import edu.aku.hassannaqvi.naunehal.models.Users;
 import edu.aku.hassannaqvi.naunehal.workers.DataDownWorkerALL;
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.PROJECT_NAME;
+import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.dbBackup;
 import static edu.aku.hassannaqvi.naunehal.utils.CreateTable.DATABASE_COPY;
 import static edu.aku.hassannaqvi.naunehal.utils.CreateTable.DATABASE_NAME;
 
@@ -57,7 +59,6 @@ public class SyncActivity extends AppCompatActivity {
     private static final String TAG = "SyncActivity";
     SharedPreferences.Editor editor;
     SharedPreferences sharedPref;
-    String DirectoryName;
     DatabaseHelper db;
     SyncListAdapter syncListAdapter;
     ActivitySyncBinding bi;
@@ -75,10 +76,10 @@ public class SyncActivity extends AppCompatActivity {
         downloadTables = new ArrayList<>();
 
         // Set tables to DOWNLOAD
+        downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
         downloadTables.add(new SyncModel(DistrictsContract.TableDistricts.TABLE_NAME));
         downloadTables.add(new SyncModel(UCsContract.TableUCs.TABLE_NAME));
         downloadTables.add(new SyncModel(ClustersContract.TableClusters.TABLE_NAME));
-        //downloadTables.add(new SyncModel(UsersContract.TableUsers.TABLE_NAME));
 
         // Set tables to UPLOAD
         uploadTables.add(new SyncModel("Forms"));
@@ -90,14 +91,9 @@ public class SyncActivity extends AppCompatActivity {
         sharedPref = getSharedPreferences("src", MODE_PRIVATE);
         editor = sharedPref.edit();
         db = new DatabaseHelper(this);
-        dbBackup();
+        dbBackup(this);
 
         boolean sync_flag = getIntent().getBooleanExtra(CONSTANTS.SYNC_LOGIN, false);
-/*
-        bi.btnSync.setOnClickListener(v -> onSyncDataClick());
-        bi.btnUpload.setOnClickListener(v -> syncServer());
-     */   // setAdapter();
-        // setUploadAdapter();
     }
 
 
@@ -114,63 +110,6 @@ public class SyncActivity extends AppCompatActivity {
             bi.noDataItem.setVisibility(View.VISIBLE);
         }
     }
-
-    public void dbBackup() {
-
-        if (sharedPref.getBoolean("flag", false)) {
-
-            String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
-
-            if (!dt.equals(new SimpleDateFormat("dd-MM-yy").format(new Date()))) {
-                editor.putString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
-                editor.apply();
-            }
-
-            File folder = new File(Environment.getExternalStorageDirectory() + File.separator + PROJECT_NAME);
-            boolean success = true;
-            if (!folder.exists()) {
-                success = folder.mkdirs();
-            }
-            if (success) {
-                DirectoryName = folder.getPath() + File.separator + sharedPref.getString("dt", "");
-                folder = new File(DirectoryName);
-                if (!folder.exists()) {
-                    success = folder.mkdirs();
-                }
-                if (success) {
-
-                    try {
-                        File dbFile = new File(this.getDatabasePath(DATABASE_NAME).getPath());
-                        FileInputStream fis = new FileInputStream(dbFile);
-
-                        String outFileName = DirectoryName + File.separator + DATABASE_COPY;
-
-                        // Open the empty db as the output stream
-                        OutputStream output = new FileOutputStream(outFileName);
-
-                        // Transfer bytes from the inputfile to the outputfile
-                        byte[] buffer = new byte[1024];
-                        int length;
-                        while ((length = fis.read(buffer)) > 0) {
-                            output.write(buffer, 0, length);
-                        }
-                        // Close the streams
-                        output.flush();
-                        output.close();
-                        fis.close();
-                    } catch (IOException e) {
-                        Log.e("dbBackup:", e.getMessage());
-                    }
-
-                }
-
-            } else {
-                Toast.makeText(this, "Not create folder", Toast.LENGTH_SHORT).show();
-            }
-        }
-
-    }
-
 
     @Override
     public void onBackPressed() {
@@ -222,15 +161,6 @@ public class SyncActivity extends AppCompatActivity {
         WorkManager wm = WorkManager.getInstance();
         WorkContinuation wc = wm.beginWith(workRequests);
         wc.enqueue();
-
-        // FOR WORKREQUESTS CHAIN (ONE TABLE DOWNLOADS AT A TIME)
-/*        WorkManager wm = WorkManager.getInstance();
-        WorkContinuation wc = wm.beginWith(workRequests.get(0));
-        for (int i=1; i < workRequests.size(); i++ ) {
-            wc = wc.then(workRequests.get(i));
-        }
-        wc.enqueue();*/
-
 
         wc.getWorkInfosLiveData().observe(this, new Observer<List<WorkInfo>>() {
 
@@ -337,7 +267,6 @@ public class SyncActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 
 
