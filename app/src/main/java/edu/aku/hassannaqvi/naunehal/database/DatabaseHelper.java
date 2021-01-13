@@ -12,25 +12,27 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import edu.aku.hassannaqvi.naunehal.contracts.ChildContract;
 import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract.ChildInfoTable;
+import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
+import edu.aku.hassannaqvi.naunehal.contracts.FormsContract.FormsTable;
+import edu.aku.hassannaqvi.naunehal.contracts.IMContract;
+import edu.aku.hassannaqvi.naunehal.core.MainApp;
+import edu.aku.hassannaqvi.naunehal.models.Child;
+import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
 import edu.aku.hassannaqvi.naunehal.models.Clusters;
 import edu.aku.hassannaqvi.naunehal.models.Clusters.TableClusters;
 import edu.aku.hassannaqvi.naunehal.models.Districts;
 import edu.aku.hassannaqvi.naunehal.models.Districts.TableDistricts;
-import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
-import edu.aku.hassannaqvi.naunehal.contracts.FormsContract.FormsTable;
-import edu.aku.hassannaqvi.naunehal.contracts.IMContract;
-import edu.aku.hassannaqvi.naunehal.models.UCsContract;
-import edu.aku.hassannaqvi.naunehal.models.UCsContract.TableUCs;
-import edu.aku.hassannaqvi.naunehal.core.MainApp;
-import edu.aku.hassannaqvi.naunehal.models.Child;
-import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
 import edu.aku.hassannaqvi.naunehal.models.Form;
 import edu.aku.hassannaqvi.naunehal.models.FormIndicatorsModel;
 import edu.aku.hassannaqvi.naunehal.models.Immunization;
+import edu.aku.hassannaqvi.naunehal.models.UCsContract;
+import edu.aku.hassannaqvi.naunehal.models.UCsContract.TableUCs;
 import edu.aku.hassannaqvi.naunehal.models.Users;
 import edu.aku.hassannaqvi.naunehal.models.Users.UsersTable;
 import edu.aku.hassannaqvi.naunehal.models.VersionApp;
@@ -709,5 +711,85 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return insertCount;
     }
+
+
+    //Get All Districts
+    public List<Districts> getDistricts() {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = TableDistricts._ID + " ASC";
+        List<Districts> allEB = new ArrayList<>();
+        try {
+            c = db.query(
+                    TableDistricts.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allEB.add(new Districts().hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allEB;
+    }
+
+    //Get UCs By District
+    public Collection<UCsContract> getUcByDist(String dcode) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause = TableUCs.COLUMN_DISTRICT_CODE + "=?";
+        String[] whereArgs = new String[]{dcode, "%Test%"};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                TableUCs.COLUMN_UC_CODE + " ASC";
+
+        Collection<UCsContract> allDC = new ArrayList<>();
+        try {
+            c = db.query(
+                    TableUCs.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                UCsContract dc = new UCsContract();
+                allDC.add(dc.hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allDC;
+    }
+
 
 }
