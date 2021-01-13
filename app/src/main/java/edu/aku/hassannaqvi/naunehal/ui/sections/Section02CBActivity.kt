@@ -78,9 +78,11 @@ class Section02CBActivity : AppCompatActivity() {
                 bi.fldGrpCVcb07.visibility = View.GONE
                 bi.fldGrpCVcb08.visibility = View.GONE
                 bi.fldGrpCVcb09.visibility = View.GONE
+                bi.fldGrpCVcb10.visibility = View.GONE
             } else if (i == bi.cb0602.id) {
                 bi.fldGrpCVcb12.visibility = View.GONE
                 bi.fldGrpCVcb13.visibility = View.GONE
+                bi.fldGrpCVcb14.visibility = View.GONE
             }
         }
     }
