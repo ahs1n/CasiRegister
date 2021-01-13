@@ -46,8 +46,7 @@
         <activity
             android:name=".ui.SyncActivity"
             android:label="Download and Upload Data Activity"
-            android:screenOrientation="portrait"
-             />
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".ui.sections.ChildrenListActivity"
@@ -58,7 +57,8 @@
         <activity
             android:name=".ui.MainActivity"
             android:label="Dashboard Activity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar.Bridge" />
 
         <activity
             android:name=".ui.sections.Section082SEActivity"

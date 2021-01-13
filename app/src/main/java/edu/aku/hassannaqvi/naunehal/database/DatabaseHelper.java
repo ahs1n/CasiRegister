@@ -16,15 +16,15 @@ import java.util.Date;
 
 import edu.aku.hassannaqvi.naunehal.contracts.ChildContract;
 import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract.ChildInfoTable;
-import edu.aku.hassannaqvi.naunehal.contracts.ClustersContract;
-import edu.aku.hassannaqvi.naunehal.contracts.ClustersContract.TableClusters;
-import edu.aku.hassannaqvi.naunehal.contracts.DistrictsContract;
-import edu.aku.hassannaqvi.naunehal.contracts.DistrictsContract.TableDistricts;
+import edu.aku.hassannaqvi.naunehal.models.Clusters;
+import edu.aku.hassannaqvi.naunehal.models.Clusters.TableClusters;
+import edu.aku.hassannaqvi.naunehal.models.Districts;
+import edu.aku.hassannaqvi.naunehal.models.Districts.TableDistricts;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.naunehal.contracts.IMContract;
-import edu.aku.hassannaqvi.naunehal.contracts.UCsContract;
-import edu.aku.hassannaqvi.naunehal.contracts.UCsContract.TableUCs;
+import edu.aku.hassannaqvi.naunehal.models.UCsContract;
+import edu.aku.hassannaqvi.naunehal.models.UCsContract.TableUCs;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.models.Child;
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
@@ -70,60 +70,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public int syncVersionApp(JSONObject VersionList) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(VersionAppTable.TABLE_NAME, null, null);
-        long count = 0;
-        try {
-            JSONObject jsonObjectCC = ((JSONArray) VersionList.get(VersionAppTable.COLUMN_VERSION_PATH)).getJSONObject(0);
-            VersionApp Vc = new VersionApp();
-            Vc.sync(jsonObjectCC);
-
-            ContentValues values = new ContentValues();
-
-            values.put(VersionAppTable.COLUMN_PATH_NAME, Vc.getPathname());
-            values.put(VersionAppTable.COLUMN_VERSION_CODE, Vc.getVersioncode());
-            values.put(VersionAppTable.COLUMN_VERSION_NAME, Vc.getVersionname());
-
-            count = db.insert(VersionAppTable.TABLE_NAME, null, values);
-            if (count > 0) count = 1;
-
-        } catch (Exception ignored) {
-        } finally {
-            db.close();
-        }
-
-        return (int) count;
-    }
-
-    public int syncUser(JSONArray userList) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(UsersTable.TABLE_NAME, null, null);
-        int insertCount = 0;
-        try {
-            for (int i = 0; i < userList.length(); i++) {
-
-                JSONObject jsonObjectUser = userList.getJSONObject(i);
-
-                Users user = new Users();
-                user.sync(jsonObjectUser);
-                ContentValues values = new ContentValues();
-
-                values.put(UsersTable.COLUMN_USERNAME, user.getUserName());
-                values.put(UsersTable.COLUMN_PASSWORD, user.getPassword());
-                values.put(UsersTable.COLUMN_FULLNAME, user.getFullname());
-                long rowID = db.insert(UsersTable.TABLE_NAME, null, values);
-                if (rowID != -1) insertCount++;
-            }
-
-        } catch (Exception e) {
-            Log.d(TAG, "syncUser(e): " + e);
-            db.close();
-        } finally {
-            db.close();
-        }
-        return insertCount;
-    }
 
     /*
      * Addition in DB
@@ -429,26 +375,42 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allForms;
     }
 
+    public ArrayList<Cursor> getDatabaseManagerData(String Query) {
+        //get writable database
+        SQLiteDatabase sqlDB = this.getWritableDatabase();
+        String[] columns = new String[]{"message"};
+        //an array list of cursor to save two cursors one has results from the query
+        //other cursor stores error message if any errors are triggered
+        ArrayList<Cursor> alc = new ArrayList<Cursor>(2);
+        MatrixCursor Cursor2 = new MatrixCursor(columns);
+        alc.add(null);
+        alc.add(null);
 
-    /*   public int updateFormID() {
-           SQLiteDatabase db = this.getReadableDatabase();
+        try {
+            //execute the query results will be save in Cursor c
+            Cursor c = sqlDB.rawQuery(Query, null);
 
-   // New value for one column
-           ContentValues values = new ContentValues();
-           values.put(FormsContract.FormsTable.COLUMN_UID, MainApp.form.get_UID());
+            //add value to cursor2
+            Cursor2.addRow(new Object[]{"Success"});
 
-   // Which row to update, based on the ID
-           String selection = FormsContract.FormsTable._ID + " = ?";
-           String[] selectionArgs = {String.valueOf(MainApp.form.getId())};
+            alc.set(1, Cursor2);
+            if (null != c && c.getCount() > 0) {
 
-           int count = db.update(FormsContract.FormsTable.TABLE_NAME,
-                   values,
-                   selection,
-                   selectionArgs);
-           return count;
-       }
-   */
-    //Get BLRandom data
+                alc.set(0, c);
+                c.moveToFirst();
+
+                return alc;
+            }
+            return alc;
+        } catch (Exception sqlEx) {
+            Log.d("printing exception", sqlEx.getMessage());
+            //if any exceptions are triggered save the error message to cursor an return the arraylist
+            Cursor2.addRow(new Object[]{"" + sqlEx.getMessage()});
+            alc.set(1, Cursor2);
+            return alc;
+        }
+    }
+
     /*public BLRandom getHHFromBLRandom(String subAreaCode, String hh) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
@@ -604,51 +566,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    // ANDROID DATABASE MANAGER
-    public ArrayList<Cursor> getData(String Query) {
-        //get writable database
-        SQLiteDatabase sqlDB = this.getWritableDatabase();
-        String[] columns = new String[]{"message"};
-        //an array list of cursor to save two cursors one has results from the query
-        //other cursor stores error message if any errors are triggered
-        ArrayList<Cursor> alc = new ArrayList<Cursor>(2);
-        MatrixCursor Cursor2 = new MatrixCursor(columns);
-        alc.add(null);
-        alc.add(null);
-
-        try {
-            //execute the query results will be save in Cursor c
-            Cursor c = sqlDB.rawQuery(Query, null);
-
-            //add value to cursor2
-            Cursor2.addRow(new Object[]{"Success"});
-
-            alc.set(1, Cursor2);
-            if (null != c && c.getCount() > 0) {
-
-                alc.set(0, c);
-                c.moveToFirst();
-
-                return alc;
-            }
-            return alc;
-        } catch (Exception sqlEx) {
-            Log.d("printing exception", sqlEx.getMessage());
-            //if any exceptions are triggered save the error message to cursor an return the arraylist
-            Cursor2.addRow(new Object[]{"" + sqlEx.getMessage()});
-            alc.set(1, Cursor2);
-            return alc;
-        }
-    }
-
+    /*
+     * Download data functions
+     * */
     public int syncDistricts(JSONArray Districtslist) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(DistrictsContract.TableDistricts.TABLE_NAME, null, null);
+        db.delete(Districts.TableDistricts.TABLE_NAME, null, null);
         int insertCount = 0;
         try {
             for (int i = 0; i < Districtslist.length(); i++) {
                 JSONObject jsonObjectDistrict = Districtslist.getJSONObject(i);
-                DistrictsContract District = new DistrictsContract();
+                Districts District = new Districts();
                 District.sync(jsonObjectDistrict);
                 ContentValues values = new ContentValues();
 
@@ -675,7 +603,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             for (int i = 0; i < clusterList.length(); i++) {
                 JSONObject jsonObjectCluster = clusterList.getJSONObject(i);
-                ClustersContract cluster = new ClustersContract();
+                Clusters cluster = new Clusters();
                 cluster.sync(jsonObjectCluster);
                 ContentValues values = new ContentValues();
 
@@ -720,6 +648,61 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         } catch (Exception e) {
             Log.d(TAG, "syncUc(e): " + e);
+            db.close();
+        } finally {
+            db.close();
+        }
+        return insertCount;
+    }
+
+    public int syncVersionApp(JSONObject VersionList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(VersionAppTable.TABLE_NAME, null, null);
+        long count = 0;
+        try {
+            JSONObject jsonObjectCC = ((JSONArray) VersionList.get(VersionAppTable.COLUMN_VERSION_PATH)).getJSONObject(0);
+            VersionApp Vc = new VersionApp();
+            Vc.sync(jsonObjectCC);
+
+            ContentValues values = new ContentValues();
+
+            values.put(VersionAppTable.COLUMN_PATH_NAME, Vc.getPathname());
+            values.put(VersionAppTable.COLUMN_VERSION_CODE, Vc.getVersioncode());
+            values.put(VersionAppTable.COLUMN_VERSION_NAME, Vc.getVersionname());
+
+            count = db.insert(VersionAppTable.TABLE_NAME, null, values);
+            if (count > 0) count = 1;
+
+        } catch (Exception ignored) {
+        } finally {
+            db.close();
+        }
+
+        return (int) count;
+    }
+
+    public int syncUser(JSONArray userList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(UsersTable.TABLE_NAME, null, null);
+        int insertCount = 0;
+        try {
+            for (int i = 0; i < userList.length(); i++) {
+
+                JSONObject jsonObjectUser = userList.getJSONObject(i);
+
+                Users user = new Users();
+                user.sync(jsonObjectUser);
+                ContentValues values = new ContentValues();
+
+                values.put(UsersTable.COLUMN_USERNAME, user.getUserName());
+                values.put(UsersTable.COLUMN_PASSWORD, user.getPassword());
+                values.put(UsersTable.COLUMN_FULLNAME, user.getFullname());
+                long rowID = db.insert(UsersTable.TABLE_NAME, null, values);
+                if (rowID != -1) insertCount++;
+            }
+
+        } catch (Exception e) {
+            Log.d(TAG, "syncUser(e): " + e);
             db.close();
         } finally {
             db.close();

@@ -1,193 +1,166 @@
-package edu.aku.hassannaqvi.naunehal.ui.sections;
+package edu.aku.hassannaqvi.naunehal.ui.sections
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.text.TextUtils;
-import android.text.format.DateFormat;
-import android.util.Log;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Toast;
+import android.app.Activity
+import android.content.Intent
+import android.os.Bundle
+import android.text.TextUtils
+import android.text.format.DateFormat
+import android.util.Log
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.RadioButton
+import android.widget.RadioGroup
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import com.validatorcrawler.aliazaz.Clear
+import com.validatorcrawler.aliazaz.Validator
+import edu.aku.hassannaqvi.naunehal.R
+import edu.aku.hassannaqvi.naunehal.contracts.FormsContract
+import edu.aku.hassannaqvi.naunehal.core.MainApp
+import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection01hhBinding
+import edu.aku.hassannaqvi.naunehal.models.Form
+import org.json.JSONObject
+import org.threeten.bp.Instant
+import org.threeten.bp.LocalDateTime
+import org.threeten.bp.ZoneId
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.*
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
+class Section01HHActivity : AppCompatActivity() {
+    lateinit var bi: ActivitySection01hhBinding
+    private val ucCode = ""
+    private val dCode = ""
 
-import com.validatorcrawler.aliazaz.Clear;
-import com.validatorcrawler.aliazaz.Validator;
-
-import org.jetbrains.annotations.NotNull;
-import org.json.JSONObject;
-import org.threeten.bp.Instant;
-import org.threeten.bp.LocalDateTime;
-import org.threeten.bp.ZoneId;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
-
-import edu.aku.hassannaqvi.naunehal.R;
-import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
-import edu.aku.hassannaqvi.naunehal.core.MainApp;
-import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
-import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection01hhBinding;
-import edu.aku.hassannaqvi.naunehal.models.Form;
-
-public class Section01HHActivity extends AppCompatActivity {
-
-    ActivitySection01hhBinding bi;
-    private DatabaseHelper db;
-    private String ucCode = "", dCode = "";
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_01hh);
-        bi.hh05.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList("....", "Test")));
-        bi.hh06.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList("....", "Test")));
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_01hh)
+        bi.hh05.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList("....", "Test"))
+        bi.hh06.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList("....", "Test"))
 
         /*
          *  ONLY in First Section of every Table
          *  Below statement will be called only in first section (in identification or section A ).
          *  We will decide this later after checking functionality and flow of the app
-         */
-        MainApp.form = new Form();
+         */MainApp.form = Form()
 
         // TODO: Check if form already exist in database.
-        if (/*!formExists()*/ false)  //<== If form exist in database formExists() will also populateForm() and return true;
+        if ( /*!formExists()*/false) //<== If form exist in database formExists() will also populateForm() and return true;
         {
-            initForm(); //<== If form does not exist in database (New Form)
+            initForm() //<== If form does not exist in database (New Form)
         }
-
-        bi.setForm(MainApp.form);
-        setupSkips();
+        bi.setForm(MainApp.form)
+        setupSkips()
     }
 
-    private void setupSkips() {
-        rgListener(bi.hh11, bi.hh1102, bi.llhh11);
-        rgListener(bi.hh18, bi.hh1801, bi.llhh18);
+    private fun setupSkips() {
+        rgListener(bi.hh11, bi.hh1102, bi.llhh11)
+        rgListener(bi.hh18, bi.hh1801, bi.llhh18)
     }
 
-    private void rgListener(@NotNull RadioGroup rg, RadioButton rb, ViewGroup vg) {
-        rg.setOnCheckedChangeListener((radioGroup, i) -> {
-            Clear.clearAllFields(vg);
-            vg.setVisibility(View.VISIBLE);
-            if (i == rb.getId()) vg.setVisibility(View.GONE);
-        });
-    }
-
-    public void BtnContinue(View view) {
-        if (!formValidation()) return;
-
-        initForm(); //<== This function is no longer needed after DataBinding
-
-        if (UpdateDB()) {
-            finish();
-            startActivity(new Intent(this, ChildrenListActivity.class));
+    private fun rgListener(rg: RadioGroup, rb: RadioButton, vg: ViewGroup) {
+        rg.setOnCheckedChangeListener { radioGroup: RadioGroup?, i: Int ->
+            Clear.clearAllFields(vg)
+            vg.visibility = View.VISIBLE
+            if (i == rb.id) vg.visibility = View.GONE
         }
     }
 
-    public void checkHHExist(View view) {
-        Clear.clearAllFields(bi.fldGrpcheck);
-        bi.fldGrpcheck.setVisibility(View.VISIBLE);
+    fun BtnContinue(view: View) {
+        if (!formValidation()) return
+        initForm() //<== This function is no longer needed after DataBinding
+        if (updateDB()) {
+            finish()
+            startActivity(Intent(this, ChildrenListActivity::class.java))
+        }
     }
 
-    private boolean UpdateDB() {
-        DatabaseHelper db = MainApp.appInfo.dbHelper;
-        Long updcount = db.addForm(MainApp.form);
-        MainApp.form.setId(updcount.toString());
-        if (updcount > 0) {
-            MainApp.form.setUid(MainApp.form.getDeviceId() + MainApp.form.getId());
-            int count = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_UID, MainApp.form.getUid());
-            if (count > 0)
-                count = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_S01HH, MainApp.form.getS01HH());
-            if (count > 0)
-                return true;
-            else {
-                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
-                return false;
+    fun checkHHExist(view: View) {
+        Clear.clearAllFields(bi.fldGrpcheck)
+        bi.fldGrpcheck.visibility = View.VISIBLE
+    }
+
+    private fun updateDB(): Boolean {
+        val db = MainApp.appInfo.dbHelper
+        val updcount = db.addForm(MainApp.form)
+        MainApp.form.id = updcount.toString()
+        return if (updcount > 0) {
+            MainApp.form.uid = MainApp.form.deviceId + MainApp.form.id
+            var count = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_UID, MainApp.form.uid)
+            if (count > 0) count = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_S01HH, MainApp.form.s01HH)
+            if (count > 0) true else {
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show()
+                false
             }
         } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
-            return false;
+            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show()
+            false
         }
     }
 
-    private boolean formValidation() {
-        if (!Validator.emptyCheckingContainer(this, bi.GrpName))
-            return false;
-        int totalMembers = (TextUtils.isEmpty(bi.hh22.getText()) ? 0 : Integer.parseInt(bi.hh22.getText().toString().trim()))
-                + (TextUtils.isEmpty(bi.hh23.getText()) ? 0 : Integer.parseInt(bi.hh23.getText().toString().trim()));
+    private fun formValidation(): Boolean {
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false
+        val totalMembers = ((if (TextUtils.isEmpty(bi.hh22.text)) 0 else bi.hh22.text.toString().trim().toInt())
+                + if (TextUtils.isEmpty(bi.hh23.text)) 0 else bi.hh23.text.toString().trim().toInt())
         if (totalMembers == 0) {
-            return Validator.emptyCustomTextBox(this, bi.hh21, "Invalid Count");
-        } else if (totalMembers != Integer.parseInt(bi.hh21.getText().toString())) {
-            return Validator.emptyCustomTextBox(this, bi.hh21, "Invalid Count");
-        } else if (Integer.parseInt(bi.hh24.getText().toString()) >= Integer.parseInt(bi.hh22.getText().toString())) {
-            return Validator.emptyCustomTextBox(this, bi.hh24, "Total male Children cannot be greater or equal than HH22");
-        } else if (Integer.parseInt(bi.hh25.getText().toString()) >= Integer.parseInt(bi.hh23.getText().toString())) {
-            return Validator.emptyCustomTextBox(this, bi.hh25, "Total female Children cannot be greater or equal than HH22");
-        } else if (Integer.parseInt(bi.hh24.getText().toString()) == 0 && Integer.parseInt(bi.hh25.getText().toString()) == 0)
-            return Validator.emptyCustomTextBox(this, bi.hh21, "Male & Female Children cannot be zero");
-        return true;
+            return Validator.emptyCustomTextBox(this, bi.hh21, "Invalid Count")
+        } else if (totalMembers != bi.hh21.text.toString().toInt()) {
+            return Validator.emptyCustomTextBox(this, bi.hh21, "Invalid Count")
+        } else if (bi.hh24.text.toString().toInt() >= bi.hh22.text.toString().toInt()) {
+            return Validator.emptyCustomTextBox(this, bi.hh24, "Total male Children cannot be greater or equal than HH22")
+        } else if (bi.hh25.text.toString().toInt() >= bi.hh23.text.toString().toInt()) {
+            return Validator.emptyCustomTextBox(this, bi.hh25, "Total female Children cannot be greater or equal than HH22")
+        } else if (bi.hh24.text.toString().toInt() == 0 && bi.hh25.text.toString().toInt() == 0) return Validator.emptyCustomTextBox(this, bi.hh21, "Male & Female Children cannot be zero")
+        return true
     }
 
     // Only in First Section of every Table.
-    public void initForm() {
+    private fun initForm() {
         // TODO: need work on appinfo
-        MainApp.form.setSysDate(new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        MainApp.form.setUserName(MainApp.user.getUserName());
-        MainApp.form.setDcode(dCode);
-        MainApp.form.setUcode(ucCode);
-        MainApp.form.setCluster(bi.hh08.getText().toString());
-        MainApp.form.setHhno(bi.hh09.getText().toString());
-        MainApp.form.setDeviceId(MainApp.appInfo.getDeviceID());
-        MainApp.form.setDeviceTag(MainApp.appInfo.getTagName());
-        MainApp.form.setAppver(MainApp.appInfo.getAppVersion());
-        MainApp.form.setGps(getGPS(this).toString());
-        // MainApp.setGPS({"gpsLng":"12444",...});
+        MainApp.form.sysDate = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(Date().time)
+        MainApp.form.userName = MainApp.user.userName
+        MainApp.form.dcode = dCode
+        MainApp.form.ucode = ucCode
+        MainApp.form.cluster = bi.hh08.text.toString()
+        MainApp.form.hhno = bi.hh09.text.toString()
+        MainApp.form.deviceId = MainApp.appInfo.deviceID
+        MainApp.form.deviceTag = MainApp.appInfo.tagName
+        MainApp.form.appver = MainApp.appInfo.appVersion
+        MainApp.form.gps = getGPS(this).toString()
 
         //Setting Date
         try {
-            Instant instant = Instant.parse(new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).format(new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH).parse(bi.aa01.getText().toString())) + "T06:24:01Z");
-            MainApp.form.setLocalDate(LocalDateTime.ofInstant(instant, ZoneId.systemDefault()).toLocalDate());
-        } catch (ParseException e) {
-            e.printStackTrace();
+            val instant = Instant.parse(SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).format(SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH).parse(bi.aa01.text.toString())) + "T06:24:01Z")
+            MainApp.form.localDate = LocalDateTime.ofInstant(instant, ZoneId.systemDefault()).toLocalDate()
+        } catch (e: ParseException) {
+            e.printStackTrace()
         }
     }
 
-    private JSONObject getGPS(Activity activity) {
-        JSONObject json = new JSONObject();
-        SharedPreferences GPSPref = activity.getSharedPreferences("GPSCoordinates", Context.MODE_PRIVATE);
+    private fun getGPS(activity: Activity): JSONObject? {
+        val json = JSONObject()
+        val gpsPref = activity.getSharedPreferences("GPSCoordinates", MODE_PRIVATE)
         try {
-            String lat = GPSPref.getString("Latitude", "0");
-            String lang = GPSPref.getString("Longitude", "0");
-
-            if (lat.equals("0") && lang.equals("0")) {
-                Toast.makeText(activity, "Could not obtained GPS points", Toast.LENGTH_SHORT).show();
+            val lat = gpsPref.getString("Latitude", "0")
+            val lang = gpsPref.getString("Longitude", "0")
+            if (lat == "0" && lang == "0") {
+                Toast.makeText(activity, "Could not obtained GPS points", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(activity, "GPS set", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, "GPS set", Toast.LENGTH_SHORT).show()
             }
-
-            String date = DateFormat.format("dd-MM-yyyy HH:mm", Long.parseLong(GPSPref.getString("Time", "0"))).toString();
-            json.put("gpslat", GPSPref.getString("Latitude", "0"));
-            json.put("gpslng", GPSPref.getString("Longitude", "0"));
-            json.put("gpsacc", GPSPref.getString("Accuracy", "0"));
-            json.put("gpsdate", date);
-
-            return json;
-        } catch (Exception e) {
-            Log.e("GPS", "setGPS: " + e.getMessage());
+            val date = DateFormat.format("dd-MM-yyyy HH:mm", gpsPref.getString("Time", "0")!!.toLong()).toString()
+            json.put("gpslat", gpsPref.getString("Latitude", "0"))
+            json.put("gpslng", gpsPref.getString("Longitude", "0"))
+            json.put("gpsacc", gpsPref.getString("Accuracy", "0"))
+            json.put("gpsdate", date)
+            return json
+        } catch (e: Exception) {
+            Log.e("GPS", "setGPS: " + e.message)
         }
-        return null;
+        return null
     }
+
 
 }

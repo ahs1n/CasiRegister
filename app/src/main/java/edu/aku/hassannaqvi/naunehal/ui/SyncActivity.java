@@ -2,7 +2,6 @@ package edu.aku.hassannaqvi.naunehal.ui;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -25,34 +24,25 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import edu.aku.hassannaqvi.naunehal.CONSTANTS;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.adapters.SyncListAdapter;
-import edu.aku.hassannaqvi.naunehal.contracts.ClustersContract;
-import edu.aku.hassannaqvi.naunehal.contracts.DistrictsContract;
-import edu.aku.hassannaqvi.naunehal.contracts.UCsContract;
+import edu.aku.hassannaqvi.naunehal.models.Clusters;
+import edu.aku.hassannaqvi.naunehal.models.Districts;
+import edu.aku.hassannaqvi.naunehal.models.UCsContract;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySyncBinding;
 import edu.aku.hassannaqvi.naunehal.models.SyncModel;
 import edu.aku.hassannaqvi.naunehal.models.Users;
+import edu.aku.hassannaqvi.naunehal.models.VersionApp;
 import edu.aku.hassannaqvi.naunehal.workers.DataDownWorkerALL;
 
-import static edu.aku.hassannaqvi.naunehal.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.dbBackup;
-import static edu.aku.hassannaqvi.naunehal.utils.CreateTable.DATABASE_COPY;
-import static edu.aku.hassannaqvi.naunehal.utils.CreateTable.DATABASE_NAME;
 
 
 public class SyncActivity extends AppCompatActivity {
@@ -77,9 +67,10 @@ public class SyncActivity extends AppCompatActivity {
 
         // Set tables to DOWNLOAD
         downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
-        downloadTables.add(new SyncModel(DistrictsContract.TableDistricts.TABLE_NAME));
+        downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
+        downloadTables.add(new SyncModel(Districts.TableDistricts.TABLE_NAME));
         downloadTables.add(new SyncModel(UCsContract.TableUCs.TABLE_NAME));
-        downloadTables.add(new SyncModel(ClustersContract.TableClusters.TABLE_NAME));
+        downloadTables.add(new SyncModel(Clusters.TableClusters.TABLE_NAME));
 
         // Set tables to UPLOAD
         uploadTables.add(new SyncModel("Forms"));
@@ -193,35 +184,28 @@ public class SyncActivity extends AppCompatActivity {
                                     JSONArray jsonArray = new JSONArray();
                                     int insertCount = 0;
                                     switch (tableName) {
-                                        // case TableUsers.TABLE_NAME:
-                                        //   jsonArray = new JSONArray(result);
-                                        //   insertCount = db.syncUser(jsonArray);
-                                        //           position = 0;
-                                        //  break;
-                                        //  case TableVersionApp.TABLE_NAME:
-                                        //        insertCount = db.syncVersionApp(new JSONObject(result));
-                                        //    if (insertCount == 1) jsonArray.put("1");
-                                        //        position = 1;
-                                        //     break;
+                                        case Users.UsersTable.TABLE_NAME:
+                                            jsonArray = new JSONArray(result);
+                                            insertCount = db.syncUser(jsonArray);
+                                            break;
+                                        case VersionApp.VersionAppTable.TABLE_NAME:
+                                            insertCount = db.syncVersionApp(new JSONObject(result));
+                                            if (insertCount == 1) jsonArray.put("1");
+                                            break;
                                         case UCsContract.TableUCs.TABLE_NAME:
                                             jsonArray = new JSONArray(result);
                                             insertCount = db.syncUCs(jsonArray);
                                             Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));
-                                            //      position = 2;
                                             break;
-                                        case DistrictsContract.TableDistricts.TABLE_NAME:
+                                        case Districts.TableDistricts.TABLE_NAME:
                                             jsonArray = new JSONArray(result);
                                             insertCount = db.syncDistricts(jsonArray);
                                             Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));
-
-                                            //      position = 3;
                                             break;
-                                        case ClustersContract.TableClusters.TABLE_NAME:
+                                        case Clusters.TableClusters.TABLE_NAME:
                                             jsonArray = new JSONArray(result);
                                             insertCount = db.syncCluster(jsonArray);
                                             Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));
-
-                                            //       position = 4;
                                             break;
 
                                     }

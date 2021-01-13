@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_main);
         bi.setCallback(this);
-        setSupportActionBar(bi.toolbar);
 
 
     }

@@ -1,74 +1,40 @@
-package edu.aku.hassannaqvi.naunehal.contracts;
+package edu.aku.hassannaqvi.naunehal.models
 
-import android.database.Cursor;
-import android.provider.BaseColumns;
-
-import org.json.JSONException;
-import org.json.JSONObject;
+import android.database.Cursor
+import android.provider.BaseColumns
+import org.json.JSONException
+import org.json.JSONObject
 
 /**
  * Created by hassan.naqvi on 10/31/2016.
+ * @update ali.azaz
  */
+class UCsContract {
+    var ucCode: String = ""
+    var ucName: String = ""
+    var districtCode: String = ""
 
-public class UCsContract {
-
-    private String ucCode;
-    private String ucName;
-    private String districtCode;
-
-    public UCsContract() {
+    @Throws(JSONException::class)
+    fun sync(jsonObject: JSONObject): UCsContract {
+        ucCode = jsonObject.getString(TableUCs.COLUMN_UC_CODE)
+        ucName = jsonObject.getString(TableUCs.COLUMN_UC_NAME)
+        districtCode = jsonObject.getString(TableUCs.COLUMN_DISTRICT_CODE)
+        return this
     }
 
-    public UCsContract sync(JSONObject jsonObject) throws JSONException {
-        this.ucCode = jsonObject.getString(TableUCs.COLUMN_UC_CODE);
-        this.ucName = jsonObject.getString(TableUCs.COLUMN_UC_NAME);
-        this.districtCode = jsonObject.getString(TableUCs.COLUMN_DISTRICT_CODE);
-
-        return this;
+    fun hydrate(cursor: Cursor): UCsContract {
+        ucCode = cursor.getString(cursor.getColumnIndex(TableUCs.COLUMN_UC_CODE))
+        ucName = cursor.getString(cursor.getColumnIndex(TableUCs.COLUMN_UC_NAME))
+        districtCode = cursor.getString(cursor.getColumnIndex(TableUCs.COLUMN_DISTRICT_CODE))
+        return this
     }
 
-    public UCsContract hydrate(Cursor cursor) {
-        this.ucCode = cursor.getString(cursor.getColumnIndex(TableUCs.COLUMN_UC_CODE));
-        this.ucName = cursor.getString(cursor.getColumnIndex(TableUCs.COLUMN_UC_NAME));
-        this.districtCode = cursor.getString(cursor.getColumnIndex(TableUCs.COLUMN_DISTRICT_CODE));
-
-        return this;
+    object TableUCs : BaseColumns {
+        const val TABLE_NAME = "ucs"
+        const val COLUMN_NAME_NULLABLE = "nullColumnHack"
+        const val COLUMN_ID = "_ID"
+        const val COLUMN_UC_CODE = "ucCode"
+        const val COLUMN_UC_NAME = "ucName"
+        const val COLUMN_DISTRICT_CODE = "districtCode"
     }
-
-    public String getUcCode() {
-        return ucCode;
-    }
-
-    public void setUcCode(String ucCode) {
-        this.ucCode = ucCode;
-    }
-
-    public String getUcName() {
-        return ucName;
-    }
-
-    public void setUcName(String ucName) {
-        this.ucName = ucName;
-    }
-
-    public String getDistrictCode() {
-        return districtCode;
-    }
-
-    public UCsContract setDistrictCode(String districtCode) {
-        this.districtCode = districtCode;
-        return this;
-    }
-
-    public static abstract class TableUCs implements BaseColumns {
-
-        public static final String TABLE_NAME = "ucs";
-        public static final String COLUMN_NAME_NULLABLE = "nullColumnHack";
-        public static final String COLUMN_ID = "_ID";
-        public static final String COLUMN_UC_CODE = "ucCode";
-        public static final String COLUMN_UC_NAME = "ucName";
-        public static final String COLUMN_DISTRICT_CODE = "districtCode";
-
-    }
-
 }

@@ -1,61 +1,36 @@
-package edu.aku.hassannaqvi.naunehal.contracts;
+package edu.aku.hassannaqvi.naunehal.models
 
-import android.database.Cursor;
-import android.provider.BaseColumns;
-
-import org.json.JSONException;
-import org.json.JSONObject;
+import android.database.Cursor
+import android.provider.BaseColumns
+import org.json.JSONException
+import org.json.JSONObject
 
 /**
  * Created by hassan.naqvi on 10/31/2016.
+ * @update ali.azaz
  */
+class Districts {
+    var districtCode: String = ""
+    var districtName: String = ""
 
-public class DistrictsContract {
-
-    private String districtCode;
-    private String districtName;
-
-    public DistrictsContract() {
+    @Throws(JSONException::class)
+    fun sync(jsonObject: JSONObject): Districts {
+        districtCode = jsonObject.getString(TableDistricts.COLUMN_DISTRICT_CODE)
+        districtName = jsonObject.getString(TableDistricts.COLUMN_DISTRICT_NAME)
+        return this
     }
 
-    public DistrictsContract sync(JSONObject jsonObject) throws JSONException {
-        this.districtCode = jsonObject.getString(TableDistricts.COLUMN_DISTRICT_CODE);
-        this.districtName = jsonObject.getString(TableDistricts.COLUMN_DISTRICT_NAME);
-
-        return this;
+    fun hydrate(cursor: Cursor): Districts {
+        districtCode = cursor.getString(cursor.getColumnIndex(TableDistricts.COLUMN_DISTRICT_CODE))
+        districtName = cursor.getString(cursor.getColumnIndex(TableDistricts.COLUMN_DISTRICT_NAME))
+        return this
     }
 
-    public DistrictsContract hydrate(Cursor cursor) {
-        this.districtCode = cursor.getString(cursor.getColumnIndex(TableDistricts.COLUMN_DISTRICT_CODE));
-        this.districtName = cursor.getString(cursor.getColumnIndex(TableDistricts.COLUMN_DISTRICT_NAME));
-
-        return this;
+    object TableDistricts : BaseColumns {
+        const val TABLE_NAME = "districts"
+        const val COLUMN_NAME_NULLABLE = "nullColumnHack"
+        const val COLUMN_ID = "_ID"
+        const val COLUMN_DISTRICT_CODE = "districtCode"
+        const val COLUMN_DISTRICT_NAME = "districtName"
     }
-
-    public String getDistrictCode() {
-        return districtCode;
-    }
-
-    public void setDistrictCode(String districtCode) {
-        this.districtCode = districtCode;
-    }
-
-    public String getDistrictName() {
-        return districtName;
-    }
-
-    public void setDistrictName(String districtName) {
-        this.districtName = districtName;
-    }
-
-    public static abstract class TableDistricts implements BaseColumns {
-
-        public static final String TABLE_NAME = "districts";
-        public static final String COLUMN_NAME_NULLABLE = "nullColumnHack";
-        public static final String COLUMN_ID = "_ID";
-        public static final String COLUMN_DISTRICT_CODE = "districtCode";
-        public static final String COLUMN_DISTRICT_NAME = "districtName";
-
-    }
-
 }
