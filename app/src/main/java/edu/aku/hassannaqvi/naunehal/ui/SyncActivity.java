@@ -34,7 +34,7 @@ import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.adapters.SyncListAdapter;
 import edu.aku.hassannaqvi.naunehal.models.Clusters;
 import edu.aku.hassannaqvi.naunehal.models.Districts;
-import edu.aku.hassannaqvi.naunehal.models.UCsContract;
+import edu.aku.hassannaqvi.naunehal.models.UCs;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySyncBinding;
 import edu.aku.hassannaqvi.naunehal.models.SyncModel;
@@ -69,7 +69,7 @@ public class SyncActivity extends AppCompatActivity {
         downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
         downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
         downloadTables.add(new SyncModel(Districts.TableDistricts.TABLE_NAME));
-        downloadTables.add(new SyncModel(UCsContract.TableUCs.TABLE_NAME));
+        downloadTables.add(new SyncModel(UCs.TableUCs.TABLE_NAME));
         downloadTables.add(new SyncModel(Clusters.TableClusters.TABLE_NAME));
 
         // Set tables to UPLOAD
@@ -192,7 +192,7 @@ public class SyncActivity extends AppCompatActivity {
                                             insertCount = db.syncVersionApp(new JSONObject(result));
                                             if (insertCount == 1) jsonArray.put("1");
                                             break;
-                                        case UCsContract.TableUCs.TABLE_NAME:
+                                        case UCs.TableUCs.TABLE_NAME:
                                             jsonArray = new JSONArray(result);
                                             insertCount = db.syncUCs(jsonArray);
                                             Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));

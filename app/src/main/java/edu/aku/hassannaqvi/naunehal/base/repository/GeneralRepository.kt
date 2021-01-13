@@ -12,6 +12,14 @@ open class GeneralRepository(private val db: DatabaseHelper) : GeneralDataSource
         db.getFamilyFromDB(cluster, hhno, uuid)
     }
 
+    override suspend fun getDistrictsFromDB(): ArrayList<Districts> = withContext(Dispatchers.IO) {
+        db.allDistricts
+    }
+
+    override suspend fun getUcsByDistrictsFromDB(dCode: String): ArrayList<UCs> = withContext(Dispatchers.IO) {
+        db.getUCsByDistricts(dCode)
+    }
+
     override suspend fun getLoginInformation(username: String, password: String): Users? = withContext(Dispatchers.IO) {
         db.getLoginUser(username, password)
     }

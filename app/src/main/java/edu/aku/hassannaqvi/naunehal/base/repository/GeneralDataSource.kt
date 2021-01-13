@@ -33,4 +33,14 @@ interface GeneralDataSource {
     * For Child List End
     * */
 
+    /*
+    * For SectionH1
+    * */
+    suspend fun getDistrictsFromDB(): ArrayList<Districts>
+
+    suspend fun getUcsByDistrictsFromDB(dCode: String): ArrayList<UCs>
+    /*
+    * For SectionH1 End
+    * */
+
 }

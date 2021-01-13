@@ -9,20 +9,20 @@ import org.json.JSONObject
  * Created by hassan.naqvi on 10/31/2016.
  * @update ali.azaz
  */
-class UCsContract {
+class UCs {
     var ucCode: String = ""
     var ucName: String = ""
     var districtCode: String = ""
 
     @Throws(JSONException::class)
-    fun sync(jsonObject: JSONObject): UCsContract {
+    fun sync(jsonObject: JSONObject): UCs {
         ucCode = jsonObject.getString(TableUCs.COLUMN_UC_CODE)
         ucName = jsonObject.getString(TableUCs.COLUMN_UC_NAME)
         districtCode = jsonObject.getString(TableUCs.COLUMN_DISTRICT_CODE)
         return this
     }
 
-    fun hydrate(cursor: Cursor): UCsContract {
+    fun hydrate(cursor: Cursor): UCs {
         ucCode = cursor.getString(cursor.getColumnIndex(TableUCs.COLUMN_UC_CODE))
         ucName = cursor.getString(cursor.getColumnIndex(TableUCs.COLUMN_UC_NAME))
         districtCode = cursor.getString(cursor.getColumnIndex(TableUCs.COLUMN_DISTRICT_CODE))

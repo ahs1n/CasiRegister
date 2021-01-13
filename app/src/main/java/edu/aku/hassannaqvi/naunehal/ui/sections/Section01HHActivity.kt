@@ -8,19 +8,25 @@ import android.text.format.DateFormat
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.RadioButton
-import android.widget.RadioGroup
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import com.validatorcrawler.aliazaz.Clear
 import com.validatorcrawler.aliazaz.Validator
 import edu.aku.hassannaqvi.naunehal.R
+import edu.aku.hassannaqvi.naunehal.base.repository.GeneralRepository
+import edu.aku.hassannaqvi.naunehal.base.repository.ResponseStatus
+import edu.aku.hassannaqvi.naunehal.base.viewmodel.H1ViewModel
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract
 import edu.aku.hassannaqvi.naunehal.core.MainApp
+import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection01hhBinding
 import edu.aku.hassannaqvi.naunehal.models.Form
+import edu.aku.hassannaqvi.naunehal.utils.extension.obtainViewModel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import org.json.JSONObject
 import org.threeten.bp.Instant
 import org.threeten.bp.LocalDateTime
@@ -31,17 +37,87 @@ import java.util.*
 
 class Section01HHActivity : AppCompatActivity() {
     lateinit var bi: ActivitySection01hhBinding
-    private val ucCode = ""
-    private val dCode = ""
+    lateinit var viewModel: H1ViewModel
+    var district = mutableListOf("....")
+    var districtCode = mutableListOf("....")
+    var uc = mutableListOf("....")
+    var ucCode = mutableListOf("....")
+    lateinit var districtAdapter: ArrayAdapter<String>
+    lateinit var ucAdapter: ArrayAdapter<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_01hh)
-        bi.hh05.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList("....", "Test"))
-        bi.hh06.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList("....", "Test"))
+
+        /*
+        * Obtaining ViewModel
+        * */
+        viewModel = obtainViewModel(H1ViewModel::class.java, GeneralRepository(DatabaseHelper(this)))
+
+        /*
+        * Setting Adapters
+        * */
+        districtAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, district)
+        bi.hh05.adapter = districtAdapter
+        ucAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, uc)
+        bi.hh06.adapter = ucAdapter
+
+        /*
+        * Calling viewmodel district data function
+        * Fetch district result response
+        * */
+        viewModel.districtResponse.observe(this, Observer {
+            it?.let {
+                when (it.status) {
+                    ResponseStatus.SUCCESS -> {
+                        lifecycleScope.launch {
+                            it.data?.forEach { item ->
+                                district.add(item.districtName)
+                                districtCode.add(item.districtCode)
+                            }
+                            districtAdapter.notifyDataSetChanged()
+                        }
+                    }
+                    ResponseStatus.ERROR -> {
+                        lifecycleScope.launch {
+                            Toast.makeText(this@Section01HHActivity, "Please sync data first", Toast.LENGTH_LONG).show()
+                            delay(3000)
+                            finish()
+                        }
+                    }
+                    ResponseStatus.LOADING -> {
+                    }
+                }
+            }
+        })
+
+        /*
+        * Calling viewmodel uc data function
+        * Fetch uc result response
+        * */
+        viewModel.ucResponse.observe(this, Observer {
+            it?.let {
+                when (it.status) {
+                    ResponseStatus.SUCCESS -> {
+                        lifecycleScope.launch {
+                            it.data?.forEach { item ->
+                                uc.add(item.ucName)
+                                ucCode.add(item.ucCode)
+                            }
+                            ucAdapter.notifyDataSetChanged()
+                        }
+                    }
+                    ResponseStatus.ERROR -> {
+                        Toast.makeText(this@Section01HHActivity, "Village not found!", Toast.LENGTH_LONG).show()
+                    }
+                    ResponseStatus.LOADING -> {
+                    }
+                }
+            }
+        })
 
         // TODO: Check if form already exist in database.
-        if ( /*!formExists()*/true) //<== If form exist in database formExists() will also populateForm() and return true;
+        if ( /*!formExists()*/false) //<== If form exist in database formExists() will also populateForm() and return true;
         {
             initForm() //<== If form does not exist in database (New Form)
         }
@@ -52,6 +128,22 @@ class Section01HHActivity : AppCompatActivity() {
     private fun setupSkips() {
         rgListener(bi.hh11, bi.hh1102, bi.llhh11)
         rgListener(bi.hh18, bi.hh1801, bi.llhh18)
+
+        bi.hh05.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View, position: Int, id: Long) {
+                bi.hh06.setSelection(0)
+                if (position == 0) {
+                    bi.hh06.isEnabled = false
+                    return
+                }
+                bi.hh06.isEnabled = true
+                uc.clear()
+                uc.add("....")
+                viewModel.getUCsDistrictFromDB(districtCode[position - 1])
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
     }
 
     private fun rgListener(rg: RadioGroup, rb: RadioButton, vg: ViewGroup) {
@@ -115,8 +207,8 @@ class Section01HHActivity : AppCompatActivity() {
         MainApp.form = Form()
         MainApp.form.sysDate = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(Date().time)
         MainApp.form.userName = MainApp.user.userName
-        MainApp.form.dcode = dCode
-        MainApp.form.ucode = ucCode
+        MainApp.form.dcode = districtCode.get(bi.hh05.selectedItemPosition - 1)
+        MainApp.form.ucode = ucCode.get(bi.hh06.selectedItemPosition - 1)
         MainApp.form.cluster = bi.hh08.text.toString()
         MainApp.form.hhno = bi.hh09.text.toString()
         MainApp.form.deviceId = MainApp.appInfo.deviceID

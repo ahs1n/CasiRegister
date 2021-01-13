@@ -121,11 +121,11 @@ object CreateTable {
             + Districts.TableDistricts.COLUMN_DISTRICT_CODE + " TEXT"
             + " );")
 
-    const val SQL_CREATE_UCS = ("CREATE TABLE " + UCsContract.TableUCs.TABLE_NAME + "("
-            + UCsContract.TableUCs.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + UCsContract.TableUCs.COLUMN_UC_NAME + " TEXT,"
-            + UCsContract.TableUCs.COLUMN_UC_CODE + " TEXT,"
-            + UCsContract.TableUCs.COLUMN_DISTRICT_CODE + " TEXT"
+    const val SQL_CREATE_UCS = ("CREATE TABLE " + UCs.TableUCs.TABLE_NAME + "("
+            + UCs.TableUCs.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + UCs.TableUCs.COLUMN_UC_NAME + " TEXT,"
+            + UCs.TableUCs.COLUMN_UC_CODE + " TEXT,"
+            + UCs.TableUCs.COLUMN_DISTRICT_CODE + " TEXT"
             + " );")
     const val SQL_CREATE_CLUSTERS = ("CREATE TABLE " + Clusters.TableClusters.TABLE_NAME + "("
             + Clusters.TableClusters.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"

@@ -29,8 +29,8 @@ import edu.aku.hassannaqvi.naunehal.models.Districts.TableDistricts;
 import edu.aku.hassannaqvi.naunehal.models.Form;
 import edu.aku.hassannaqvi.naunehal.models.FormIndicatorsModel;
 import edu.aku.hassannaqvi.naunehal.models.Immunization;
-import edu.aku.hassannaqvi.naunehal.models.UCsContract;
-import edu.aku.hassannaqvi.naunehal.models.UCsContract.TableUCs;
+import edu.aku.hassannaqvi.naunehal.models.UCs;
+import edu.aku.hassannaqvi.naunehal.models.UCs.TableUCs;
 import edu.aku.hassannaqvi.naunehal.models.Users;
 import edu.aku.hassannaqvi.naunehal.models.Users.UsersTable;
 import edu.aku.hassannaqvi.naunehal.models.VersionApp;
@@ -448,20 +448,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return all;
     }
 
-    public ArrayList<UCsContract> getUCsByDistricts(String dcode) {
+    public ArrayList<UCs> getUCsByDistricts(String dCode) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
 
         String whereClause = TableUCs.COLUMN_DISTRICT_CODE + "=?";
-        String[] whereArgs = new String[]{dcode, "%Test%"};
+        String[] whereArgs = new String[]{dCode};
         String groupBy = null;
         String having = null;
 
-        String orderBy =
-                TableUCs.COLUMN_UC_CODE + " ASC";
+        String orderBy = TableUCs.COLUMN_UC_CODE + " ASC";
 
-        ArrayList<UCsContract> allDC = new ArrayList<>();
+        ArrayList<UCs> allDC = new ArrayList<>();
         try {
             c = db.query(
                     TableUCs.TABLE_NAME,  // The table to query
@@ -473,7 +472,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                UCsContract dc = new UCsContract();
+                UCs dc = new UCs();
                 allDC.add(dc.hydrate(c));
             }
         } finally {
@@ -709,7 +708,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             for (int i = 0; i < ucList.length(); i++) {
                 JSONObject jsonObjectUc = ucList.getJSONObject(i);
-                UCsContract uc = new UCsContract();
+                UCs uc = new UCs();
                 uc.sync(jsonObjectUc);
                 ContentValues values = new ContentValues();
 

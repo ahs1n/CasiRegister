@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import edu.aku.hassannaqvi.naunehal.R;
+import edu.aku.hassannaqvi.naunehal.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.naunehal.ui.sections.Section01HHActivity;
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
 
             case R.id.action_settings:
-                //    startActivity(new Intent(this, SettingsActivity.class));
+                    startActivity(new Intent(this, AndroidDatabaseManager.class));
                 break;
             case R.id.action_data_sync:
                 //startActivity(new Intent(this, SyncActivity.class));
