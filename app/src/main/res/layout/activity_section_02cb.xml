@@ -220,32 +220,6 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                style="@style/textView3Head"
-                                android:text="@string/cb04mm" />
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:gravity="center"
-                                android:id="@+id/cb04mm"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/month"
-                                android:inputType="number"
-                                android:maxLength="2"
-                                android:text="@={childInformation.cb04mm}"
-                                app:defaultValue="98"
-                                app:maxValue="12"
-                                app:minValue="1"
-                                app:type="range" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
                             android:layout_marginStart="2dp"
                             android:layout_weight="1"
                             android:orientation="vertical">
@@ -269,6 +243,35 @@
                                 app:type="range" />
 
                         </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="2dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/textView3Head"
+                                android:text="@string/cb04mm" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:gravity="center"
+                                android:id="@+id/cb04mm"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/month"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={childInformation.cb04mm}"
+                                app:defaultValue="98"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
+
+                        </LinearLayout>
+
 
                         <LinearLayout
                             android:layout_width="match_parent"

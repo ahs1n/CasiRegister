@@ -12,9 +12,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 import edu.aku.hassannaqvi.naunehal.contracts.ChildContract;
 import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract.ChildInfoTable;
@@ -413,6 +411,82 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    public ArrayList<Districts> getAllDistricts() {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = TableDistricts._ID + " ASC";
+        ArrayList<Districts> all = new ArrayList<>();
+        try {
+            c = db.query(
+                    TableDistricts.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                all.add(new Districts().hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return all;
+    }
+
+    public ArrayList<UCsContract> getUCsByDistricts(String dcode) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause = TableUCs.COLUMN_DISTRICT_CODE + "=?";
+        String[] whereArgs = new String[]{dcode, "%Test%"};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                TableUCs.COLUMN_UC_CODE + " ASC";
+
+        ArrayList<UCsContract> allDC = new ArrayList<>();
+        try {
+            c = db.query(
+                    TableUCs.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                UCsContract dc = new UCsContract();
+                allDC.add(dc.hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allDC;
+    }
+
     /*public BLRandom getHHFromBLRandom(String subAreaCode, String hh) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
@@ -710,85 +784,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
         }
         return insertCount;
-    }
-
-
-    //Get All Districts
-    public List<Districts> getDistricts() {
-
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = null;
-        String[] columns = null;
-
-        String whereClause = null;
-        String[] whereArgs = null;
-        String groupBy = null;
-        String having = null;
-
-        String orderBy = TableDistricts._ID + " ASC";
-        List<Districts> allEB = new ArrayList<>();
-        try {
-            c = db.query(
-                    TableDistricts.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                allEB.add(new Districts().hydrate(c));
-            }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
-        return allEB;
-    }
-
-    //Get UCs By District
-    public Collection<UCsContract> getUcByDist(String dcode) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = null;
-        String[] columns = null;
-
-        String whereClause = TableUCs.COLUMN_DISTRICT_CODE + "=?";
-        String[] whereArgs = new String[]{dcode, "%Test%"};
-        String groupBy = null;
-        String having = null;
-
-        String orderBy =
-                TableUCs.COLUMN_UC_CODE + " ASC";
-
-        Collection<UCsContract> allDC = new ArrayList<>();
-        try {
-            c = db.query(
-                    TableUCs.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                UCsContract dc = new UCsContract();
-                allDC.add(dc.hydrate(c));
-            }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
-        return allDC;
     }
 
 
