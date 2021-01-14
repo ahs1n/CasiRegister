@@ -6,17 +6,23 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
+import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
+import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection082seBinding;
 import edu.aku.hassannaqvi.naunehal.ui.EndingActivity;
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
+
+import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
 
 public class Section082SEActivity extends AppCompatActivity {
 
@@ -69,13 +75,23 @@ public class Section082SEActivity extends AppCompatActivity {
     }
 
 
-    public void BtnContinue(View view) {
-        if (!formValidation()) return;
+    private boolean UpdateDB() {
+        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_S08SE, form.s08SEtoString());
+        if (updcount == 1) {
+            return true;
+        } else {
+            Toast.makeText(this, "SORRY! Failed to update DB", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
 
-        // SaveDraft(); //<== This function is no longer needed after DataBinding
-        if (/*UpdateDB()*/ true) {
+
+    public void BtnContinue() {
+        if (!formValidation()) return;
+        if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, EndingActivity.class));
         }
     }
 
