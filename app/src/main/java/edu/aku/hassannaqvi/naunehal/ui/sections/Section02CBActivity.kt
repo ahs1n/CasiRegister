@@ -17,7 +17,6 @@ import edu.aku.hassannaqvi.naunehal.R
 import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract
 import edu.aku.hassannaqvi.naunehal.core.MainApp
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection02cbBinding
-import edu.aku.hassannaqvi.naunehal.ui.sections.ChildrenListActivity.Companion.serial
 import edu.aku.hassannaqvi.naunehal.utils.datecollection.AgeModel
 import edu.aku.hassannaqvi.naunehal.utils.datecollection.DateRepository.Companion.getCalculatedAge
 import edu.aku.hassannaqvi.naunehal.utils.openWarningDialog
@@ -96,7 +95,6 @@ class Section02CBActivity : AppCompatActivity() {
         initForm()
         // SaveDraft(); //<== This function is no longer needed after DataBinding
         if (updateDB()) {
-            serial = MainApp.childInformation.cb01.toInt() + 1
             finish()
         }
     }

@@ -8,13 +8,16 @@ import com.google.android.material.snackbar.Snackbar
 import com.kennyc.view.MultiStateView
 import com.leinardi.android.speeddial.SpeedDialActionItem
 import edu.aku.hassannaqvi.naunehal.R
-import edu.aku.hassannaqvi.naunehal.adapters.ChildListAdapter
+import edu.aku.hassannaqvi.naunehal.adapters.SelectedChildListAdapter
 import edu.aku.hassannaqvi.naunehal.base.repository.GeneralRepository
 import edu.aku.hassannaqvi.naunehal.base.repository.ResponseStatus
 import edu.aku.hassannaqvi.naunehal.base.viewmodel.ChildListViewModel
+import edu.aku.hassannaqvi.naunehal.base.viewmodel.SelectedChildrenListViewModel
 import edu.aku.hassannaqvi.naunehal.core.MainApp
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper
 import edu.aku.hassannaqvi.naunehal.databinding.ActivityChildrenListBinding
+import edu.aku.hassannaqvi.naunehal.databinding.ActivitySelectedChildrenListBinding
+import edu.aku.hassannaqvi.naunehal.models.Child
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation
 import edu.aku.hassannaqvi.naunehal.utils.WarningActivityInterface
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivity
@@ -23,22 +26,28 @@ import edu.aku.hassannaqvi.naunehal.utils.openSectionEndingActivity
 import edu.aku.hassannaqvi.naunehal.utils.openWarningActivity
 import java.util.*
 
-class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
+class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
 
-    lateinit var adapter: ChildListAdapter
-    lateinit var bi: ActivityChildrenListBinding
-    lateinit var viewModel: ChildListViewModel
+    lateinit var adapter: SelectedChildListAdapter
+    lateinit var bi: ActivitySelectedChildrenListBinding
+
+    /*
+    * Using old approach to visible viewmodel in all sub classes
+    * Serial no increment on every new entry
+    * */
+    companion object {
+        lateinit var viewModel: SelectedChildrenListViewModel
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_children_list)
-        viewModel = obtainViewModel(ChildListViewModel::class.java, GeneralRepository(DatabaseHelper(this)))
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_selected_children_list)
+        viewModel = obtainViewModel(SelectedChildrenListViewModel::class.java, GeneralRepository(DatabaseHelper(this)))
         callingRecyclerView()
 
         /*
         * Nested Toolbar
         * */
-        bi.toolbarLayout.title = "Children List [${MainApp.form.cluster} / ${MainApp.form.hhno})"
         bi.toolbarLayout.setCollapsedTitleTextColor(ContextCompat.getColor(this, R.color.black))
         bi.toolbarLayout.setExpandedTitleColor(ContextCompat.getColor(this, R.color.black_overlay))
 
@@ -48,23 +57,22 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
         * */
         val actionItems = mutableListOf<SpeedDialActionItem>(
                 SpeedDialActionItem.Builder(R.id.fab_exit, R.drawable.ic_exit).setLabel("Force exit").create(),
-                SpeedDialActionItem.Builder(R.id.fab_finish, R.drawable.ic_finish).setLabel("Finish").create(),
-                SpeedDialActionItem.Builder(R.id.fab_add, R.drawable.ic_add).setLabel("Add Children").create()
+                SpeedDialActionItem.Builder(R.id.fab_finish, R.drawable.ic_finish).setLabel("Finish").create()
         )
         bi.speedDial.addAllActionItems(actionItems)
         bi.speedDial.setOnActionSelectedListener { actionItem ->
             when (actionItem.id) {
-                R.id.fab_add -> {
-                    MainApp.childInformation = ChildInformation((adapter.childItems.size + 1).toString())
-                    gotoActivity(Section02CBActivity::class.java)
-                }
                 R.id.fab_finish -> {
-                    if (adapter.childItems.size == 0) {
+                    if (false) {
                         Snackbar.make(findViewById(android.R.id.content), "Please add children's for proceeding to the next section", Snackbar.LENGTH_LONG)
                                 .show()
                         return@setOnActionSelectedListener false
                     }
                     gotoActivity(Section03CSActivity::class.java)
+//                    val flag = adapter.mList.find { item -> item.memFlag == 3 }
+//                    finish()
+//                    startActivity(Intent(this, EndingActivity::class.java).putExtra("complete", flag == null).putExtra(CONSTANTS.NOT_IN_HOME_END, flag != null))
+//                    return@OnActionSelectedListener true // false will close it without animation
                 }
                 R.id.fab_exit -> {
                     openSectionEndingActivity()
@@ -102,25 +110,23 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
     * Callback call after pressing Child item in recyclerview
     * */
     override fun callWarningActivity(item: Any?) {
-        MainApp.childInformation = item as ChildInformation
-        gotoActivity(Section02CBActivity::class.java)
+        val information = item as ChildInformation
+
+        MainApp.child = Child()
+
+        gotoActivity(Section03CSActivity::class.java)
     }
 
     /*
     * Initialize recyclerView with onClickListener
     * */
     private fun callingRecyclerView() {
-        adapter = ChildListAdapter(object : ChildListAdapter.OnItemClickListener {
+        adapter = SelectedChildListAdapter(object : SelectedChildListAdapter.OnItemClickListener {
             override fun onItemClick(item: ChildInformation, position: Int) {
                 openWarningActivity(
                         title = "CONFIRMATION!",
                         message = "Are you sure, you want to edit ${item.cb02.toUpperCase(Locale.ENGLISH)} interview?",
                         data = item)
-            }
-
-            override fun onButtonItemClick(item: ChildInformation, flag: Boolean) {
-                MainApp.childInformation = ChildInformation((adapter.childItems.size + 1).toString(), flag)
-                gotoActivity(Section02CBActivity::class.java)
             }
         })
         bi.childList.adapter = adapter
