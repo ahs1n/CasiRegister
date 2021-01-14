@@ -67,7 +67,7 @@ public class Section07CVActivity extends AppCompatActivity {
     }
 
 
-    public void BtnContinue() {
+    public void BtnContinue(View view) {
         if (!formValidation()) return;
         if (UpdateDB()) {
             finish();

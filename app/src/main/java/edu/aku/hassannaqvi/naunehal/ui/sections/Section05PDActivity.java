@@ -115,7 +115,7 @@ public class Section05PDActivity extends AppCompatActivity {
     }
 
 
-    public void BtnContinue() {
+    public void BtnContinue(View view) {
         if (!formValidation()) return;
         if (UpdateDB()) {
             finish();
@@ -130,7 +130,7 @@ public class Section05PDActivity extends AppCompatActivity {
     }
 
 
-    public void BtnEnd() {
+    public void BtnEnd(View view) {
         finish();
         startActivity(new Intent(this, MainActivity.class));
     }
