@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -16,9 +17,13 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.jetbrains.annotations.NotNull;
 
 import edu.aku.hassannaqvi.naunehal.R;
+import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
+import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection07cvBinding;
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
+
+import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
 
 public class Section07CVActivity extends AppCompatActivity {
 
@@ -50,11 +55,21 @@ public class Section07CVActivity extends AppCompatActivity {
     }
 
 
-    public void BtnContinue(View view) {
-        if (!formValidation()) return;
+    private boolean UpdateDB() {
+        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_S07CV, form.s07CVtoString());
+        if (updcount == 1) {
+            return true;
+        } else {
+            Toast.makeText(this, "SORRY! Failed to update DB", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
 
-        // SaveDraft(); //<== This function is no longer needed after DataBinding
-        if (/*UpdateDB()*/ true) {
+
+    public void BtnContinue() {
+        if (!formValidation()) return;
+        if (UpdateDB()) {
             finish();
             startActivity(new Intent(this, Section081SEActivity.class));
         }
