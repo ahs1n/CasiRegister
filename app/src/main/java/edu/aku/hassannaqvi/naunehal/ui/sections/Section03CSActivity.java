@@ -5,11 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioGroup;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection03csBinding;
@@ -31,6 +32,7 @@ public class Section03CSActivity extends AppCompatActivity {
         setupSkips();
 
     }
+
 
     private void setupSkips() {
 
@@ -104,6 +106,7 @@ public class Section03CSActivity extends AppCompatActivity {
             startActivity(new Intent(this, Section04IMActivity.class));
         }
     }
+
 
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);

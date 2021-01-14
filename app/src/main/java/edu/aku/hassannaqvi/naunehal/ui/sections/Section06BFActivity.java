@@ -1,18 +1,23 @@
 package edu.aku.hassannaqvi.naunehal.ui.sections;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-import edu.aku.hassannaqvi.naunehal.R;
-import edu.aku.hassannaqvi.naunehal.core.MainApp;
-import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection06bfBinding;
-import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import edu.aku.hassannaqvi.naunehal.R;
+import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
+import edu.aku.hassannaqvi.naunehal.core.MainApp;
+import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
+import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection06bfBinding;
+import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
+
+import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
 
 public class Section06BFActivity extends AppCompatActivity {
 
@@ -73,28 +78,38 @@ public class Section06BFActivity extends AppCompatActivity {
 
         bi.bf10.setOnCheckedChangeListener((radioGroup, i) -> {
             Clear.clearAllFields(bi.fldGrpCVbf11);
-            bi.fldGrpCVbf07.setVisibility(View.VISIBLE);
+            bi.fldGrpCVbf11.setVisibility(View.VISIBLE);
             if (i == bi.bf1001.getId()) {
-                bi.fldGrpCVbf09.setVisibility(View.GONE);
+                bi.fldGrpCVbf11.setVisibility(View.GONE);
             }
         });
 
     }
 
 
+    private boolean UpdateDB() {
+        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_S06BF, form.s06BFtoString());
+        if (updcount == 1) {
+            return true;
+        } else {
+            Toast.makeText(this, "SORRY! Failed to update DB", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
+
     public void BtnContinue() {
         if (!formValidation()) return;
-
-        // SaveDraft(); //<== This function is no longer needed after DataBinding
-        if (/*UpdateDB()*/ true) {
+        if (UpdateDB()) {
             finish();
             startActivity(new Intent(this, Section07CVActivity.class));
         }
     }
 
+
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
-
     }
 
 
