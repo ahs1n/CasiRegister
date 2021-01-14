@@ -40,26 +40,21 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.main_menu, menu);
-
         return true;
     }
 
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-
         switch (item.getItemId()) {
-
             case R.id.action_settings:
                     startActivity(new Intent(this, AndroidDatabaseManager.class));
                 break;
             case R.id.action_data_sync:
                 //startActivity(new Intent(this, SyncActivity.class));
                 break;
-
         }
         return super.onOptionsItemSelected(item);
     }
