@@ -1,4 +1,5 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -12,20 +13,32 @@
     </data>
 
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/app_bg_gray"
         android:orientation="vertical">
 
         <include
+            android:id="@+id/include"
             layout="@layout/child_linenname"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="@dimen/_100sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <ScrollView
+            android:id="@+id/scrollView2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_55sdp"
+            android:background="@android:color/transparent"
+            android:elevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
 
             <LinearLayout
@@ -37,6 +50,7 @@
 
                 <!-- cs01  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
+
                     android:id="@+id/fldGrpCVcs01"
                     style="@style/cardView">
 
@@ -1710,7 +1724,8 @@
 
 
         </ScrollView>
-    </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </layout>
