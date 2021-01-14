@@ -1,5 +1,4 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
 
     <data>
@@ -36,7 +35,7 @@
 
 
                 <!-- cs01  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
+                <!--<androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcs01"
                     style="@style/cardView">
 
@@ -85,7 +84,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- cs02  Input   -->
+                &lt;!&ndash; cs02  Input   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcs02"
                     style="@style/cardView">
@@ -126,7 +125,7 @@
 
                     </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>-->
 
 
                 <!-- cs03  Radio   -->
