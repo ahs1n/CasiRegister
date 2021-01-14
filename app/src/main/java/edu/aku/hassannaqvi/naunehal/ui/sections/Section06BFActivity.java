@@ -5,12 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -79,9 +78,9 @@ public class Section06BFActivity extends AppCompatActivity {
 
         bi.bf10.setOnCheckedChangeListener((radioGroup, i) -> {
             Clear.clearAllFields(bi.fldGrpCVbf11);
-            bi.fldGrpCVbf07.setVisibility(View.VISIBLE);
+            bi.fldGrpCVbf11.setVisibility(View.VISIBLE);
             if (i == bi.bf1001.getId()) {
-                bi.fldGrpCVbf09.setVisibility(View.GONE);
+                bi.fldGrpCVbf11.setVisibility(View.GONE);
             }
         });
 
