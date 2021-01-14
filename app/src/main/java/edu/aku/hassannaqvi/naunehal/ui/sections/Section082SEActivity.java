@@ -8,12 +8,11 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -70,8 +69,16 @@ public class Section082SEActivity extends AppCompatActivity {
             }
         });
 
-        bi.se36.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpse36));
-
+        bi.se36.setOnCheckedChangeListener(((radioGroup, i) -> {
+            bi.fldGrpse36.setVisibility(View.VISIBLE);
+            bi.fldGrpse37.setVisibility(View.VISIBLE);
+            if (i == bi.se3602.getId()) {
+                Clear.clearAllFields(bi.fldGrpse36);
+                Clear.clearAllFields(bi.fldGrpse37);
+                bi.fldGrpse36.setVisibility(View.GONE);
+                bi.fldGrpse37.setVisibility(View.GONE);
+            }
+        }));
     }
 
 
