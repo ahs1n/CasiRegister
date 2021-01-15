@@ -67,50 +67,8 @@
             android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar.Bridge" />
 
         <activity
-            android:name="edu.aku.hassannaqvi.casiregister.ui.sections.Section082SEActivity"
-            android:label="Section SE"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1" />
-
-        <activity
             android:name="edu.aku.hassannaqvi.casiregister.ui.EndingActivity"
             android:label="Section SE"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1" />
-
-        <activity
-            android:name="edu.aku.hassannaqvi.casiregister.ui.sections.Section081SEActivity"
-            android:label="Section SE"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1" />
-
-        <activity
-            android:name="edu.aku.hassannaqvi.casiregister.ui.sections.Section07CVActivity"
-            android:label="Section CV"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1" />
-
-        <activity
-            android:name="edu.aku.hassannaqvi.casiregister.ui.sections.Section06BFActivity"
-            android:label="Section BF"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1" />
-
-        <activity
-            android:name="edu.aku.hassannaqvi.casiregister.ui.sections.Section05PDActivity"
-            android:label="Section PD"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1" />
-
-        <activity
-            android:name="edu.aku.hassannaqvi.casiregister.ui.sections.Section04IMActivity"
-            android:label="Section IM"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1" />
-
-        <activity
-            android:name="edu.aku.hassannaqvi.casiregister.ui.sections.Section03CSActivity"
-            android:label="Section CS"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
 

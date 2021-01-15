@@ -16,12 +16,6 @@ import edu.aku.hassannaqvi.casiregister.core.MainApp;
 import edu.aku.hassannaqvi.casiregister.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.casiregister.ui.sections.Section01HHActivity;
 import edu.aku.hassannaqvi.casiregister.ui.sections.Section02CBActivity;
-import edu.aku.hassannaqvi.casiregister.ui.sections.Section03CSActivity;
-import edu.aku.hassannaqvi.casiregister.ui.sections.Section04IMActivity;
-import edu.aku.hassannaqvi.casiregister.ui.sections.Section05PDActivity;
-import edu.aku.hassannaqvi.casiregister.ui.sections.Section06BFActivity;
-import edu.aku.hassannaqvi.casiregister.ui.sections.Section07CVActivity;
-import edu.aku.hassannaqvi.casiregister.ui.sections.Section081SEActivity;
 
 public class MainActivity extends AppCompatActivity {
 
