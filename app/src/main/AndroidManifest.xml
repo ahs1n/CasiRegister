@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:tools="http://schemas.android.com/tools"
     package="edu.aku.hassannaqvi.casiregister">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-feature android:name="android.hardware.location.gps" />
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -17,7 +17,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
-        android:name="edu.aku.hassannaqvi.casiregister.core.MainApp"
+        android:name=".core.MainApp"
         android:allowBackup="false"
         android:icon="@drawable/appicon"
         android:label="@string/app_name"
@@ -25,74 +25,62 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-
+        <activity android:name=".ui.sections.Section01CSActivity"></activity>
         <activity
-            android:name="edu.aku.hassannaqvi.casiregister.ui.SplashscreenActivity"
+            android:name=".ui.SplashscreenActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Design.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name="edu.aku.hassannaqvi.casiregister.ui.login_activity.LoginActivity"
+            android:name=".ui.login_activity.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge" />
-
         <activity
-            android:name="edu.aku.hassannaqvi.casiregister.ui.SyncActivity"
+            android:name=".ui.SyncActivity"
             android:label="Download and Upload Data Activity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name="edu.aku.hassannaqvi.casiregister.ui.sections.ChildrenListActivity"
+            android:name=".ui.sections.ChildrenListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
-            android:name="edu.aku.hassannaqvi.casiregister.ui.sections.SelectedChildrenListActivity"
+            android:name=".ui.sections.SelectedChildrenListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
-            android:name="edu.aku.hassannaqvi.casiregister.ui.MainActivity"
+            android:name=".ui.MainActivity"
             android:label="Dashboard Activity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar.Bridge" />
-
         <activity
-            android:name="edu.aku.hassannaqvi.casiregister.ui.EndingActivity"
+            android:name=".ui.EndingActivity"
             android:label="Section SE"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
-
         <activity
-            android:name="edu.aku.hassannaqvi.casiregister.ui.sections.Section02CBActivity"
+            android:name=".ui.sections.Section02CBActivity"
             android:label="Section CB"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
-
         <activity
-            android:name="edu.aku.hassannaqvi.casiregister.ui.sections.Section01HHActivity"
+            android:name=".ui.sections.Section01HHActivity"
             android:label="Section HH"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
-
         <activity
-            android:name="edu.aku.hassannaqvi.casiregister.ui.sections.IdentificationSectionActivity"
-            android:parentActivityName="edu.aku.hassannaqvi.casiregister.ui.MainActivity" />
-
+            android:name=".ui.sections.IdentificationSectionActivity"
+            android:parentActivityName=".ui.MainActivity" />
         <activity
-            android:name="edu.aku.hassannaqvi.casiregister.core.AndroidDatabaseManager"
+            android:name=".core.AndroidDatabaseManager"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
-
     </application>
 
 </manifest>
