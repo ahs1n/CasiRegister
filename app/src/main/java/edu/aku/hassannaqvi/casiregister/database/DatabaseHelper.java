@@ -72,14 +72,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsContract.FormsTable.COLUMN_UID, form.getUid());
         values.put(FormsContract.FormsTable.COLUMN_USERNAME, form.getUserName());
         values.put(FormsContract.FormsTable.COLUMN_SYSDATE, form.getSysDate());
-        values.put(FormsContract.FormsTable.COLUMN_S01CS, form.getS01HH());
+        values.put(FormsContract.FormsTable.COLUMN_S01CS, form.getS01CS());
         values.put(FormsContract.FormsTable.COLUMN_S02FC, form.getS02FC());
         values.put(FormsContract.FormsTable.COLUMN_S03WS, form.getS03WS());
         values.put(FormsContract.FormsTable.COLUMN_S04FW, form.getS04FW());
-        values.put(FormsContract.FormsTable.COLUMN_S05PD, form.getS05PD());
-        values.put(FormsContract.FormsTable.COLUMN_S06BF, form.getS06BF());
-        values.put(FormsContract.FormsTable.COLUMN_S07CV, form.getS07CV());
-        values.put(FormsContract.FormsTable.COLUMN_S08SE, form.getS08SE());
 
         values.put(FormsContract.FormsTable.COLUMN_ISTATUS, form.getIStatus());
         values.put(FormsContract.FormsTable.COLUMN_ISTATUS96x, form.getIStatus96x());

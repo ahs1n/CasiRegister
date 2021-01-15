@@ -38,10 +38,6 @@ object CreateTable {
             + FormsContract.FormsTable.COLUMN_S02FC + " TEXT,"
             + FormsContract.FormsTable.COLUMN_S03WS + " TEXT,"
             + FormsContract.FormsTable.COLUMN_S04FW + " TEXT,"
-            + FormsContract.FormsTable.COLUMN_S05PD + " TEXT,"
-            + FormsContract.FormsTable.COLUMN_S06BF + " TEXT,"
-            + FormsContract.FormsTable.COLUMN_S07CV + " TEXT,"
-            + FormsContract.FormsTable.COLUMN_S08SE + " TEXT"
             + " );")
 
 
