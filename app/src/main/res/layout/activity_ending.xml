@@ -9,7 +9,7 @@
 
         <variable
             name="form"
-            type="edu.aku.hassannaqvi.naunehal.models.Form" />
+            type="edu.aku.hassannaqvi.casiregister.models.Form" />
     </data>
 
     <ScrollView
